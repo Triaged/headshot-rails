@@ -4,37 +4,31 @@ class API::V1::OfficeLocationsController < APIController
   # GET /api/v1/office_locations
   def index
     @office_locations = current_company.office_locations.all
+    respond_with @office_locations
   end
 
   # GET /api/v1/office_locations/1
   def show
+    respond_with @office_location
   end
 
   
   # POST /api/v1/office_locations
   def create
     @office_location = current_company.office_locations.build(office_location_params)
-
-    if @api_v1_office_location.save
-      redirect_to api_v1_office_locations_url(@office_location), notice: 'Office location was successfully created.'
-    else
-      render :new
-    end
+    respond_with @office_location
   end
 
   # PATCH/PUT /api/v1/office_locations/1
   def update
-    if @office_location.update(office_location_params)
-      redirect_to api_v1_office_locations_url(@office_location), notice: 'Office location was successfully updated.'
-    else
-      render :edit
-    end
+    @office_location.update(office_location_params)
+    respond_with @office_location
   end
 
   # DELETE /api/v1/office_locations/1
   def destroy
     @office_location.destroy
-    redirect_to api_v1_office_locations_url, notice: 'Office location was successfully destroyed.'
+    respond_with @office_location
   end
 
   private
