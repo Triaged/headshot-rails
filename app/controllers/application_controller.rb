@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include UrlHelper
   protect_from_forgery with: :exception
   helper_method :subdomain, :current_company
-  before_filter :validate_subdomain, :authenticate_user!
+  before_filter  :authenticate_user! #:validate_subdomain,
 
 private # ----------------------------------------------------
 
