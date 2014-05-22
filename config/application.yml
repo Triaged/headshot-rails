@@ -16,5 +16,5 @@ GA_SECRET: Qn7uh6AG0Y3en-NNqM0X-ot_
 
 
 production:
-	GA_CLIENT_ID: 637941761856-itd93us1ml2e6bbpm0jtg52m4i6ff68t.apps.googleusercontent.com
-	GA_SECRET: ovKxu5cLp_1yh9gr4Trg71f_
+  GA_CLIENT_ID: 637941761856-itd93us1ml2e6bbpm0jtg52m4i6ff68t.apps.googleusercontent.com
+  GA_SECRET: ovKxu5cLp_1yh9gr4Trg71f_
