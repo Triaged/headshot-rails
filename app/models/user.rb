@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
-	include AlgoliaSearch
-  # Include default devise modules. Others available are:
+	# Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable, :basecamper
@@ -74,10 +73,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  algoliasearch per_environment: true do
-    attribute :first_name, :last_name, :email
-  end
-
+ 
 protected
 
 	
