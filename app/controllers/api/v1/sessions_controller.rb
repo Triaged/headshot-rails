@@ -1,4 +1,4 @@
-class Api::V1::SessionsController < API::BaseController
+class Api::V1::SessionsController < APIController
 	before_filter :authenticate_user_from_token!, :except => [:create]
 	before_filter :authenticate_user!, :except => [:create]
 	before_filter :ensure_params_exist
