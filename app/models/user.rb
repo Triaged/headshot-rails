@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   
   has_one :employee_info, dependent: :destroy
   accepts_nested_attributes_for :employee_info
-  before_create :build_default_employee_info
+  before_create :create_default_employee_info
 
 
   has_many :provider_credentials
@@ -82,10 +82,10 @@ class User < ActiveRecord::Base
 protected
 
 
-	def build_default_employee_info
+	def create_default_employee_info
 	  # build default profile instance. Will use default params.
 	  # The foreign key to the owning User model is set automatically
-	  build_employee_info
+	  create_employee_info
 	  true # Always return true in callbacks as the normal 'continue' state
 	end
 
