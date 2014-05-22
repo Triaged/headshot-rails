@@ -8,6 +8,7 @@ HeadshotRails::Application.routes.draw do
   
   namespace :api, :path => "", :constraints => {:subdomain => "api"}, :defaults => {:format => :json} do
   	namespace :v1 do
+      devise_for :users
     	resources :users
   	end
 	end
