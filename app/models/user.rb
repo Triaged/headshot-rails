@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
 	before_save :ensure_authentication_token!	
 
   belongs_to :company
-  has_one :employee_info
+  has_one :employee_info, dependent: :destroy
+  accepts_nested_attributes_for :employee_info
   has_many :provider_credentials
   has_many :subordinates, class_name: "User", foreign_key: "manager_id"
  	belongs_to :manager, class_name: "User"

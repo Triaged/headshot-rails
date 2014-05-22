@@ -1,5 +1,10 @@
 <h3>User</h3>
 <p>User: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
+<%= @user.employee_info.job_title %>
+<%= @user.employee_info.cell_phone %>
+<%= @user.employee_info.office_phone %>
+<%= @user.employee_info.job_start_date %>
+<%= @user.employee_info.birth_date %>
 <%= image_tag @user.avatar.face.url, :width => 60 %>
 <%= link_to 'Edit account', edit_user_path %>

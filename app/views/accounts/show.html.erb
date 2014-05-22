@@ -1,0 +1,9 @@
+<%= image_tag @current_user.avatar.face.url, :width => 60 %>
+<%= @current_user.name %> <br />
+<%= @current_user.employee_info.job_title %> <br />
+<%= @current_user.employee_info.cell_phone %><br />
+<%= @current_user.employee_info.office_phone %><br />
+<%= @current_user.employee_info.job_start_date %><br />
+<%= @current_user.employee_info.birth_date %><br />
+
+<%= link_to 'Edit', edit_account_path %>

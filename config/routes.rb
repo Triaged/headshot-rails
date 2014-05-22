@@ -8,13 +8,20 @@ HeadshotRails::Application.routes.draw do
   
   namespace :api, :path => "", :constraints => {:subdomain => "api"}, :defaults => {:format => :json} do
   	namespace :v1 do
-      devise_for :users
+
+      devise_scope :user do
+        match '/sessions' => 'sessions#create', :via => :post
+        match '/sessions' => 'sessions#destroy', :via => :delete
+        match '/registrations' => 'registrations#create', :via => :post
+     end
+
     	resources :users
   	end
 	end
   
   constraints(Subdomain) do
   	resources :users
+    resource :account
 	end
 
 end
