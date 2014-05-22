@@ -1,4 +1,4 @@
-class API::V1::AccountsControllerController < APIController
+class API::V1::AccountsController < APIController
 
 	def show
 		respond_with current_user
