@@ -6,7 +6,6 @@ class AccountsController < ApplicationController
 
 	def edit
 		@current_user = current_user
-		@current_user.build_employee_info if @current_user.employee_info.nil?
 	end
 
 	def update
