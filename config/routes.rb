@@ -11,6 +11,7 @@ HeadshotRails::Application.routes.draw do
       resources :users
       resources :office_locations
       resource :account
+      resource :company
 
       devise_scope :user do
         match '/sessions' => 'sessions#create', :via => :post
