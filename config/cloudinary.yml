@@ -1,0 +1,25 @@
+---
+development:
+  cloud_name: triage
+  api_key: '846265839234531'
+  api_secret: aEA3Rt4s64OaxQVSZPaSmhqYK6A
+  enhance_image_tag: true
+  static_image_support: false
+staging:
+  cloud_name: triage
+  api_key: '846265839234531'
+  api_secret: aEA3Rt4s64OaxQVSZPaSmhqYK6A
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: triage
+  api_key: '846265839234531'
+  api_secret: aEA3Rt4s64OaxQVSZPaSmhqYK6A
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: triage
+  api_key: '846265839234531'
+  api_secret: aEA3Rt4s64OaxQVSZPaSmhqYK6A
+  enhance_image_tag: true
+  static_image_support: false

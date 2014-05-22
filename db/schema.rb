@@ -11,10 +11,81 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520203200) do
+ActiveRecord::Schema.define(version: 20140522034827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "companies", force: true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.string   "website"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "employee_infos", force: true do |t|
+    t.string   "job_title"
+    t.string   "cell_phone"
+    t.string   "office_phone"
+    t.date     "job_start_date"
+    t.date     "birth_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "employee_infos", ["user_id"], name: "index_employee_infos_on_user_id", using: :btree
+
+  create_table "office_locations", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "company_id"
+  end
+
+  add_index "office_locations", ["company_id"], name: "index_office_locations_on_company_id", using: :btree
+
+  create_table "provider_credentials", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "provider_id"
+    t.integer  "company_id"
+    t.string   "uid"
+    t.string   "access_token"
+    t.string   "token_secret"
+    t.string   "refresh_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "provider_credentials", ["company_id"], name: "index_provider_credentials_on_company_id", using: :btree
+  add_index "provider_credentials", ["provider_id"], name: "index_provider_credentials_on_provider_id", using: :btree
+  add_index "provider_credentials", ["user_id"], name: "index_provider_credentials_on_user_id", using: :btree
+
+  create_table "providers", force: true do |t|
+    t.string   "name"
+    t.string   "title"
+    t.string   "short_title"
+    t.boolean  "active"
+    t.boolean  "oauth"
+    t.string   "oauth_path"
+    t.string   "large_icon"
+    t.string   "small_icon"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teams", force: true do |t|
+    t.string   "name"
+    t.integer  "company_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "teams", ["company_id"], name: "index_teams_on_company_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,9 +101,23 @@ ActiveRecord::Schema.define(version: 20140520203200) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "company_id"
+    t.integer  "team_id"
+    t.string   "avatar"
+    t.integer  "manager_id"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "authentication_token"
   end
 
+  add_index "users", ["company_id"], name: "index_users_on_company_id", using: :btree
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["manager_id"], name: "index_users_on_manager_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["team_id"], name: "index_users_on_team_id", using: :btree
 
 end
