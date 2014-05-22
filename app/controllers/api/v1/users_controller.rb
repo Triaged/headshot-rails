@@ -14,13 +14,7 @@ class API::V1::UsersController < APIController
     respond_with @user
   end
 
-  # POST /api/v1/users
-  # POST /api/v1/users.json
-  def create
-    @user = current_company.users.build(user_params)
-    respond_with @user
-  end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
