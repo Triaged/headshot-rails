@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   before_create :set_company
+  after_create :unleash_sherlock
 
 	def set_company
 		email_address = Mail::Address.new(email)
@@ -80,6 +81,11 @@ class User < ActiveRecord::Base
 
  
 protected
+
+	def unleash_sherlock
+		SherlockHolmes.new(self.id).investigate!
+		true
+	end
 
 
 	def create_default_employee_info

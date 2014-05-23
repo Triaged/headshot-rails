@@ -1,7 +1,7 @@
 class API::V1::AccountsController < APIController
 
 	def show
-		respond_with current_user
+		render json: current_user, serializer: AccountSerializer
 	end
 
 	def update
