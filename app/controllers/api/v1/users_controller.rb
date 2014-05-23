@@ -5,6 +5,7 @@ class API::V1::UsersController < APIController
   # GET /api/v1/users.json
   def index
     @users = current_company.users.all
+    Rails.logger.info @users.count
     respond_with @users
   end
 
