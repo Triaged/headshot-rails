@@ -1,3 +1,3 @@
-class OfficeLocationSerializer < ActiveModel::Serializer
+class OfficeLocationSerializer < ApplicationSerializer
   attributes :id, :name, :address, :longitude, :latitude
 end

@@ -1,4 +1,4 @@
-class AccountSerializer < ActiveModel::Serializer
+class AccountSerializer < ApplicationSerializer
   attributes :id
 
   has_one :current_user, serializer: UserSerializer

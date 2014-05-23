@@ -1,4 +1,4 @@
-class EmployeeInfoSerializer < ActiveModel::Serializer
+class EmployeeInfoSerializer < ApplicationSerializer
   attributes :job_title, :job_start_date, :birth_date, :cell_phone, :office_phone, :home_office_location, :current_office_location
 
  
