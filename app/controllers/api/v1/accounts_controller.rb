@@ -1,7 +1,8 @@
 class API::V1::AccountsController < APIController
+	before_action :set_user, :only => :show
 
 	def show
-		render json: current_user, serializer: AccountSerializer
+		render json: @user, serializer: AccountSerializer
 	end
 
 	def update
@@ -13,5 +14,11 @@ class API::V1::AccountsController < APIController
   def user_params
     params[:user].permit(:name, :avatar, :employee_info_attributes => [:job_title, :cell_phone, :office_phone, :job_start_date, :birth_date])
   end
+
+private
+
+	def set_user
+		@user = current_user
+	end
 
 end
