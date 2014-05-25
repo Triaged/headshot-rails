@@ -14,10 +14,12 @@ class API::V1::OfficeLocationsController < APIController
 
   def entered
     current_user.employee_info.update(current_office_location: @office_location)
+    respond_with @office_location
   end
 
   def exited
     current_user.employee_info.update(current_office_location: nil)
+    respond_with @office_location
   end
 
   # POST /api/v1/office_locations
