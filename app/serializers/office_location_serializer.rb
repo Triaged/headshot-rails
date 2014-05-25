@@ -1,3 +1,3 @@
 class OfficeLocationSerializer < ApplicationSerializer
-  attributes :id, :name, :address, :longitude, :latitude
+  attributes :id, :name, :street_address, :city, :state, :zip_code, :country, :longitude, :latitude
 end
