@@ -1,5 +1,5 @@
 class API::V1::OfficeLocationsController < APIController
-  before_action :set_office_location, only: [:show, :edit, :update, :destroy]
+  before_action :set_office_location, only: [:show, :edit, :update, :destroy, :entered, :exited]
 
   # GET /api/v1/office_locations
   def index
@@ -12,7 +12,14 @@ class API::V1::OfficeLocationsController < APIController
     respond_with @office_location
   end
 
-  
+  def entered
+    current_user.employee_info.update(current_office_location: @office_location)
+  end
+
+  def exited
+    current_user.employee_info.update(current_office_location: nil)
+  end
+
   # POST /api/v1/office_locations
   def create
     @office_location = current_company.office_locations.build(office_location_params)
