@@ -1,4 +1,10 @@
 HeadshotRails::Application.routes.draw do
+  namespace :api do
+  namespace :v1 do
+    get 'push_service/create'
+    end
+  end
+
   root :to => "home#index"
 
   as :user do
@@ -18,7 +24,7 @@ HeadshotRails::Application.routes.draw do
 
       resource :account
       resource :company
-
+      resource :push_services, only: :create
       devise_scope :user do
         match '/sessions' => 'sessions#create', :via => :post
         match '/sessions' => 'sessions#destroy', :via => :delete
