@@ -1,8 +1,8 @@
 class Sinch::PushService
 
-	def init (push_token, payload)
-		@push_token = push_token
-		@payload = payload
+	def init params
+		@push_token = params[:push_token]
+		@payload = params[:payload]
 	end
 
 	def deliver!
