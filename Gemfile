@@ -24,6 +24,7 @@ gem "omniauth-google-oauth2"
 gem "geocoder"
 gem "fullcontact", '0.6.1', :github => "Triaged/fullcontact-api-ruby"
 gem 'grocer'
+gem 'connection_pool'
 
 
 
