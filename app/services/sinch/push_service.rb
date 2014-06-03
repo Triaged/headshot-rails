@@ -20,6 +20,15 @@ class Sinch::PushService
 					"SIN" => @payload
 				}
 			)
+
+		GROCER.with do |connection|
+  		connection.push(notification)
+		end
+			
+
+		GROCER_FEEDBACK.each do |attempt|
+			puts attempt.inspect
+		end
 	end
 
 end
