@@ -2,7 +2,6 @@ class API::V1::PushServicesController < APIController
   
 
   def create
-  	Rails.logger.info push_service_params.inspect
   	Sinch::PushService.new(push_service_params).deliver!
   	render :json => 'ok' 
   end
