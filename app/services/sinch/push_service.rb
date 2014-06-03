@@ -23,6 +23,7 @@ class Sinch::PushService
 
 		GROCER.with do |connection|
   		connection.push(notification)
+  		Rails.logger.info "pushed"
 		end
 			
 
