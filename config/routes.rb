@@ -14,7 +14,12 @@ HeadshotRails::Application.routes.draw do
   
   namespace :api, :path => "", :constraints => {:subdomain => "api"}, :defaults => {:format => :json} do
   	namespace :v1 do
-      resources :users
+      resources :users do
+        member do 
+          get 'manager'
+          get 'subordinates'
+        end
+      end
       resources :office_locations do
         member do 
           post 'entered'
