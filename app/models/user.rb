@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
-  before_create :set_company
+  #before_create :set_company
   after_create :unleash_sherlock
 
 	def set_company
