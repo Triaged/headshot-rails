@@ -1,0 +1,10 @@
+
+
+<%= link_to 'Add Manually', new_admin_user_path %> <br />
+<%= link_to 'Import From Google', import_admin_users_path %>
+<br />
+------------
+<br />
+<% @users.each do |user| %>
+	<%= render partial: "user", locals: {user: user} %> <br />
+<% end %>

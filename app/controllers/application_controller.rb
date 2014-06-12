@@ -3,8 +3,17 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   include UrlHelper
   protect_from_forgery with: :exception
-  helper_method :subdomain, :current_company
+  helper_method :subdomain, :current_company, :is_admin?
   before_filter  :authenticate_user! #:validate_subdomain,
+
+  def after_sign_in_path_for(resource)
+    logger.info 'after signup'
+    if resource.admin?
+    	admin_users_path
+    else
+    	download_path
+    end
+	end
 
 private # ----------------------------------------------------
 
@@ -12,6 +21,10 @@ private # ----------------------------------------------------
 	    # The where clause is assuming you are using Mongoid, change appropriately
 	    # for ActiveRecord or a different supported ORM.
 	    @current_company ||= Company.where(slug: subdomain).first
+	end
+
+	def is_admin?
+		current_user.admin?
 	end
 
 	def subdomain

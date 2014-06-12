@@ -1,0 +1,9 @@
+Profile
+<hr />
+<%= image_tag @user.avatar.url %>
+
+<%= @user.name %> <%= @user.email %>
+<%= @user.employee_info.job_title %>
+<hr />
+
+<%= render "form" %>

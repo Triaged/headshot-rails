@@ -6,4 +6,19 @@
 <%= @current_user.employee_info.job_start_date %><br />
 <%= @current_user.employee_info.birth_date %><br />
 
-<%= link_to 'Edit', edit_account_path %>
+<%= simple_form_for(current_user, :url => account_path, :method => :patch) do |f| %>
+
+	<%= f.input :name %>
+	<%= f.input :avatar %>
+
+	<%= f.simple_fields_for :employee_info, current_user.employee_info do |e| %>
+		<%= e.input :job_title %>
+		<%= e.input :cell_phone %>
+		<%= e.input :office_phone %>
+		<%= e.input :job_start_date %>
+		<%= e.input :birth_date %>
+	<% end %>
+
+	<%= f.submit %>
+
+<% end %>

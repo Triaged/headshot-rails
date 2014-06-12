@@ -1,10 +1,4 @@
 HeadshotRails::Application.routes.draw do
-  namespace :api do
-  namespace :v1 do
-    get 'push_service/create'
-    end
-  end
-
   root :to => "home#index"
 
   as :user do
@@ -41,6 +35,16 @@ HeadshotRails::Application.routes.draw do
   constraints(Subdomain) do
   	resources :users
     resource :account
+    resource :download
+    
+    namespace :admin do
+      resources :users do
+        collection do
+          get 'import'
+        end
+      end
+    end
+    
 	end
 
 end
