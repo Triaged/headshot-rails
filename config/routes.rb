@@ -26,7 +26,7 @@ HeadshotRails::Application.routes.draw do
           delete 'exited'
         end
       end
-
+      resources :departments
       resource :account
       resource :company
       resource :push_services, only: :create
