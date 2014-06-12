@@ -5,6 +5,7 @@ class Company < ActiveRecord::Base
 
 	has_many :users
 	has_many :office_locations
+	has_many :departments
 
 	after_create :create_default_departments
 
