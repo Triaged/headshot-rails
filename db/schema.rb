@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20140612164546) do
 
   create_table "departments", force: true do |t|
     t.string   "name"
-    t.boolean  "shared"
     t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
