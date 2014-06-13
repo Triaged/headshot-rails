@@ -3,6 +3,7 @@ class Sinch::PushService
 	def initialize params
 		@push_token = params[:push_token]
 		@payload = params[:payload]
+		@body = params[:message_body]
 	end
 
 	def deliver!
@@ -11,7 +12,7 @@ class Sinch::PushService
 
 		notification = Grocer::Notification.new(
 			  device_token:      @push_token,
-			  alert:             'incoming message',
+			  alert:             @body.truncate(256),
 			  sound: 						 'default',
 			  badge:             1,
 			  expiry:            Time.now + 60*60*12,     # optional; 0 is default, meaning the message is not stored

@@ -9,6 +9,6 @@ class API::V1::PushServicesController < APIController
 private
 	# Only allow a trusted parameter "white list" through.
     def push_service_params
-      params[:push_service].permit(:push_token, :payload)
+      params[:push_service].permit(:push_token, :payload, :message_body)
     end
 end
