@@ -43,6 +43,7 @@ HeadshotRails::Application.routes.draw do
           get 'import'
         end
       end
+      resource :company
     end
     
 	end

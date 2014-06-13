@@ -1,0 +1,12 @@
+<%= @company.name %>
+
+<hr />
+<% @company.office_locations.each do |location| %>
+	<%= location.street_address %>
+<% end %>
+
+<hr />
+
+<% @company.departments.each do |dept| %>
+	<%= dept.name %> <hr />
+<% end %>
