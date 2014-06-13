@@ -8,6 +8,8 @@ class SherlockHolmes
 		puts "investigating"
 		person = FullContact.person(email: @user.email)
 		puts person.inspect
+	rescue
+		puts "Sherlock failed"
 	end
 
 end
