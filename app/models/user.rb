@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 	before_save :ensure_authentication_token!	
 
   belongs_to :company
-  belongs_to :department
+  belongs_to :department, counter_cache: true
   
   has_one :employee_info, dependent: :destroy
   accepts_nested_attributes_for :employee_info
