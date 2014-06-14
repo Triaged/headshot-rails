@@ -1,7 +1,2 @@
-class Admin::CompaniesController < ApplicationController
-
-	def show
-    @company = current_company
-  end
-
+class Admin::CompaniesController < AdminController
 end
