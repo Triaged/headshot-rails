@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     logger.info 'after signup'
     if resource.is_a? Admin
     	admin_companies_path(subdomain: :admin)
-    if resource.admin?
+    elsif resource.admin?
     	manage_users_path
     else
     	download_path
