@@ -8,8 +8,10 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     logger.info 'after signup'
+    if resource.is_a? Admin
+    	admin_companies_path(subdomain: :admin)
     if resource.admin?
-    	admin_users_path
+    	manage_users_path
     else
     	download_path
     end
