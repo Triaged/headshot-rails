@@ -1,9 +1,9 @@
 
 $font-family-sans-serif: 'Whitney-Medium';
+@import "typography";
 
 @import "bootstrap";
 @import "framework_and_overrides";
 @import "buttons";
 @import "colors";
-@import "typography";
 @import "style";

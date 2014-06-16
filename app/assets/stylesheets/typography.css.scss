@@ -2,3 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@font-face {
+  font-family: 'Whitney-Medium';    
+  src: url('<%= asset_path('Whitney-Medium') %>');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Whitney-Semibold';    
+  src: url('<%= asset_path('Whitney-Semibold') %>');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Whitney-Bold';    
+  src: url('<%= asset_path('Whitney-Bold') %>');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Whitney-Book';    
+  src: url('<%= asset_path('Whitney-Book') %>');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Whitney-Light';    
+  src: url('<%= asset_path('Whitney-Light') %>');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+p {font-weight:Whitney-Medium;}
+$font-weight-small: Whitney-Book;
+h1 {font-weight:Whitney-Bold;}
+h2 {font-weight:Whitney-Bold;}
+h3 {font-weight:Whitney-Bold;}
+h4 {font-weight:Whitney-Semibold;}
