@@ -2,9 +2,3 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@font-face {
-  font-family: 'Whitney-Medium';    
-  src: url('<%= asset_path('Whitney-Medium') %>');
-  font-weight: normal;
-  font-style: normal;
-}
