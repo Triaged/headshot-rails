@@ -1,0 +1,9 @@
+<%= simple_form_for @import, :url => manage_import_path, :method => :post, :html => {:id => 'import_users_form' } do |f| %>
+
+	<%= f.simple_fields_for :users do |u| %>
+		<%= u.object.full_name %>
+		<%= u.object.email %>
+		<%= u.input :import %>
+		<hr />
+	<% end %>
+<% end %>

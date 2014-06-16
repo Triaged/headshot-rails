@@ -2,8 +2,9 @@ class User < ActiveRecord::Base
 	# Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable, :basecamper
-	devise_basecamper :subdomain_class => :company, :subdomain_field => :slug, :scope_field => :company_id
+         :recoverable, :rememberable, :trackable, :validatable
+	
+	
 	before_save :ensure_authentication_token!	
 
   belongs_to :company

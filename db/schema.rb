@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140616174751) do
-
+ActiveRecord::Schema.define(version: 20140616210739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +79,15 @@ ActiveRecord::Schema.define(version: 20140616174751) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "full_name"
+    t.integer  "import_id"
+  end
+
+  add_index "imported_users", ["import_id"], name: "index_imported_users_on_import_id", using: :btree
+
+  create_table "imports", force: true do |t|
+    t.integer  "company_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "office_locations", force: true do |t|
@@ -125,6 +133,7 @@ ActiveRecord::Schema.define(version: 20140616174751) do
     t.string   "small_icon"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "teams", force: true do |t|
@@ -149,7 +158,7 @@ ActiveRecord::Schema.define(version: 20140616174751) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
+    t.string   "full_name"
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "company_id"

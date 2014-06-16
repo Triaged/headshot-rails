@@ -9,19 +9,6 @@ class Manage::UsersController < ApplicationController
     @user = current_company.users.find(params[:id])
   end
 
-  def prompt_import
-  
-  end
-
-  def import
-    @users = UserImport.new(current_company.id).imported_users
-  end
-
-  def imported
-    imported_users = []
-    UserImport.new(current_company.id).convert_imported_to_real(imported_users)
-  end
-
   def new
   	@user = current_company.users.build
     @user.build_employee_info
