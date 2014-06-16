@@ -3,9 +3,8 @@
   <li><%= link_to 'Account', account_path %></li>
 <% else %>
   <li><%= link_to 'Sign in', new_user_session_path %></li>
-  <li><%= link_to 'Sign up', new_user_registration_path %></li>
 <% end %>
 <% if user_signed_in? && is_admin? %>
-  <li><%= link_to 'Users', admin_users_path %></li>
-  <li><%= link_to 'Company', admin_company_path %></li>
+  <li><%= link_to 'Users', manage_users_path %></li>
+  <li><%= link_to 'Company', manage_company_path %></li>
 <% end %>
