@@ -1,4 +1,4 @@
-class Manage::UsersController < AdminController
+class Manage::UsersController < ApplicationController
 
 	def index
     @users = current_company.users

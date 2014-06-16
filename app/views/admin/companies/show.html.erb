@@ -1,0 +1,15 @@
+<%= @company.name %>
+<br />
+<%= link_to 'Add User', new_admin_company_user_path(@company) %> <br />
+Admins:
+<hr />
+<% @company.users.admin.each do |admin| %>
+	<%= admin.email %> <br />
+<% end %>
+
+
+Users:
+<hr />
+<% @company.users.each do |user| %>
+	<%= user.email %> <br />
+<% end %>

@@ -33,7 +33,9 @@ HeadshotRails::Application.routes.draw do
   namespace :admin, :path => "", :constraints => {:subdomain => "admin"} do
     
   #   resources :users , :controller => 'admin/users'
-     resources :companies
+     resources :companies do
+      resources :users
+     end
   #   resources :feed_items , :controller => 'admin/feed_items'
   #   resources :messages , :controller => 'admin/messages'
   #   resources :providers, :controller => 'admin/providers'

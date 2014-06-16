@@ -11,9 +11,9 @@ class ApplicationController < ActionController::Base
     if resource.is_a? Admin
     	admin_companies_path(subdomain: 'admin')
     elsif resource.admin?
-    	manage_users_path
+    	manage_users_path(subdomain: resource.company.slug)
     else
-    	download_path
+    	download_path(subdomain: resource.company.slug)
     end
 	end
 

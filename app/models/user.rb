@@ -8,20 +8,19 @@ class User < ActiveRecord::Base
 
   belongs_to :company
   belongs_to :department, counter_cache: true
-  
   has_one :employee_info, dependent: :destroy
   accepts_nested_attributes_for :employee_info
   before_create :create_default_employee_info
-
-
-  has_many :provider_credentials
+	has_many :provider_credentials
   has_many :subordinates, class_name: "User", foreign_key: "manager_id"
  	belongs_to :manager, class_name: "User"
-
-  mount_uploader :avatar, AvatarUploader
+	
+	mount_uploader :avatar, AvatarUploader
 
   #before_create :set_company
   after_create :unleash_sherlock
+
+  scope :admin, -> { where(admin: true) }
 
 	def set_company
 		email_address = Mail::Address.new(email)
@@ -80,6 +79,12 @@ class User < ActiveRecord::Base
     end
   end
 
+  def password_match?
+    self.errors[:password] << 'must be provided' if password.blank?
+    self.errors[:password] << 'and confirmation do not match' if password != password_confirmation
+    password == password_confirmation and !password.blank?
+  end
+
  
 protected
 
@@ -96,8 +101,7 @@ protected
 	  true # Always return true in callbacks as the normal 'continue' state
 	end
 
-	
-  
+
   def generate_authentication_token
     loop do
       token = Devise.friendly_token

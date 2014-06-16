@@ -17,11 +17,12 @@ class ConfirmationsController < Devise::ConfirmationsController
           @confirmable.errors.clear #so that we wont render :new
         end
       else
-        self.class.add_error_on(self, :email, :password_already_set)
+        @confirmable.errors.add(:email, 'password_already_set')
       end
     end
 
     if !@confirmable.errors.empty?
+      self.resource = @confirmable
       render 'devise/confirmations/new' #Change this if you don't have the views on default path
     end
   end
