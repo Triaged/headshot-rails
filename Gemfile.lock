@@ -61,8 +61,12 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.1.1.1)
+    bootstrap-sass (3.1.0.2)
       sass (~> 3.2)
+    bootstrap-sass-rails (3.1.0.0)
+      bootstrap-sass (~> 3.1.0.0)
+      railties (>= 3.2.0)
+      sass-rails (>= 3.2.0)
     builder (3.2.2)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -274,7 +278,7 @@ DEPENDENCIES
   active_model_serializers
   better_errors
   binding_of_caller
-  bootstrap-sass
+  bootstrap-sass-rails
   carrierwave
   cloudinary
   coffee-rails (~> 4.0.0)
