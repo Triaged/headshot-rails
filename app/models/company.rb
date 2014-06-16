@@ -4,6 +4,7 @@ class Company < ActiveRecord::Base
 	friendly_id :name, use: [:slugged, :finders]
 
 	has_many :users
+	has_many :imported_users
 	has_many :office_locations
 	has_many :departments
 

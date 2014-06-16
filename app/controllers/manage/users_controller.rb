@@ -14,11 +14,12 @@ class Manage::UsersController < ApplicationController
   end
 
   def import
-  
+    @users = UserImport.new(current_company.id).imported_users
   end
 
   def imported
-
+    imported_users = []
+    UserImport.new(current_company.id).convert_imported_to_real(imported_users)
   end
 
   def new
