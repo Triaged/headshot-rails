@@ -26,13 +26,12 @@ class Google::UserImport
 		response.data.users.each do |user|
 			email = user.emails.select {|email| email['primary'] == true }.first
 			
-			u = User.find_or_initialize_by(email: email['address'])
-			if u.new_record?
-				u.first_name = user['name']['givenName']
-				u.last_name = user['name']['lastName']
-				u.name = user['name']['fullName']
-				u.company_id = @company.id
-				u.save
+			imported_user = @company.imported_users.find_or_initialize_by(email: email['address'])
+			unless imported_user.user_exists?
+				imported_user.first_name = user['name']['givenName']
+				imported_user.last_name = user['name']['lastName']
+				imported_user.full_name = user['name']['fullName']
+				imported_user.save
 			end
 		end
 		
