@@ -10,10 +10,50 @@
   </head>
   <body>
     <header>
+      <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a href="../" class="navbar-brand">Headshot</a>
+          </div>
+          <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+              <li class="active">
+                <a href="../home/users">Contacts</a>
+              </li>
+              <li>
+                <a href="../home/company">Company</a>
+              </li>
+              <li>
+                <a href="../home/profile">Profile</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
     </header>
+
     <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
+    <%= render 'layouts/messages' %>
+    <%= yield %>
     </main>
+
+    <footer class="bs-docs-footer" role="contentinfo">
+      <div class="container">
+        <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+        <ul class="bs-docs-footer-links muted">
+          <li><a href="https://headshot.io">Features</a></li>
+          <li><a href="https://twitter.com/headshotapp">Twitter</a></li>
+          <li><a href="mailto:team@headshot.io">Support</a></li>
+          <li><a href="../home/profile">Download</a></li>
+        </ul>
+      </div>
+    </footer>
+    
   </body>
 </html>
