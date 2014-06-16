@@ -39,6 +39,9 @@ HeadshotRails::Application.routes.draw do
 
   # Admin
   devise_for :admins
+
+  resources :test
+
   namespace :admin, :path => "", :constraints => {:subdomain => "admin"} do
     
   #   resources :users , :controller => 'admin/users'
@@ -62,17 +65,13 @@ HeadshotRails::Application.routes.draw do
     resource :download
     
     namespace :manage do
-      resources :users do
-        collection do
-          get 'prompt_import'
-          get 'import'
-          post 'imported'
+      resources :users
+      resources :import do
+        member do
+          get 'select'
         end
       end
       resource :company
     end
   end
-
-  
-
 end

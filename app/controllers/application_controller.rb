@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if resource.is_a? Admin
-    	admin_companies_path(subdomain: 'admin')
+    	admin_companies_url(subdomain: 'admin')
     elsif resource.admin?
-    	manage_users_path(subdomain: resource.company.slug)
+    	manage_users_url(subdomain: resource.company.slug)
     else
     	download_path(subdomain: resource.company.slug)
     end

@@ -16,17 +16,20 @@ class Google::UserImport
 
 	def fetch_users!
 		response = @client.execute(api_method: @directory.users.list, parameters: {'customer' => 'my_customer'})
+		import = @company.imports.create!	
 		
 		if response.response.status != 200
 			puts response.data.error['errors'].inspect
-			return
+			import.errors[:base] << "Import Failed"
+			return import
 		end
+	
 		
 
 		response.data.users.each do |user|
 			email = user.emails.select {|email| email['primary'] == true }.first
 			
-			imported_user = @company.imported_users.find_or_initialize_by(email: email['address'])
+			imported_user = import.imported_users.find_or_initialize_by(email: email['address'])
 			unless imported_user.user_exists?
 				imported_user.first_name = user['name']['givenName']
 				imported_user.last_name = user['name']['lastName']
@@ -34,8 +37,7 @@ class Google::UserImport
 				imported_user.save
 			end
 		end
-		
+		Rails.logger.info("import: #{import.inspect}")
+		return import
 	end
-
-
 end
