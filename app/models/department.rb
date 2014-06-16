@@ -2,7 +2,7 @@ class Department < ActiveRecord::Base
 	belongs_to :company
 	has_many :users
 
-	DEFAULT_DEPARTMENTS = ['Engineering', 'Services', 'Operations', 'Marketing', 'Human Resources', 'Finance', 
+	DEFAULT_DEPARTMENTS = ['Engineering', 'Services', 'Operations', 'Marketing', 'Human Resources', 'Finance', 'Product', 'Project Management', 
 		'Purchasing', 'Sales', 'IT', 'Design', 'Quality Assurance', 'Operations', 'Marketing', 'Client Services', 'Customer Support']
 
 	def self.create_default_departments company

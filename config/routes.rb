@@ -1,6 +1,15 @@
 HeadshotRails::Application.routes.draw do
   root :to => "home#index"
 
+  get 'home/create' => "home#create"
+  get 'home/import' => "home#import"
+  get 'home/users' => "home#users"
+  get 'home/user' => "home#user"
+  get 'home/prompt_import' => "home#prompt_import"
+  get 'home/profile' => "home#profile"
+  get 'home/company' => "home#company"
+
+
   # API
   namespace :api, :path => "", :constraints => {:subdomain => "api"}, :defaults => {:format => :json} do
   	namespace :v1 do
@@ -33,7 +42,9 @@ HeadshotRails::Application.routes.draw do
   namespace :admin, :path => "", :constraints => {:subdomain => "admin"} do
     
   #   resources :users , :controller => 'admin/users'
-     resources :companies
+     resources :companies do
+      resources :users
+     end
   #   resources :feed_items , :controller => 'admin/feed_items'
   #   resources :messages , :controller => 'admin/messages'
   #   resources :providers, :controller => 'admin/providers'
@@ -53,7 +64,9 @@ HeadshotRails::Application.routes.draw do
     namespace :manage do
       resources :users do
         collection do
+          get 'prompt_import'
           get 'import'
+          post 'imported'
         end
       end
       resource :company
