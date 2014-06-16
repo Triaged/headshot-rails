@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   before_filter  :authenticate_user! #:validate_subdomain,
 
   def after_sign_in_path_for(resource)
-    logger.info 'after signup'
     if resource.is_a? Admin
     	admin_companies_path(subdomain: 'admin')
     elsif resource.admin?

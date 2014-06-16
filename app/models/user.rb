@@ -8,16 +8,18 @@ class User < ActiveRecord::Base
 
   belongs_to :company
   belongs_to :department, counter_cache: true
-  has_one :employee_info, dependent: :destroy
-  accepts_nested_attributes_for :employee_info
-  before_create :create_default_employee_info
+  belongs_to :manager, class_name: "User"
+  
 	has_many :provider_credentials
   has_many :subordinates, class_name: "User", foreign_key: "manager_id"
- 	belongs_to :manager, class_name: "User"
+ 	
+ 	has_one :employee_info, dependent: :destroy
+ 	accepts_nested_attributes_for :employee_info
 	
 	mount_uploader :avatar, AvatarUploader
 
   #before_create :set_company
+  before_create :create_default_employee_info
   after_create :unleash_sherlock
 
   scope :admin, -> { where(admin: true) }

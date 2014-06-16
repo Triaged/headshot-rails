@@ -1,2 +1,25 @@
 class HomeController < ApplicationController
+	skip_before_filter :authenticate_user!
+
+	def create
+	end
+
+	def users
+	end
+
+	def user
+	end
+
+	def prompt_import
+	end
+
+	def import
+	end
+
+	def profile
+	end
+
+	def company
+	end
+
 end
