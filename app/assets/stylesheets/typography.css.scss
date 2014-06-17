@@ -43,7 +43,11 @@ p {
 	letter-spacing: .025em;
 	color: $grey;
 }
-h1, h2 {
+h1 {
+	font-weight:700;
+	color: #fff;
+}
+h2 {
 	font-weight:700;
 }
 h3 {

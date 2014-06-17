@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "longshadows";
+
 $border-radius-sm: 3px;
 $border-radius-lg: 5px;
 
@@ -10,6 +12,14 @@ $spacing-sm: 10px;
 $spacing-m: 20px;
 $spacing-lg: 30px;
 $spacing-xlg: 40px;
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 
 
 
@@ -68,22 +78,56 @@ $spacing-xlg: 40px;
 
 .picture-frame-sm {
 	width: 50px;
-	-webkit-border-radius: 26px;
-    -moz-border-radius: 26px;
-    border-radius: 26px;
+	-webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
 }
 
 .picture-frame-lg {
 	width: 100px;
-	-webkit-border-radius: 52px;
-    -moz-border-radius: 52px;
-    border-radius: 52px;
+	-webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.profile-circle {
+	width: 100px;
+	height: 100px;
+	background-color: rgb(250, 198, 119);
+	-webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin: 0 auto;
+    text-align: center;
+    h1 {
+    	@include vertical-align;
+    	span {
+    		@include long-shadow;
+    	}
+		margin: 0;
+    }
 }
 
 // Forms
 
+.form-group:last-child {
+	margin-bottom:0;
+}
 .label-custom {
 	font-weight: 400;
+	color: $grey;
+}
+.field-name {
+	padding: 7px 15px 0;
+	font-weight: 400;
+	color: $grey;
+	text-align: right;
+}
+.field {
+	padding: 7px 0 0 15px;
+	.row:not(:first-child) {
+		padding-top: $spacing-sm;
+	}
 }
 .form-control-custom {
 	box-shadow: none;
@@ -203,9 +247,16 @@ $spacing-xlg: 40px;
 	padding: $spacing-sm 0 $spacing-m 0;
 	.edit-fields {
 		padding-top: $spacing-sm;
+		width: 100%;
 	}
 	.edit-btns {
 		text-align: right;
-		padding-top: $spacing-sm;
+		padding-top: $spacing-m;
+	}
+	h4 {
+		padding-top: $spacing-lg;
+	}
+	h4:first-child {
+		padding-top: none;
 	}
 }

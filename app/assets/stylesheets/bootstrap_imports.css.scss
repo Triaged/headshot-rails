@@ -17,13 +17,13 @@ $brand-primary: #F8AE37;
 
 $text-color: #2E3B4E;
 $link-color: $brand-primary;
-$link-hover-color: lighten($link-color, 15%);
+$link-hover-color: darken($link-color, 10%);
 $grey: #919496;
 $grey-light: #DBDCE1;
 $grey-lighter: #E8E8EA;
 $grey-dark: #919496;
 
-// Components
+// Buttons
 
 $btn-font-weight: 400;
 
@@ -31,9 +31,10 @@ $btn-default-color: #fff;
 $btn-default-bg: $brand-primary;
 $btn-default-border: $brand-primary;
 
-$btn-primary-color: $brand-primary;
-$btn-primary-bg: #fff;
-$btn-primary-border: $brand-primary;
+$btn-default-color: $brand-primary;
+$btn-default-bg: #fff;
+$btn-default-border: $brand-primary;
+
 
 // Alerts
 
@@ -45,7 +46,7 @@ $alert-success-border: #CCEBE9;
 
 // Forms
 
-$input-bg: $grey-lighter;
+$input-bg: #ECECEC;
 $input-color: #222222;
 $input-border: $grey-lighter;
 $input-border-radius: 3px;

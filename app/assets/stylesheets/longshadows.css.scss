@@ -1,0 +1,28 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@mixin long-shadow {
+  text-shadow: rgb(225, 178, 107) 1px 1px,
+    rgb(225, 178, 107) 2px 2px,
+    rgb(225, 178, 107) 3px 3px,
+    rgb(225, 178, 107) 4px 4px,
+    rgb(225, 178, 107) 5px 5px,
+    rgb(225, 178, 107) 6px 6px,
+    rgb(227, 180, 108) 7px 7px,
+    rgb(230, 182, 109) 8px 8px,
+    rgb(233, 184, 111) 9px 9px,
+    rgb(236, 186, 112) 10px 10px,
+    rgb(238, 189, 113) 11px 11px,
+    rgb(241, 191, 115) 12px 12px,
+    rgb(244, 193, 116) 13px 13px,
+    rgb(247, 195, 117) 14px 14px,
+    rgb(250, 198, 119) 15px 15px;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
