@@ -33,15 +33,32 @@ $spacing-xlg: 40px;
 
 .main > div {
 	border-bottom: 2px solid $grey-light;
+
 }
 .main > div:last-child {
 	border-bottom: none;
 }
 
+// Headlines
+
 .headline {
 	padding-bottom: $spacing-sm;
 }
 
+// Bread Crumbs
+
+.contact-breadcrumb {
+	padding-bottom: $spacing-sm;
+	h3 {
+		font-weight: 700;
+	}
+	a {
+		color: $text-color;
+	}
+	.breadcrumb-fwdslsh {
+		color: $grey;
+	}
+}
 
 // Picture Frame
 
@@ -56,6 +73,16 @@ $spacing-xlg: 40px;
     border-radius: 26px;
 }
 
+.picture-frame-lg {
+	width: 100px;
+	-webkit-border-radius: 52px;
+    -moz-border-radius: 52px;
+    border-radius: 52px;
+}
+
+
+
+// Contact List
 
 // Add Contacts
 
@@ -90,6 +117,10 @@ $spacing-xlg: 40px;
 
 .contact-profile {
 	clear: left;
+	h3 {
+		text-transform: none;
+		margin: $spacing-xsm 0;
+	}
 }
 .contact-picture {
 	float: left;
@@ -113,4 +144,30 @@ $spacing-xlg: 40px;
 	width: 25%;
 	display: inline-block;
 	text-align: right;
+}
+
+
+
+// User
+
+// Profile
+
+.profile {
+	padding: $spacing-m 0 $spacing-m 0;
+}
+
+.profile-info {
+	text-align: center;
+	h3 {
+		text-transform: none;
+	}
+}
+
+// Profile Status
+
+.profile-status {
+	text-align: center;
+	h4 {
+		text-transform: none;
+	}
 }

@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="col-lg-6 col-lg-offset-3">
+  <div class="col-lg-6 col-lg-offset-3 main">
     <div class="contact-breadcrumb">
       <h3>
       <a href="../home/users">Contacts</a> <span class="breadcrumb-fwdslsh">/</span> Amy Bochi
@@ -8,7 +8,7 @@
     
     <div class="profile">
       <div class="profile-picture">
-        <%= image_tag ("amy-bochi.png") %>
+        <%= image_tag "amy-bochi.png", :class => "picture-frame-lg" %>
       </div>
       <div class="profile-info">
         <div class="profile-name">
@@ -21,14 +21,14 @@
       <div class="profile-status">
         <h4>Amy has not yet accepted her email invitation.</h4>
         <div class="profile-status-btn">
-          <button type="button" class="btn btn-default">Resend Invitation</button>
+          <button type="button" class="btn-custom btn-default">Resend Invitation</button>
         </div>
       </div>
     </div>
 
 
     <div class="edit">
-      <h4>Profile</h4>
+      <h4>Edit Profile</h4>
       <div class="edit-fields">
         <form class="form-horizontal" role="form">
           <div class="form-group">
