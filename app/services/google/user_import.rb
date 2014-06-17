@@ -23,18 +23,18 @@ class Google::UserImport
 			import.errors[:base] << "Import Failed"
 			return import
 		end
-	
 		
-
 		response.data.users.each do |user|
 			email = user.emails.select {|email| email['primary'] == true }.first
 			
-			imported_user = import.imported_users.find_or_initialize_by(email: email['address'])
-			unless imported_user.user_exists?
+			if User.where(email: email['address']).count < 1
+				imported_user = import.imported_users.find_or_initialize_by(email: email['address'])
 				imported_user.first_name = user['name']['givenName']
 				imported_user.last_name = user['name']['lastName']
 				imported_user.full_name = user['name']['fullName']
 				imported_user.save
+			else
+				Rails.logger.info "User #{email['address']} exists"
 			end
 		end
 		Rails.logger.info("import: #{import.inspect}")

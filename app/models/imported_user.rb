@@ -3,7 +3,7 @@ class ImportedUser < ActiveRecord::Base
 	belongs_to :import
 
 	def user_exists?
-		self.company.users.find(email: self.email)
+		user = User.find_by(email: self.email)
 		true
 	rescue
 		false

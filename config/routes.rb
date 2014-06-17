@@ -39,9 +39,6 @@ HeadshotRails::Application.routes.draw do
 
   # Admin
   devise_for :admins
-
-  resources :test
-
   namespace :admin, :path => "", :constraints => {:subdomain => "admin"} do
     
   #   resources :users , :controller => 'admin/users'
@@ -60,8 +57,7 @@ HeadshotRails::Application.routes.draw do
   end
   devise_for :users, :skip => [:registrations], :controllers => {omniauth_callbacks: "omniauth_callbacks",  :confirmations => "confirmations"}
   constraints(Subdomain) do
-  	resources :users
-    resource :account
+  	resource :account
     resource :download
     
     namespace :manage do

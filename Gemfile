@@ -25,6 +25,10 @@ gem "geocoder"
 gem "fullcontact", '0.6.1', :github => "Triaged/fullcontact-api-ruby"
 gem 'grocer'
 gem 'connection_pool'
+gem 'activerecord-session_store'
+gem 'bootstrap_form'
+gem "select2-rails"
+gem "paranoia", "~> 2.0"
 
 
 

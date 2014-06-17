@@ -6,7 +6,6 @@ class Manage::UsersController < ApplicationController
   end
 
   def show
-    @user = current_company.users.find(params[:id])
   end
 
   def new
@@ -24,10 +23,24 @@ class Manage::UsersController < ApplicationController
     end
   end
 
+  # PATCH/PUT /tests/1
+  def update
+    if @user.update(user_params)
+      redirect_to manage_user_path(@user), notice: 'Contact was successfully updated.'
+    else
+      render :show
+    end
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to manage_users_path, notice: "#{@user.full_name} was successfully archived."
+  end
+
 private
 
   def set_user
-    @user = @company.users.find(params[:id])
+    @user = current_company.users.find(params[:id])
   end
 
   def user_params

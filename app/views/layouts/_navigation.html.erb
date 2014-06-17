@@ -1,19 +1,32 @@
-<%# navigation styled for Bootstrap 3.0 %>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    <div class="col-lg-6 col-lg-offset-3">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button>
-      <%= link_to 'Home', root_path, class: 'navbar-brand' %>
-    </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <%= render 'layouts/navigation_links' %>
-      </ul>
+        </button>
+        <span class="navbar-brand navbar-brand-custom">Badge</span>
+      </div>
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav navbar-right navbar-custom">
+          <li class="active">
+            <% if user_signed_in? %>
+               <% if is_admin? %>
+                <li><%= link_to 'Contacts', manage_users_path %></li>
+              </li>
+              <li>
+                 <li><%= link_to 'Company', manage_company_path %></li>
+              </li>
+              <% end %>
+          <li>
+            <%= link_to 'Profile', account_path %>
+          </li>
+            <% end %>
+        </ul>
+      </nav>
     </div>
   </div>
-</nav>
+</header>

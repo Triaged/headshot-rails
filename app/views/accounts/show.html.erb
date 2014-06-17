@@ -1,5 +1,5 @@
 <%= image_tag @current_user.avatar.face.url, :width => 60 %>
-<%= @current_user.name %> <br />
+<%= @current_user.full_name %> <br />
 <%= @current_user.employee_info.job_title %> <br />
 <%= @current_user.employee_info.cell_phone %><br />
 <%= @current_user.employee_info.office_phone %><br />
@@ -8,7 +8,8 @@
 
 <%= simple_form_for(current_user, :url => account_path, :method => :patch) do |f| %>
 
-	<%= f.input :name %>
+	<%= f.input :first_name %>
+	<%= f.input :last_name %>
 	<%= f.input :avatar %>
 
 	<%= f.simple_fields_for :employee_info, current_user.employee_info do |e| %>
@@ -23,4 +24,4 @@
 
 <% end %>
 
-<li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+<li><%= link_to 'Sign Out', destroy_user_session_url(subdomain: nil), method: :delete %></li>

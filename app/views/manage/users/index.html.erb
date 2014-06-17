@@ -1,10 +1,36 @@
+  <div class="col-lg-6 col-lg-offset-3 main">
+    
+  <!-- HeadLine -->
+    <div class="headline">
+      <h1>Contacts</h1>
+    </div>
+    <div class="add-contacts">
+      <h4>Add contacts</h4>
+      <div class="contact-btns">
+        <%= link_to 'Add Contact Manually', new_manage_user_path, class: "btn-custom btn-default" %>
+        <%= link_to 'Import From Google Apps', manage_import_path("google"), class: "btn-custom btn-default" %>
+      </div>
+    </div>
 
 
-<%= link_to 'Add Manually', new_manage_user_path %> <br />
-<%= link_to 'Import From Google', manage_import_path(id: "google") %>
-<br />
-------------
-<br />
-<% @users.each do |user| %>
-	<%= render partial: "user", locals: {user: user} %> <br />
-<% end %>
+  <!-- Contacts List -->
+  <div class="contact-list">
+  	<div class="list-search col-lg-6">
+      <form role="form">
+        <div class="form-group">
+          <input type="search" class="form-control" id="search-users" placeholder="Search">
+        </div>
+      </form>
+    </div>
+
+    <% alpha = @users.group_by{|u| u.first_name[0] } %>
+    <% alpha.each do |alpha, users| %>
+    	<div class="contacts-group">
+    		<h4><%= alpha %></h4>
+				<% users.each do |user| %>
+					<%= render partial: "user", locals: {user: user} %> <br />
+				<% end %>
+			</div>
+		<% end %>
+  </div>
+</div>
