@@ -17,7 +17,7 @@ $brand-primary: #F8AE37;
 
 $text-color: #2E3B4E;
 $link-color: $brand-primary;
-$link-hover-color: lighten($link-color, 15%);
+$link-hover-color: darken($link-color, 10%);
 $grey: #919496;
 $grey-light: #DBDCE1;
 $grey-lighter: #E8E8EA;

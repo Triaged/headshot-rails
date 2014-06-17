@@ -29,3 +29,19 @@ user-select: none;
 .btn-custom + .btn-custom {
 	margin-left: $spacing-m;
 }
+
+.btn-custom i {
+	padding-right: 5px;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
+color: #FF9D00;
+background-color: #FEF6EB;
+border-color: #ea9308;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+color: white;
+background-color: #f79e10;
+border-color: #fff;
+}

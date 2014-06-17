@@ -110,21 +110,24 @@ $spacing-xlg: 40px;
 
 // Forms
 
-.form-custom {
-	padding: 7px 15px 0;
+.form-group:last-child {
+	margin-bottom:0;
 }
-
 .label-custom {
-	@extend .form-custom;
+	font-weight: 400;
+	color: $grey;
+}
+.field-name {
+	padding: 7px 15px 0;
 	font-weight: 400;
 	color: $grey;
 	text-align: right;
 }
-.form-static-field {
-	@extend .form-custom;
-}
-.edit-form-static {
-	@extend .form-custom;
+.field {
+	padding: 7px 0 0 15px;
+	.row:not(:first-child) {
+		padding-top: $spacing-sm;
+	}
 }
 .form-control-custom {
 	box-shadow: none;
@@ -240,10 +243,11 @@ $spacing-xlg: 40px;
 	padding: $spacing-sm 0 $spacing-m 0;
 	.edit-fields {
 		padding-top: $spacing-sm;
+		width: 100%;
 	}
 	.edit-btns {
 		text-align: right;
-		padding-top: $spacing-sm;
+		padding-top: $spacing-m;
 	}
 	h4 {
 		padding-top: $spacing-lg;
