@@ -38,7 +38,10 @@
 }
 
 
-p {font-weight: 400;}
+p {
+	font-weight: 400;
+	letter-spacing: .025em;
+}
 $font-weight-small: 300;
 h1, h2, h3, h4 {
 	font-weight:700;
@@ -49,4 +52,18 @@ h4 {
 h1, h2, h3, h4 {
 	text-transform: uppercase;
 	letter-spacing: .05em;
+}
+
+
+.contact-profile {
+	h3 {
+		text-transform: none;
+		font-weight: 400;
+		margin: $spacing-xsm 0;
+	}
+
+	p {
+		font-family: 'Whitney-Book';
+		color: $grey;
+	}
 }

@@ -5,6 +5,7 @@
 $border-radius-sm: 3px;
 $border-radius-lg: 5px;
 
+$spacing-xsm: 5px;
 $spacing-sm: 10px;
 $spacing-m: 20px;
 $spacing-lg: 30px;
@@ -14,16 +15,13 @@ $spacing-xlg: 40px;
 
 
 // Navbar
-.navbar-custom {
-
-}
 
 .navbar-brand-custom {
 	color: #2CB5A8;
 	font-weight: 500;
 }
 
-.navbar-nav > li > a {
+.navbar-custom > li > a {
 	font-size: $font-size-small;
 	color: $text-color;
 	text-transform: uppercase;
@@ -31,13 +29,17 @@ $spacing-xlg: 40px;
 }
 
 
-// Contact List
+// Elements
 
-.contact-profile {
-	clear: left;
+.main > div {
+	border-bottom: 2px solid $grey-light;
 }
-.contact-picture {
-	float: left;
+.main > div:last-child {
+	border-bottom: none;
+}
+
+.headline {
+	padding-bottom: $spacing-sm;
 }
 
 
@@ -54,8 +56,61 @@ $spacing-xlg: 40px;
     border-radius: 26px;
 }
 
+
+// Add Contacts
+
+.add-contacts {
+	padding: $spacing-sm 0 $spacing-m 0;
+}
+
+.contact-btns {
+	padding-top: $spacing-sm;
+}
+
+
+// Contact List
+
+.contact-list {
+	padding: $spacing-m 0 $spacing-m 0;
+}
+
+.list-search {
+	padding-left: 0;
+}
+
+.contacts-group {
+	padding-top: $spacing-sm;
+	clear: left;
+}
+
+.contacts-group > h4 {
+	padding-bottom: $spacing-sm;
+	border-bottom: 1px solid $grey-lighter;
+}
+
+.contact-profile {
+	clear: left;
+}
+.contact-picture {
+	float: left;
+}
+
+
 // Contact Info
 
+.contact-info {
+	margin: 0 0 $spacing-sm 75px;
+	border-bottom: 1px solid $grey-lighter;
+}
+
 .contact {
-	width: 75%;
+	padding-left: $spacing-xsm;
+	width: 73%;
+	display: inline-block;
+}
+
+.activity-state {
+	width: 25%;
+	display: inline-block;
+	text-align: right;
 }
