@@ -59,8 +59,8 @@ $spacing-xlg: 40px;
 
 .contact-breadcrumb {
 	padding-bottom: $spacing-sm;
-	h3 {
-		font-weight: bold;
+	h2 {
+		font-weight: 700;
 	}
 	a {
 		color: $text-color;
@@ -99,12 +99,13 @@ $spacing-xlg: 40px;
     border-radius: 50%;
     margin: 0 auto;
     text-align: center;
-    h1 {
+    .company-letter {
     	@include vertical-align;
     	span {
     		@include long-shadow;
     	}
 		margin: 0;
+		font-size: ($font-size-base * 3);
     }
 }
 
@@ -175,14 +176,14 @@ $spacing-xlg: 40px;
 	clear: left;
 }
 
-.contacts-group > h4 {
+.contacts-group > h3 {
 	padding-bottom: $spacing-sm;
 	border-bottom: 1px solid $grey-lighter;
 }
 
 .contact-profile {
 	clear: left;
-	h3 {
+	h2 {
 		text-transform: none;
 		margin: $spacing-xsm 0;
 	}
@@ -223,7 +224,7 @@ $spacing-xlg: 40px;
 
 .profile-info {
 	text-align: center;
-	h3 {
+	h2 {
 		text-transform: none;
 	}
 }
@@ -233,7 +234,7 @@ $spacing-xlg: 40px;
 .profile-status {
 	text-align: center;
 	padding: $spacing-sm 0 $spacing-m 0;
-	h4 {
+	h3 {
 		text-transform: none;
 	}
 	.profile-status-btn {
@@ -245,6 +246,9 @@ $spacing-xlg: 40px;
 
 .edit {
 	padding: $spacing-sm 0 $spacing-m 0;
+	.edit-groups:not(:first-of-type) {
+		padding-top: $spacing-xlg;
+	}
 	.edit-fields {
 		padding-top: $spacing-sm;
 		width: 100%;
@@ -253,10 +257,10 @@ $spacing-xlg: 40px;
 		text-align: right;
 		padding-top: $spacing-m;
 	}
-	h4 {
+	h3 {
 		padding-top: $spacing-lg;
 	}
-	h4:first-child {
+	h3:first-child {
 		padding-top: none;
 	}
 }
