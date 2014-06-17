@@ -105,7 +105,9 @@ $spacing-xlg: 40px;
     		@include long-shadow;
     	}
 		margin: 0;
-		font-size: ($font-size-base * 3);
+		font-size: 3em;
+		color: #fff;
+		font-weight: 700;
     }
 }
 
