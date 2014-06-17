@@ -14,7 +14,7 @@ $spacing-xlg: 40px;
 
 
 
-// Navbar
+// NAVBAR
 
 .navbar-brand-custom {
 	color: #2CB5A8;
@@ -29,10 +29,10 @@ $spacing-xlg: 40px;
 }
 
 
-// Elements
+// ELEMENTS
 
 .main > div {
-	border-bottom: 2px solid $grey-light;
+	border-bottom: 1px solid $grey-light;
 
 }
 .main > div:last-child {
@@ -80,7 +80,24 @@ $spacing-xlg: 40px;
     border-radius: 52px;
 }
 
+// Forms
 
+.label-custom {
+	font-weight: 400;
+}
+.form-control-custom {
+	box-shadow: none;
+}
+
+// Final Links
+
+.final-links {
+	padding-top: $spacing-m;
+	text-align: right;
+}
+
+
+// PAGES
 
 // Contact List
 
@@ -153,7 +170,7 @@ $spacing-xlg: 40px;
 // Profile
 
 .profile {
-	padding: $spacing-m 0 $spacing-m 0;
+	padding: $spacing-m 0 $spacing-sm 0;
 }
 
 .profile-info {
@@ -167,7 +184,24 @@ $spacing-xlg: 40px;
 
 .profile-status {
 	text-align: center;
+	padding: $spacing-sm 0 $spacing-m 0;
 	h4 {
 		text-transform: none;
+	}
+	.profile-status-btn {
+		padding-top: $spacing-sm;
+	}
+}
+
+// Edit
+
+.edit {
+	padding: $spacing-sm 0 $spacing-m 0;
+	.edit-fields {
+		padding-top: $spacing-sm;
+	}
+	.edit-btns {
+		text-align: right;
+		padding-top: $spacing-sm;
 	}
 }
