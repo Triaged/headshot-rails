@@ -23,7 +23,7 @@ $grey-light: #DBDCE1;
 $grey-lighter: #E8E8EA;
 $grey-dark: #919496;
 
-// Components
+// Buttons
 
 $btn-font-weight: 400;
 
@@ -31,9 +31,10 @@ $btn-default-color: #fff;
 $btn-default-bg: $brand-primary;
 $btn-default-border: $brand-primary;
 
-$btn-primary-color: $brand-primary;
-$btn-primary-bg: #fff;
-$btn-primary-border: $brand-primary;
+$btn-default-color: $brand-primary;
+$btn-default-bg: #fff;
+$btn-default-border: $brand-primary;
+
 
 // Alerts
 
@@ -45,7 +46,7 @@ $alert-success-border: #CCEBE9;
 
 // Forms
 
-$input-bg: $grey-lighter;
+$input-bg: #ECECEC;
 $input-color: #222222;
 $input-border: $grey-lighter;
 $input-border-radius: 3px;
