@@ -3,43 +3,43 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @font-face {
-  font-family: 'Whitney-Medium';    
-  src: url('<%= asset_path('Whitney-Medium') %>');
-  font-weight: normal;
+  font-family: 'Whitney';    
+  src: asset-url('Whitney-Medium.ttf');
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Whitney-Semibold';    
-  src: url('<%= asset_path('Whitney-Semibold') %>');
-  font-weight: normal;
+  font-family: 'Whitney'; 
+  src: asset-url('Whitney-Semibold.ttf');   
+  font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Whitney-Bold';    
-  src: url('<%= asset_path('Whitney-Bold') %>');
-  font-weight: normal;
+  font-family: 'Whitney'; 
+  src: asset-url('Whitney-Bold.ttf');   
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Whitney-Book';    
-  src: url('<%= asset_path('Whitney-Book') %>');
-  font-weight: normal;
+  font-family: 'Whitney';  
+  src: asset-url('Whitney-Book.ttf');  
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Whitney-Light';    
-  src: url('<%= asset_path('Whitney-Light') %>');
-  font-weight: normal;
+  font-family: 'Whitney';  
+  src: asset-url('Whitney-Light.ttf');  
+  font-weight: 300;
   font-style: normal;
 }
 
 
 p {
-	font-family: 'Whitney-Book';
+	font-family: 'Whitney';
 	letter-spacing: .025em;
 	color: $grey;
 }
