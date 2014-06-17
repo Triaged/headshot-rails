@@ -1,8 +1,8 @@
 <div class="col-lg-6 col-lg-offset-3 main">
   <div class="contact-breadcrumb">
-    <h3>
+    <h2>
     <%= link_to 'Contacts', manage_users_path %> <span class="breadcrumb-fwdslsh">/</span> <%= @user.full_name %>
-    </h3>
+    </h2>
   </div>
 
   <div class="profile">
@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="profile-status">
-    <h4><%= @user.first_name %> has not yet accepted her email invitation.</h4>
+    <h3><%= @user.first_name %> has not yet accepted her email invitation.</h3>
     <div class="profile-status-btn">
       <button type="button" class="btn-custom btn-primary">Resend Invitation</button>
     </div>

@@ -114,7 +114,7 @@ $spacing-xlg: 40px;
 .form-group:last-child {
 	margin-bottom:0;
 }
-.label-custom {
+.control-label {
 	font-weight: 400;
 	color: $grey;
 }
@@ -130,12 +130,16 @@ $spacing-xlg: 40px;
 		padding-top: $spacing-sm;
 	}
 }
-.form-control-custom {
+.form-control {
 	box-shadow: none;
 }
 
 .form-pull-right {
 	text-align: right;
+}
+
+.select2-container {
+	background-color: #ececec;
 }
 
 // Final Links
