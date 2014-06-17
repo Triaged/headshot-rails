@@ -7,15 +7,17 @@ class UserImport
 	end
 
 	def import_users
-		Rails.logger.info "Fetching users"
 		destroy_existing
 		import_class = "#{@provider.name.classify}::UserImport".constantize
 		import = import_class.new(@user).fetch_users!
 		return import
 	end
 
-	def convert_imported_to_real (imported_users)
-		imported_users.each { |imported_user| imported_user.convert_to_real! unless imported_user.user_exists? }
+	def convert_imported_to_real (import_ids)
+		import_ids.each do |id|
+			imported_user = ImportedUser.find(id)
+			imported_user.convert_to_real! unless imported_user.user_exists?
+		end
 		destroy_existing
 	end
 

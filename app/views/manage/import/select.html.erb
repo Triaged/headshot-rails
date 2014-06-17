@@ -1,9 +1,11 @@
-<%= simple_form_for @import, :url => manage_import_path, :method => :post, :html => {:id => 'import_users_form' } do |f| %>
+<%= simple_form_for @import, :url => manage_import_index_path, :method => :post, :html => {:id => 'import_users_form' } do |f| %>
 
-	<%= f.simple_fields_for :users do |u| %>
+	<%= f.simple_fields_for :imported_users do |u| %>
 		<%= u.object.full_name %>
-		<%= u.object.email %>
-		<%= u.input :import %>
+		<%= u.input :should_import %>
 		<hr />
 	<% end %>
+
+	<%= f.hidden_field :provider_id, value: @provider.id %>
+	<%= f.submit %>
 <% end %>
