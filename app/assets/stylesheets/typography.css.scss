@@ -39,31 +39,20 @@
 
 
 p {
-	font-weight: 400;
+	font-family: 'Whitney-Book';
 	letter-spacing: .025em;
+	color: $grey;
 }
-$font-weight-small: 300;
-h1, h2, h3, h4 {
+h1, h2 {
 	font-weight:700;
 }
+h3 {
+	font-weight:400;
+}
 h4 {
-	font-weight:600;
+	font-weight: 600;
 }
 h1, h2, h3, h4 {
 	text-transform: uppercase;
 	letter-spacing: .05em;
-}
-
-
-.contact-profile {
-	h3 {
-		text-transform: none;
-		font-weight: 400;
-		margin: $spacing-xsm 0;
-	}
-
-	p {
-		font-family: 'Whitney-Book';
-		color: $grey;
-	}
 }

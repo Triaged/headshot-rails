@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="col-lg-6 col-lg-offset-3">
+  <div class="col-lg-6 col-lg-offset-3 main">
     <div class="contact-breadcrumb">
       <h3>
       <a href="../home/users">Contacts</a> <span class="breadcrumb-fwdslsh">/</span> Amy Bochi
@@ -8,7 +8,7 @@
     
     <div class="profile">
       <div class="profile-picture">
-        <%= image_tag ("amy-bochi.png") %>
+        <%= image_tag "amy-bochi.png", :class => "picture-frame-lg" %>
       </div>
       <div class="profile-info">
         <div class="profile-name">
@@ -18,80 +18,80 @@
           <p>amybochi@company.com</p>
         </div>
       </div>
-      <div class="profile-status">
-        <h4>Amy has not yet accepted her email invitation.</h4>
-        <div class="profile-status-btn">
-          <button type="button" class="btn btn-default">Resend Invitation</button>
-        </div>
+    </div>
+    <div class="profile-status">
+      <h4>Amy has not yet accepted her email invitation.</h4>
+      <div class="profile-status-btn">
+        <button type="button" class="btn-custom btn-default">Resend Invitation</button>
       </div>
     </div>
 
 
     <div class="edit">
-      <h4>Profile</h4>
+      <h4>Edit Profile</h4>
       <div class="edit-fields">
         <form class="form-horizontal" role="form">
           <div class="form-group">
-            <label for="inputFirstName" class="col-sm-2 control-label">First Name</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+            <label for="inputFirstName" class="col-sm-3 control-label label-custom">First Name</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control form-control-custom" id="inputFirstName" placeholder="First Name">
             </div>
           </div>
           <div class="form-group">
-            <label for="inputLastName" class="col-sm-2 control-label">Last Name</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+            <label for="inputLastName" class="col-sm-3 control-label label-custom">Last Name</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control form-control-custom" id="inputLastName" placeholder="Last Name">
             </div>
           </div>
           <div class="form-group">
-            <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+            <label for="inputEmail" class="col-sm-3 control-label label-custom">Email</label>
+            <div class="col-sm-9">
+              <input type="email" class="form-control form-control-custom" id="inputEmail" placeholder="Email">
             </div>
           </div>
           <div class="form-group">
-            <label for="inputLastName" class="col-sm-2 control-label">Phone</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputLastName" placeholder="1 (234) 567-8910">
+            <label for="inputLastName" class="col-sm-3 control-label label-custom">Phone</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control form-control-custom" id="inputLastName" placeholder="1 (234) 567-8910">
             </div>
           </div>
           <div class="form-group">
-            <label for="inputDepartment" class="col-sm-2 control-label">Department</label>
-            <div class="col-sm-10">
-              <select class="form-control">
+            <label for="inputDepartment" class="col-sm-3 control-label label-custom">Department</label>
+            <div class="col-sm-9">
+              <select class="form-control form-control-custom">
                 <option>Design</option>
                 <option>Engineering</option>
               </select>
             </div>
           </div>
           <div class="form-group">
-            <label for="inputPosition" class="col-sm-2 control-label">Position</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputPosition" placeholder="Position">
+            <label for="inputPosition" class="col-sm-3 control-label label-custom">Position</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control form-control-custom" id="inputPosition" placeholder="Position">
             </div>
           </div>
           <div class="form-group">
-            <label for="inputStartDate" class="col-sm-2 control-label">Start Date</label>
-            <div class="col-sm-10">
-              <input type="date" class="form-control" id="inputStartDate" placeholder="01/01/2014">
+            <label for="inputStartDate" class="col-sm-3 control-label label-custom">Start Date</label>
+            <div class="col-sm-9">
+              <input type="date" class="form-control form-control-custom" id="inputStartDate" placeholder="01/01/2014">
             </div>
           </div>
           <div class="form-group">
-            <label for="inputBirthday" class="col-sm-2 control-label">Birthday</label>
-            <div class="col-sm-10">
-              <input type="date" class="form-control" id="inputBirthday" placeholder="01/01">
+            <label for="inputBirthday" class="col-sm-3 control-label label-custom">Birthday</label>
+            <div class="col-sm-9">
+              <input type="date" class="form-control form-control-custom" id="inputBirthday" placeholder="01/01">
             </div>
           </div>
         </form>
       </div>
-      <div class="edit-btns">
-        
-        <button type="button" class="btn btn-primary">Cancel</button>
-        <button type="button" class="btn btn-default">Save</button>
+      <div class="edit-btns">       
+        <button type="button" class="btn-custom btn-primary">Cancel</button>
+        <button type="button" class="btn-custom btn-default">Save</button>
       </div>
-        <div class="sm-link">
-        <p><a href="blahh">Archive Contact</a></p>
-      </div>
+    </div>
+
+    <div class="final-links">
+      <p><a href="blahh">Archive Contact</a></p>
     </div>
 
     
