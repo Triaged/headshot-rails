@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
 
   scope :admin, -> { where(admin: true) }
 
+  def full_name
+  	"#{first_name} #{last_name}"
+  end
+
 	def set_company
 		email_address = Mail::Address.new(email)
 

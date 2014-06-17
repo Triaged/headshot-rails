@@ -6,7 +6,6 @@ class Manage::UsersController < ApplicationController
   end
 
   def show
-    @user = current_company.users.find(params[:id])
   end
 
   def new
@@ -27,7 +26,7 @@ class Manage::UsersController < ApplicationController
 private
 
   def set_user
-    @user = @company.users.find(params[:id])
+    @user = current_company.users.find(params[:id])
   end
 
   def user_params
