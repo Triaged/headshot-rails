@@ -13,21 +13,25 @@ $font-size-h4: ($font-size-base * 1);
 
 // Colors
 
+$brand-primary: #F8AE37;
+
 $text-color: #2E3B4E;
-$link-color: #F8AE37;
+$link-color: $brand-primary;
 $link-hover-color: lighten($link-color, 15%);
 $grey: lighten(#000, 33.5%);
 
 // Components
 
-$padding-large-vertical: 40px;
-$padding-base-vertical: 30px;
-$padding-small-vertical: 20px;
-$padding-xs-horizontal: 10px;
-$padding-base-horizontal: 10px;
-$padding-large-horizontal: 20px;
+// $padding-large-vertical: 40px;
+// $padding-base-vertical: 30px;
+// $padding-small-vertical: 20px;
+// $padding-xs-horizontal: 10px;
+// $padding-base-horizontal: 10px;
+// $padding-large-horizontal: 20px;
 
 
 // Components
 
 $btn-font-weight: 400;
+$btn-default-color: #fff;
+$btn-default-bg: $brand-primary
