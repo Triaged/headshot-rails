@@ -33,5 +33,11 @@ $grey: lighten(#000, 33.5%);
 // Components
 
 $btn-font-weight: 400;
+
 $btn-default-color: #fff;
-$btn-default-bg: $brand-primary
+$btn-default-bg: $brand-primary;
+$btn-default-border: $brand-primary;
+
+$btn-primary-color: $brand-primary;
+$btn-primary-bg: #fff;
+$btn-primary-border: $brand-primary;
