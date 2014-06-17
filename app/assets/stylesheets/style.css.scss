@@ -241,6 +241,9 @@ $spacing-xlg: 40px;
 
 .edit {
 	padding: $spacing-sm 0 $spacing-m 0;
+	.edit-groups:not(:first-of-type) {
+		padding-top: $spacing-xlg;
+	}
 	.edit-fields {
 		padding-top: $spacing-sm;
 		width: 100%;
