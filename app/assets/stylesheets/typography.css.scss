@@ -1,0 +1,52 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@font-face {
+  font-family: 'Whitney-Medium';    
+  src: url('<%= asset_path('Whitney-Medium') %>');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Whitney-Semibold';    
+  src: url('<%= asset_path('Whitney-Semibold') %>');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Whitney-Bold';    
+  src: url('<%= asset_path('Whitney-Bold') %>');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Whitney-Book';    
+  src: url('<%= asset_path('Whitney-Book') %>');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Whitney-Light';    
+  src: url('<%= asset_path('Whitney-Light') %>');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+p {font-weight: 400;}
+$font-weight-small: 300;
+h1, h2, h3, h4 {
+	font-weight:700;
+}
+h4 {
+	font-weight:600;
+}
+h1, h2, h3, h4 {
+	text-transform: uppercase;
+	letter-spacing: .05em;
+}
