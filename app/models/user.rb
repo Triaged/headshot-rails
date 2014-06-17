@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	acts_as_paranoid
 	# Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable, :confirmable,
@@ -14,7 +15,7 @@ class User < ActiveRecord::Base
 	has_many :provider_credentials
   has_many :subordinates, class_name: "User", foreign_key: "manager_id"
  	
- 	has_one :employee_info, dependent: :destroy
+ 	has_one :employee_info
  	accepts_nested_attributes_for :employee_info
 	
 	mount_uploader :avatar, AvatarUploader

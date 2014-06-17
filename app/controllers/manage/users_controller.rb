@@ -23,6 +23,20 @@ class Manage::UsersController < ApplicationController
     end
   end
 
+  # PATCH/PUT /tests/1
+  def update
+    if @user.update(user_params)
+      redirect_to manage_user_path(@user), notice: 'Contact was successfully updated.'
+    else
+      render :show
+    end
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to manage_users_path, notice: "#{@user.full_name} was successfully archived."
+  end
+
 private
 
   def set_user

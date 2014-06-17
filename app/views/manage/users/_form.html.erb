@@ -1,25 +1,24 @@
-<%= simple_form_for([:manage, @user]) do |f| %>
-  <%= f.error_notification %>
+<%= bootstrap_form_for([:manage, @user], layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
+  
 
   <div class="form-inputs">
-  	<%= f.input :first_name %>
-  	<%= f.input :last_name %>
-  	<%= f.input :email %>
-    <%= f.association :department %>
-  	<%= f.simple_fields_for :employee_info do |e| %>
-      <%= e.input :job_title %> 
-      <%= e.input :cell_phone %>  
+  	<%= f.text_field :first_name %>
+  	<%= f.text_field :last_name %>
+  	<%= f.email_field :email %>
+    <%= f.collection_select(:department_id, current_company.departments.all, :id, :name) %>
+  	<%= f.fields_for :employee_info do |e| %>
+      <%= e.text_field :job_title %> 
+      <%= e.text_field :cell_phone %>  
        
-      <%= e.input :birth_date %>  
-      <%= e.input :job_start_date %>  
+      <%= e.text_field :birth_date %>  
+      <%= e.text_field :job_start_date %>  
     <% end %>
     
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+
+  <div class="form-actions form-pull-right">
+    <%= f.submit "Cancel", class: "btn-custom btn-primary" %>
+    <%= f.submit "Save", class: "btn-custom btn-default" %>
   </div>
 <% end %>
-
-
-Hi

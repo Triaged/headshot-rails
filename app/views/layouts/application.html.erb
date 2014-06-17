@@ -14,8 +14,10 @@
     </header>
     <main role="main">
       <div class="container">
-        <%= render 'layouts/messages' %>
-        <%= yield %>
+        <div class="row">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
+        </div>
       </div>
     </main>
   </body>
