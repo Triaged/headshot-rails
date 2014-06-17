@@ -2,3 +2,60 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$border-radius-sm: 3px;
+$border-radius-lg: 5px;
+
+$spacing-sm: 10px;
+$spacing-m: 20px;
+$spacing-lg: 30px;
+$spacing-xlg: 40px;
+
+
+
+
+// Navbar
+.navbar-custom {
+
+}
+
+.navbar-brand-custom {
+	color: #2CB5A8;
+	font-weight: 500;
+}
+
+.navbar-nav > li > a {
+	font-size: $font-size-small;
+	color: $text-color;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+}
+
+
+// Contact List
+
+.contact-profile {
+	clear: left;
+}
+.contact-picture {
+	float: left;
+}
+
+
+// Picture Frame
+
+.contact-picture {
+	padding: 0 $spacing-m 0 $spacing-sm;
+}
+
+.picture-frame-sm {
+	width: 50px;
+	-webkit-border-radius: 26px;
+    -moz-border-radius: 26px;
+    border-radius: 26px;
+}
+
+// Contact Info
+
+.contact {
+	width: 75%;
+}
