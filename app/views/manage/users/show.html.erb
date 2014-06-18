@@ -7,7 +7,13 @@
 
   <div class="profile">
     <div class="profile-picture">
-      <%= image_tag @user.avatar.url, :class => "picture-frame-lg" %>
+      <% if !@user.avatar.nil? %>
+        <%= image_tag @user.avatar.url, :class => "picture-frame-lg" %>
+      <% else %>
+        <div class="profile-circle">
+          <div class="company-letter"><span><%= @user.initials %></span></div>
+        </div>
+      <% end %>
     </div>
     <div class="profile-info">
       <div class="profile-name">
