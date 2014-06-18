@@ -8,6 +8,7 @@ HeadshotRails::Application.routes.draw do
   get 'home/prompt_import' => "home#prompt_import"
   get 'home/profile' => "home#profile"
   get 'home/company' => "home#company"
+  get 'home/add' => "home#add"
 
 
   # API
