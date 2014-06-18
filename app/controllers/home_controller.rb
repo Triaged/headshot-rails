@@ -23,4 +23,7 @@ class HomeController < ApplicationController
 	def company
 	end
 
+	def add
+	end
+
 end
