@@ -221,6 +221,11 @@ $spacing-xlg: 40px;
 	}
 }
 
+.profile-btn {
+		padding-top: $spacing-sm;
+		text-align: center;
+	}
+
 // Profile Status
 
 .profile-status {
@@ -228,9 +233,6 @@ $spacing-xlg: 40px;
 	padding: $spacing-sm 0 $spacing-m 0;
 	h3 {
 		text-transform: none;
-	}
-	.profile-status-btn {
-		padding-top: $spacing-sm;
 	}
 }
 
