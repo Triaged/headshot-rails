@@ -37,6 +37,13 @@ class Manage::UsersController < ApplicationController
     redirect_to manage_users_path, notice: "#{@user.full_name} was successfully archived."
   end
 
+  def archived
+    @users = current_company.users.only_deleted
+  end
+
+  def restore
+  end
+
 private
 
   def set_user
