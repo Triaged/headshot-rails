@@ -21,3 +21,17 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+@mixin sm-shadow {
+  text-shadow: rgb(225, 178, 107) 1px 1px,
+    rgb(225, 178, 107) 2px 2px,
+    rgb(233, 184, 111) 3px 3px,
+    rgb(241, 191, 115) 4px 4px,
+    rgb(250, 198, 119) 5px 5px;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
