@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import "longshadows";
-
 $border-radius-sm: 3px;
 $border-radius-lg: 5px;
 
@@ -26,18 +24,51 @@ $spacing-xlg: 40px;
 
 // NAVBAR
 
-.navbar-brand-custom {
-	color: #2CB5A8;
+.navbar {
 	font-weight: 500;
-}
-
-.navbar-custom > li > a {
+	.navbar-brand-custom {
+	color: #2CB5A8;
+	}
+	.navbar-custom > li > a {
 	font-size: $font-size-small;
 	color: $text-color;
 	text-transform: uppercase;
 	letter-spacing: .05em;
+	font-weight: 500;
+	padding: 15px 5px 0;
+	margin: 0 15px;
+	background-color: #fff;
+	}
+	.navbar-custom > li > a:after{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: $text-color;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+	}
+	.navbar-custom > li > a:hover::after,
+	.navbar-custom > li > a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);	
+	}
 }
-
+.nav-icon {
+	display: inline;
+	padding-right: $spacing-xsm;
+	height: 12px;
+	margin-top: -4px;
+}
 
 // ELEMENTS
 
@@ -68,64 +99,6 @@ $spacing-xlg: 40px;
 	.breadcrumb-fwdslsh {
 		color: $grey;
 	}
-}
-
-// Picture Frame
-
-.contact-picture {
-	padding: 0 $spacing-m 0 $spacing-sm;
-}
-
-.picture-frame-sm {
-	width: 50px;
-	-webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-}
-
-.picture-frame-lg {
-	width: 100px;
-	-webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-}
-.letter-circle {
-	background-color: rgb(250, 198, 119);
-	-webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    margin: 0 auto;
-    text-align: center;
-}
-.letter-circle-lg {
-	width: 100px;
-	height: 100px;
-    .letter-lg {
-    	@include vertical-align;
-    	span {
-    		@include long-shadow;
-    	}
-		margin: 0;
-		font-size: 2.75em;
-		color: #fff;
-		font-weight: 700;
-		letter-spacing: .1em;
-    }
-}
-.letter-circle-sm {
-	width: 50px;
-	height: 50px;
-    .letter-sm {
-    	@include vertical-align;
-    	span {
-    		@include sm-shadow;
-    	}
-		margin: 0;
-		font-size: 1.5em;
-		color: #fff;
-		font-weight: 500;
-		letter-spacing: .1em;
-    }
 }
 
 // Forms
