@@ -130,8 +130,16 @@ $spacing-xlg: 40px;
 	text-align: right;
 }
 
-.select2-container {
-	background-color: #ececec;
+
+// Labels
+.profile-label {
+	padding-bottom: $spacing-sm;
+	.label-custom {
+	padding: .2em .75em .3em;
+	font-size: 1em;
+	font-weight: 300;
+	color: #fff;
+	}
 }
 
 // Final Links
@@ -226,7 +234,7 @@ $spacing-xlg: 40px;
 }
 
 .profile-btn {
-		padding-top: $spacing-sm;
+		padding: $spacing-sm 0;
 		text-align: center;
 	}
 
@@ -234,7 +242,7 @@ $spacing-xlg: 40px;
 
 .profile-status {
 	text-align: center;
-	padding: $spacing-sm 0 $spacing-m 0;
+	padding: $spacing-sm 0 $spacing-sm 0;
 	h3 {
 		text-transform: none;
 	}
@@ -261,4 +269,13 @@ $spacing-xlg: 40px;
 	h3:first-child {
 		padding-top: none;
 	}
+}
+
+
+
+// Import
+
+.field-description {
+	font-size: $font-size-small;
+	color: $brand-primary;
 }
