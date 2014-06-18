@@ -19,8 +19,6 @@ class ApplicationController < ActionController::Base
 private # ----------------------------------------------------
 
 	def current_company
-	    # The where clause is assuming you are using Mongoid, change appropriately
-	    # for ActiveRecord or a different supported ORM.
 	    @current_company ||= Company.where(slug: subdomain).first
 	end
 

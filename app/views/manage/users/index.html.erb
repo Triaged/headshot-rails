@@ -5,10 +5,10 @@
       <h1>Contacts</h1>
     </div>
     <div class="add-contacts">
-      <h4>Add contacts</h4>
+      <h3>Add contacts</h3>
       <div class="contact-btns">
-        <%= link_to 'Add Contact Manually', new_manage_user_path, class: "btn-custom btn-default" %>
-        <%= link_to 'Import From Google Apps', manage_import_path("google"), class: "btn-custom btn-default" %>
+        <%= link_to 'Add Contact Manually', new_manage_user_path, class: "btn-custom btn-primary" %>
+        <%= link_to 'Import From Google Apps', manage_import_path("google"), class: "btn-custom btn-primary" %>
       </div>
     </div>
 
@@ -26,9 +26,9 @@
     <% alpha = @users.group_by{|u| u.first_name[0] } %>
     <% alpha.each do |alpha, users| %>
     	<div class="contacts-group">
-    		<h4><%= alpha %></h4>
+    		<h3><%= alpha %></h3>
 				<% users.each do |user| %>
-					<%= render partial: "user", locals: {user: user} %> <br />
+					<%= render partial: "user", locals: {user: user} %>
 				<% end %>
 			</div>
 		<% end %>
