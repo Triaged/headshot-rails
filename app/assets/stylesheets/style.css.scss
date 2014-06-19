@@ -19,10 +19,36 @@ $spacing-xlg: 40px;
   transform: translateY(-50%);
 }
 
+@mixin link-style-after {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: $text-color;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+}
+
+@mixin link-style-hover-after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);	
+}
 
 
 
-// NAVBAR
+
+// NAVBAR + FOOTER
+
+// Navbar
 
 .navbar {
 	font-weight: 500;
@@ -40,27 +66,12 @@ $spacing-xlg: 40px;
 	background-color: #fff;
 	}
 	.navbar-custom > li > a:after{
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	height: 2px;
 	background: $text-color;
-	content: '';
-	opacity: 0;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
-	transition: opacity 0.3s, transform 0.3s;
-	-webkit-transform: translateY(10px);
-	-moz-transform: translateY(10px);
-	transform: translateY(10px);
+	@include link-style-after
 	}
 	.navbar-custom > li > a:hover::after,
 	.navbar-custom > li > a:focus::after {
-	opacity: 1;
-	-webkit-transform: translateY(0px);
-	-moz-transform: translateY(0px);
-	transform: translateY(0px);	
+	@include link-style-hover-after	
 	}
 }
 .nav-icon {
@@ -68,6 +79,28 @@ $spacing-xlg: 40px;
 	padding-right: $spacing-xsm;
 	height: 12px;
 	margin-top: -4px;
+}
+
+// Footer
+#footer {
+	background-color: #FFF5E7;
+	height: 70px;
+	.container {
+		@include vertical-align
+	}
+}
+
+.footer-links {
+	text-align: center;
+	padding: 0;
+	margin-bottom: 0px;
+	li {
+		display: inline;
+		padding: 0 25px;
+		a {
+			text-decoration: none;
+		}
+	}
 }
 
 // ELEMENTS
@@ -259,10 +292,6 @@ $spacing-xlg: 40px;
 		padding-top: $spacing-sm;
 		width: 100%;
 	}
-	.edit-btns {
-		text-align: right;
-		padding-top: $spacing-m;
-	}
 	h3 {
 		padding-top: $spacing-lg;
 	}
@@ -270,12 +299,82 @@ $spacing-xlg: 40px;
 		padding-top: none;
 	}
 }
+.edit-btns {
+		text-align: right;
+		padding-top: $spacing-m;
+}
 
 
-
-// Import
+// Prompt_import
 
 .field-description {
 	font-size: $font-size-small;
 	color: $brand-primary;
+}
+
+
+// Import List
+
+.import-profile {
+	clear: left;
+	h2 {
+		text-transform: none;
+		margin: $spacing-xsm 0;
+	}
+	.contact-info {
+		margin: 0;
+		border-bottom: 1px solid $grey-lighter;
+		.add-contact {
+			display: inline-block;
+			text-align: right;
+			p {
+				display: inline;
+			}
+		}
+	}
+}
+
+.checkbox-custom {
+	display: inline;
+	color: $grey;
+	font-weight: 400;
+	input {
+	display: none;
+	}
+	input + label {
+		cursor: pointer;
+		font-size: 1em;
+	}
+	#checkbox-1-1 + label {
+		background-color: #FFF;
+		border: 3px solid $grey-lighter;
+		padding: 6px;
+		display: inline-block;
+		position: relative;
+		margin: 0 0 -4px 10px;
+	}
+	#checkbox-1-1 + label:active {
+		box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+	}
+	#checkbox-1-1:checked + label {
+		background-color: #FFF;
+		border: 3px solid #87C750;
+		color: #87C750;
+	}
+	#checkbox-1-1:checked + label:after {
+		content: '\2713';
+		position: absolute;
+		top: -2px;
+		left: 0px;
+		color: #87C750;
+		width: 100%;
+		text-align: center;
+		font-size: .8em;
+		padding: 0;
+		vertical-align: text-top;
+	}
+}
+
+.contacts-group .import-profile:not(:first-of-type) {
+		padding-top: $spacing-sm;
 }
