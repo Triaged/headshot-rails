@@ -24,7 +24,7 @@ class API::V1::OfficeLocationsController < APIController
 
   # POST /api/v1/office_locations
   def create
-    @office_location = current_company.office_locations.build(office_location_params)
+    @office_location = current_company.office_locations.create(office_location_params)
     respond_with @office_location, location: api_v1_office_location_path(@office_location)
   end
 

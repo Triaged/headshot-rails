@@ -12,7 +12,7 @@ class API::V1::DepartmentsController < APIController
 
 	# POST /api/v1/office_locations
   def create
-    @department = current_company.departments.build(department_params)
+    @department = current_company.departments.create(department_params)
     Rails.logger.info @department.inspect
     Rails.logger.info @department.errors.inspect
     respond_with @department, location: api_v1_department_path(@department)
