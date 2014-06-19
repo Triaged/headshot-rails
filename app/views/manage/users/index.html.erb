@@ -23,7 +23,7 @@
 
   <% alpha = @users.group_by{|u| u.first_name[0] } %>
   <% alpha.each do |alpha, users| %>
-  	<div class="contacts-group">
+  	<div class="contact-group">
   		<h3><%= alpha %></h3>
 			<% users.each do |user| %>
 				<%= render partial: "user", locals: {user: user} %>

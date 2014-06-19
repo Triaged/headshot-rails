@@ -280,36 +280,50 @@ $spacing-xlg: 40px;
 
 .list-search {
 	padding-left: 0;
+	padding-bottom: $spacing-lg;
 }
 
-.contacts-group {
-	padding-top: $spacing-sm;
+.contact-group {
 	clear: left;
-}
-
-.contacts-group > h3 {
-	padding-bottom: $spacing-sm;
-	border-bottom: 1px solid $grey-lighter;
+	h3 {
+		margin-bottom: 0;
+		padding-bottom: $spacing-sm;
+		border-bottom: 1px solid $grey-lighter;
+	}
+	div:last-of-type{
+		.contact-info {
+			border-bottom: none;
+		}
+	}
 }
 
 .contact-profile {
 	clear: left;
+	padding-top: $spacing-sm;
+	.contact-picture {
+	float: left;
+	}
 	h2 {
 		text-transform: none;
 		margin: $spacing-xsm 0;
+		a {
+			color: $text-color;
+		}
+	}
+	.contact-info {
+		margin: 0 0 0 75px;
+		border-bottom: 1px solid $grey-lighter;
 	}
 }
-.contact-picture {
-	float: left;
+
+.contact-profile:hover,
+.contact-profile:focus {
+	background-color: #FFFCF1; 
 }
 
 
 // Contact Info
 
-.contact-info {
-	margin: 0 0 $spacing-sm 75px;
-	border-bottom: 1px solid $grey-lighter;
-}
 
 .contact {
 	padding-left: $spacing-xsm;
@@ -408,6 +422,6 @@ $spacing-xlg: 40px;
 }
 
 
-.contacts-group .import-profile:not(:first-of-type) {
+.contact-group .import-profile:not(:first-of-type) {
 		padding-top: $spacing-sm;
 }
