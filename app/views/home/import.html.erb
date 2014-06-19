@@ -26,7 +26,7 @@
             </div>
             <div class="add-contact">
               <div class="checkbox checkbox-custom">
-                <input type="checkbox" id="checkbox-1-1" />add contact<label for="checkbox-1-1"></label>
+                  <input type="checkbox" id="c1" />add contact<label for="c1"></label>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@
             </div>
             <div class="add-contact">
               <div class="checkbox checkbox-custom">
-                <input type="checkbox" id="checkbox-1-1" />add contact<label for="checkbox-1-1"></label>
+                  <input type="checkbox" id="c2" />add contact<label for="c2"></label>
               </div>
             </div>
           </div>
@@ -64,7 +64,7 @@
             </div>
             <div class="add-contact">
               <div class="checkbox checkbox-custom">
-                <input type="checkbox" id="checkbox-1-1" />add contact<label for="checkbox-1-1"></label>
+                <input type="checkbox" id="c3" />add contact<label for="c3"></label>
               </div>
             </div>
           </div>
@@ -81,15 +81,36 @@
             </div>
             <div class="add-contact">
               <div class="checkbox checkbox-custom">
-                <input type="checkbox" id="checkbox-1-1" />add contact<label for="checkbox-1-1"></label>
+                <input type="checkbox" id="c4" />add contact<label for="c4"></label>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="edit-btns">
+      <div class="btns-spacing-m btns-right">
         <button type="button" class="btn-custom btn-default">Cancel</button>
-        <button type="button" class="btn-custom btn-primary">Connect</button>
+        <button type="button" class="btn-custom btn-primary" data-toggle="modal" data-target="#myModal">Add Contacts</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-header-custom">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h1 class="modal-title" id="myModalLabel">Confirm</h4>
+      </div>
+      <div class="modal-body modal-body-custom">
+        <p>When you submit your <strong>38 contacts</strong>, we’ll send them an email invitation with a link to the app and onboarding insturctions.  
+        <div class="btns-spacing-sm btns-center">
+          <button type="button" class="btn-custom btn-primary">Submit Contacts</button>
+        </div>
+      </div>
+      <div class="modal-footer modal-footer-custom">
+        <button type="button" class="btn-custom btn-modal btn-default" data-dismiss="modal">No, I still want to edit contacts</button>
       </div>
     </div>
   </div>
