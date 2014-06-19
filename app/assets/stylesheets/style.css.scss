@@ -62,7 +62,7 @@ $spacing-xlg: 40px;
 	letter-spacing: .05em;
 	font-weight: 500;
 	padding: 15px 5px 0;
-	margin: 0 15px;
+	margin: 0 10px;
 	background-color: #fff;
 	}
 	.navbar-custom > li > a:after{
@@ -79,30 +79,6 @@ $spacing-xlg: 40px;
 	padding-right: $spacing-xsm;
 	height: 12px;
 	margin-top: -4px;
-}
-
-// Footer
-#footer {
-	background-color: #FFF5E7;
-	height: 60px;
-	.container {
-		@include vertical-align
-	}
-}
-
-.footer-links {
-	text-align: center;
-	padding: 0;
-	margin-bottom: 0px;
-	li {
-		display: inline;
-		padding: 0 25px;
-		a {
-			text-decoration: none;
-			color: $gray;
-			font-weight: 300;
-		}
-	}
 }
 
 // ELEMENTS
