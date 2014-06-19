@@ -111,7 +111,7 @@ $spacing-xlg: 40px;
 	border-bottom: 1px solid $grey-light;
 
 }
-.main > div:last-child {
+.main > div:last-of-type {
 	border-bottom: none;
 }
 
@@ -366,6 +366,9 @@ $spacing-xlg: 40px;
 	h3 {
 		text-transform: none;
 	}
+	.profile-status-btn{
+		padding-bottom: $spacing-sm;
+	}
 }
 
 // Edit
@@ -403,6 +406,7 @@ $spacing-xlg: 40px;
 
 .import-profile {
 	clear: left;
+	padding: 0 0 $spacing-sm;
 	h2 {
 		text-transform: none;
 		margin: $spacing-xsm 0;
