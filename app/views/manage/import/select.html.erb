@@ -1,11 +1,40 @@
+<div class="contact-breadcrumb">
+  <h2>
+    <%= link_to 'Contacts', manage_users_path %> <span class="breadcrumb-fwdslsh">/</span> Import Contacts
+  </h2>
+</div>
+<div class="add-contacts">
+	<h3>Google App Users</h3>
+  <p>Please <strong class="custom">deselect</strong> any users that you don’t wish to add to your contact list.</p>
+</div>
+
 <%= simple_form_for @import, :url => manage_import_index_path, :method => :post, :html => {:id => 'import_users_form' } do |f| %>
-
+	<div class="contacts-group">
 	<%= f.simple_fields_for :imported_users do |u| %>
-		<%= u.object.full_name %>
-		<%= u.input :should_import %>
-		<hr />
+		<div class="import-profile">
+      <div class="contact-info">
+        <div class="contact">
+          <div class="contact-name">
+            <h2><%= u.object.full_name %></h2>
+          </div>
+          <div class="contact-email">
+            <p><%= u.object.email %></p>
+          </div>
+        </div>
+        <div class="add-contact">
+          <div class="checkbox checkbox-custom">
+            <input type="checkbox" id="checkbox-1-1" />add contact<label for="checkbox-1-1"></label>
+            <%#= u.input :should_import, label: "Add Contact" %>
+          </div>
+        </div>
+      </div>
+    </div>
 	<% end %>
-
+	</div>
 	<%= f.hidden_field :provider_id, value: @provider.id %>
-	<%= f.submit %>
+	<div class="edit-btns">
+  	<button type="button" class="btn-custom btn-default">Cancel</button>
+    <%= f.submit 'Import', class: "btn-custom btn-primary" %>
+  </div>
+
 <% end %>

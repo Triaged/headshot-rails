@@ -48,6 +48,6 @@ class API::V1::OfficeLocationsController < APIController
 
     # Only allow a trusted parameter "white list" through.
     def office_location_params
-      params[:office_location]
+      params[:office_location].permit(:street_address, :city, :zip_code, :state, :country)
     end
 end

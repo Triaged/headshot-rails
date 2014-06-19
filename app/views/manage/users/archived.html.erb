@@ -1,16 +1,3 @@
-<!-- HeadLine -->
-  <div class="headline">
-    <h1>Contacts</h1>
-  </div>
-  <div class="add-contacts">
-    <h3>Add contacts</h3>
-    <div class="contact-btns">
-      <%= link_to 'Add Contact Manually', new_manage_user_path, class: "btn-custom btn-primary" %>
-      <%= link_to 'Import From Google Apps', manage_import_path("google"), class: "btn-custom btn-primary" %>
-    </div>
-  </div>
-
-
 <!-- Contacts List -->
 <div class="contact-list">
 	<div class="list-search col-lg-6">
@@ -21,7 +8,7 @@
     </form>
   </div>
 
-  <% alpha = @users.group_by{|u| u.first_name[0] }.sort %>
+  <% alpha = @users.group_by{|u| u.first_name[0] } %>
   <% alpha.each do |alpha, users| %>
   	<div class="contacts-group">
   		<h3><%= alpha %></h3>

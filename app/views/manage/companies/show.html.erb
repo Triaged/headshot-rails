@@ -1,12 +1,56 @@
-<%= @company.name %>
+<div class="headline">
+  <h1>Company Profile</h1>
+</div>
 
-<hr />
-<% @company.office_locations.each do |location| %>
-	<%= location.street_address %>
-<% end %>
+<div class="profile">
+	<%= company_logo @company %>
+	<div class="profile-info">
+    <div class="profile-name">
+      <h2><%= @company.name %></h2>
+    </div>
+  </div>
+</div>
 
-<hr />
-
-<% @company.departments.each do |dept| %>
-	<%= dept.name %> <hr />
-<% end %>
+<div class="edit">
+  <h3>Company Info</h3>
+  <div class="edit-groups">
+    <div class="edit-fields row">
+      <div class="col-sm-3 field-name">Locations</div>
+      <div class="col-sm-9 field">
+      	<% @company.office_locations.each do |location| %>
+	        <div class="row">
+	          <div class="col-sm-11 field-content"><%= location.full_address %></div>
+	          <div class="col-sm-1 field-btn"><a href=""><i class="fa fa-wrench"></i></a></div>
+	        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="edit-btns form-pull-right">
+      <button type="button" class="btn-custom btn-default"><i class="fa fa-plus-circle"></i>Add Location</button>
+    </div>
+  </div>
+  <div class="edit-groups">
+    <div class="edit-fields row">
+      <div class="col-sm-3 field-name">Departments</div>
+      <div class="col-sm-9 field">
+      	<% @company.departments.each do |dept| %>
+	        <div class="row">
+	          <div class="col-sm-11 field-content"><%= dept.name %></div>
+	          <div class="col-sm-1 field-btn"><a href=""><i class="fa fa-wrench"></i></a></div>
+	        </div>
+	      <% end %>
+      </div>
+    </div>
+    <div class="edit-btns form-pull-right">
+      <button type="button" class="btn-custom btn-default"><i class="fa fa-plus-circle"></i>Add Department</button>
+    </div>
+  </div>
+  <div class="edit-groups">
+    <div class="edit-fields">
+      	<%= render "form" %>
+    </div>
+  </div>
+</div>
+<div class="final-links">
+  <p><%= link_to 'Archived Contacts', archived_manage_users_path %></p>
+</div>

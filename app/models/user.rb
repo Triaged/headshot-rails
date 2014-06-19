@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
   	"#{first_name} #{last_name}"
   end
 
+  def initials
+  	"#{first_name[0]}#{last_name[0]}"
+  end
+
 	def set_company
 		email_address = Mail::Address.new(email)
 

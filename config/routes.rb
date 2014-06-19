@@ -62,7 +62,14 @@ HeadshotRails::Application.routes.draw do
     resource :download
     
     namespace :manage do
-      resources :users
+      resources :users do
+        collection do
+          get 'archived'
+        end
+        member do
+          post 'restore'
+        end
+      end
       resources :import do
         member do
           get 'select'

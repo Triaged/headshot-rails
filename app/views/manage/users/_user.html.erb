@@ -1,11 +1,9 @@
 <div class="contact-profile">
-  <div class="contact-picture">
-    <%= image_tag user.avatar.url, :class => "picture-frame-sm" %>
-  </div>
+  <%= avatar_or_initials(user, "contact-picture") %>
   <div class="contact-info">
     <div class="contact">
       <div class="contact-name">
-        <h3> <%= link_to user.full_name, manage_user_path(user) %></h3>
+        <h2> <%= user.full_name %></h2>
       </div>
       <div class="contact-email">
         <p><%= user.email %></p>

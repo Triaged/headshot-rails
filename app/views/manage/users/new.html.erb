@@ -1,6 +1,12 @@
-<h1>New User</h1>
-Hello
+<div class="contact-breadcrumb">
+  <h2>
+  <%= link_to 'Contacts', manage_users_path %> <span class="breadcrumb-fwdslsh">/</span> Add Contacts
+  </h2>
+</div>
 
-<%= render 'form' %>
+ <div class="edit">
+  <h3>New Contact</h3>
+	<%= render 'form' %>
+</div>
 
-<%= link_to 'Back', manage_company_path(@company) %>
+<%#= link_to 'Back', manage_company_path(@company) %>

@@ -1,17 +1,21 @@
 class OfficeLocation < ActiveRecord::Base
 
-geocoded_by :address   # can also be an IP address
-reverse_geocoded_by :latitude, :longitude do |obj,results|
-  if geo = results.first
-  	obj.street_address = geo.street_address
-    obj.city    = geo.city
-    obj.state = geo.state
-    obj.zip_code = geo.postal_code
-    obj.country = geo.country_code
+	geocoded_by :address   # can also be an IP address
+	reverse_geocoded_by :latitude, :longitude do |obj,results|
+	  if geo = results.first
+	  	obj.street_address = geo.street_address
+	    obj.city    = geo.city
+	    obj.state = geo.state
+	    obj.zip_code = geo.postal_code
+	    obj.country = geo.country_code
+		end
 	end
-end
-after_validation :reverse_geocode  # auto-fetch address
+	after_validation :reverse_geocode  # auto-fetch address
 
-belongs_to :company
+	belongs_to :company
+
+	def full_address
+		"#{street_address} #{city}, #{state} #{zip_code} #{country}"
+	end
 
 end
