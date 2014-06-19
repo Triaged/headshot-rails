@@ -34,12 +34,12 @@
 	<%= f.hidden_field :provider_id, value: @provider.id %>
 	<div class="btns-spacing-m btns-right">
   	<button type="button" class="btn-custom btn-default">Cancel</button>
-    <%= f.button "Import Contacts", type: 'button', class: "btn-custom btn-primary", data: {toggle: "modal", target: "#myModal"} %>
+    <%= f.button "Import Contacts", type: 'button', class: "btn-custom btn-primary", data: {toggle: "modal", target: "#addContactImport"} %>
   </div>
 
 
 <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addContactImport" tabindex="-1" role="dialog" aria-labelledby="addContactImport" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header modal-header-custom">

@@ -28,7 +28,7 @@
       <%= link_to "Cancel", manage_users_path, class: "btn-custom btn-default" %>
       
       <% if current_page?(:action => 'new') %>
-        <%= f.button "Save", type: 'button', class: "btn-custom btn-primary", data: {toggle: "modal", target: "#myModal"} %>
+        <%= f.button "Save", type: 'button', class: "btn-custom btn-primary", data: {toggle: "modal", target: "#addContactManual"} %>
       <% else %>
         <%= f.button "Save", class: "btn-custom btn-primary" %>
       <% end %>
@@ -36,7 +36,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addContactManual" tabindex="-1" role="dialog" aria-labelledby="addContactManual" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header modal-header-custom">
