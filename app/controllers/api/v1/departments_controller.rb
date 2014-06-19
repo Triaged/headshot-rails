@@ -36,7 +36,7 @@ private
 
   # Only allow a trusted parameter "white list" through.
   def department_params
-    params[:department]
+    params[:department].permit(:name)
   end
 
 end
