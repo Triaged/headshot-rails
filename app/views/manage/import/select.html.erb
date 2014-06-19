@@ -8,9 +8,9 @@
   <p>Please <strong class="custom">deselect</strong> any users that you don’t wish to add to your contact list.</p>
 </div>
 
-<%= simple_form_for @import, :url => manage_import_index_path, :method => :post, :html => {:id => 'import_users_form' } do |f| %>
+<%= form_for @import, :url => manage_import_index_path, :method => :post, :html => {:id => 'import_users_form' } do |f| %>
 	<div class="contacts-group">
-	<%= f.simple_fields_for :imported_users do |u| %>
+	<%= f.fields_for :imported_users do |u| %>
 		<div class="import-profile">
       <div class="contact-info">
         <div class="contact">
@@ -34,10 +34,9 @@
 	<%= f.hidden_field :provider_id, value: @provider.id %>
 	<div class="btns-spacing-m btns-right">
   	<button type="button" class="btn-custom btn-default">Cancel</button>
-    <%= f.submit 'Import', class: "btn-custom btn-primary", data: {toggle: "modal", target: "#addContactImport"} %>
+    <%= f.button "Import Contacts", type: 'button', class: "btn-custom btn-primary", data: {toggle: "modal", target: "#addContactImport"} %>
   </div>
 
-<% end %>
 
 <!-- Modal -->
     <div class="modal fade" id="addContactImport" tabindex="-1" role="dialog" aria-labelledby="addContactImport" aria-hidden="true">
@@ -50,7 +49,7 @@
           <div class="modal-body modal-body-custom">
             <p>When you submit your <strong>38 contacts</strong>, we’ll send them an email invitation with a link to the app and onboarding insturctions.  
             <div class="btns-spacing-sm btns-center">
-              <button type="button" class="btn-custom btn-primary">Submit Contacts</button>
+              <%= f.submit 'Submit Contacts', class: "btn-custom btn-primary" %>
             </div>
           </div>
           <div class="modal-footer modal-footer-custom">
@@ -59,3 +58,5 @@
         </div>
       </div>
     </div>
+
+<% end %>
