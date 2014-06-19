@@ -1,24 +1,26 @@
-<%= bootstrap_form_for([:manage, @user], layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
-  
-
-  <div class="form-inputs">
-  	<%= f.text_field :first_name %>
-  	<%= f.text_field :last_name %>
-  	<%= f.email_field :email %>
-    <%= f.collection_select(:department_id, current_company.departments.all, :id, :name) %>
-  	<%= f.fields_for :employee_info do |e| %>
-      <%= e.text_field :job_title %> 
-      <%= e.text_field :cell_phone %>  
-       
-      <%= e.text_field :birth_date %>  
-      <%= e.text_field :job_start_date %>  
-    <% end %>
+<div class="edit-fields">
+  <%= bootstrap_form_for([:manage, @user], layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
     
-  </div>
+
+    <div class="form-inputs">
+    	<%= f.text_field :first_name %>
+    	<%= f.text_field :last_name %>
+    	<%= f.email_field :email %>
+      <%= f.collection_select(:department_id, current_company.departments.all, :id, :name) %>
+    	<%= f.fields_for :employee_info do |e| %>
+        <%= e.text_field :job_title %> 
+        <%= e.text_field :cell_phone %>  
+         
+        <%= e.text_field :birth_date %>  
+        <%= e.text_field :job_start_date %>  
+      <% end %>
+      
+    </div>
 
 
-  <div class="form-actions form-pull-right">
-    <%= f.submit "Cancel", class: "btn-custom btn-default" %>
-    <%= f.submit "Save", class: "btn-custom btn-primary" %>
-  </div>
-<% end %>
+    <div class="form-actions form-pull-right">
+      <%= f.submit "Cancel", class: "btn-custom btn-default" %>
+      <%= f.submit "Save", class: "btn-custom btn-primary" %>
+    </div>
+  <% end %>
+</div>
