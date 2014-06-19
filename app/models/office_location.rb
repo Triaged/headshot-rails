@@ -1,6 +1,6 @@
 class OfficeLocation < ActiveRecord::Base
 
-	geocoded_by :address   # can also be an IP address
+	geocoded_by :full_address   # can also be an IP address
 	reverse_geocoded_by :latitude, :longitude do |obj,results|
 	  if geo = results.first
 	  	obj.street_address = geo.street_address
