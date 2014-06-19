@@ -107,12 +107,15 @@ $spacing-xlg: 40px;
 
 // ELEMENTS
 
+
+// Borders
 .main > div {
 	border-bottom: 1px solid $grey-light;
 
 }
-.main > div:last-of-type {
-	border-bottom: none;
+
+.no-border {
+	border-bottom: none !important;
 }
 
 // Headlines
