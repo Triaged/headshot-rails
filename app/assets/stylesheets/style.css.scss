@@ -99,6 +99,7 @@ $spacing-xlg: 40px;
 		padding: 0 25px;
 		a {
 			text-decoration: none;
+			color: $text-color;
 		}
 	}
 }
@@ -173,6 +174,78 @@ $spacing-xlg: 40px;
 	color: #fff;
 	}
 }
+
+// Checkboxes
+
+.checkbox-custom {
+	display: inline;
+	color: $grey;
+	font-weight: 400;
+	input {
+	display: none;
+	}
+	input + label {
+		cursor: pointer;
+		font-size: 1em;
+	}
+	input[type="checkbox"] + label {
+		background-color: #FFF;
+		border: 3px solid $grey-lighter;
+		padding: 6px;
+		display: inline-block;
+		position: relative;
+		margin: 0 0 -4px 10px;
+	}
+	input[type="checkbox"] + label:active {
+		box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+	}
+	input[type="checkbox"]:checked + label {
+		background-color: #FFF;
+		border: 3px solid #87C750;
+		color: #87C750;
+	}
+	input[type="checkbox"]:checked + label:after {
+		content: '\2713';
+		position: absolute;
+		top: -2px;
+		left: 0px;
+		color: #87C750;
+		width: 100%;
+		text-align: center;
+		font-size: .8em;
+		padding: 0;
+		vertical-align: text-top;
+	}
+}	
+
+// Modals
+
+.modal,
+.fade,
+.in {
+	background: rgba(225,225,225,0.80);
+}
+
+.modal-content {
+	  -moz-box-shadow:    0px 0px 2px 0px #E3E4EC;
+	  -webkit-box-shadow: 0px 0px 2px 0px #E3E4EC;
+	  box-shadow:         0px 0px 2px 0px #E3E4EC;
+	  border: none;
+	.modal-header-custom,
+	.modal-footer-custom,
+	.modal-body-custom {
+		margin: 0 15px;
+		padding: $spacing-m 0;
+	}
+	.modal-body-custom {
+		text-align: center;
+	}
+	.modal-footer-custom {
+		text-align: center;
+		border-top: 1px solid #e5e5e5;
+	}
+}
+
 
 // Final Links
 
@@ -267,7 +340,6 @@ $spacing-xlg: 40px;
 
 .profile-btn {
 		padding: $spacing-sm 0;
-		text-align: center;
 	}
 
 // Profile Status
@@ -299,7 +371,6 @@ $spacing-xlg: 40px;
 	}
 }
 .edit-btns {
-		text-align: right;
 		padding-top: $spacing-m;
 }
 
@@ -333,46 +404,6 @@ $spacing-xlg: 40px;
 	}
 }
 
-.checkbox-custom {
-	display: inline;
-	color: $grey;
-	font-weight: 400;
-	input {
-	display: none;
-	}
-	input + label {
-		cursor: pointer;
-		font-size: 1em;
-	}
-	#checkbox-1-1 + label {
-		background-color: #FFF;
-		border: 3px solid $grey-lighter;
-		padding: 6px;
-		display: inline-block;
-		position: relative;
-		margin: 0 0 -4px 10px;
-	}
-	#checkbox-1-1 + label:active {
-		box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
-	}
-	#checkbox-1-1:checked + label {
-		background-color: #FFF;
-		border: 3px solid #87C750;
-		color: #87C750;
-	}
-	#checkbox-1-1:checked + label:after {
-		content: '\2713';
-		position: absolute;
-		top: -2px;
-		left: 0px;
-		color: #87C750;
-		width: 100%;
-		text-align: center;
-		font-size: .8em;
-		padding: 0;
-		vertical-align: text-top;
-	}
-}
 
 .contacts-group .import-profile:not(:first-of-type) {
 		padding-top: $spacing-sm;

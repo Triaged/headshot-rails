@@ -47,3 +47,18 @@ background-color: #f79e10;
 border-color: #fff;
 }
 
+.btns-right {
+	text-align: right;
+}
+
+.btns-center {
+	text-align: center;
+}
+
+.btns-spacing-m {
+	padding-top: $spacing-m;
+}
+
+.btns-spacing-sm {
+	padding-top: $spacing-sm;
+}
