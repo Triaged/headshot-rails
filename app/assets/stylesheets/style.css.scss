@@ -84,7 +84,7 @@ $spacing-xlg: 40px;
 // Footer
 #footer {
 	background-color: #FFF5E7;
-	height: 70px;
+	height: 60px;
 	.container {
 		@include vertical-align
 	}
@@ -99,7 +99,8 @@ $spacing-xlg: 40px;
 		padding: 0 25px;
 		a {
 			text-decoration: none;
-			color: $text-color;
+			color: $gray;
+			font-weight: 300;
 		}
 	}
 }
