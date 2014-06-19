@@ -12,4 +12,14 @@ module UsersHelper
       end
     end
   end
+
+  def company_logo(company)
+    content_tag(:div, class: "profile-picture") do
+      content_tag(:div, class: "initials-circle") do
+        content_tag(:div, class: "initials") do
+          concat content_tag(:span, company.name[0])
+        end
+      end
+    end
+  end
 end

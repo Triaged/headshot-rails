@@ -1,4 +1,7 @@
 <div class="edit-fields">
+  <div class="col-sm-9 col-sm-offset-3">
+    <p class="field-description">Required fields</p>
+  </div>
   <%= bootstrap_form_for([:manage, @user], layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
     
 
@@ -6,6 +9,9 @@
     	<%= f.text_field :first_name %>
     	<%= f.text_field :last_name %>
     	<%= f.email_field :email %>
+      <div class="col-sm-9 col-sm-offset-3">
+        <p class="field-description">Add these fields so that your contacts don’t have to </p>
+      </div>
       <%= f.collection_select(:department_id, current_company.departments.all, :id, :name) %>
     	<%= f.fields_for :employee_info do |e| %>
         <%= e.text_field :job_title %> 
@@ -18,7 +24,7 @@
     </div>
 
 
-    <div class="form-actions form-pull-right">
+    <div class="form-actions form-pull-right edit-btns">
       <%= f.submit "Cancel", class: "btn-custom btn-default" %>
       <%= f.submit "Save", class: "btn-custom btn-primary" %>
     </div>
