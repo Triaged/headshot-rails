@@ -25,13 +25,13 @@ class API::V1::OfficeLocationsController < APIController
   # POST /api/v1/office_locations
   def create
     @office_location = current_company.office_locations.build(office_location_params)
-    respond_with @office_location
+    respond_with @office_location, location: api_v1_office_location(@office_location)
   end
 
   # PATCH/PUT /api/v1/office_locations/1
   def update
     @office_location.update(office_location_params)
-    respond_with @office_location
+    respond_with @office_location, location: api_v1_office_location(@office_location)
   end
 
   # DELETE /api/v1/office_locations/1

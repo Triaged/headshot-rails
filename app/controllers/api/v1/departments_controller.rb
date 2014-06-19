@@ -13,13 +13,13 @@ class API::V1::DepartmentsController < APIController
 	# POST /api/v1/office_locations
   def create
     @department = current_company.departments.build(department_params)
-    respond_with @department
+    respond_with @department, location: api_v1_department(@department)
   end
 
   # PATCH/PUT /api/v1/office_locations/1
   def update
     @department.update(department_params)
-    respond_with @department
+    respond_with @department, location: api_v1_department(@department)
   end
 
   # DELETE /api/v1/office_locations/1
