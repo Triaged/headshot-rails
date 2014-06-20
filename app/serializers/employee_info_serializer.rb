@@ -3,11 +3,11 @@ class EmployeeInfoSerializer < ApplicationSerializer
 
   
   def job_start_date
-  	object.job_start_date.to_time
+  	object.job_start_date.to_time if object.job_start_date
   end
 
   def birth_date
-  	object.birth_date.to_time
+  	object.birth_date.to_time if object.birth_date
   end
  
 end
