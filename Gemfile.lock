@@ -88,6 +88,9 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     connection_pool (2.0.0)
+    countries (0.9.3)
+      currencies (~> 0.4.2)
+    currencies (0.4.2)
     daemon_controller (1.2.0)
     debug_inspector (0.0.2)
     devise (3.2.4)
@@ -184,6 +187,11 @@ GEM
       rack
       rake (>= 0.8.1)
     pg (0.17.1)
+    phony (2.2.13)
+    phony_rails (0.6.1)
+      activesupport (>= 3.0)
+      countries (>= 0.8.2)
+      phony (~> 2.1)
     polyglot (0.3.4)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -309,6 +317,7 @@ DEPENDENCIES
   paranoia (~> 2.0)
   passenger
   pg
+  phony_rails
   pry-rails
   pry-rescue
   public_suffix
