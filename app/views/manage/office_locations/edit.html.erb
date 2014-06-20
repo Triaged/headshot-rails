@@ -23,10 +23,10 @@
       </div>
       <div class="modal-body modal-body-custom">
         <p>Are you sure you want to delete: </br>
-        [Office Locations]
+        <%= @office_location.display_name %>
         </p>
         <div class="btns-spacing-sm btns-center">
-          <%= link_to "Delete Location", class: "btn-custom btn-primary" %>
+          <%= link_to "Delete Location", manage_office_location_path(@office_location), method: :delete, class: "btn-custom btn-primary" %>
         </div>
       </div>
       <div class="modal-footer modal-footer-custom">
