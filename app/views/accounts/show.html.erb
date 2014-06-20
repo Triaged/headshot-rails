@@ -15,6 +15,9 @@
     <% end %>
   </div>
   <div class="profile-btn">
+    <%= bootstrap_form_for(current_user, :url => account_path, :method => :patch) do |f| %>
+			<%= f.file_field :avatar, label: "Edit Picture", class: "btn-custom btn-default" %>
+		<% end %>
   </div>
 </div>
 
