@@ -17,7 +17,7 @@ class Manage::UsersController < ApplicationController
     @user = current_company.users.new(user_params)
 
     if @user.save
-      redirect_to admin_company_user_path(@company, @user), notice: 'User was successfully created.'
+      redirect_to manage_user_path(@user), success: 'User was successfully created.'
     else
       render action: 'new'
     end
@@ -26,7 +26,7 @@ class Manage::UsersController < ApplicationController
   # PATCH/PUT /tests/1
   def update
     if @user.update(user_params)
-      redirect_to manage_user_path(@user), notice: 'Contact was successfully updated.'
+      redirect_to manage_user_path(@user), success: 'Contact was successfully updated.'
     else
       render :show
     end
@@ -34,7 +34,7 @@ class Manage::UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to manage_users_path, notice: "#{@user.full_name} was successfully archived."
+    redirect_to manage_users_path, success: "#{@user.full_name} was successfully archived."
   end
 
   def archived

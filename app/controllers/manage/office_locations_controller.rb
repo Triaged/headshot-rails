@@ -24,7 +24,7 @@ class Manage::OfficeLocationsController < ApplicationController
     @office_location = current_company.office_locations.new(office_location_params)
 
     if @office_location.save
-      redirect_to manage_company_path, notice: 'Office location was successfully created.'
+      redirect_to manage_company_path, success: 'Office location was successfully created.'
     else
       render :new
     end
@@ -33,7 +33,7 @@ class Manage::OfficeLocationsController < ApplicationController
   # PATCH/PUT /manage/office_locations/1
   def update
     if @office_location.update(office_location_params)
-      redirect_to manage_company_path, notice: 'Office location was successfully updated.'
+      redirect_to manage_company_path, success: 'Office location was successfully updated.'
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class Manage::OfficeLocationsController < ApplicationController
   # DELETE /manage/office_locations/1
   def destroy
     @office_location.destroy
-    redirect_to manage_company_path, notice: 'Office location was successfully destroyed.'
+    redirect_to manage_company_path, success: 'Office location was successfully destroyed.'
   end
 
   private

@@ -110,6 +110,8 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    font-awesome-sass (4.1.0)
+      sass (~> 3.2)
     formatador (0.2.4)
     friendly_id (5.0.3)
       activerecord (>= 4.0.0)
@@ -300,6 +302,7 @@ DEPENDENCIES
   connection_pool
   devise
   figaro
+  font-awesome-sass
   friendly_id (~> 5.0.0)
   fullcontact (= 0.6.1)!
   geocoder

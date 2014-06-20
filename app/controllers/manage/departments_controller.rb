@@ -24,7 +24,7 @@ class Manage::DepartmentsController < ApplicationController
     @department = current_company.departments.new(department_params)
 
     if @department.save
-      redirect_to manage_company_path, notice: 'Department was successfully created.'
+      redirect_to manage_company_path, success: 'Department was successfully created.'
     else
       render :new
     end
@@ -33,7 +33,7 @@ class Manage::DepartmentsController < ApplicationController
   # PATCH/PUT /manage/departments/1
   def update
     if @department.update(department_params)
-      redirect_to manage_company_path, notice: 'Department was successfully updated.'
+      redirect_to manage_company_path, success: 'Department was successfully updated.'
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class Manage::DepartmentsController < ApplicationController
   # DELETE /manage/departments/1
   def destroy
     @department.destroy
-    redirect_to manage_company_path, notice: 'Department was successfully destroyed.'
+    redirect_to manage_company_path, success: 'Department was successfully destroyed.'
   end
 
   private

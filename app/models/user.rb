@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   scope :admin, -> { where(admin: true) }
 
   def full_name
-  	"#{first_name} #{last_name}"
+  	"#{first_name.capitalize} #{last_name.capitalize}"
   end
 
   def initials

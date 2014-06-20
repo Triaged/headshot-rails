@@ -31,7 +31,7 @@
 </div>
 
 <div class="final-links no-border">
-  <p><%= link_to 'Archive Contact', "#", data: {toggle: "modal", target: "#archiveContact"} %></p>
+  <p><%= link_to 'Deactivate Contact', "#", data: {toggle: "modal", target: "#archiveContact"} %></p>
 </div>
 
 
@@ -46,11 +46,11 @@
       <div class="modal-body modal-body-custom">
         <p>When you submit your contact, we’ll send them an email invitation with a link to the app and onboarding insturctions. </p>
         <div class="btns-spacing-sm btns-center">
-          <%= link_to 'Archive Contact', manage_user_path(@user), method: :delete, class: "btn-custom btn-primary" %>
+          <%= link_to "Deactivate #{@user.first_name.capitalize}", manage_user_path(@user), method: :delete, class: "btn-custom btn-primary" %>
         </div>
       </div>
       <div class="modal-footer modal-footer-custom">
-        <button type="button" class="btn-custom btn-modal btn-default" data-dismiss="modal">No, I still want to edit contact</button>
+        <button type="button" class="btn-custom btn-modal btn-default" data-dismiss="modal">No, I don't want to deactivate <%= @user.first_name.capitalize %></button>
       </div>
     </div>
   </div>
