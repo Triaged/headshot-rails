@@ -17,7 +17,7 @@ class OfficeLocation < ActiveRecord::Base
 	end
 
 	def display_name
-		self.name.empty? ? self.street_address : self.name
+		self.name.nil? || self.name.empty? ? self.street_address : self.name
 	end
 
 end
