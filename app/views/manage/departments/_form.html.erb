@@ -1,6 +1,4 @@
-<%= simple_form_for(@manage_department) do |f| %>
-  <%= f.error_notification %>
-
+<%= bootstrap_form_for([:manage, @department], layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
   <div class="form-inputs">
   </div>
 

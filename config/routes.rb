@@ -77,6 +77,8 @@ HeadshotRails::Application.routes.draw do
         end
       end
       resource :company
+      resources :office_locations
+      resources :departments
     end
   end
 end
