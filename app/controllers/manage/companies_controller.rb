@@ -6,7 +6,7 @@ class Manage::CompaniesController < ApplicationController
 
   def update
   	if @company.update(company_params)
-      redirect_to manage_company_path(), notice: 'Company was successfully updated.'
+      redirect_to manage_company_path(), success: 'Company was successfully updated.'
     else
       render :show
     end

@@ -1,0 +1,16 @@
+<%= bootstrap_form_for([:manage, @office_location], layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
+   <div class="form-inputs">
+  	<%= f.text_field :name %>
+  	<%= f.text_field :street_address %>
+  	<%= f.text_field :city %>
+  	<%= f.text_field :state %>
+  	<%= f.text_field :zip_code %>
+  	<%= f.text_field :country %>
+  </div>
+
+
+  <div class="form-actions form-pull-right edit-btns">
+    <%= link_to "Cancel", manage_company_path, class: "btn-custom btn-default" %>
+    <%= f.submit "Save", class: "btn-custom btn-primary" %>
+  </div>
+<% end %>

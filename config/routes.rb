@@ -26,6 +26,7 @@ HeadshotRails::Application.routes.draw do
           delete 'exited'
         end
       end
+      resources :devices, only: :create
       resources :departments
       resource :account
       resource :company
@@ -76,6 +77,8 @@ HeadshotRails::Application.routes.draw do
         end
       end
       resource :company
+      resources :office_locations
+      resources :departments
     end
   end
 end

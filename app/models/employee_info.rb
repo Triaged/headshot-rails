@@ -1,6 +1,7 @@
 class EmployeeInfo < ActiveRecord::Base
 
 	belongs_to :user
-	belongs_to :home_office_location, class_name: "OfficeLocation"
-	belongs_to :current_office_location, class_name: 'OfficeLocation'
+
+	phony_normalize :cell_phone, :default_country_code => 'US'
+	phony_normalize :office_phone, :default_country_code => 'US'
 end
