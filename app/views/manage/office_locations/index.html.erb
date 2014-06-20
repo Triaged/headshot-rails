@@ -1,0 +1,23 @@
+<h1>Listing manage_office_locations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @manage_office_locations.each do |manage_office_location| %>
+      <tr>
+        <td><%= link_to 'Show', manage_office_location %></td>
+        <td><%= link_to 'Edit', edit_manage_office_location_path(manage_office_location) %></td>
+        <td><%= link_to 'Destroy', manage_office_location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Office location', new_manage_office_location_path %>

@@ -1,13 +1,13 @@
 class API::V1::AccountsController < APIController
-	before_action :set_user, :only => :show
+	before_action :set_user
 
 	def show
 		render json: @user, serializer: AccountSerializer
 	end
 
 	def update
-		current_user.update(user_params)
-		respond_with current_user
+		@user.update(user_params)
+		render json: @user, serializer: AccountSerializer
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
