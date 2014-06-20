@@ -434,3 +434,38 @@ button.close-custom {
 .contact-group .import-profile:not(:first-of-type) {
 		padding-top: $spacing-sm;
 }
+
+
+// Download Page 
+
+.download-background {
+	background-color: #FFF5E7;
+	margin-top: 120px;
+	max-height: 350px;
+}
+.download-screenshot {
+	margin-top: -80px;
+}
+
+.download-content {
+	margin-top: 60px;
+	h2 {
+		font-weight: 600;
+		text-transform: none;
+	}
+	.download-altcolor {
+		color: $text-color;
+	}
+	.download-form {
+		margin-top: $spacing-xlg;
+	}
+}
+
+.download-form {
+	.input-group {
+		.form-control{
+			background-color: #fff;
+			border: 1px solid $brand-primary;
+		}
+	}
+}
