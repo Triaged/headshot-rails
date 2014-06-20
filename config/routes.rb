@@ -14,12 +14,7 @@ HeadshotRails::Application.routes.draw do
   # API
   namespace :api, :path => "", :constraints => {:subdomain => "api"}, :defaults => {:format => :json} do
   	namespace :v1 do
-      resources :users do
-        member do 
-          get 'manager'
-          get 'subordinates'
-        end
-      end
+      resources :users
       resources :office_locations do
         member do 
           post 'entered'
@@ -56,6 +51,8 @@ HeadshotRails::Application.routes.draw do
  # Web
   as :user do
       patch '/user/confirmation' => 'confirmations#update', :via => :patch, :as => :update_user_confirmation
+      get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'    
+      put 'users/:id' => 'devise/registrations#update', :as => 'user_registration' 
   end
   devise_for :users, :skip => [:registrations], :controllers => {omniauth_callbacks: "omniauth_callbacks",  :confirmations => "confirmations"}
   constraints(Subdomain) do

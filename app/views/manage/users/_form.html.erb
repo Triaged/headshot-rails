@@ -10,7 +10,11 @@
     	<%= f.text_field :last_name %>
     	<%= f.email_field :email %>
       <div class="col-sm-9 col-sm-offset-3">
-        <p class="field-description">Add these fields so that your contacts don’t have to </p>
+        <% if @user != current_user %> 
+          <p class="field-description">Add these fields so that your contacts don’t have to </p> 
+        <% else %> 
+          <p class="field-description">Optional</p>
+        <% end %>
       </div>
       <%= f.collection_select(:department_id, current_company.departments.all, :id, :name) %>
     	<%= f.fields_for :employee_info do |e| %>
@@ -20,7 +24,6 @@
         <%= e.text_field :birth_date %>  
         <%= e.text_field :job_start_date %>  
       <% end %>
-      
     </div>
 
 

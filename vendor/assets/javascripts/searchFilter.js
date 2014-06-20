@@ -18,14 +18,15 @@
             $el.keyup(function() {
                 var search = $(this).val();
 
+
                 var $target = $(opt.targetSelector);
                 $target.show();
-                $(".contacts-group").show();
+                $(".contact-group").show();
 
                 if (search && search.length >= opt.charCount)
                     $target.not(":containsNoCase(" + search + ")").hide();
                     
-                    $.each($(".contacts-group"), function( index, value ) {
+                    $.each($(".contact-group"), function( index, value ) {
                         if ( $(value).children(".contact-profile:visible").length == 0) {
                             $(value).hide();
                         }
