@@ -1,4 +1,4 @@
-class PushToken < ActiveRecord::Base
+class Device < ActiveRecord::Base
 
 	belongs_to :user
 	before_create :strip_spaces

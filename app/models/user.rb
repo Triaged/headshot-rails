@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   belongs_to :manager, class_name: "User"
   
 	has_many :provider_credentials
-	has_many :push_tokens
+	has_many :devices
   has_many :subordinates, class_name: "User", foreign_key: "manager_id"
 
   belongs_to :primary_office_location, class_name: "OfficeLocation"
