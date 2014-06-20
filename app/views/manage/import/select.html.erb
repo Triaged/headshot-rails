@@ -6,9 +6,16 @@
 <div class="add-contacts">
 	<h3>Google App Users</h3>
   <p>Please <strong class="custom">deselect</strong> any users that you don’t wish to add to your contact list.</p>
+
 </div>
 
 <%= form_for @import, :url => manage_import_index_path, :method => :post, :html => {:id => 'import_users_form' } do |f| %>
+  <% if @import.imported_users.count > 20 %>
+    <div class="btns-spacing-m btns-right">
+      <%= link_to 'Cancel', manage_users_path, class: "btn-custom btn-default" %>
+      <%= f.button "Import Contacts", type: 'button', class: "btn-custom btn-primary", data: {toggle: "modal", target: "#addContactImport"} %>
+    </div>
+  <% end %>
 	<div class="contacts-group">
 	<%= f.fields_for :imported_users do |u| %>
 		<div class="import-profile">
@@ -32,10 +39,13 @@
 	<% end %>
 	</div>
 	<%= f.hidden_field :provider_id, value: @provider.id %>
-	<div class="btns-spacing-m btns-right">
-  	<button type="button" class="btn-custom btn-default">Cancel</button>
+	
+  
+  <div class="btns-spacing-m btns-right">
+  	<%= link_to 'Cancel', manage_users_path, class: "btn-custom btn-default" %>
     <%= f.button "Import Contacts", type: 'button', class: "btn-custom btn-primary", data: {toggle: "modal", target: "#addContactImport"} %>
   </div>
+ 
 
 
 <!-- Modal -->

@@ -28,6 +28,9 @@ class User < ActiveRecord::Base
   before_create :create_default_employee_info
   after_create :unleash_sherlock
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+
   scope :admin, -> { where(admin: true) }
 
   def full_name
