@@ -3,7 +3,7 @@
 <% flash.each do |name, msg| %>
   <% if msg.is_a?(String) %>
     <div class="alert <%= bootstrap_class_for(name) %>">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <button type="button" class="close close-custom" data-dismiss="alert" aria-hidden="true"><%= icon "times" %></button>
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
     </div>
   <% end %>

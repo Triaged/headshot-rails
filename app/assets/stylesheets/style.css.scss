@@ -238,6 +238,21 @@ text-align: center;
 	}
 }
 
+button.close-custom {
+	font-size: 14px;
+}
+
+// Alert
+
+.alert-success {
+	.close-custom {
+	margin: -5px;
+	font-size: 14px;
+	color: #2CB5A8;
+	opacity: 1;
+	}
+}
+
 
 // Final Links
 
