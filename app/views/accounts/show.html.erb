@@ -28,7 +28,7 @@
 
 <div class="final-links no-border">
   <p><%= link_to 'Change Password', edit_user_registration_path %></p>
-  <p><%= link_to 'Sign Out', destroy_user_session_url(subdomain: nil), method: :delete %></p>
+  <p><%= link_to 'Sign Out', destroy_user_session_url(subdomain: 'www'), method: :delete %></p>
 </div>
 
 
