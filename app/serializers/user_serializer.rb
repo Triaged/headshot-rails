@@ -5,6 +5,9 @@ class UserSerializer < ApplicationSerializer
   has_one :primary_office_location
   has_one :current_office_location
   
+  def manager_id
+    object.manager_id.to_s
+  end
 
   def avatar_url
   	object.avatar.url
