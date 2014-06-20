@@ -19,11 +19,6 @@ private
     params = params[:user].permit(:first_name, :last_name, :avatar, :department_id, :manager_id, :primary_office_location_id,
     	employee_info_attributes: [:job_title, :cell_phone, :office_phone, :job_start_date, :birth_date]
     )
-
-    params[:employee_info_attributes][:birth_date] = Date.strptime(params[:employee_info_attributes][:birth_date].to_s, '%s') 
-    params[:employee_info_attributes][:job_start_date] = Date.strptime(params[:employee_info_attributes][:job_start_date].to_s, '%s') 
-
-    return params
   end
 
 	def set_user
