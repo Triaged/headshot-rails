@@ -1,27 +1,33 @@
-<%= image_tag @current_user.avatar.face.url, :width => 60 %>
-<%= @current_user.full_name %> <br />
-<%= @current_user.employee_info.job_title %> <br />
-<%= @current_user.employee_info.cell_phone %><br />
-<%= @current_user.employee_info.office_phone %><br />
-<%= @current_user.employee_info.job_start_date %><br />
-<%= @current_user.employee_info.birth_date %><br />
+<div class="headline">
+  <h1>Company Profile</h1>
+</div>
 
-<%= simple_form_for(current_user, :url => account_path, :method => :patch) do |f| %>
+<div class="profile">
+  <%= avatar_or_initials(@user, "profile-picture") %>
+  <div class="profile-info">
+    <div class="profile-name">
+      <h2><%= @user.full_name %></h2>
+    </div>
+    <% if @user.admin? %>
+    	<div class="profile-label">
+      	<span class="label label-default label-custom">Admin</span>
+    	</div>
+    <% end %>
+  </div>
+  <div class="profile-btn">
+  </div>
+</div>
 
-	<%= f.input :first_name %>
-	<%= f.input :last_name %>
-	<%= f.input :avatar %>
+<div class="edit">
+  <h4>Edit Profile</h4>
+    <%= render "manage/users/form" %>
+</div>
 
-	<%= f.simple_fields_for :employee_info, current_user.employee_info do |e| %>
-		<%= e.input :job_title %>
-		<%= e.input :cell_phone %>
-		<%= e.input :office_phone %>
-		<%= e.input :job_start_date %>
-		<%= e.input :birth_date %>
-	<% end %>
+<div class="final-links no-border">
+  <p><%= link_to 'Change Password', edit_user_password_path %></p>
+  <p><%= link_to 'Sign Out', destroy_user_session_url(subdomain: nil), method: :delete %></p>
+</div>
 
-	<%= f.submit %>
 
-<% end %>
 
-<li><%= link_to 'Sign Out', destroy_user_session_url(subdomain: nil), method: :delete %></li>
+

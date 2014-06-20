@@ -22,10 +22,10 @@
         <h1 class="modal-title" id="myModalLabel">Confirm</h4>
       </div>
       <div class="modal-body modal-body-custom">
-        <p>Are you sure you want to delete [Department Name]
+        <p>Are you sure you want to delete <%= @department.name %>
         </p>
         <div class="btns-spacing-sm btns-center">
-          <%= link_to "Delete Department", class: "btn-custom btn-primary" %>
+          <%= link_to "Delete Department", manage_department_path(@department), method: :delete, class: "btn-custom btn-primary" %>
         </div>
       </div>
       <div class="modal-footer modal-footer-custom">
