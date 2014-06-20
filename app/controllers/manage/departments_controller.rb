@@ -52,7 +52,7 @@ class Manage::DepartmentsController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
-    def manage_department_params
-      params[:manage_department]
+    def department_params
+      params[:department].permit(:name)
     end
 end

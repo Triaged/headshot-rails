@@ -16,4 +16,8 @@ class OfficeLocation < ActiveRecord::Base
 		"#{street_address} #{city}, #{state} #{zip_code} #{country}"
 	end
 
+	def display_name
+		self.name.empty? ? self.street_address : self.name
+	end
+
 end

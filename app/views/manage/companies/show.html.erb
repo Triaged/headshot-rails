@@ -19,10 +19,10 @@
       <div class="col-sm-9 field">
       	<% @company.office_locations.each do |location| %>
 	        <div class="row">
-	          <div class="col-sm-11 field-content"><%= location.full_address %></div>
+	          <div class="col-sm-11 field-content"><%= location.display_name %></div>
 	          <div class="col-sm-1 field-btn">
-              <%= link_to edit_office_location_path(location) do %>
-                <i class="fa fa-wrench"></i>
+              <%= link_to edit_manage_office_location_path(location) do %>
+                <i class="fa fa-wrench">a</i>
               <% end %>
             </div>
 	        </div>

@@ -1,6 +1,10 @@
-<h1>Editing manage_department</h1>
+<div class="contact-breadcrumb">
+  <h2>
+  <%= link_to 'Company', manage_company_path %> <span class="breadcrumb-fwdslsh">/</span> Edit Department
+  </h2>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @manage_department %> |
-<%= link_to 'Back', manage_departments_path %>
+ <div class="edit">
+  <h3>Department</h3>
+	<%= render 'form' %>
+</div>
