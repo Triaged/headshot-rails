@@ -8,3 +8,29 @@
   <h3>Department</h3>
 	<%= render 'form' %>
 </div>
+
+<div class="final-links no-border">
+  <p><%= link_to 'Delete Department', "#", data: {toggle: "modal", target: "#archiveDepartment"} %></p>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="archiveDepartment" tabindex="-1" role="dialog" aria-labelledby="archiveDepartment" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-header-custom">
+        <button type="button" class="close close-custom" data-dismiss="modal" aria-hidden="true"><%= icon "times" %></button>
+        <h1 class="modal-title" id="myModalLabel">Confirm</h4>
+      </div>
+      <div class="modal-body modal-body-custom">
+        <p>Are you sure you want to delete [Department Name]
+        </p>
+        <div class="btns-spacing-sm btns-center">
+          <%= link_to "Delete Department", class: "btn-custom btn-primary" %>
+        </div>
+      </div>
+      <div class="modal-footer modal-footer-custom">
+        <button type="button" class="btn-custom btn-modal btn-default" data-dismiss="modal">No, I don't want to delete this department</button>
+      </div>
+    </div>
+  </div>
+</div>
