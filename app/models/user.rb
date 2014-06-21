@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   end
 
   def initials
-  	"#{first_name[0]}#{last_name[0]}"
+  	"#{first_name[0].capitalize}#{last_name[0].capitalize}"
   end
 
 	def set_company

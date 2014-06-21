@@ -10,52 +10,9 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
-        <div class="container">
-          <div class="col-lg-6 col-lg-offset-3">
-            <div class="navbar-header">
-              <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              </button>
-              <span class="navbar-brand navbar-brand-custom">Badge</span>
-            </div>
-            <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-              <ul class="nav navbar-nav navbar-right navbar-custom">
-                <li>
-                  <a href="../home/users"><%= image_tag "user-1.svg", :class => "nav-icon" %>Contacts</a>
-                </li>
-                <li>
-                  <a href="../home/company"><%= image_tag "shop-1.svg", :class => "nav-icon" %>Company</a>
-                </li>
-                <li>
-                  <a href="../home/profile"><%= image_tag "settings-1.svg", :class => "nav-icon" %>Profile</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </header>
-    </header>
-
     <main role="main">
     <%= render 'layouts/messages' %>
     <%= yield %>
     </main>
-
-    <div id="footer">
-      <div class="container">
-        <ul class="footer-links">
-          <li><a href="https://headshot.io">Features</a></li>
-          <li><a href="https://twitter.com/headshotapp">Twitter</a></li>
-          <li><a href="mailto:team@headshot.io">Support</a></li>
-          <li><a href="../home/profile">Download</a></li>
-        </ul>
-      </div>
-    </div>
-    
   </body>
 </html>

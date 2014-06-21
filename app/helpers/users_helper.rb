@@ -17,7 +17,7 @@ module UsersHelper
     content_tag(:div, class: "profile-picture") do
       content_tag(:div, class: "initials-circle") do
         content_tag(:div, class: "initials") do
-          concat content_tag(:span, company.name[0])
+          concat content_tag(:span, company.initial)
         end
       end
     end

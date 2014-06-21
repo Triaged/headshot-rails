@@ -14,4 +14,8 @@ class Company < ActiveRecord::Base
 		Department.create_default_departments self
 	end
 
+	def initial
+		name[0].capitalize
+	end
+
 end

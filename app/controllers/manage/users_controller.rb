@@ -1,5 +1,5 @@
 class Manage::UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :resend]
 
 	def index
     @users = current_company.users
@@ -35,6 +35,15 @@ class Manage::UsersController < ApplicationController
   def destroy
     @user.destroy
     redirect_to manage_users_path, success: "#{@user.full_name} was successfully archived."
+  end
+
+  def resend
+    if @user.confirmed_at.nil?
+      @user.send_confirmation_instructions
+    else
+      # send download email
+    end
+    redirect_to manage_user_path(@user), success: 'Invitation was successfully resent.'
   end
 
   def archived
