@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     elsif resource.admin?
     	manage_users_url(subdomain: resource.company.slug)
     else
-    	download_path(subdomain: resource.company.slug)
+    	download_url(subdomain: resource.company.slug)
     end
 	end
 

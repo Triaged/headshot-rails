@@ -20,7 +20,7 @@ module ApplicationHelper
         "alert-danger"    # Red
       when "alert"
         "alert-warning"   # Yellow
-      when "notice"
+      when "alert"
         "alert-info"      # Blue
       else
         flash_type.to_s
