@@ -46,7 +46,7 @@ private # ----------------------------------------------------
 	# based on the subdomain.  You can change this to whatever best fits your
 	# application.
 	def validate_subdomain
-	    redirect_to '/404.html' if (current_company.nil? || current_user.company != current_company)
+	    redirect_to '/404.html' if (!subdomain.nil? && (current_company.nil? || current_user.company != current_company))
 	end
 
 end
