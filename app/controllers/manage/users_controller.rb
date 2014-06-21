@@ -1,4 +1,4 @@
-class Manage::UsersController < ApplicationController
+class Manage::UsersController < ManageController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :resend]
 
 	def index

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include UrlHelper
   protect_from_forgery with: :exception
   helper_method :subdomain, :current_company, :is_admin?
-  before_filter  :authenticate_user! #:validate_subdomain,
+  before_filter :authenticate_user!, :validate_subdomain
 
   def after_sign_in_path_for(resource)
     if resource.is_a? Admin

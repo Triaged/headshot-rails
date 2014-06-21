@@ -1,4 +1,4 @@
-class Manage::ImportController < ApplicationController
+class Manage::ImportController < ManageController
 	before_action :set_provider, except: :create
 
 	def show

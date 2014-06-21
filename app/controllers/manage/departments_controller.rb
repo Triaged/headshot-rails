@@ -1,4 +1,4 @@
-class Manage::DepartmentsController < ApplicationController
+class Manage::DepartmentsController < ManageController
   before_action :set_department, only: [:show, :edit, :update, :destroy]
 
   # GET /manage/departments

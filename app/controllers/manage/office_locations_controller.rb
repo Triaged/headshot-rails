@@ -1,4 +1,4 @@
-class Manage::OfficeLocationsController < ApplicationController
+class Manage::OfficeLocationsController < ManageController
   before_action :set_office_location, only: [:show, :edit, :update, :destroy]
 
   # GET /manage/office_locations

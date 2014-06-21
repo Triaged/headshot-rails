@@ -1,4 +1,4 @@
-class Manage::CompaniesController < ApplicationController
+class Manage::CompaniesController < ManageController
 	before_action :set_company
 
 	def show
