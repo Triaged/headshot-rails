@@ -3,7 +3,7 @@ class ManageController < ApplicationController
 
 
 	def validates_manager
-		redirect_to root_url unless current_user.admin?
+		redirect_to download_path unless current_user.admin?
 	end
 
 end
