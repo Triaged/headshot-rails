@@ -1,6 +1,6 @@
 HeadshotRails::Application.routes.draw do
   authenticated :user do
-    root :to => "manage/users#index"
+    root :to => "manage/users#index", as: :authenticated_root
   end
 
   root :to => "home#index"
@@ -28,19 +28,7 @@ HeadshotRails::Application.routes.draw do
   	end
 	end
 
-  # Admin
-  devise_for :admins
-  namespace :admin, :path => "", :constraints => {:subdomain => "admin"} do
-    
-  #   resources :users , :controller => 'admin/users'
-     resources :companies do
-      resources :users
-     end
-  #   resources :feed_items , :controller => 'admin/feed_items'
-  #   resources :messages , :controller => 'admin/messages'
-  #   resources :providers, :controller => 'admin/providers'
-  #   mount Sidekiq::Web => '/sidekiq'
-   end
+ 
   
  # Web
   as :user do
@@ -72,5 +60,13 @@ HeadshotRails::Application.routes.draw do
       resources :office_locations
       resources :departments
     end
+  end
+
+   # Admin
+  devise_for :admins
+  namespace :admin, :path => "", :constraints => {:subdomain => "admin"} do
+     resources :companies do
+      resources :users
+     end
   end
 end
