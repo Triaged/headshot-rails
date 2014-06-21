@@ -1,23 +1,15 @@
-<div class="authform">
-  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
-    <h3>Sign in</h3>
-    <%= devise_error_messages! %>
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%- if devise_mapping.recoverable? %>
-        <%= link_to "Forgot password?", new_password_path(resource_name), class: 'right' %>
-      <% end -%>
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-    </div>
-      <%= f.submit 'Sign in', :class => 'button right' %>
-      <% if devise_mapping.rememberable? -%>
-        <div class="checkbox">
-          <%= f.check_box :remember_me %> <%= f.label :remember_me %>
-        </div>
-      <% end -%>
+<div>
+  <h3>Sign In</h3>
+</div>
+<div class="sign-in no-border">
+  <%= bootstrap_form_for(:user, :url => session_path(:user), :html => { :role => 'form'}, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
+    
+    
+    <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
+    <%= f.password_field :password, class: 'form-control' %>
+    
+   <div class="form-actions form-pull-right edit-btns">
+    <%= f.submit "Sign In", class: "btn-custom btn-primary" %>
+  </div>
   <% end %>
 </div>
