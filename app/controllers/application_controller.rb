@@ -42,11 +42,15 @@ private # ----------------------------------------------------
 	  request.subdomain
 	end
 
+  def company_subdomain?
+    request.subdomain.present? && request.subdomain != "www" 
+  end
+
 	# This will redirect the user to your 404 page if the account can not be found
 	# based on the subdomain.  You can change this to whatever best fits your
 	# application.
 	def validate_subdomain
-	    redirect_to '/404.html' if (!subdomain.nil? && (current_company.nil? || current_user.company != current_company))
+	    redirect_to '/404.html' if (company_subdomain? && (current_company.nil? || current_user.company != current_company))
 	end
 
 end
