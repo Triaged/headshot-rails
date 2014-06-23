@@ -85,13 +85,9 @@ $spacing-xlg: 40px;
 
 
 // Borders
-.main > div {
+
+.border {
 	border-bottom: 1px solid $grey-light;
-
-}
-
-.no-border {
-	border-bottom: none !important;
 }
 
 // Headlines
