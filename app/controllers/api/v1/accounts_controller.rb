@@ -18,7 +18,7 @@ class API::V1::AccountsController < APIController
   def update_password
     if @user.update_with_password(password_params)
       # Sign in the user by passing validation in case his password changed
-      render :json => 'ok', :status => 200
+      render :json => { "message" : "ok" }, :status => 200
     else
     	render :json=> "Error with updating your password", :status=>401
     end
