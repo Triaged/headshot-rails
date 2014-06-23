@@ -19,32 +19,6 @@ $spacing-xlg: 40px;
   transform: translateY(-50%);
 }
 
-@mixin link-style-after {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background: $text-color;
-	content: '';
-	opacity: 0;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
-	transition: opacity 0.3s, transform 0.3s;
-	-webkit-transform: translateY(10px);
-	-moz-transform: translateY(10px);
-	transform: translateY(10px);
-}
-
-@mixin link-style-hover-after {
-	opacity: 1;
-	-webkit-transform: translateY(0px);
-	-moz-transform: translateY(0px);
-	transform: translateY(0px);	
-}
-
-
-
 
 // NAVBAR + FOOTER
 
@@ -65,13 +39,38 @@ $spacing-xlg: 40px;
 	margin: 0 10px;
 	background-color: #fff;
 	}
-	.navbar-custom > li > a:after{
+	.navbar-custom > .linkstyle > a:after {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 2px;
 	background: $text-color;
-	@include link-style-after
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
 	}
-	.navbar-custom > li > a:hover::after,
-	.navbar-custom > li > a:focus::after {
-	@include link-style-hover-after	
+	.navbar-custom > .linkstyle > a:hover::after,
+	.navbar-custom > .linkstyle > a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+	}
+	.navbar-custom > .active > a:before {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: $text-color;
+	content: '';
+	opacity: 1;
 	}
 }
 .nav-icon {
@@ -85,13 +84,9 @@ $spacing-xlg: 40px;
 
 
 // Borders
-.main > div {
+
+.border {
 	border-bottom: 1px solid $grey-light;
-
-}
-
-.no-border {
-	border-bottom: none !important;
 }
 
 // Headlines
@@ -340,6 +335,26 @@ button.close-custom {
 	width: 25%;
 	display: inline-block;
 	text-align: right;
+	p {
+		display: inline;
+		color: $active;
+	}
+	i {
+		padding: 0 15px;
+		font-size: 26px;
+		position: relative;
+		top: 2px; 
+		color: $active;
+	}
+	// non-active
+	// p {
+	// 	display: inline;
+	// 	color: $deactive;
+	// }
+	// i {
+	// 	font-size: 20px;
+	// 	color: $deactive;
+	// 	}
 }
 
 
@@ -386,12 +401,6 @@ button.close-custom {
 	.edit-fields {
 		padding-top: $spacing-sm;
 		width: 100%;
-	}
-	h3 {
-		padding-top: $spacing-lg;
-	}
-	h3:first-child {
-		padding-top: none;
 	}
 }
 .edit-btns {
