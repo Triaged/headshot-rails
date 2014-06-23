@@ -3,7 +3,7 @@ class API::V1::AccountsController < APIController
 
 	def show
 		render json: @user, serializer: AccountSerializer
-	end
+  end
 
 	def update
 		@user.update(user_params)
@@ -18,9 +18,9 @@ class API::V1::AccountsController < APIController
   def update_password
     if @user.update_with_password(password_params)
       # Sign in the user by passing validation in case his password changed
-      render :json =>  { message: : "Your password was successfully updated" } , :status => 200
+      render :json => { "message" => "ok" }, :status => 200
     else
-    	render :json=> "Error with updating your password", :status=>401
+    	render :json=> { "message" => "Error with updating your password" }, :status=>401
     end
   end
 
