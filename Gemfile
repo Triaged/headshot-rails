@@ -31,7 +31,7 @@ gem "select2-rails"
 gem "paranoia", "~> 2.0"
 gem 'phony_rails'
 gem 'font-awesome-sass'
-gem 'utf8-cleaner'
+
 
 
 
