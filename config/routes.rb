@@ -16,6 +16,7 @@ HeadshotRails::Application.routes.draw do
       resource :account do
         member do
           post 'avatar'
+          post 'update_password'
         end
       end
       resource :company

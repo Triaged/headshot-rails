@@ -15,6 +15,15 @@ class API::V1::AccountsController < APIController
 		render json: @user, serializer: AccountSerializer
   end
 
+  def update_password
+    if @user.update_with_password(password_params)
+      # Sign in the user by passing validation in case his password changed
+      render :json => 'ok', :status => 200
+    else
+    	render :json=> "Error with updating your password", :status=>401
+    end
+  end
+
 private
 
 	# Never trust parameters from the scary internet, only allow the white list through.
@@ -27,5 +36,9 @@ private
 	def set_user
 		@user = current_user
 	end
+
+	 def password_params
+    params[:user].permit(:current_password, :password, :password_confirmation)
+  end
 
 end
