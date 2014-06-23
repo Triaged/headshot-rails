@@ -14,20 +14,23 @@
         <ul class="nav navbar-nav navbar-right navbar-custom">
           <li class="active">
             <% if user_signed_in? %>
-               <li><%= link_to 'Download', download_path %></li>
-               <% if is_admin? %>
-                <li><%= link_to 'Contacts', manage_users_path %></li>
-              </li>
-              <li>
-                 <li><%= link_to 'Company', manage_company_path %></li>
-              </li>
-              <% end %>
-          <li>
-            <%= link_to 'Profile', account_path %>
-          </li>
+            <li class="active">
+              <%= link_to 'Download', download_path %>
+            </li>
+            <% if is_admin? %>
+            <li class="linkstyle">
+              <%= link_to 'Contacts', manage_users_path %>
+            </li>
+            <li class="linkstyle">
+              <%= link_to 'Company', manage_company_path %>
+            </li>
             <% end %>
-        </ul>
-      </nav>
+            <li class="linkstyle">
+              <%= link_to 'Profile', account_path %>
+            </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
     </div>
-  </div>
-</header>
+  </header>

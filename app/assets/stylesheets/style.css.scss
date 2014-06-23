@@ -55,7 +55,7 @@ $spacing-xlg: 40px;
 	.navbar-brand-custom {
 	color: #2CB5A8;
 	}
-	.navbar-custom > li > a {
+	.navbar-custom > .linkstyle > a {
 	font-size: $font-size-small;
 	color: $text-color;
 	text-transform: uppercase;
@@ -65,13 +65,36 @@ $spacing-xlg: 40px;
 	margin: 0 10px;
 	background-color: #fff;
 	}
-	.navbar-custom > li > a:after{
+	.navbar-custom > .linkstyle > a:after {
 	background: $text-color;
 	@include link-style-after
 	}
-	.navbar-custom > li > a:hover::after,
-	.navbar-custom > li > a:focus::after {
+	.navbar-custom > .linkstyle > a:hover::after,
+	.navbar-custom > .linkstyle > a:focus::after {
 	@include link-style-hover-after	
+	}
+	.navbar-custom > .active > a {
+	font-size: $font-size-small;
+	color: $text-color;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+	font-weight: 500;
+	padding: 15px 5px 0;
+	margin: 0 10px;
+	background-color: #fff;
+	}
+	.navbar-custom > .active > a:before {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: $text-color;
+	content: '';
+	opacity: 1;
+	}
+	.navbar-custom > .active > a:hover::after,
+	.navbar-custom > .active > a:focus::after {
 	}
 }
 .nav-icon {
@@ -382,12 +405,6 @@ button.close-custom {
 	.edit-fields {
 		padding-top: $spacing-sm;
 		width: 100%;
-	}
-	h3 {
-		padding-top: $spacing-lg;
-	}
-	h3:first-child {
-		padding-top: none;
 	}
 }
 .edit-btns {

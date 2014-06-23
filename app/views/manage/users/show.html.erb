@@ -1,12 +1,12 @@
 <!-- Content -->
 
-<div class="contact-breadcrumb">
+<div class="contact-breadcrumb border">
   <h2>
   <%= link_to 'Contacts', manage_users_path %> <span class="breadcrumb-fwdslsh">/</span> <%= @user.full_name %>
   </h2>
 </div>
 
-<div class="profile">
+<div class="profile border">
  <%= avatar_or_initials(@user, "profile-picture") %>
   <div class="profile-info">
     <div class="profile-name">
@@ -18,7 +18,7 @@
   </div>
 </div>
 <% unless @user.installed_app %>
-  <div class="profile-status">
+  <div class="profile-status border">
     <h3><%= @user.first_name %> has not yet accepted her email invitation.</h3>
     <div class="profile-status-btn">
       <%= link_to 'Resend Invitation', resend_manage_user_path(@user), method: :put, class: "btn-custom btn-primary" %>
@@ -27,12 +27,12 @@
 <% end %>
 
 
-<div class="edit">
+<div class="edit border">
   <h4>Edit Profile</h4>
     <%= render "form" %>
 </div>
 
-<div class="final-links no-border">
+<div class="final-links">
   <p><%= link_to 'Deactivate Contact', "#", data: {toggle: "modal", target: "#archiveContact"} %></p>
 </div>
 
