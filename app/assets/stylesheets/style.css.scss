@@ -19,7 +19,27 @@ $spacing-xlg: 40px;
   transform: translateY(-50%);
 }
 
-@mixin link-style-after {
+
+// NAVBAR + FOOTER
+
+// Navbar
+
+.navbar {
+	font-weight: 500;
+	.navbar-brand-custom {
+	color: #2CB5A8;
+	}
+	.navbar-custom > li > a {
+	font-size: $font-size-small;
+	color: $text-color;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+	font-weight: 500;
+	padding: 15px 5px 0;
+	margin: 0 10px;
+	background-color: #fff;
+	}
+	.navbar-custom > .linkstyle > a:after {
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -34,54 +54,13 @@ $spacing-xlg: 40px;
 	-webkit-transform: translateY(10px);
 	-moz-transform: translateY(10px);
 	transform: translateY(10px);
-}
-
-@mixin link-style-hover-after {
-	opacity: 1;
-	-webkit-transform: translateY(0px);
-	-moz-transform: translateY(0px);
-	transform: translateY(0px);	
-}
-
-
-
-
-// NAVBAR + FOOTER
-
-// Navbar
-
-.navbar {
-	font-weight: 500;
-	.navbar-brand-custom {
-	color: #2CB5A8;
-	}
-	.navbar-custom > .linkstyle > a {
-	font-size: $font-size-small;
-	color: $text-color;
-	text-transform: uppercase;
-	letter-spacing: .05em;
-	font-weight: 500;
-	padding: 15px 5px 0;
-	margin: 0 10px;
-	background-color: #fff;
-	}
-	.navbar-custom > .linkstyle > a:after {
-	background: $text-color;
-	@include link-style-after
 	}
 	.navbar-custom > .linkstyle > a:hover::after,
 	.navbar-custom > .linkstyle > a:focus::after {
-	@include link-style-hover-after	
-	}
-	.navbar-custom > .active > a {
-	font-size: $font-size-small;
-	color: $text-color;
-	text-transform: uppercase;
-	letter-spacing: .05em;
-	font-weight: 500;
-	padding: 15px 5px 0;
-	margin: 0 10px;
-	background-color: #fff;
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
 	}
 	.navbar-custom > .active > a:before {
 	position: absolute;
@@ -92,9 +71,6 @@ $spacing-xlg: 40px;
 	background: $text-color;
 	content: '';
 	opacity: 1;
-	}
-	.navbar-custom > .active > a:hover::after,
-	.navbar-custom > .active > a:focus::after {
 	}
 }
 .nav-icon {
@@ -359,6 +335,26 @@ button.close-custom {
 	width: 25%;
 	display: inline-block;
 	text-align: right;
+	p {
+		display: inline;
+		color: $active;
+	}
+	i {
+		padding: 0 15px;
+		font-size: 26px;
+		position: relative;
+		top: 2px; 
+		color: $active;
+	}
+	// non-active
+	// p {
+	// 	display: inline;
+	// 	color: $deactive;
+	// }
+	// i {
+	// 	font-size: 20px;
+	// 	color: $deactive;
+	// 	}
 }
 
 
