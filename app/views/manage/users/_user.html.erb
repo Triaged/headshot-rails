@@ -10,7 +10,11 @@
       </div>
     </div>
     <div class="activity-state">
-      <p><%= user.installed_app? %></p><i class="fa fa-mobile"></i>
+    <% if user.installed_app? %>
+      <p>active</p><i class="fa fa-mobile"></i>
+    <% else %>
+      <p>no response</p><i class="fa fa-mobile"></i>
+    <% end %>
     </div>
   </div>
 </div>
