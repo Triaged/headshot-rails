@@ -13,7 +13,11 @@ HeadshotRails::Application.routes.draw do
       end
       resources :devices, only: :create
       resources :departments
-      resource :account
+      resource :account do
+        member do
+          post 'avatar'
+        end
+      end
       resource :company
       resource :push_services, only: :create
       devise_scope :user do

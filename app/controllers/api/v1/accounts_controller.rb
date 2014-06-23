@@ -10,7 +10,10 @@ class API::V1::AccountsController < APIController
 		render json: @user, serializer: AccountSerializer
   end
 
-  
+  def avatar
+  	@user.update(user_params)
+		render json: @user, serializer: AccountSerializer
+  end
 
 private
 
