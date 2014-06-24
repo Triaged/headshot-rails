@@ -3,73 +3,85 @@
     <%= link_to 'Contacts', manage_users_path %> <span class="breadcrumb-fwdslsh">/</span> Import Contacts
   </h2>
 </div>
-<div class="add-contacts border">
-	<h3>Google App Users</h3>
-  <p>Please <strong class="custom">deselect</strong> any users that you don’t wish to add to your contact list.</p>
 
-</div>
+<% if @import.imported_users.empty? %>
+   <div class="add-contacts border">
+    <h3>There are no new contacts to import</h3>
+    <p> All contacts are currently synced with Badge.</p>
+   </div>
 
-<%= form_for [:manage, @import], :html => {:id => 'import_users_form' } do |f| %>
-  <% if @import.imported_users.count > 20 %>
     <div class="btns-spacing-m btns-right">
-      <%= link_to 'Cancel', manage_users_path, class: "btn-custom btn-default" %>
-      <%= f.button "Import Contacts", type: 'button', class: "btn-custom btn-primary", data: {toggle: "modal", target: "#addContactImport"} %>
+      <%= link_to 'Continue', manage_users_path, class: "btn-custom btn-primary" %>
     </div>
-  <% end %>
-	<div class="contacts-group">
-  <br />
-	<%= f.fields_for :imported_users do |u| %>
-		<div class="import-profile">
-      <div class="contact-info">
-        <div class="contact">
-          <div class="contact-name">
-            <h2><%= u.object.full_name %></h2>
-          </div>
-          <div class="contact-email">
-            <p><%= u.object.email %></p>
-          </div>
-        </div>
-        <div class="add-contact">
-          <div class="checkbox checkbox-custom">
-            <!-- <input type="checkbox" id="checkbox-1-1" />add contact<label for="checkbox-1-1"></label> -->
-            <span> add contact </span>
-            <%= u.check_box :should_import, label: "Add Contact", :checked => true %>
-            <label for="import_imported_users_attributes_<%= u.index %>_should_import"></label>
-          </div>
-        </div>
-      </div>
-    </div>
-	<% end %>
-	</div>
-	<%= f.hidden_field :provider_id, value: @provider.id %>
-	
-  
-  <div class="btns-spacing-m btns-right">
-  	<%= link_to 'Cancel', manage_users_path, class: "btn-custom btn-default" %>
-    <%= f.button "Import Contacts", type: 'button', class: "btn-custom btn-primary", data: {toggle: "modal", target: "#addContactImport"} %>
+<% else %>
+  <div class="add-contacts border">
+  	<h3>Google App Users</h3>
+    <p>Please <strong class="custom">deselect</strong> any users that you don’t wish to add to your contact list.</p>
+
   </div>
- 
 
-
-<!-- Modal -->
-    <div class="modal fade" id="addContactImport" tabindex="-1" role="dialog" aria-labelledby="addContactImport" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header modal-header-custom">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><%= icon "times" %></button>
-            <h1 class="modal-title" id="myModalLabel">Confirm</h4>
-          </div>
-          <div class="modal-body modal-body-custom">
-            <p>When you submit your contacts, we’ll send them an email invitation with a link to the app and onboarding insturctions.  
-            <div class="btns-spacing-sm btns-center">
-              <%= f.submit 'Submit New Contacts', class: "btn-custom btn-primary" %>
+  <%= form_for [:manage, @import], :html => {:id => 'import_users_form' } do |f| %>
+    <% if @import.imported_users.count > 20 %>
+      <div class="btns-spacing-m btns-right">
+        <%= link_to 'Cancel', manage_users_path, class: "btn-custom btn-default" %>
+        <%= f.button "Import Contacts", type: 'button', class: "btn-custom btn-primary", data: {toggle: "modal", target: "#addContactImport"} %>
+      </div>
+    <% end %>
+  	<div class="contacts-group">
+    <br />
+  	<%= f.fields_for :imported_users do |u| %>
+  		<div class="import-profile">
+        <div class="contact-info">
+          <div class="contact">
+            <div class="contact-name">
+              <h2><%= u.object.full_name %></h2>
+            </div>
+            <div class="contact-email">
+              <p><%= u.object.email %></p>
             </div>
           </div>
-          <div class="modal-footer modal-footer-custom">
-            <button type="button" class="btn-custom btn-modal btn-default" data-dismiss="modal">No, I still want to edit contacts</button>
+          <div class="add-contact">
+            <div class="checkbox checkbox-custom">
+              <!-- <input type="checkbox" id="checkbox-1-1" />add contact<label for="checkbox-1-1"></label> -->
+              <span> add contact </span>
+              <%= u.check_box :should_import, label: "Add Contact", :checked => true %>
+              <label for="import_imported_users_attributes_<%= u.index %>_should_import"></label>
+            </div>
           </div>
         </div>
       </div>
+  	<% end %>
+  	</div>
+  	<%= f.hidden_field :provider_id, value: @provider.id %>
+  	
+    
+    <div class="btns-spacing-m btns-right">
+    	<%= link_to 'Cancel', manage_users_path, class: "btn-custom btn-default" %>
+      <%= f.button "Import Contacts", type: 'button', class: "btn-custom btn-primary", data: {toggle: "modal", target: "#addContactImport"} %>
     </div>
+   
 
+
+  <!-- Modal -->
+      <div class="modal fade" id="addContactImport" tabindex="-1" role="dialog" aria-labelledby="addContactImport" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header modal-header-custom">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><%= icon "times" %></button>
+              <h1 class="modal-title" id="myModalLabel">Confirm</h4>
+            </div>
+            <div class="modal-body modal-body-custom">
+              <p>When you submit your contacts, we’ll send them an email invitation with a link to the app and onboarding insturctions.  
+              <div class="btns-spacing-sm btns-center">
+                <%= f.submit 'Submit New Contacts', class: "btn-custom btn-primary" %>
+              </div>
+            </div>
+            <div class="modal-footer modal-footer-custom">
+              <button type="button" class="btn-custom btn-modal btn-default" data-dismiss="modal">No, I still want to edit contacts</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <% end %>
 <% end %>
