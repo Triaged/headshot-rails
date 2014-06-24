@@ -1,6 +1,3 @@
-<p>Welcome <%= @email %>!</p>
-
-
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>*|MC:SUBJECT|*</title>
@@ -537,7 +534,7 @@
 										</td>
 										<!-- *|IFNOT:ARCHIVE_PAGE|* -->
 										<td valign="top" width="380" class="preheaderContent" style="padding-top: 15px;padding-right: 20px;padding-bottom: 15px;padding-left: 0;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #2E3B4E;font-family: Helvetica;font-size: 14px;line-height: 125%;text-align: left;font-weight: lighter;" mc:edit="preheader_content01">
-											Private beta invite to Badge from your collegue, JT White
+											Private beta invite to Badge from your colleague, JT White
 										</td>
 										<!-- *|END:IF|* -->
 									</tr>
@@ -565,7 +562,7 @@
 								<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;border-collapse: collapse !important;">
 									<tbody><tr>
 										<td valign="top" class="bodyContent" mc:edit="body_content" style="padding-top: 20px;padding-right: 10%;padding-left: 10%;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #BBBBBB;font-family: Helvetica;font-size: 14px;line-height: 150%;padding-bottom: 20px;text-align: center;">
-											<h2 style="padding-bottom: 20px;display: block;font-family: Helvetica;font-size: 20px;font-style: normal;font-weight: bold;line-height: 135%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #2E3B4E !important;">Amy, your collegue, James White, <br> has invited you to Headshot’s private beta!</h2>
+											<h2 style="padding-bottom: 20px;display: block;font-family: Helvetica;font-size: 20px;font-style: normal;font-weight: bold;line-height: 135%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #2E3B4E !important;">Amy, your colleague, James White, <br> has invited you to Headshot’s private beta!</h2>
 											<h3 style="display: block;font-family: Helvetica;font-size: 16px;font-style: normal;font-weight: lighter;line-height: 150%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #919496 !important;">Headshot is mobile directory for you and your team. <br>James signed [Company Name] up, and created an account for you. <br>Use the buttons below to sign in, and join your team!</h3>
 										</td>
 									</tr>
@@ -583,7 +580,7 @@
 													<tbody>
 														<tr>
 															<td align="center" valign="middle" style="color: #FFFFFF;border-color: #FF9D00;font-family: Helvetica, Arial, sans-serif;font-size: 16px;letter-spacing: .5px;line-height: 150%;padding-top: 10px;padding-right: 50px;padding-bottom: 10px;padding-left: 50px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-																<a href="http://www.mailchimp.com/blog/" target="_blank" style="color: #FFFFFF;text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;"><%= link_to 'Sign in to your account', confirmation_url(@resource, confirmation_token: @token) %></a>
+																<%= link_to 'Sign in to your account', confirmation_url(@resource, confirmation_token: @token), { :style => 'color: #FFFFFF;text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;' }  %></a>
 															</td>
 														</tr>
 													</tbody>
@@ -604,14 +601,8 @@
 												<tbody><tr>
 													<td valign="top" class="leftColumnContent text-left" mc:edit="left_column_content" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #919496;font-family: Helvetica;font-size: 14px;line-height: 150%;font-weight: lighter;padding-top: 120px;padding-bottom: 20px;padding-right: 20px;padding-left: 40px;text-align: left;">
 														<h1 style="color: #2CB5A8;display: block;font-family: Helvetica;font-size: 40px;font-style: normal;font-weight: bold;line-height: 135%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;">What is Badge?</h1>
-														<h2 style="padding-top: 10px;display: block;font-family: Helvetica;font-size: 20px;font-style: normal;font-weight: bold;line-height: 135%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #2E3B4E !important;">Connect with everyone at work.</h2>
-														<h3 style="padding-top: 10px;padding-bottom: 20px;display: block;font-family: Helvetica;font-size: 16px;font-style: normal;font-weight: lighter;line-height: 150%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #919496 !important;">Headshot gives you access to everyone you work with.</h3>
-														Easy Access To:
-														<ul>
-															<li style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">People</li>
-															<li style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">Communication</li>
-															<li style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">Activity</li>
-														</ul>
+														<h2 style="padding-top: 10px;display: block;font-family: Helvetica;font-size: 20px;font-style: normal;font-weight: bold;line-height: 135%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #2E3B4E !important;">Easy access to everyone at work.</h2>
+														<h3 style="padding-top: 10px;padding-bottom: 20px;display: block;font-family: Helvetica;font-size: 16px;font-style: normal;font-weight: lighter;line-height: 150%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #919496 !important;">Badge makes everyone in your company only a few taps away. Finding your teammates by name or department is simple and painless. Headshot gives you the information you want, when you need it.</h3>
 													</td>
 												</tr>
 											</tbody></table>
@@ -620,7 +611,7 @@
 											<table border="0" cellpadding="20" cellspacing="0" width="100%" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
 												<tbody><tr>
 													<td class="rightColumnContent center" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #919496;font-family: Helvetica;font-size: 14px;line-height: 150%;font-weight: lighter;padding-top: 20px;padding-bottom: 20px;padding-right: 20px;padding-left: 20px;text-align: center !important;">
-														<img src="https://ci5.googleusercontent.com/proxy/1nUo48-uHUQQ1QXJCTR6VnUzC3GbDTKyshWNoVH19t14uo5rgO8VeWbUoyxffAzWRkwoToOf1fsS9TKnvUTDGUsBp_E5Nx7VFm-kVJZ5LX8V4g_5YQQvn7mELwKAAqVVZsaVS2Sl4MST25bGA3IK3ze51ORXlndO87W2LQ=s0-d-e1-ft#http://gallery.mailchimp.com/09719a524b376a51bc97e6bd7/images/6733868d-5209-4da4-8cc5-f60844c715d6.png" style="max-width: 260px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" class="columnImage" mc:label="right_column_image" mc:edit="right_column_image">
+														<img src="https://ci4.googleusercontent.com/proxy/-t1PXD_441WC8FxhSDNd3F7rL4J1dMP30lnJA2qcY-b4hkWujrufxA0KI_1E5ggaFwEqYWaCver29pxWCtlHk21ehfAOH-ooWrxRkPH5JLlv1tZt48eA1w-i79kNExzgBIgquCq1EJzMkf-oQT1wf53Hq_QBInlDK1IudA=s0-d-e1-ft#http://gallery.mailchimp.com/09719a524b376a51bc97e6bd7/images/f20da795-4925-41d3-8b75-420142b8215b.png" width="247" style="max-width: 247px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" class="columnImage" mc:label="right_column_image" mc:edit="right_column_image">
 													</td>
 												</tr>
 											</tbody></table>
@@ -633,7 +624,8 @@
 											<table border="0" cellpadding="20" cellspacing="0" width="100%" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
 												<tbody><tr>
 													<td class="leftColumnContent center" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #919496;font-family: Helvetica;font-size: 14px;line-height: 150%;font-weight: lighter;padding-top: 20px;padding-bottom: 20px;padding-right: 20px;padding-left: 20px;text-align: center !important;">
-														<img src="https://ci3.googleusercontent.com/proxy/8lo1k5KMCAbT3xDrs0PupX59d7GfhTCHriH4etN45IO0aQAg6papaoa1GDrJHurK7E1QsP9Pfe3-D2SigTBv62STSltvIBLmxpNJ4zPK7AyOAkd2CSvwF-0R3GK2UnRVQe0je04Guc1mRVFKEPKKgpLSlDkvoTI2XMaSSQ=s0-d-e1-ft#http://gallery.mailchimp.com/09719a524b376a51bc97e6bd7/images/69698251-6637-4887-98a4-c78f060a2aae.png" style="max-width: 260px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" class="columnImage" mc:label="left_column_image" mc:edit="left_column_image">
+														<img src="https://ci5.googleusercontent.com/proxy/Cd_5pFnaGUnf1TDZ3R-S5oXHGWRQFQrfLod2mrShKBkilqjPzxcrIvvsuU32-IYB_Y_kuHXHpcAsm7mP72ymwfwbgTgdv1RtxyD6NE8d5xNY_OAnQbmi5RYE_T1mQQeDTxN135sYRrvTzOGr2QI1Pxx6WSI5kE7-15iDIw=s0-d-e1-ft#http://gallery.mailchimp.com/09719a524b376a51bc97e6bd7/images/5d2bd6df-c69c-41b4-96ae-a4181767e0fd.png" width="247" style="max-width: 247px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" class="columnImage" mc:label="left_column_image" mc:edit="left_column_image">
+
 													</td>
 												</tr>
 											</tbody></table>
@@ -644,7 +636,7 @@
 												<tbody><tr>
 													<td valign="top" class="rightColumnContent text-right" mc:edit="right_column_content" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #919496;font-family: Helvetica;font-size: 14px;line-height: 150%;font-weight: lighter;padding-top: 120px;padding-bottom: 20px;padding-right: 40px;padding-left: 20px;text-align: left;">
 														<h2 style="display: block;font-family: Helvetica;font-size: 20px;font-style: normal;font-weight: bold;line-height: 135%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #2E3B4E !important;">Easy access to your teammates work infomation.</h2>
-														<h3 style="padding-top: 20px;padding-bottom: 20px;display: block;font-family: Helvetica;font-size: 16px;font-style: normal;font-weight: lighter;line-height: 150%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #919496 !important;">Everything that you need on a day to day basis.</h3>
+														<h3 style="padding-top: 20px;padding-bottom: 20px;display: block;font-family: Helvetica;font-size: 16px;font-style: normal;font-weight: lighter;line-height: 150%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #919496 !important;">From all their contact info, to their position, team organization, and availibility, Badge gives you everything that you need to know about your colleagues.</h3>
 														Profile Includes:
 														<ul>
 															<li style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">Availibility</li>
@@ -679,7 +671,7 @@
 											<table border="0" cellpadding="20" cellspacing="0" width="100%" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
 												<tbody><tr>
 													<td class="rightColumnContent center" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #919496;font-family: Helvetica;font-size: 14px;line-height: 150%;font-weight: lighter;padding-top: 20px;padding-bottom: 20px;padding-right: 20px;padding-left: 20px;text-align: center !important;">
-														<img src="https://ci5.googleusercontent.com/proxy/1nUo48-uHUQQ1QXJCTR6VnUzC3GbDTKyshWNoVH19t14uo5rgO8VeWbUoyxffAzWRkwoToOf1fsS9TKnvUTDGUsBp_E5Nx7VFm-kVJZ5LX8V4g_5YQQvn7mELwKAAqVVZsaVS2Sl4MST25bGA3IK3ze51ORXlndO87W2LQ=s0-d-e1-ft#http://gallery.mailchimp.com/09719a524b376a51bc97e6bd7/images/6733868d-5209-4da4-8cc5-f60844c715d6.png" style="max-width: 260px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" class="columnImage" mc:label="right_column_image" mc:edit="right_column_image">
+														<img src="https://ci3.googleusercontent.com/proxy/OMU5A8PajXyd7FdCPXQ46ZtVs7xBg9ZuwmK3ya-1hcZWbjqL6px2XxR5JVltO5E5XETuBJ3Ci__GWHBtki_gK1Dxf12SHmtR-t6YSJ4tUW4CAi0rrI7D8HaX3y8GwASWqk-Q1K5rxMkexIQdR--JfBFGQi8IuioWw4vhqg=s0-d-e1-ft#http://gallery.mailchimp.com/09719a524b376a51bc97e6bd7/images/e17c5a45-877b-442d-a7dc-eb563c2a18d7.png" width="247" style="max-width: 247px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" class="columnImage" mc:label="right_column_image" mc:edit="right_column_image">
 													</td>
 												</tr>
 											</tbody></table>
