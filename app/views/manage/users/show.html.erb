@@ -46,13 +46,13 @@
         <h1 class="modal-title" id="myModalLabel">Confirm</h4>
       </div>
       <div class="modal-body modal-body-custom">
-        <p>After you deactivate <%= @user.first_name.capitalize %>, the user will not be able to access their Badge account, and their account information will be archived into your deactivated contact list within your company profile.</p>
+        <p><%= @user.first_name.capitalize %> will be removed from Badge. Both contact info & login access will be revoked. This change can be reversed on the company settings page.</p>
         <div class="btns-spacing-sm btns-center">
-          <%= link_to "Deactivate #{@user.first_name.capitalize}", manage_user_path(@user), method: :delete, class: "btn-custom btn-primary" %>
+          <%= link_to "Deactivate #{@user.full_name}", manage_user_path(@user), method: :delete, class: "btn-custom btn-primary" %>
         </div>
       </div>
       <div class="modal-footer modal-footer-custom">
-        <button type="button" class="btn-custom btn-modal btn-default" data-dismiss="modal">No, I don't want to deactivate <%= @user.first_name.capitalize %></button>
+        <button type="button" class="btn-custom btn-modal btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>
   </div>

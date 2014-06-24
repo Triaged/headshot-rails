@@ -24,24 +24,3 @@
 		</div>
 	<% end %>
 </div>
-
-<!-- Modal -->
-<div class="modal fade" id="archiveContact" tabindex="-1" role="dialog" aria-labelledby="archiveContact" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header modal-header-custom">
-        <button type="button" class="close close-custom" data-dismiss="modal" aria-hidden="true"><%= icon "times" %></button>
-        <h1 class="modal-title" id="myModalLabel">Confirm</h4>
-      </div>
-      <div class="modal-body modal-body-custom">
-        <p>After you re-activate <%= @user.first_name.capitalize %>, the user will be able to access their Badge account, and their account information will be placed into your contact list.</p>
-        <div class="btns-spacing-sm btns-center">
-          <%= link_to "Re-activate #{@user.first_name.capitalize}", manage_user_path(@user), method: :delete, class: "btn-custom btn-primary" %>
-        </div>
-      </div>
-      <div class="modal-footer modal-footer-custom">
-        <button type="button" class="btn-custom btn-modal btn-default" data-dismiss="modal">No, I don't want to re-activate <%= @user.first_name.capitalize %></button>
-      </div>
-    </div>
-  </div>
-</div>

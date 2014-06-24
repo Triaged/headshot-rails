@@ -51,6 +51,8 @@ class Manage::UsersController < ManageController
   end
 
   def restore
+    User.restore(params[:id])
+    redirect_to manage_users_path, success: 'Contact was successfully activated.'
   end
 
 private
