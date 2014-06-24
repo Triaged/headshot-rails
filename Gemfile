@@ -33,6 +33,7 @@ gem 'phony_rails'
 gem 'font-awesome-sass'
 gem 'mandrill-api'
 gem 'active_link_to'
+gem 'mobile-fu'
 
 
 
