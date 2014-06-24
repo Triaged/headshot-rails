@@ -1,22 +1,22 @@
 class UserImport
 
-	def initialize provider_id, user_id, company_id
-		@provider = Provider.find(provider_id)
+	def initialize user_id, company_id
 		@user = User.find(user_id)
 		@company = Company.find(company_id)
 	end
 
-	def import_users
+	def import_users provider_id
+		provider = Provider.find(provider_id)
 		destroy_existing
-		import_class = "#{@provider.name.classify}::UserImport".constantize
+		
+		import_class = "#{provider.name.classify}::UserImport".constantize
 		import = import_class.new(@user).fetch_users!
 		return import
 	end
 
-	def convert_imported_to_real (import_ids)
-		import_ids.each do |id|
-			imported_user = ImportedUser.find(id)
-			imported_user.convert_to_real! unless imported_user.user_exists?
+	def convert_imported_to_real (import)
+		import.imported_users.each do |imported_user|
+			imported_user.convert_to_real! if (imported_user.should_import && !imported_user.user_exists?)
 		end
 		destroy_existing
 	end

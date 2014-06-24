@@ -1,22 +1,25 @@
 class Manage::ImportController < ManageController
-	before_action :set_provider, except: :create
+	before_action :set_provider, except: :update
 
 	def show
 		
 	end
 
 	def select
-		@import = UserImport.new(@provider.id, current_user.id, current_company.id).import_users
+		@import = UserImport.new(current_user.id, current_company.id).import_users(@provider.id)
 		unless @import.errors.empty?
-			logger.info @import.errors.inspect
-			flash[:danger] = @import.errors
+			flash[:error] = @import.errors
 			redirect_to manage_import_url(@provider.name)
 		end
 	end
 
-	def create
-		import_ids = h["imported_users_attributes"].values.collect {|hash| hash['id'] if hash['should_import'] == "1" }.compact
-		UserImport.new(import_params[:provider_id], current_user.id, current_company.id).convert_imported_to_real(import_ids)
+	def update
+		@import = Import.find(params[:id])
+
+		if @import.update(import_params)
+			UserImport.new(current_user.id, current_company.id).convert_imported_to_real(@import)
+			redirect_to manage_users_path, success: 'Contacts successfully imported.'
+		end
 	end
 
 private
@@ -25,7 +28,7 @@ private
 	end
 
 	def import_params
-		params[:import].permit!
+		params[:import].permit(:imported_users_attributes => [:id, :should_import])
 	end
 
 end

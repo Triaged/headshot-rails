@@ -14,6 +14,8 @@ ADMIN_PASSWORD: changeme
 GA_CLIENT_ID: 637941761856.apps.googleusercontent.com
 GA_SECRET: Qn7uh6AG0Y3en-NNqM0X-ot_
 FULL_CONTACT_API_KEY: d39f9b411b368b6d
+MANDRILL_USER_NAME: team@badge.co
+MANDRILL_API_KEY: 4ifikFe1NO-pkxJJ9hG4zA
 
 
 production:

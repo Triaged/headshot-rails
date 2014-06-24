@@ -16,7 +16,7 @@ class Google::UserImport
 
 	def fetch_users!
 		response = @client.execute(api_method: @directory.users.list, parameters: {'customer' => 'my_customer'})
-		import = @company.imports.create!	
+		import = @company.imports.create!(provider: Provider.named("google"))	
 		
 		if response.response.status != 200
 			puts response.data.error['errors'].inspect
@@ -29,8 +29,9 @@ class Google::UserImport
 			
 			if User.where(email: email['address']).count < 1
 				imported_user = import.imported_users.find_or_initialize_by(email: email['address'])
+				imported_user.company = @company
 				imported_user.first_name = user['name']['givenName']
-				imported_user.last_name = user['name']['lastName']
+				imported_user.last_name = user['name']['familyName']
 				imported_user.full_name = user['name']['fullName']
 				imported_user.save
 			else

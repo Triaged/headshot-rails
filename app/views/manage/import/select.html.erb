@@ -9,7 +9,7 @@
 
 </div>
 
-<%= form_for @import, :url => manage_import_index_path, :method => :post, :html => {:id => 'import_users_form' } do |f| %>
+<%= form_for [:manage, @import], :html => {:id => 'import_users_form' } do |f| %>
   <% if @import.imported_users.count > 20 %>
     <div class="btns-spacing-m btns-right">
       <%= link_to 'Cancel', manage_users_path, class: "btn-custom btn-default" %>
@@ -60,7 +60,7 @@
             <h1 class="modal-title" id="myModalLabel">Confirm</h4>
           </div>
           <div class="modal-body modal-body-custom">
-            <p>When you submit your <strong>38 contacts</strong>, we’ll send them an email invitation with a link to the app and onboarding insturctions.  
+            <p>When you submit your contacts, we’ll send them an email invitation with a link to the app and onboarding insturctions.  
             <div class="btns-spacing-sm btns-center">
               <%= f.submit 'Submit Contacts', class: "btn-custom btn-primary" %>
             </div>

@@ -3,19 +3,17 @@ class ImportedUser < ActiveRecord::Base
 	belongs_to :import
 
 	def user_exists?
-		user = User.find_by(email: self.email)
-		true
-	rescue
-		false
+		User.exists?(email: self.email)
 	end
 
 	def convert_to_real!
-		self.company.users.create(
+		user = self.company.users.create(
 			email: self.email,
 			first_name: self.first_name,
 			last_name: self.last_name,
-			full_name: self.full_name
 		)
+		Rails.logger.info user.inspect
+		Rails.logger.info user.errors.inspect
 	end
 
 end
