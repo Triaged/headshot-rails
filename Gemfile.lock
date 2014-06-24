@@ -171,6 +171,9 @@ GEM
     minitest (5.3.4)
     minitest-wscolor (0.0.3)
       minitest (>= 2.3.1)
+    mobile-fu (1.3.1)
+      rack-mobile-detect
+      rails
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -214,6 +217,8 @@ GEM
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
+    rack-mobile-detect (0.4.0)
+      rack
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.0)
@@ -323,6 +328,7 @@ DEPENDENCIES
   mandrill-api
   minitest-spec-rails!
   minitest-wscolor
+  mobile-fu
   omniauth
   omniauth-google-oauth2
   paranoia (~> 2.0)
