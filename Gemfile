@@ -32,6 +32,8 @@ gem "paranoia", "~> 2.0"
 gem 'phony_rails'
 gem 'font-awesome-sass'
 gem 'mandrill-api'
+gem 'active_link_to'
+gem 'browser'
 
 
 

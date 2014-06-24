@@ -4,20 +4,17 @@ class AccountsController < ApplicationController
 		@user = current_user
 	end
 
-	def edit
-		@user = current_user
-	end
-
 	def update
 		if current_user.update(user_params)
-      redirect_to root_path, notice: 'Info was successfully updated.'
+      redirect_to account_path, success: 'Info was successfully updated.'
     else
       render :show
     end
 	end
 
+private
 	# Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params[:user].permit(:name, :avatar, :employee_info_attributes => [:job_title, :cell_phone, :office_phone, :job_start_date, :birth_date])
+    params[:user].permit(:first_name, :last_name, :email, :department, :employee_info_attributes => [:cell_phone, :office_phone, :job_title, :birth_date, :job_start_date])
   end
 end

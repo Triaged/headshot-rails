@@ -1,0 +1,65 @@
+<div class="edit-fields">
+  <div class="col-sm-9 col-sm-offset-3">
+    <p class="field-description">Required fields</p>
+  </div>
+  <%= bootstrap_form_for([:manage, @user], url: account_path, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
+    
+
+    <div class="form-inputs">
+    	<%= f.text_field :first_name %>
+    	<%= f.text_field :last_name %>
+    	<%= f.email_field :email %>
+      <div class="col-sm-9 col-sm-offset-3">
+        <% if @user != current_user %> 
+          <p class="field-description">Add these fields so that your contacts don’t have to </p> 
+        <% else %> 
+          <p class="field-description">Optional</p>
+        <% end %>
+      </div>
+      <%= f.collection_select(:department_id, current_company.departments.all, :id, :name) %>
+    	<%= f.fields_for :employee_info do |e| %>
+        <%= e.text_field :job_title %> 
+        <%= e.text_field :cell_phone %>  
+        <%= e.text_field :office_phone %>   
+        <%= e.text_field :birth_date %>  
+        <%= e.text_field :job_start_date %>  
+      <% end %>
+    </div>
+
+
+    <div class="form-actions form-pull-right edit-btns">
+      <%= link_to "Cancel", manage_users_path, class: "btn-custom btn-default" %>
+      
+      <% if current_page?(:action => 'new') %>
+        <%= f.button "Save", type: 'button', class: "btn-custom btn-primary", data: {toggle: "modal", target: "#addContactManual"} %>
+      <% else %>
+        <%= f.button "Save", class: "btn-custom btn-primary" %>
+      <% end %>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addContactManual" tabindex="-1" role="dialog" aria-labelledby="addContactManual" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header modal-header-custom">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><%= icon "times" %></button>
+            <h1 class="modal-title" id="myModalLabel">Confirm</h4>
+          </div>
+          <div class="modal-body modal-body-custom">
+            <p>When you submit your contact, we’ll send them an email invitation with a link to the app and onboarding instructions.  
+            <div class="btns-spacing-sm btns-center">
+              <%= f.submit "Submit New Contact", class: "btn-custom btn-primary" %>
+            </div>
+          </div>
+          <div class="modal-footer modal-footer-custom">
+            <button type="button" class="btn-custom btn-modal btn-default" data-dismiss="modal">No, I still want to edit contact</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+</div>
+
+
