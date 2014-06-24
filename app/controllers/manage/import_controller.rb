@@ -6,7 +6,8 @@ class Manage::ImportController < ManageController
 	end
 
 	def select
-		@import = UserImport.new(current_user.id, current_company.id).import_users(@provider.id)
+		crendentials_id = session[:credentials_id]
+		@import = UserImport.new(current_user.id, current_company.id).import_users(@provider.id, crendentials_id)
 		unless @import.errors.empty?
 			flash[:error] = @import.errors
 			redirect_to manage_import_url(@provider.name)
@@ -17,8 +18,8 @@ class Manage::ImportController < ManageController
 		@import = Import.find(params[:id])
 
 		if @import.update(import_params)
-			UserImport.new(current_user.id, current_company.id).convert_imported_to_real(@import)
-			redirect_to manage_users_path, success: 'Contacts successfully imported.'
+			users = UserImport.new(current_user.id, current_company.id).convert_imported_to_real!(@import)
+			redirect_to manage_users_path, success: "#{view_context.pluralize(users.count, 'contact')} successfully imported."
 		end
 	end
 

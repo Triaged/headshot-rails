@@ -1,10 +1,10 @@
 class Google::UserImport
 
 
-	def initialize user
+	def initialize user, credentials
 		@user = user
 		@company = @user.company
-		google_provider_credentials = @user.provider_credentials.where(provider: Provider.named("google")).first
+		google_provider_credentials = credentials
 		
 		@client = Google::APIClient.new(application_name: 'Headshot', application_version: '1.0')
 		@client.authorization.client_id = ENV['GA_CLIENT_ID']

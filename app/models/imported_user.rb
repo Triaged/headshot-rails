@@ -12,8 +12,8 @@ class ImportedUser < ActiveRecord::Base
 			first_name: self.first_name,
 			last_name: self.last_name,
 		)
-		Rails.logger.info user.inspect
-		Rails.logger.info user.errors.inspect
+		
+		return user
 	end
 
 end

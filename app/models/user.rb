@@ -65,6 +65,7 @@ class User < ActiveRecord::Base
 	  credentials.access_token = access_token
 	  credentials.refresh_token = refresh_token
 	  credentials.save!
+	  return credentials
 	end
 
 	# new function to set the password without knowing the current password used in our confirmation controller. 

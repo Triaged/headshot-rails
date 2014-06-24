@@ -18,6 +18,7 @@ production:
   enhance_image_tag: true
   static_image_support: true
   secure: true
+  cdn_subdomain: true
 test:
   cloud_name: triage
   api_key: '846265839234531'
