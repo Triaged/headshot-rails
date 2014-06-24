@@ -141,6 +141,9 @@ $spacing-xlg: 40px;
 	font-weight: 400;
 	color: $grey;
 	text-align: right;
+	@media(max-width:767px){
+		text-align: left;
+	}
 }
 .field {
 	padding: 7px 0 0 15px;
