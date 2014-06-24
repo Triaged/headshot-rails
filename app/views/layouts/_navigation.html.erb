@@ -13,20 +13,12 @@
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav navbar-right navbar-custom">
           <% if user_signed_in? %>
-          <li class="active">
-            <%= link_to 'Download', download_path %>
-          </li>
+            <%= active_link_to("Download", download_path, :wrap_tag => :li, :class_inactive => 'linkstyle') %>
           <% if is_admin? %>
-          <li class="linkstyle">
-            <%= link_to 'Contacts', manage_users_path %>
-          </li>
-          <li class="linkstyle">
-            <%= link_to 'Company', manage_company_path %>
-          </li>
+            <%= active_link_to("Contacts", manage_users_path, :wrap_tag => :li, :class_inactive => 'linkstyle') %>
+            <%= active_link_to("Company", manage_company_path, :wrap_tag => :li, :class_inactive => 'linkstyle') %>
           <% end %>
-          <li class="linkstyle">
-            <%= link_to 'Profile', account_path %>
-          </li>
+            <%= active_link_to("Profile", account_path, :wrap_tag => :li, :class_inactive => 'linkstyle') %>
           <% end %>
         </ul>
       </nav>

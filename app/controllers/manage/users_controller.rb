@@ -17,7 +17,7 @@ class Manage::UsersController < ManageController
     @user = current_company.users.new(user_params)
 
     if @user.save
-      redirect_to manage_user_path(@user), success: 'User was successfully created.'
+      redirect_to manage_users_path, success: 'Contact was successfully created.'
     else
       render action: 'new'
     end
@@ -34,7 +34,7 @@ class Manage::UsersController < ManageController
 
   def destroy
     @user.destroy
-    redirect_to manage_users_path, success: "#{@user.full_name} was successfully archived."
+    redirect_to manage_users_path, success: "#{@user.full_name} was successfully deactivated."
   end
 
   def resend
