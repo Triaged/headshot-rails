@@ -489,6 +489,9 @@ button.close-custom {
 	background-color: #FFF5E7;
 	margin-top: 100px;
 	max-height: 350px;
+	@media(max-width:767px){ 
+		margin-top: 0;
+	}
 }
 .download-screenshot {
 	margin-top: -80px;
@@ -505,6 +508,16 @@ button.close-custom {
 	}
 	.download-form {
 		margin-top: $spacing-xlg;
+	}
+	@media(max-width:767px){ 
+		margin-top: 40px;
+		.download-form {
+		margin-top: $spacing-m;
+		text-align: center;
+		}
+		.edit-btns {
+			padding-bottom: $spacing-m;
+		}
 	}
 }
 
