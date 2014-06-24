@@ -39,7 +39,7 @@ $spacing-xlg: 40px;
 	margin: 0 10px;
 	background-color: #fff;
 	}
-	.navbar-custom > .linkstyle > a:after {
+	.navbar-custom > .nav-link > a:after {
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -55,8 +55,8 @@ $spacing-xlg: 40px;
 	-moz-transform: translateY(10px);
 	transform: translateY(10px);
 	}
-	.navbar-custom > .linkstyle > a:hover::after,
-	.navbar-custom > .linkstyle > a:focus::after {
+	.navbar-custom > .nav-link > a:hover::after,
+	.navbar-custom > .nav-link > a:focus::after {
 	opacity: 1;
 	-webkit-transform: translateY(0px);
 	-moz-transform: translateY(0px);
@@ -80,6 +80,22 @@ $spacing-xlg: 40px;
 	margin-top: -4px;
 }
 
+@media(max-width:767px){
+	.navbar-toggle-custom {
+		.icon-bar {
+			background-color: $text-color;
+		}
+	}
+	.navbar .in {
+		background-color: #ffffff;
+	}
+	.navbar .navbar-custom > li > a  {
+		background: rgba(225, 225, 225, 0.8);
+	}
+	.navbar .navbar-custom > .active > a::before {
+		height: 0;
+	}
+}
 
 // ELEMENTS
 
@@ -330,6 +346,10 @@ button.close-custom {
 	padding-left: $spacing-xsm;
 	width: 70%;
 	display: inline-block;
+	@media(max-width:767px){ 
+		padding-left: 0;
+		width: 100%;
+	}
 }
 
 .activity-state {
@@ -352,6 +372,10 @@ button.close-custom {
 	.fa-envelope-o {
 		font-size: 20px;
 		color: $grey-light;
+	}
+	@media(max-width:767px){ 
+		width: 100%;
+		text-align: left;
 	}
 }
 

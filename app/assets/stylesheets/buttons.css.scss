@@ -29,6 +29,13 @@ user-select: none;
 	margin-left: $spacing-m;
 }
 
+@media(max-width:767px){ 
+	.btn-custom + .btn-custom {
+	margin-left: 0;
+	margin-top: $spacing-sm;
+	}
+}
+
 
 .btn-custom i {
 	padding-right: 5px;
