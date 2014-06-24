@@ -1,7 +1,7 @@
 require 'mandrill'
 
 class MandrillClient
-	include Sidekiq::Worker
+	#include Sidekiq::Worker
 	class_attribute :template
 
 	attr_accessor :recipient_email, :recipient_name, :from_email, :from_name
