@@ -1,5 +1,718 @@
 <p>Welcome <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>*|MC:SUBJECT|*</title>
+		<style type="text/css">
+					/* /\/\/\/\/\/\/\/\/ CLIENT-SPECIFIC STYLES /\/\/\/\/\/\/\/\/ */
+					#outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+					.ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+					.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing */
+					body, table, td, p, a, li, blockquote{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+					table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+					img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+					/* /\/\/\/\/\/\/\/\/ RESET STYLES /\/\/\/\/\/\/\/\/ */
+					body{margin:0; padding:0;}
+					img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+					table{border-collapse:collapse !important;}
+					body, #bodyTable, #bodyCell{height:100% !important; margin:0; padding:0; width:100% !important;}
+					/* /\/\/\/\/\/\/\/\/ TEMPLATE STYLES /\/\/\/\/\/\/\/\/ */
+					/* ========== Page Styles ========== */
+					#bodyCell{padding:20px;}
+					#templateContainer{width:800px;}
+					/**
+					* @tab Page
+					* @section background style
+					* @tip Set the background color and top border for your email. You may want to choose colors that match your company's branding.
+					* @theme page
+					*/
+					body, #bodyTable{
+						/*@editable*/ background-color:#FFFFFF;
+					}
+					/**
+					* @tab Page
+					* @section background style
+					* @tip Set the background color and top border for your email. You may want to choose colors that match your company's branding.
+					* @theme page
+					*/
+					#bodyCell{
+						/*@editable*/ border-top:4px solid #FFFFFF;
+					}
+					/**
+					* @tab Page
+					* @section email border
+					* @tip Set the border for your email.
+					*/
+					#templateContainer{
+						/*@editable*/ border:1px solid #FFFFFF;
+					}
+					/**
+					* @tab Page
+					* @section heading 1
+					* @tip Set the styling for all first-level headings in your emails. These should be the largest of your headings.
+					* @style heading 1
+					*/
+					h1{
+						/*@editable*/ color:#2CB5A8;
+						display:block;
+						/*@editable*/ font-family:Helvetica;
+						/*@editable*/ font-size:40px;
+						/*@editable*/ font-style:normal;
+						/*@editable*/ font-weight:bold;
+						/*@editable*/ line-height:135%;
+						/*@editable*/ letter-spacing:normal;
+						margin-top:0;
+						margin-right:0;
+						margin-bottom:10px;
+						margin-left:0;
+					}
+					/**
+					* @tab Page
+					* @section heading 2
+					* @tip Set the styling for all second-level headings in your emails.
+					* @style heading 2
+					*/
+					h2{
+						/*@editable*/ color:#2E3B4E !important;
+						display:block;
+						/*@editable*/ font-family:Helvetica;
+						/*@editable*/ font-size:20px;
+						/*@editable*/ font-style:normal;
+						/*@editable*/ font-weight:bold;
+						/*@editable*/ line-height:135%;
+						/*@editable*/ letter-spacing:normal;
+						margin-top:0;
+						margin-right:0;
+						margin-bottom:10px;
+						margin-left:0;
+					}
+					/**
+					* @tab Page
+					* @section heading 3
+					* @tip Set the styling for all third-level headings in your emails.
+					* @style heading 3
+					*/
+					h3{
+						/*@editable*/ color:#919496 !important;
+						display:block;
+						/*@editable*/ font-family:Helvetica;
+						/*@editable*/ font-size:16px;
+						/*@editable*/ font-style:normal;
+						/*@editable*/ font-weight:lighter;
+						/*@editable*/ line-height:150%;
+						/*@editable*/ letter-spacing:normal;
+						margin-top:0;
+						margin-right:0;
+						margin-bottom:10px;
+						margin-left:0;
+					}
+					/**
+					* @tab Page
+					* @section heading 4
+					* @tip Set the styling for all fourth-level headings in your emails. These should be the smallest of your headings.
+					* @style heading 4
+					*/
+					h4{
+						/*@editable*/ color:#2E3B4E !important;
+						display:block;
+						/*@editable*/ font-family:Helvetica;
+						/*@editable*/ font-size:14px;
+						/*@editable*/ font-style:italic;
+						/*@editable*/ font-weight:normal;
+						/*@editable*/ line-height:125%;
+						/*@editable*/ letter-spacing:normal;
+						margin-top:0;
+						margin-right:0;
+						margin-bottom:10px;
+						margin-left:0;
+					}
+					/* ========== Header Styles ========== */
+					/**
+					* @tab Header
+					* @section preheader style
+					* @tip Set the background color and bottom border for your email's preheader area.
+					* @theme header
+					*/
+					#templatePreheader{
+						/*@editable*/ background-color:#FFF5E7;
+					}
+					/**
+					* @tab Header
+					* @section preheader text
+					* @tip Set the styling for your email's preheader text. Choose a size and color that is easy to read.
+					*/
+					.preheaderContent{
+						/*@editable*/ color:#2E3B4E;
+						/*@editable*/ font-family:Helvetica;
+						/*@editable*/ font-size:14px;
+						/*@editable*/ line-height:125%;
+						/*@editable*/ text-align:left;
+									font-weight:lighter;
+					}
+					/**
+					* @tab Header
+					* @section preheader link
+					* @tip Set the styling for your email's preheader links. Choose a color that helps them stand out from your text.
+					*/
+					.preheaderContent a:link, .preheaderContent a:visited, /* Yahoo! Mail Override */ .preheaderContent a .yshortcuts /* Yahoo! Mail Override */{
+						/*@editable*/ color:#2CB5A8;
+						/*@editable*/ font-weight:bold;
+						/*@editable*/ text-decoration:none;
+					}
+					/**
+					* @tab Header
+					* @section header style
+					* @tip Set the background color and borders for your email's header area.
+					* @theme header
+					*/
+					#templateHeader{
+						/*@editable*/ background-color:#FFFFFF;
+					}
+					/**
+					* @tab Header
+					* @section header text
+					* @tip Set the styling for your email's header text. Choose a size and color that is easy to read.
+					*/
+					.headerContent{
+						/*@editable*/ color:#919496;
+						/*@editable*/ font-family:Helvetica;
+						/*@editable*/ font-size:20px;
+						/*@editable*/ font-weight:bold;
+						/*@editable*/ line-height:100%;
+						/*@editable*/ padding-top:0;
+						/*@editable*/ padding-right:0;
+						/*@editable*/ padding-bottom:0;
+						/*@editable*/ padding-left:0;
+						/*@editable*/ text-align:center;
+						/*@editable*/ vertical-align:middle;
+					}
+					/**
+					* @tab Header
+					* @section header link
+					* @tip Set the styling for your email's header links. Choose a color that helps them stand out from your text.
+					*/
+					.headerContent a:link, .headerContent a:visited, /* Yahoo! Mail Override */ .headerContent a .yshortcuts /* Yahoo! Mail Override */{
+						/*@editable*/ color:#EB4102;
+						/*@editable*/ font-weight:normal;
+						/*@editable*/ text-decoration:underline;
+					}
+					#headerImage{
+						height:auto;
+						max-width:600px;
+					}
+					/* ========== Body Styles ========== */
+					/**
+					* @tab Body
+					* @section body style
+					* @tip Set the background color and borders for your email's body area.
+					*/
+					#templateBody{
+						/*@editable*/ background-color:#FFFFFF;
+					}
+					/**
+					* @tab Body
+					* @section body text
+					* @tip Set the styling for your email's main content text. Choose a size and color that is easy to read.
+					* @theme main
+					*/
+					.bodyContent{
+						/*@editable*/ color:#BBBBBB;
+						/*@editable*/ font-family:Helvetica;
+						/*@editable*/ font-size:14px;
+						/*@editable*/ line-height:150%;
+						padding-top:20px;
+						padding-right:20px;
+						padding-bottom:20px;
+						padding-left:20px;
+						/*@editable*/ text-align:center;
+					}
+					/**
+					* @tab Body
+					* @section body link
+					* @tip Set the styling for your email's main content links. Choose a color that helps them stand out from your text.
+					*/
+					.bodyContent a:link, .bodyPreContent a:visited, /* Yahoo! Mail Override */ .bodyContent a .yshortcuts /* Yahoo! Mail Override */{
+						/*@editable*/ color:#FF9D00;
+						/*@editable*/ font-weight:normal;
+						/*@editable*/ text-decoration:underline;
+					}
+					.bodyContent img{
+						display:inline;
+						height:auto;
+						max-width:560px;
+					}
+					#templateBodyHeadline{
+						/*@editable*/ background-color:#FFF5E7;
+					}
+					#templateBodyHeadline h1{
+						/*@editable*/ color:#2E3B4E;
+					}
+					/**
+					* @tab Body
+					* @section body text
+					* @tip Set the styling for your email's main content text. Choose a size and color that is easy to read.
+					* @theme main
+					*/
+					.bodyHeadline{
+						/*@editable*/ color:#BBBBBB;
+						/*@editable*/ font-family:Helvetica;
+						/*@editable*/ font-size:14px;
+						/*@editable*/ line-height:150%;
+						padding-top:20px;
+						padding-right:20px;
+						padding-bottom:10px;
+						padding-left:20px;
+						/*@editable*/ text-align:left;
+					}
+					/* ========== Column Styles ========== */
+					.templateColumnContainer{width:260px;}
+					/**
+					* @tab Columns
+					* @section column style
+					* @tip Set the background color and borders for your email's column area.
+					*/
+					.templateColumns{
+						/*@editable*/ background-color:#FFF5E7;
+									padding-top: 20px;
+						/*@editable*/ border-bottom:15px solid #FFFFFF;
+					}
+					/**
+					* @tab Columns
+					* @section left column text
+					* @tip Set the styling for your email's left column content text. Choose a size and color that is easy to read.
+					*/
+					.leftColumnContent{
+						/*@editable*/ color:#919496;
+						/*@editable*/ font-family:Helvetica;
+						/*@editable*/ font-size:14px;
+						/*@editable*/ line-height:150%;
+						/*@editable*/ font-weight:lighter;
+						padding-top:20px;
+						padding-bottom:20px;
+						padding-right:20px;
+						padding-left:20px;
+						/*@editable*/ text-align:left;
+					}
+					/**
+					* @tab Columns
+					* @section left column link
+					* @tip Set the styling for your email's left column content links. Choose a color that helps them stand out from your text.
+					*/
+					.leftColumnContent a:link, .leftColumnContent a:visited, /* Yahoo! Mail Override */ .leftColumnContent a .yshortcuts /* Yahoo! Mail Override */{
+						/*@editable*/ color:#FF9D00;
+						/*@editable*/ font-weight:normal;
+						/*@editable*/ text-decoration:underline;
+					}
+					/**
+					* @tab Columns
+					* @section right column text
+					* @tip Set the styling for your email's right column content text. Choose a size and color that is easy to read.
+					*/
+					.rightColumnContent{
+						/*@editable*/ color:#919496;
+						/*@editable*/ font-family:Helvetica;
+						/*@editable*/ font-size:14px;
+						/*@editable*/ line-height:150%;
+						/*@editable*/ font-weight:lighter;
+						padding-top:20px;
+						padding-bottom:20px;
+						padding-right:20px;
+						padding-left:20px;
+						/*@editable*/ text-align:left;
+					}
+					/**
+					* @tab Columns
+					* @section right column link
+					* @tip Set the styling for your email's right column content links. Choose a color that helps them stand out from your text.
+					*/
+					.rightColumnContent a:link, .rightColumnContent a:visited, /* Yahoo! Mail Override */ .rightColumnContent a .yshortcuts /* Yahoo! Mail Override */{
+						/*@editable*/ color:#FF9D00;
+						/*@editable*/ font-weight:normal;
+						/*@editable*/ text-decoration:underline;
+					}
+					.leftColumnContent img{
+						display:inline;
+						height:auto;
+						max-width:260px;
+					}
+					.rightColumnContent img{
+						display:inline;
+						height:auto;
+						max-width:260px;
+					}
+					.center {
+						text-align: center !important;
+					}
+					.text-left {
+						padding-left: 40px;
+						padding-top: 120px;
+					}
+					.text-right {
+						padding-top: 120px;
+						padding-right: 40px;
+					}
+					/* ========== Footer Styles ========== */
+					/**
+					* @tab Footer
+					* @section footer style
+					* @tip Set the background color and borders for your email's footer area.
+					* @theme footer
+					*/
+					#templateFooter{
+						/*@editable*/ background-color:#FFFFFF;
+						/*@editable*/ border-top:1px solid #FFFFFF;
+					}
+					/**
+					* @tab Footer
+					* @section footer text
+					* @tip Set the styling for your email's footer text. Choose a size and color that is easy to read.
+					* @theme footer
+					*/
+					.footerContent{
+						/*@editable*/ color:#808080;
+						/*@editable*/ font-family:Helvetica;
+						/*@editable*/ font-size:10px;
+						/*@editable*/ line-height:150%;
+						padding-top:20px;
+						padding-right:20px;
+						padding-bottom:20px;
+						padding-left:20px;
+						/*@editable*/ text-align:center;
+					}
+					/**
+					* @tab Footer
+					* @section footer link
+					* @tip Set the styling for your email's footer links. Choose a color that helps them stand out from your text.
+					*/
+					.footerContent a:link, .footerContent a:visited, /* Yahoo! Mail Override */ .footerContent a .yshortcuts, .footerContent a span /* Yahoo! Mail Override */{
+						/*@editable*/ color:#FF9D00;
+						/*@editable*/ font-weight:normal;
+						/*@editable*/ text-decoration:underline;
+					}
+					/* /\/\/\/\/\/\/\/\/ MOBILE STYLES /\/\/\/\/\/\/\/\/ */
+		@media only screen and (max-width: 480px){
+						/* /\/\/\/\/\/\/ CLIENT-SPECIFIC MOBILE STYLES /\/\/\/\/\/\/ */
+						body, table, td, p, a, li, blockquote{-webkit-text-size-adjust:none !important;} /* Prevent Webkit platforms from changing default text sizes */
+		body{width:100% !important; min-width:100% !important;} /* Prevent iOS Mail from adding padding to the body */
+						/* /\/\/\/\/\/\/ MOBILE RESET STYLES /\/\/\/\/\/\/ */
+						#bodyCell{padding:10px !important;}
+						/* /\/\/\/\/\/\/ MOBILE TEMPLATE STYLES /\/\/\/\/\/\/ */
+						/* ======== Page Styles ======== */
+						/**
+						* @tab Mobile Styles
+						* @section template width
+						* @tip Make the template fluid for portrait or landscape view adaptability. If a fluid layout doesn't work for you, set the width to 300px instead.
+						*/
+						#templateContainer{
+							max-width:600px !important;
+							/*@editable*/ width:100% !important;
+						}
+						/**
+						* @tab Mobile Styles
+						* @section heading 1
+						* @tip Make the first-level headings larger in size for better readability on small screens.
+						*/
+						h1{
+							/*@editable*/ font-size:24px !important;
+							/*@editable*/ line-height:100% !important;
+						}
+						/**
+						* @tab Mobile Styles
+						* @section heading 2
+						* @tip Make the second-level headings larger in size for better readability on small screens.
+						*/
+						h2{
+							/*@editable*/ font-size:20px !important;
+							/*@editable*/ line-height:100% !important;
+						}
+						/**
+						* @tab Mobile Styles
+						* @section heading 3
+						* @tip Make the third-level headings larger in size for better readability on small screens.
+						*/
+						h3{
+							/*@editable*/ font-size:18px !important;
+							/*@editable*/ line-height:100% !important;
+						}
+						/**
+						* @tab Mobile Styles
+						* @section heading 4
+						* @tip Make the fourth-level headings larger in size for better readability on small screens.
+						*/
+						h4{
+							/*@editable*/ font-size:16px !important;
+							/*@editable*/ line-height:100% !important;
+						}
+						/* ======== Header Styles ======== */
+						#templatePreheader{display:none !important;} /* Hide the template preheader to save space */
+						/**
+						* @tab Mobile Styles
+						* @section header image
+						* @tip Make the main header image fluid for portrait or landscape view adaptability, and set the image's original width as the max-width. If a fluid setting doesn't work, set the image width to half its original size instead.
+						*/
+						#headerImage{
+							height:auto !important;
+							/*@editable*/ max-width:600px !important;
+							/*@editable*/ width:100% !important;
+						}
+						/**
+						* @tab Mobile Styles
+						* @section header text
+						* @tip Make the header content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+						*/
+						.headerContent{
+							/*@editable*/ font-size:20px !important;
+							/*@editable*/ line-height:125% !important;
+						}
+						/* ======== Body Styles ======== */
+						/**
+						* @tab Mobile Styles
+						* @section body text
+						* @tip Make the body content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+						*/
+						.bodyContent{
+							/*@editable*/ font-size:18px !important;
+							/*@editable*/ line-height:125% !important;
+						}
+						/* ======== Column Styles ======== */
+						.templateColumnContainer{display:block !important; width:100% !important;}
+						/**
+						* @tab Mobile Styles
+						* @section column image
+						* @tip Make the column image fluid for portrait or landscape view adaptability, and set the image's original width as the max-width. If a fluid setting doesn't work, set the image width to half its original size instead.
+						*/
+						.columnImage{
+							height:auto !important;
+							/*@editable*/ max-width:480px !important;
+							/*@editable*/ width:100% !important;
+						}
+						/**
+						* @tab Mobile Styles
+						* @section left column text
+						* @tip Make the left column content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+						*/
+						.leftColumnContent{
+							/*@editable*/ font-size:16px !important;
+							/*@editable*/ line-height:125% !important;
+						}
+						/**
+						* @tab Mobile Styles
+						* @section right column text
+						* @tip Make the right column content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+						*/
+						.rightColumnContent{
+							/*@editable*/ font-size:16px !important;
+							/*@editable*/ line-height:125% !important;
+						}
+						/* ======== Footer Styles ======== */
+						/* ======== Footer Styles ======== */
+						/**
+						* @tab Mobile Styles
+						* @section footer text
+						* @tip Make the body content text larger in size for better readability on small screens.
+						*/
+						.footerContent{
+							/*@editable*/ font-size:14px !important;
+							/*@editable*/ line-height:115% !important;
+						}
+						.footerContent a{display:block !important;} /* Place footer social and utility links on their own lines, for easier access */
+					}
+		</style>
+	</head>
+	<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;margin: 0;padding: 0;background-color: #FFFFFF;height: 100% !important;width: 100% !important;">
+		<center>
+		<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;margin: 0;padding: 0;background-color: #FFFFFF;border-collapse: collapse !important;height: 100% !important;width: 100% !important;">
+			<tbody><tr>
+				<td align="center" valign="top" id="bodyCell" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;margin: 0;padding: 20px;border-top: 4px solid #FFFFFF;height: 100% !important;width: 100% !important;">
+					<!-- BEGIN TEMPLATE // -->
+					<table border="0" cellpadding="0" cellspacing="0" id="templateContainer" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 800px;border: 1px solid #FFFFFF;border-collapse: collapse !important;">
+						<tbody><tr>
+							<td align="center" valign="top" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+								<!-- BEGIN PREHEADER // -->
+								<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader" style="background-color: #FFF5E7;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+									<tbody><tr>
+										<td valign="top" class="preheaderContent" style="padding-top: 15px;padding-right: 20px;padding-bottom: 15px;padding-left: 20px;color: #2E3B4E;font-family: Helvetica;font-size: 14px;line-height: 125%;text-align: left;font-weight: lighter;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" mc:edit="preheader_content00">
+											<a href="http://badge.co/" target="_blank" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #2CB5A8;font-weight: bold;text-decoration: none;">Badge</a>
+										</td>
+										<!-- *|IFNOT:ARCHIVE_PAGE|* -->
+										<td valign="top" width="380" class="preheaderContent" style="padding-top: 15px;padding-right: 20px;padding-bottom: 15px;padding-left: 0;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #2E3B4E;font-family: Helvetica;font-size: 14px;line-height: 125%;text-align: left;font-weight: lighter;" mc:edit="preheader_content01">
+											Private beta invite to Badge from your collegue, JT White
+										</td>
+										<!-- *|END:IF|* -->
+									</tr>
+								</tbody></table>
+								<!-- // END PREHEADER -->
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="top" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+								<!-- BEGIN HEADER // -->
+								<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;border-collapse: collapse !important;">
+									<tbody><tr>
+										<td valign="top" width="100%" class="headerContent" style="padding-top: 20px;padding-right: 10%;padding-left: 10%;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #919496;font-family: Helvetica;font-size: 20px;font-weight: bold;line-height: 100%;padding-bottom: 0;text-align: center;vertical-align: middle;">
+											<h1 style="padding-bottom: 20px;color: #2CB5A8;display: block;font-family: Helvetica;font-size: 40px;font-style: normal;font-weight: bold;line-height: 135%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;">Congrats!</h1>
+											<img src="https://ci4.googleusercontent.com/proxy/P-AwFeBJqGoxFnb0KbGFZP6bAvqkWmZyuv1irF_Lrnr4aUJPrV50QxnYi-1_P-rZpY1AbLpkI4udW8HLHUZLW0e_evpszW6aXUk6BXlzmF5cEnumZqvftACpFN_imDDKqt_dcErkjLWO4w-UcCWu5WN_0f1ajBb2ecY7yw=s0-d-e1-ft#http://gallery.mailchimp.com/09719a524b376a51bc97e6bd7/images/0ad45720-378c-4709-ab76-7b4b4da70da4.png" style="max-width: 100px;padding-bottom: 20px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;" id="headerImage" mc:label="header_image" mc:edit="header_image" mc:allowdesigner="" mc:allowtext="">
+										</td>
+									</tr>
+								</tbody></table>
+								<!-- // END HEADER -->
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="top" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+								<!-- BEGIN BODY // -->
+								<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;border-collapse: collapse !important;">
+									<tbody><tr>
+										<td valign="top" class="bodyContent" mc:edit="body_content" style="padding-top: 20px;padding-right: 10%;padding-left: 10%;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #BBBBBB;font-family: Helvetica;font-size: 14px;line-height: 150%;padding-bottom: 20px;text-align: center;">
+											<h2 style="padding-bottom: 20px;display: block;font-family: Helvetica;font-size: 20px;font-style: normal;font-weight: bold;line-height: 135%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #2E3B4E !important;">Amy, your collegue, James White, <br> has invited you to Headshot’s private beta!</h2>
+											<h3 style="display: block;font-family: Helvetica;font-size: 16px;font-style: normal;font-weight: lighter;line-height: 150%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #919496 !important;">Headshot is mobile directory for you and your team. <br>James signed [Company Name] up, and created an account for you. <br>Use the buttons below to sign in, and join your team!</h3>
+										</td>
+									</tr>
+								</tbody></table>
+								<!-- // END BODY -->
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="top" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+								<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+									<tbody>
+										<tr>
+											<td style="padding-top: 0;padding-right: 18px;padding-bottom: 40px;padding-left: 18px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" valign="top" align="center">
+												<table border="0" cellpadding="0" cellspacing="0" style="background-color: #FF9D00;border-radius: 5px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+													<tbody>
+														<tr>
+															<td align="center" valign="middle" style="color: #FFFFFF;border-color: #FF9D00;font-family: Helvetica, Arial, sans-serif;font-size: 16px;letter-spacing: .5px;line-height: 150%;padding-top: 10px;padding-right: 50px;padding-bottom: 10px;padding-left: 50px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+																<a href="http://www.mailchimp.com/blog/" target="_blank" style="color: #FFFFFF;text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;"><%= link_to 'Sign in to your account', confirmation_url(@resource, confirmation_token: @token) %></a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="top" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+								<!-- BEGIN COLUMNS // -->
+								<table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateColumns" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFF5E7;padding-top: 20px;border-bottom: 15px solid #FFFFFF;border-collapse: collapse !important;">
+									<tbody><tr mc:repeatable="">
+										<td align="center" valign="top" class="templateColumnContainer" style="padding-top: 10px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 260px;">
+											<table border="0" cellpadding="20" cellspacing="0" width="100%" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+												<tbody><tr>
+													<td valign="top" class="leftColumnContent text-left" mc:edit="left_column_content" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #919496;font-family: Helvetica;font-size: 14px;line-height: 150%;font-weight: lighter;padding-top: 120px;padding-bottom: 20px;padding-right: 20px;padding-left: 40px;text-align: left;">
+														<h1 style="color: #2CB5A8;display: block;font-family: Helvetica;font-size: 40px;font-style: normal;font-weight: bold;line-height: 135%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;">What is Badge?</h1>
+														<h2 style="padding-top: 10px;display: block;font-family: Helvetica;font-size: 20px;font-style: normal;font-weight: bold;line-height: 135%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #2E3B4E !important;">Connect with everyone at work.</h2>
+														<h3 style="padding-top: 10px;padding-bottom: 20px;display: block;font-family: Helvetica;font-size: 16px;font-style: normal;font-weight: lighter;line-height: 150%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #919496 !important;">Headshot gives you access to everyone you work with.</h3>
+														Easy Access To:
+														<ul>
+															<li style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">People</li>
+															<li style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">Communication</li>
+															<li style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">Activity</li>
+														</ul>
+													</td>
+												</tr>
+											</tbody></table>
+										</td>
+										<td align="center" valign="top" class="templateColumnContainer" style="padding-top: 10px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 260px;">
+											<table border="0" cellpadding="20" cellspacing="0" width="100%" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+												<tbody><tr>
+													<td class="rightColumnContent center" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #919496;font-family: Helvetica;font-size: 14px;line-height: 150%;font-weight: lighter;padding-top: 20px;padding-bottom: 20px;padding-right: 20px;padding-left: 20px;text-align: center !important;">
+														<img src="https://ci5.googleusercontent.com/proxy/1nUo48-uHUQQ1QXJCTR6VnUzC3GbDTKyshWNoVH19t14uo5rgO8VeWbUoyxffAzWRkwoToOf1fsS9TKnvUTDGUsBp_E5Nx7VFm-kVJZ5LX8V4g_5YQQvn7mELwKAAqVVZsaVS2Sl4MST25bGA3IK3ze51ORXlndO87W2LQ=s0-d-e1-ft#http://gallery.mailchimp.com/09719a524b376a51bc97e6bd7/images/6733868d-5209-4da4-8cc5-f60844c715d6.png" style="max-width: 260px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" class="columnImage" mc:label="right_column_image" mc:edit="right_column_image">
+													</td>
+												</tr>
+											</tbody></table>
+										</td>
+									</tr>
+								</tbody></table>
+								<table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateColumns" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;padding-top: 20px;border-bottom: 15px solid #FFFFFF;border-collapse: collapse !important;">
+									<tbody><tr mc:repeatable="">
+										<td align="center" valign="top" class="templateColumnContainer" style="padding-top: 20px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 260px;">
+											<table border="0" cellpadding="20" cellspacing="0" width="100%" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+												<tbody><tr>
+													<td class="leftColumnContent center" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #919496;font-family: Helvetica;font-size: 14px;line-height: 150%;font-weight: lighter;padding-top: 20px;padding-bottom: 20px;padding-right: 20px;padding-left: 20px;text-align: center !important;">
+														<img src="https://ci3.googleusercontent.com/proxy/8lo1k5KMCAbT3xDrs0PupX59d7GfhTCHriH4etN45IO0aQAg6papaoa1GDrJHurK7E1QsP9Pfe3-D2SigTBv62STSltvIBLmxpNJ4zPK7AyOAkd2CSvwF-0R3GK2UnRVQe0je04Guc1mRVFKEPKKgpLSlDkvoTI2XMaSSQ=s0-d-e1-ft#http://gallery.mailchimp.com/09719a524b376a51bc97e6bd7/images/69698251-6637-4887-98a4-c78f060a2aae.png" style="max-width: 260px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" class="columnImage" mc:label="left_column_image" mc:edit="left_column_image">
+													</td>
+												</tr>
+											</tbody></table>
+										</td>
+										<td align="center" valign="top" class="templateColumnContainer" style="padding-top: 20px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 260px;">
+											<table border="0" cellpadding="20" cellspacing="0" width="100%" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+												
+												<tbody><tr>
+													<td valign="top" class="rightColumnContent text-right" mc:edit="right_column_content" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #919496;font-family: Helvetica;font-size: 14px;line-height: 150%;font-weight: lighter;padding-top: 120px;padding-bottom: 20px;padding-right: 40px;padding-left: 20px;text-align: left;">
+														<h2 style="display: block;font-family: Helvetica;font-size: 20px;font-style: normal;font-weight: bold;line-height: 135%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #2E3B4E !important;">Easy access to your teammates work infomation.</h2>
+														<h3 style="padding-top: 20px;padding-bottom: 20px;display: block;font-family: Helvetica;font-size: 16px;font-style: normal;font-weight: lighter;line-height: 150%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #919496 !important;">Everything that you need on a day to day basis.</h3>
+														Profile Includes:
+														<ul>
+															<li style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">Availibility</li>
+															<li style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">Position</li>
+															<li style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">Team</li>
+														</ul>
+													</td>
+												</tr>
+											</tbody></table>
+										</td>
+									</tr>
+								</tbody></table>
+								<table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateColumns" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFF5E7;padding-top: 20px;border-bottom: 15px solid #FFFFFF;border-collapse: collapse !important;">
+									<tbody><tr mc:repeatable="">
+										<td align="center" valign="top" class="templateColumnContainer" style="padding-top: 20px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 260px;">
+											<table border="0" cellpadding="20" cellspacing="0" width="100%" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+												
+												<tbody><tr>
+													<td valign="top" class="leftColumnContent text-left" mc:edit="right_column_content" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #919496;font-family: Helvetica;font-size: 14px;line-height: 150%;font-weight: lighter;padding-top: 120px;padding-bottom: 20px;padding-right: 20px;padding-left: 40px;text-align: left;">
+														<h2 style="display: block;font-family: Helvetica;font-size: 20px;font-style: normal;font-weight: bold;line-height: 135%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #2E3B4E !important;">Communicating that's completely hassle free.</h2>
+														<h3 style="padding-top: 20px;padding-bottom: 20px;display: block;font-family: Helvetica;font-size: 16px;font-style: normal;font-weight: lighter;line-height: 150%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #919496 !important;">Simple, private messaging for you and your team.</h3>
+														Useful Features:
+														<ul>
+															<li style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">Multi-person messaging</li>
+															<li style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">Chat around a calendar event.</li>
+														</ul>
+													</td>
+												</tr>
+											</tbody></table>
+										</td>
+										<td align="center" valign="top" class="templateColumnContainer" style="padding-top: 20px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 260px;">
+											<table border="0" cellpadding="20" cellspacing="0" width="100%" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+												<tbody><tr>
+													<td class="rightColumnContent center" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #919496;font-family: Helvetica;font-size: 14px;line-height: 150%;font-weight: lighter;padding-top: 20px;padding-bottom: 20px;padding-right: 20px;padding-left: 20px;text-align: center !important;">
+														<img src="https://ci5.googleusercontent.com/proxy/1nUo48-uHUQQ1QXJCTR6VnUzC3GbDTKyshWNoVH19t14uo5rgO8VeWbUoyxffAzWRkwoToOf1fsS9TKnvUTDGUsBp_E5Nx7VFm-kVJZ5LX8V4g_5YQQvn7mELwKAAqVVZsaVS2Sl4MST25bGA3IK3ze51ORXlndO87W2LQ=s0-d-e1-ft#http://gallery.mailchimp.com/09719a524b376a51bc97e6bd7/images/6733868d-5209-4da4-8cc5-f60844c715d6.png" style="max-width: 260px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" class="columnImage" mc:label="right_column_image" mc:edit="right_column_image">
+													</td>
+												</tr>
+											</tbody></table>
+										</td>
+									</tr>
+								</tbody></table>
+								<!-- // END COLUMNS -->
+							</td>
+						</tr>
+						
+						<tr>
+							<td align="center" valign="top" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+								<!-- BEGIN FOOTER // -->
+								<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;border-top: 1px solid #FFFFFF;border-collapse: collapse !important;">
+									<tbody><tr>
+										<td valign="top" class="footerContent" mc:edit="footer_content00" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #808080;font-family: Helvetica;font-size: 10px;line-height: 150%;padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: center;">
+											<a href="*|TWITTER:PROFILEURL|*" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #FF9D00;font-weight: normal;text-decoration: underline;">Follow Badge on Twitter</a>&nbsp;&nbsp;&nbsp;<a href="*|FORWARD|*" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #FF9D00;font-weight: normal;text-decoration: underline;">Forward to Friend</a>&nbsp;
+										</td>
+									</tr>
+									<tr>
+										<td valign="top" class="footerContent" style="padding-top: 20px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #808080;font-family: Helvetica;font-size: 10px;line-height: 150%;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: center;" mc:edit="footer_content01">
+											<em>Copyright © *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.</em>
+										</td>
+									</tr>
+								</tbody></table>
+								<!-- // END FOOTER -->
+							</td>
+						</tr>
+					</tbody></table>
+					<!-- // END TEMPLATE -->
+				</td>
+			</tr>
+		</tbody></table>
+		</center>
+	
+</body></html>
