@@ -39,7 +39,7 @@ $spacing-xlg: 40px;
 	margin: 0 10px;
 	background-color: #fff;
 	}
-	.navbar-custom > .linkstyle > a:after {
+	.navbar-custom > .nav-link > a:after {
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -55,8 +55,8 @@ $spacing-xlg: 40px;
 	-moz-transform: translateY(10px);
 	transform: translateY(10px);
 	}
-	.navbar-custom > .linkstyle > a:hover::after,
-	.navbar-custom > .linkstyle > a:focus::after {
+	.navbar-custom > .nav-link > a:hover::after,
+	.navbar-custom > .nav-link > a:focus::after {
 	opacity: 1;
 	-webkit-transform: translateY(0px);
 	-moz-transform: translateY(0px);
@@ -78,6 +78,23 @@ $spacing-xlg: 40px;
 	padding-right: $spacing-xsm;
 	height: 12px;
 	margin-top: -4px;
+}
+
+@media(max-width:767px){
+	.navbar-toggle-custom {
+		.icon-bar {
+			background-color: $text-color;
+		}
+	}
+	.navbar .in {
+		background-color: #ffffff;
+	}
+	.navbar .navbar-custom > li > a  {
+		background: rgba(225, 225, 225, 0.8);
+	}
+	.navbar .navbar-custom > .active > a::before {
+		height: 0;
+	}
 }
 
 // ELEMENTS
@@ -124,6 +141,9 @@ $spacing-xlg: 40px;
 	font-weight: 400;
 	color: $grey;
 	text-align: right;
+	@media(max-width:767px){
+		text-align: left;
+	}
 }
 .field {
 	padding: 7px 0 0 15px;
@@ -329,6 +349,10 @@ button.close-custom {
 	padding-left: $spacing-xsm;
 	width: 70%;
 	display: inline-block;
+	@media(max-width:767px){ 
+		padding-left: 0;
+		width: 100%;
+	}
 }
 
 .activity-state {
@@ -351,6 +375,10 @@ button.close-custom {
 	.fa-envelope-o {
 		font-size: 20px;
 		color: $grey-light;
+	}
+	@media(max-width:767px){ 
+		width: 100%;
+		text-align: left;
 	}
 }
 
@@ -461,6 +489,9 @@ button.close-custom {
 	background-color: #FFF5E7;
 	margin-top: 100px;
 	max-height: 350px;
+	@media(max-width:767px){ 
+		margin-top: 0;
+	}
 }
 .download-screenshot {
 	margin-top: -80px;
@@ -477,6 +508,16 @@ button.close-custom {
 	}
 	.download-form {
 		margin-top: $spacing-xlg;
+	}
+	@media(max-width:767px){ 
+		margin-top: 40px;
+		.download-form {
+		margin-top: $spacing-m;
+		text-align: center;
+		}
+		.edit-btns {
+			padding-bottom: $spacing-m;
+		}
 	}
 }
 
