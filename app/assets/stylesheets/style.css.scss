@@ -327,34 +327,31 @@ button.close-custom {
 
 .contact {
 	padding-left: $spacing-xsm;
-	width: 73%;
+	width: 70%;
 	display: inline-block;
 }
 
 .activity-state {
-	width: 25%;
+	width: 28%;
 	display: inline-block;
 	text-align: right;
 	p {
 		display: inline;
+	}
+	.active {
 		color: $active;
 	}
 	i {
 		padding: 0 15px;
+	}
+	.fa-mobile {
 		font-size: 26px;
-		position: relative;
-		top: 2px; 
 		color: $active;
 	}
-	// non-active
-	// p {
-	// 	display: inline;
-	// 	color: $deactive;
-	// }
-	// i {
-	// 	font-size: 20px;
-	// 	color: $deactive;
-	// 	}
+	.fa-envelope-o {
+		font-size: 20px;
+		color: $grey-light;
+	}
 }
 
 
@@ -444,6 +441,13 @@ button.close-custom {
 		padding-top: $spacing-sm;
 }
 
+// Company
+
+// Ofice Location & Departments
+
+.form-padding {
+	padding-top: 10px;
+}
 
 // Sign-in Page 
 

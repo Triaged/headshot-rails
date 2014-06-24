@@ -12,25 +12,24 @@
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav navbar-right navbar-custom">
+          <% if user_signed_in? %>
           <li class="active">
-            <% if user_signed_in? %>
-            <li class="active">
-              <%= link_to 'Download', download_path %>
-            </li>
-            <% if is_admin? %>
-            <li class="linkstyle">
-              <%= link_to 'Contacts', manage_users_path %>
-            </li>
-            <li class="linkstyle">
-              <%= link_to 'Company', manage_company_path %>
-            </li>
-            <% end %>
-            <li class="linkstyle">
-              <%= link_to 'Profile', account_path %>
-            </li>
-            <% end %>
-          </ul>
-        </nav>
-      </div>
+            <%= link_to 'Download', download_path %>
+          </li>
+          <% if is_admin? %>
+          <li class="linkstyle">
+            <%= link_to 'Contacts', manage_users_path %>
+          </li>
+          <li class="linkstyle">
+            <%= link_to 'Company', manage_company_path %>
+          </li>
+          <% end %>
+          <li class="linkstyle">
+            <%= link_to 'Profile', account_path %>
+          </li>
+          <% end %>
+        </ul>
+      </nav>
     </div>
-  </header>
+  </div>
+</header>

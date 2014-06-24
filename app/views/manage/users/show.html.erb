@@ -19,7 +19,7 @@
 </div>
 <% unless @user.installed_app %>
   <div class="profile-status border">
-    <h3><%= @user.first_name %> has not yet accepted her email invitation.</h3>
+    <h3><%= @user.first_name %> has not yet accepted the email invitation.</h3>
     <div class="profile-status-btn">
       <%= link_to 'Resend Invitation', resend_manage_user_path(@user), method: :put, class: "btn-custom btn-primary" %>
     </div>
@@ -46,7 +46,7 @@
         <h1 class="modal-title" id="myModalLabel">Confirm</h4>
       </div>
       <div class="modal-body modal-body-custom">
-        <p>When you submit your contact, we’ll send them an email invitation with a link to the app and onboarding insturctions. </p>
+        <p>After you deactivate <%= @user.first_name.capitalize %>, the user will not be able to access their Badge account, and their account information will be archived into your deactivated contact list within your company profile.</p>
         <div class="btns-spacing-sm btns-center">
           <%= link_to "Deactivate #{@user.first_name.capitalize}", manage_user_path(@user), method: :delete, class: "btn-custom btn-primary" %>
         </div>
