@@ -1,5 +1,4 @@
 class DownloadsController < ApplicationController
-	has_mobile_fu
 	layout "download"
 	
 	def show

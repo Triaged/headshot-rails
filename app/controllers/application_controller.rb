@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :subdomain, :current_company, :is_admin?
   before_filter :authenticate_user!, :validate_subdomain
+  before_action :set_device_type
+
+  def set_device_type
+    request.variant = :mobile if browser.mobile?
+  end
 
   def after_sign_in_path_for(resource)
     if resource.is_a? Admin
