@@ -5,7 +5,8 @@ class AccountsController < ApplicationController
 	end
 
 	def update
-		if current_user.update(user_params)
+		@user = current_user
+		if @user.update(user_params)
       redirect_to account_path, success: 'Info was successfully updated.'
     else
       render :show

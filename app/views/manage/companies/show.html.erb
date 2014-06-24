@@ -64,5 +64,7 @@
   </div>
 </div>
 <div class="final-links no-border">
-  <p><%= link_to 'Archived Contacts', archived_manage_users_path %></p>
+  <% unless current_company.users.only_deleted.empty? %>
+    <p><%= link_to 'Archived Contacts', archived_manage_users_path %></p>
+  <% end %>
 </div>

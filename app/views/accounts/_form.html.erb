@@ -2,7 +2,7 @@
   <div class="col-sm-9 col-sm-offset-3">
     <p class="field-description">Required fields</p>
   </div>
-  <%= bootstrap_form_for([:manage, @user], url: account_path, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
+  <%= bootstrap_form_for([:manage, @user], url: account_path, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9", html: {class: "edit_user"}) do |f| %>
     
 
     <div class="form-inputs">
@@ -21,8 +21,8 @@
         <%= e.text_field :job_title %> 
         <%= e.text_field :cell_phone %>  
         <%= e.text_field :office_phone %>   
-        <%= e.text_field :birth_date %>  
-        <%= e.text_field :job_start_date %>  
+        <%= e.text_field :birth_date, class: "datepicker" %>  
+        <%= e.text_field :job_start_date, class: "datepicker" %>  
       <% end %>
     </div>
 

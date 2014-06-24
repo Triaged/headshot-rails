@@ -16,4 +16,7 @@
 //= require bootstrap
 //= require searchFilter
 //= require select2
+//= require bootstrapValidator.min
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_tree .

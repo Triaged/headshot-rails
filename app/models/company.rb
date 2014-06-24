@@ -18,4 +18,8 @@ class Company < ActiveRecord::Base
 		name[0].capitalize
 	end
 
+	def admin_user
+		self.users.where(admin: true).first
+	end
+
 end
