@@ -1,4 +1,4 @@
-<div class="headline">
+<div class="headline border">
   <h3>Change Password</h3>
 </div>
 
@@ -6,12 +6,16 @@
 <div class="edit-fields">
   <%= bootstrap_form_for(resource, :as => resource_name, :url => user_registration_path(resource_name), :html => { :method => :put, :role => 'form'}, layout: :horizontal, label_col: "col-sm-4", control_col: "col-sm-8") do |f| %>
     <%= devise_error_messages! %>
+    
 
     <div class="form-inputs">
+      <div class="col-sm-8 col-sm-offset-4">
+        <p class="field-description">Enter your current password to make changes.</p> 
+      </div>
+      <%= f.password_field :current_password, class: 'form-control' %>
+      </br>
       <%= f.password_field :password, :autocomplete => 'off', class: 'form-control' %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
-      <p class="field-description">You must enter your current password to make changes.</p> 
-      <%= f.password_field :current_password, class: 'form-control' %>
     </div>
 
     <div class="form-actions form-pull-right edit-btns">
