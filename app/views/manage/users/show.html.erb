@@ -17,7 +17,7 @@
     </div>
   </div>
 </div>
-<% unless @user.installed_app %>
+<% unless @user.installed_app? %>
   <div class="profile-status border">
     <h3><%= @user.first_name %> has not yet accepted the email invitation.</h3>
     <div class="profile-status-btn">

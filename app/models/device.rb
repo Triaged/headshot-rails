@@ -1,11 +1,13 @@
 class Device < ActiveRecord::Base
 
 	belongs_to :user
-	before_create :strip_spaces
+	
+	validates :application_id, presence: true
+	#validates :token, uniqueness: true
 
-	validates :token, uniqueness: true
+	before_save :strip_spaces
 
   def strip_spaces
-  	token.delete(' ')
+  	token.delete(' ') if token
   end
 end
