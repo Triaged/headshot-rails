@@ -109,7 +109,7 @@ class User < ActiveRecord::Base
 protected
 
 	def unleash_sherlock
-		SherlockHolmes.new(self.id).investigate!
+		SherlockHolmes.perform_async(self.id)
 		true
 	end
 

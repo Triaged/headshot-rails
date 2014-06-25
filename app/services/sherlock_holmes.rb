@@ -1,7 +1,9 @@
 class SherlockHolmes
+	include Sidekiq::Worker
 
-	def initialize user_id
+	def perform user_id
 		@user = User.find(user_id)
+		investigate!
 	end
 
 	def investigate!
@@ -11,7 +13,6 @@ class SherlockHolmes
 	rescue
 		puts "Sherlock failed"
 	end
-
 end
 
 	
