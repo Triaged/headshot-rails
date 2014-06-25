@@ -5,9 +5,9 @@ class Device < ActiveRecord::Base
 	validates :application_id, presence: true
 	validates :token, uniqueness: true
 
-	before_create :strip_spaces
+	before_save :strip_spaces
 
   def strip_spaces
-  	token.delete(' ')
+  	token.delete(' ') if token
   end
 end

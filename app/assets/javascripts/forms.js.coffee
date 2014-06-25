@@ -13,6 +13,7 @@ $ ->
       import:
         required: (element) ->
           boxes = $(".import-checkbox")
+          console.log boxes.filter(":checked").length
           return true  if boxes.filter(":checked").length is 0
           false
 
