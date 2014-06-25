@@ -38,6 +38,7 @@ HeadshotRails::Application.routes.draw do
       put 'users/:id' => 'devise/registrations#update', :as => 'user_registration' 
   end
   devise_for :users, :skip => [:registrations], :controllers => {omniauth_callbacks: "omniauth_callbacks",  :confirmations => "confirmations"}
+  
   constraints(Subdomain) do
   	resource :account
     resource :download do
@@ -64,6 +65,8 @@ HeadshotRails::Application.routes.draw do
       resources :departments
     end
   end
+
+  resources :full_contact, only: :create
 
    # Admin
   devise_for :admins

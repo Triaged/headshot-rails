@@ -43,8 +43,8 @@
           <div class="add-contact">
             <div class="checkbox checkbox-custom">
               <!-- <input type="checkbox" id="checkbox-1-1" />add contact<label for="checkbox-1-1"></label> -->
-              <span> add contact </span>
-              <%= u.check_box :should_import, label: "Add Contact", :checked => true %>
+              <span class="import-label"> add contact </span>
+              <%= u.check_box :should_import, label: "", :checked => true %>
               <label for="import_imported_users_attributes_<%= u.index %>_should_import"></label>
             </div>
           </div>

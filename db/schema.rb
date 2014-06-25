@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140624022515) do
+ActiveRecord::Schema.define(version: 20140620143752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,17 +52,6 @@ ActiveRecord::Schema.define(version: 20140624022515) do
     t.integer  "users_count", default: 0
   end
 
-  create_table "devices", force: true do |t|
-    t.integer  "user_id"
-    t.string   "service"
-    t.string   "token"
-    t.integer  "count"
-    t.string   "os_version"
-    t.datetime "last_notified_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "employee_infos", force: true do |t|
     t.string   "job_title"
     t.string   "cell_phone"
@@ -99,10 +88,7 @@ ActiveRecord::Schema.define(version: 20140624022515) do
     t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "provider_id"
   end
-
-  add_index "imports", ["provider_id"], name: "index_imports_on_provider_id", using: :btree
 
   create_table "office_locations", force: true do |t|
     t.string   "name"
@@ -148,6 +134,15 @@ ActiveRecord::Schema.define(version: 20140624022515) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+  end
+
+  create_table "push_tokens", force: true do |t|
+    t.integer  "user_id"
+    t.string   "service"
+    t.string   "token"
+    t.integer  "count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sessions", force: true do |t|
@@ -200,7 +195,7 @@ ActiveRecord::Schema.define(version: 20140624022515) do
     t.boolean  "admin"
     t.boolean  "installed_app"
     t.datetime "deleted_at"
-    t.integer  "primary_office_location_id"
+    t.integer  "home_office_location_id"
     t.integer  "current_office_location_id"
   end
 
@@ -210,8 +205,8 @@ ActiveRecord::Schema.define(version: 20140624022515) do
   add_index "users", ["deleted_at"], name: "index_users_on_deleted_at", using: :btree
   add_index "users", ["department_id"], name: "index_users_on_department_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["home_office_location_id"], name: "index_users_on_home_office_location_id", using: :btree
   add_index "users", ["manager_id"], name: "index_users_on_manager_id", using: :btree
-  add_index "users", ["primary_office_location_id"], name: "index_users_on_primary_office_location_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["team_id"], name: "index_users_on_team_id", using: :btree
 
