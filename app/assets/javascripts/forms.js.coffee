@@ -7,23 +7,28 @@ $ ->
     else
       $(this).siblings(".import-label").text("skip contact")
 
-  $("#import_users_form").validate
-    debug: true
+  $("#import-contacts-button").click ->
+    unless $("#import_users_form").valid()
+      false
+
+  $("#import_users_form").validate(
+    ignore: []
+    errorClass: "has-error help-block"
     rules:
-      import:
+      "imports":
         required: (element) ->
           boxes = $(".import-checkbox")
-          console.log boxes.filter(":checked").length
           return true  if boxes.filter(":checked").length is 0
           false
 
         minlength: 1
-
     messages:
-      import: "Please select at least two types of spam."
+      "imports": "Please select at least one contact."
+    errorPlacement: (error, element) ->
+      console.log error
+      error.appendTo($("#import-form-error"))
+  )
 
 
-  $("#import-contacts-button").click ->
-    console.log("clicked")
-    console.log $("#import_users_form").valid()
+  
       

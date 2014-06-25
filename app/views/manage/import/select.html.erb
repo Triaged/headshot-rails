@@ -29,7 +29,9 @@
     <% end %>
   	<div class="contacts-group">
     <br />
-  	<%= f.fields_for :imported_users do |u| %>
+    <span id="import-form-error"></span>
+    <input type="hidden" name="imports" id="imports"/>
+    <%= f.fields_for :imported_users do |u| %>
   		<div class="import-profile">
         <div class="contact-info">
           <div class="contact">
