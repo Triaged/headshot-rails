@@ -14,10 +14,15 @@
     	</div>
     <% end %>
   </div>
-  <div class="profile-btn">
-    <%= bootstrap_form_for(current_user, :url => account_path, :method => :patch) do |f| %>
-			<%= f.file_field :avatar, label: "Edit Picture", class: "btn-custom btn-default" %>
-		<% end %>
+  <div class="edit-picture">
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label for="inputFirstName" class="control-label label-custom">Edit Profile Picture</label>
+        <div class="col-sm-6 col-sm-offset-4 file-input-form">
+          <input type="file" id="exampleInputFile" class="custom-file-input">
+        </div>
+      </div>
+    </form>
   </div>
 </div>
 
