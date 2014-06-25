@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140625145834) do
+ActiveRecord::Schema.define(version: 20140625162931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -195,7 +195,6 @@ ActiveRecord::Schema.define(version: 20140625145834) do
     t.string   "authentication_token"
     t.integer  "department_id"
     t.boolean  "admin"
-    t.boolean  "installed_app"
     t.integer  "primary_office_location_id"
     t.integer  "current_office_location_id"
   end

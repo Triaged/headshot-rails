@@ -105,6 +105,10 @@ class User < ActiveRecord::Base
     password == password_confirmation and !password.blank?
   end
 
+  def installed_app?
+  	self.devices.count > 0
+  end
+
  
 protected
 
