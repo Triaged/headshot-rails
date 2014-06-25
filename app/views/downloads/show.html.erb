@@ -9,14 +9,31 @@
 		<h2>A Modern Company Directory For You and Your Team.</h2>
 		<p class="download-altcolor">Download the app and join your team.</p>
 		<div class="download-form">
-			<p class="field-description">Text your phone a link to the app:</p>
+		<%= simple_form_for :sms_capture, :url => txt_download_path, :method => :post, :remote => :true, :html => {:id => 'sms_delivery_form'} do |f| %>
+					<p class="field-description">Text your phone a link to the app:</p>
+					<div class="input-group">
+						<%= f.input_field :phone_number, :id => "phone_number", :placeholder => '555 (555)-5555', :autocomplete => "off"%>
+						<span class="input-group-btn"><%= f.button :submit, "Send Link", :class => "btn-primary" %></span>
+						<div class="row center-block">
+							<p id="response" class="center-block" style="visibility:hidden;text-align:center;">abc</p>
+						</div>
+					</div>
+			<% end %>
+
+
+			<!-- <p class="field-description">Text your phone a link to the app:</p>
 			<div class="input-group">
 				<input type="text" class="form-control">
 				<span class="input-group-btn">
 				<button class="btn btn-primary" type="button">Send Link</button>
 				</span>
-			</div>
+			</div> -->
+			
 		</div>
 	</div>
 </div>
 </div>
+
+
+
+

@@ -40,7 +40,9 @@ HeadshotRails::Application.routes.draw do
   devise_for :users, :skip => [:registrations], :controllers => {omniauth_callbacks: "omniauth_callbacks",  :confirmations => "confirmations"}
   constraints(Subdomain) do
   	resource :account
-    resource :download
+    resource :download do
+      post 'txt', on: :member
+    end
     
     namespace :manage do
       resources :users do

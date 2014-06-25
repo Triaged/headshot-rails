@@ -6,7 +6,7 @@ class Google::UserImport
 		@company = @user.company
 		google_provider_credentials = credentials
 		
-		@client = Google::APIClient.new(application_name: 'Headshot', application_version: '1.0')
+		@client = Google::APIClient.new(application_name: 'Badge', application_version: '1.0')
 		@client.authorization.client_id = ENV['GA_CLIENT_ID']
 		@client.authorization.client_secret = ENV['GA_SECRET']
 		@client.authorization.update_token!(access_token: google_provider_credentials.access_token, refresh_token: google_provider_credentials.refresh_token)
