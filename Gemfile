@@ -39,6 +39,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 3.0.0'
 gem 'twilio-ruby'
 gem 'sidekiq'
 gem 'jquery-validation-rails'
+gem 'foreman'
 
 
 group :development do
