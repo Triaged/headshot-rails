@@ -1,4 +1,4 @@
-class API::V1::DevicesController < ApplicationController
+class API::V1::DevicesController < APIController
 
 	def create
 		if device_params[:token]
@@ -16,5 +16,4 @@ private
 	def device_params
 		params[:device].permit(:token, :os_version, :service, :application_id)
 	end
-
 end
