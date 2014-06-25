@@ -15,14 +15,14 @@
     <% end %>
   </div>
   <div class="edit-picture">
-    <form class="form-horizontal" role="form">
+    <%= simple_form_for([:manage, @user], url: account_path, html: {class: "edit_user"}) do |f| %>
       <div class="form-group">
-        <label for="inputFirstName" class="control-label label-custom">Edit Profile Picture</label>
-        <div class="col-sm-6 col-sm-offset-4 file-input-form">
-          <input type="file" id="exampleInputFile" class="custom-file-input">
+        <div class="col-sm-6 col-sm-offset-3 file-input-form">
+          <%= f.input :avatar, input_html: { style: "display:none;" }, label: false %>
+          <%= link_to "Change Avatar", "#", class: "btn btn-custom btn-default", id: "fake-avatar-upload" %>
         </div>
       </div>
-    </form>
+    <% end %>
   </div>
 </div>
 
