@@ -8,7 +8,7 @@ class API::V1::DevicesController < APIController
 		end	
 		
 		@device.update(device_params)
-		respond_with @device, location: api_v1_device_path(@device)
+		render :json => { "message" => "ok" }, :status => 200
 	end
 
 private 
