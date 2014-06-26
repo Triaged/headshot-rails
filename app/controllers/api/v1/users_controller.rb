@@ -5,7 +5,6 @@ class API::V1::UsersController < APIController
   # GET /api/v1/users.json
   def index
     @users = current_company.users.all
-    Rails.logger.info @users.count
     respond_with @users
   end
 
@@ -15,6 +14,9 @@ class API::V1::UsersController < APIController
     respond_with @user
   end
 
+  def email_message
+    Rails.logger.info "Email Message"
+  end
   
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -25,5 +27,9 @@ class API::V1::UsersController < APIController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params[:user]
+    end
+
+    def email_message_params
+      params[:user].permit(:message)
     end
 end

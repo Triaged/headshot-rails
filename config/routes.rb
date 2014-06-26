@@ -4,7 +4,9 @@ HeadshotRails::Application.routes.draw do
   # API
   namespace :api, :path => "", :constraints => {:subdomain => "api"}, :defaults => {:format => :json} do
   	namespace :v1 do
-      resources :users
+      resources :users do
+        post 'email_message', on: :member
+      end
       resources :office_locations do
         member do 
           post 'entered'
