@@ -1,6 +1,6 @@
 class UserSerializer < ApplicationSerializer
   attributes :id, :first_name, :last_name, :full_name, :avatar_face_url, :avatar_url, :email, :manager_id
-  attributes :primary_office_location_id, :current_office_location_id, :department_id
+  attributes :primary_office_location_id, :current_office_location_id, :department_id, :installed_app
 
   has_one :employee_info
   
@@ -28,4 +28,9 @@ class UserSerializer < ApplicationSerializer
   def avatar_face_url
   	object.avatar.face.url
   end
+
+  def installed_app
+    object.installed_app?
+  end
+  
 end
