@@ -7,14 +7,12 @@ class OfficeLocationService
 
 	def enter!
 		@user.update(current_office_location: @office_location)
-		user_ref = FIREBASE.child("companies/#{@user.company.id}/users/#{@user.id}")
-		user_ref.child('current_office_location').set("#{@office_location.id}")
+		#FIREBASE.set("companies/#{@user.company.id}/users/#{@user.id}", current_office_location: @office_location.id)
 	end
 
 	def exit!
 		@user.update(current_office_location: nil)
-		user_ref = FIREBASE.child("companies/#{@user.company.id}/users/#{@user.id}")
-		user_ref.delete('current_office_location')
+		#FIREBASE.delete("companies/#{@user.company.id}/users/#{@user.id}/current_office_location")
 	end
 
 
