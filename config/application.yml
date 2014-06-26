@@ -19,8 +19,10 @@ MANDRILL_API_KEY: 4ifikFe1NO-pkxJJ9hG4zA
 TWILIO_ACCOUNT_SID: ACca40ad9b385aa26d07d2a927c5b2d071
 TWILIO_AUTH_TOKEN: 36c8bb21a80efba1fd809094b35c6bad
 TWILIO_FROM_NUMBER: +1 207-618-8946
+FIREBASE_URL: https://badge-dev.firebaseio.com/
 
 
 production:
   GA_CLIENT_ID: 735228360361-qt7vofvrlat880q27g096sfqhaee39ih.apps.googleusercontent.com
   GA_SECRET: KTX0cuMOM1hkk1KxXKyVg3Mn
+  FIREBASE_URL: https://badge-prod.firebaseio.com/

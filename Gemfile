@@ -40,6 +40,7 @@ gem 'twilio-ruby'
 gem 'sidekiq'
 gem 'jquery-validation-rails'
 gem 'foreman'
+gem 'firebase'
 
 
 group :development do

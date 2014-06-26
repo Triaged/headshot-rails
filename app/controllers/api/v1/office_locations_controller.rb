@@ -13,12 +13,12 @@ class API::V1::OfficeLocationsController < APIController
   end
 
   def entered
-    current_user.employee_info.update(current_office_location: @office_location)
+    OfficeLocationService.new(current_user, @office_location).enter!
     respond_with @office_location
   end
 
   def exited
-    current_user.employee_info.update(current_office_location: nil)
+    OfficeLocationService.new(current_user, @office_location).exit!
     respond_with @office_location
   end
 

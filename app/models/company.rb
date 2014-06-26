@@ -9,10 +9,9 @@ class Company < ActiveRecord::Base
 	has_many :departments
 
 	after_create :create_default_departments
+	after_create :set_firebase
 
-	def create_default_departments
-		Department.create_default_departments self
-	end
+	
 
 	def initial
 		name[0].capitalize
@@ -22,4 +21,7 @@ class Company < ActiveRecord::Base
 		self.users.where(admin: true).first
 	end
 
+	def create_default_departments
+		Department.create_default_departments self
+	end
 end
