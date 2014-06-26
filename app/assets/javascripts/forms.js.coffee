@@ -1,11 +1,11 @@
 $ ->
   $(".datepicker").datepicker
-    format: "mm/dd/yyyy"
+    format: "MM dd yyyy"
     todayHighlight: true
     autoclose: true 
 
   $(".datepicker-noyear").datepicker
-    format: "mm/dd"
+    format: "MM dd"
     todayHighlight: true
     autoclose: true  
 
