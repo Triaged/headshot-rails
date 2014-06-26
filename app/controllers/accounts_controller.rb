@@ -13,6 +13,10 @@ class AccountsController < ApplicationController
     end
 	end
 
+	def reset_count
+  	current_user.devices.each  { |device| device.update(count: 0) }
+  end
+
 private
 	# Never trust parameters from the scary internet, only allow the white list through.
   def user_params

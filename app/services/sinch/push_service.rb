@@ -4,18 +4,18 @@ class Sinch::PushService
 		@push_token = params[:push_token]
 		@payload = params[:payload]
 		@body = params[:message_body]
-		@user = params[:user]
+		@device = Device.find_by(push_token: @push_token)
 	end
 
 	def deliver!
-		Rails.logger.info @push_token
-		Rails.logger.info @payload
+		@device.increment!(:count)
+		
 
 		notification = Grocer::Notification.new(
 			  device_token:      @push_token,
-			  alert:             "#{@user.first_name.capitalize}: #{@body}".truncate(256),
+			  alert:             "#{@device.user.first_name.capitalize}: #{@body}".truncate(256),
 			  sound: 						 'default',
-			  badge:             1,
+			  badge:             @device.count,
 			  expiry:            Time.now + 60*60*12,     # optional; 0 is default, meaning the message is not stored
 			  content_available: true,                  # optional; any truthy value will set 'content-available' to 1
 				custom: {
@@ -32,6 +32,10 @@ class Sinch::PushService
 		GROCER_FEEDBACK.each do |attempt|
 			puts attempt.inspect
 		end
+	end
+
+	def reset_count!
+		@device.update(count: 0)
 	end
 
 end

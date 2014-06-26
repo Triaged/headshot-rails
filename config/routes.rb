@@ -12,11 +12,13 @@ HeadshotRails::Application.routes.draw do
         end
       end
       resources :devices, only: :create
+
       resources :departments
       resource :account do
         member do
           post 'avatar'
           put 'update_password'
+          post 'reset_count'
         end
       end
       resource :company

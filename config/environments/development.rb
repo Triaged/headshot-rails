@@ -30,7 +30,7 @@ HeadshotRails::Application.configure do
 
   Rails.application.routes.default_url_options[:host] = "localhost:3000"
   config.action_mailer.default_url_options = {
-  :host => "localhost",
+  :host => "lvh.me",
   :port => "3000"
 }
 
