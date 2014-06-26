@@ -18,7 +18,7 @@
 //= require select2
 //= require bootstrapValidator.min
 //= require moment
-//= require bootstrap-datetimepicker
+//= require bootstrap-datepicker
 //= require jquery.validate
 //= require jquery.validate.additional-methods
 //= require_tree .

@@ -1,5 +1,13 @@
 $ ->
-  #$('.datepicker').datetimepicker(pickTime: false)    
+  $(".datepicker").datepicker
+    format: "mm/dd/yyyy"
+    todayHighlight: true
+    autoclose: true 
+
+  $(".datepicker-noyear").datepicker
+    format: "mm/dd"
+    todayHighlight: true
+    autoclose: true  
 
   $("#import_users_form input[type='checkbox']").change ->
     if @checked  

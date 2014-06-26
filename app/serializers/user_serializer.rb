@@ -9,6 +9,18 @@ class UserSerializer < ApplicationSerializer
     object.manager_id.to_s
   end
 
+  def department_id
+    object.department_id.to_s
+  end
+
+  def current_office_location_id
+    object.current_office_location_id.to_s
+  end
+
+  def primary_office_location_id
+    object.primary_office_location_id.to_s
+  end
+
   def avatar_url
   	object.avatar.url
   end
