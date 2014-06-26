@@ -10,8 +10,4 @@ $(document).ready ->
 
   $realInputField.change ->
     $(this).closest("form").submit()
-    return
-
-  # trigger the real input field click to bring up the file selection dialog
-  $('#fake-avatar-upload').click ->
-    $realInputField.click()
+    return 

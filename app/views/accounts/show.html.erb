@@ -18,8 +18,10 @@
     <%= simple_form_for([:manage, @user], url: account_path, html: {class: "edit_user"}) do |f| %>
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3 file-input-form">
-          <%= f.input :avatar, input_html: { style: "display:none;" }, label: false %>
-          <%= link_to "Change Avatar", "#", class: "btn btn-custom btn-default", id: "fake-avatar-upload" %>
+          <div class="fileUpload btn btn-default">
+            <span>Change Avatar</span>
+            <%= f.input :avatar, input_html: { class: "upload" }, label: false %>
+          </div>
         </div>
       </div>
     <% end %>

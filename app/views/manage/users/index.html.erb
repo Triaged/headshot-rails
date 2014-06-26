@@ -22,7 +22,7 @@
     </form>
   </div>
 
-  <% alpha = @users.group_by{|u| u.first_name[0] } %>
+  <% alpha = @users.group_by{|u| u.last_name[0] } %>
   <% alpha.sort.each do |alpha, users| %>
   	<div class="contact-group">
   		<h3><%= alpha %></h3>
