@@ -16,7 +16,7 @@
           <p class="field-description">Optional</p>
         <% end %>
       </div>
-      <%= f.collection_select(:department_id, current_company.departments.all, :id, :name) %>
+      <%= f.collection_select(:department_id, current_company.departments.all, :id, :name, include_blank: true) %>
     	<%= f.fields_for :employee_info do |e| %>
         <%= e.text_field :job_title %> 
         <%= e.text_field :cell_phone %>  

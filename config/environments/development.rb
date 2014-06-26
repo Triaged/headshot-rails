@@ -29,6 +29,10 @@ HeadshotRails::Application.configure do
   config.assets.paths << "#{Rails.root}/app/assets/fonts" 
 
   Rails.application.routes.default_url_options[:host] = "localhost:3000"
+  config.action_mailer.default_url_options = {
+  :host => "localhost",
+  :port => "3000"
+}
 
   config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews"
 

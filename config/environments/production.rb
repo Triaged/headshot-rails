@@ -80,6 +80,7 @@ HeadshotRails::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   Rails.application.routes.default_url_options[:host] = "badge.co"
+  config.action_mailer.default_url_options = { :host => "badge.co" }
 
   config.action_mailer.smtp_settings = {
     :address   => "smtp.mandrillapp.com",
