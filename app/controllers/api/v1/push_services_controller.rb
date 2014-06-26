@@ -2,7 +2,7 @@ class API::V1::PushServicesController < APIController
   
 
   def create
-  	Sinch::PushService.new(push_service_params).deliver!
+  	Sinch::PushService.new(push_service_params.merge(user: current_user)).deliver!
   	render :json => 'ok' 
   end
 
