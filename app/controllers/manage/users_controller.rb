@@ -58,7 +58,7 @@ class Manage::UsersController < ManageController
 private
 
   def set_user
-    @user = current_company.users.find(params[:id])
+    @user = current_company.users.friendly.find(params[:id])
   end
 
   def user_params
