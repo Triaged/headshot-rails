@@ -193,6 +193,7 @@ GEM
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    newrelic_rpm (3.9.0.229)
     oauth2 (0.6.1)
       faraday (~> 0.7)
       httpauth (~> 0.1)
@@ -373,6 +374,7 @@ DEPENDENCIES
   minitest-spec-rails!
   minitest-wscolor
   momentjs-rails (~> 2.5.0)
+  newrelic_rpm
   omniauth
   omniauth-google-oauth2
   paranoia (~> 2.0)

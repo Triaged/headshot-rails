@@ -43,6 +43,7 @@ gem 'foreman'
 gem 'firebase'
 gem 'sinatra', '>= 1.3.0', :require => nil
 gem 'sidekiq_mailer'
+gem 'newrelic_rpm'
 
 
 group :development do
