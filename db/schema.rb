@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140625162931) do
+ActiveRecord::Schema.define(version: 20140627015757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,12 +45,13 @@ ActiveRecord::Schema.define(version: 20140625162931) do
 
   create_table "departments", force: true do |t|
     t.string   "name"
-    t.boolean  "shared"
     t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "users_count", default: 0
   end
+
+  add_index "departments", ["company_id"], name: "index_departments_on_company_id", using: :btree
 
   create_table "devices", force: true do |t|
     t.integer  "user_id"
@@ -63,6 +64,8 @@ ActiveRecord::Schema.define(version: 20140625162931) do
     t.datetime "updated_at"
     t.string   "application_id"
   end
+
+  add_index "devices", ["user_id"], name: "index_devices_on_user_id", using: :btree
 
   create_table "employee_infos", force: true do |t|
     t.string   "job_title"
@@ -94,6 +97,7 @@ ActiveRecord::Schema.define(version: 20140625162931) do
     t.integer  "import_id"
   end
 
+  add_index "imported_users", ["company_id"], name: "index_imported_users_on_company_id", using: :btree
   add_index "imported_users", ["import_id"], name: "index_imported_users_on_import_id", using: :btree
 
   create_table "imports", force: true do |t|
@@ -183,23 +187,19 @@ ActiveRecord::Schema.define(version: 20140625162931) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "company_id"
-    t.string   "title"
     t.integer  "team_id"
-    t.string   "phone_number"
     t.string   "avatar"
     t.integer  "manager_id"
-    t.date     "start_date"
-    t.date     "birthday"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "authentication_token"
     t.integer  "department_id"
     t.boolean  "admin"
-    t.datetime "deleted_at"
     t.integer  "primary_office_location_id"
     t.integer  "current_office_location_id"
   end
