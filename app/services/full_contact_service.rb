@@ -22,12 +22,12 @@ class FullContactService
 		# Do a first pass, looking for linkedIn, Gravatar, or Angelist
 		photos.each do |photo|
 			if photo["type"] == "linkedin" || photo["type"] == "angellist" || photo["type"] == "gravatar"
-				@user.remote_avatar_url = photos.first["url"]
+				@user.update(remote_avatar_url: photos.first["url"])
 				return
 			end
 		end
 
-		@user.remote_avatar_url = photos.first["url"]
+		@user.update(remote_avatar_url: photos.first["url"])
 		return	
 	end
 
