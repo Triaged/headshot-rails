@@ -107,7 +107,7 @@ class User < ActiveRecord::Base
   end
 
   def installed_app?
-  	self.devices.count > 0
+  	self.devices_count > 0
   end
 
  
