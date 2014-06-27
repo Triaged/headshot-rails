@@ -3,7 +3,7 @@
   <div class="contact-info">
     <div class="contact">
       <div class="contact-name">
-        <h2><%= link_to user.full_name, manage_user_path(user.slug) %></h2>
+        <h2><%= link_to user.full_name, manage_user_path(user) %></h2>
       </div>
       <div class="contact-email">
         <p><%= user.email %></p>
