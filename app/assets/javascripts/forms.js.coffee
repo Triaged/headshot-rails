@@ -1,4 +1,4 @@
-$ ->
+$(document).on 'ready page:load', ->
   $(".datepicker").datepicker
     format: "MM dd yyyy"
     todayHighlight: true
