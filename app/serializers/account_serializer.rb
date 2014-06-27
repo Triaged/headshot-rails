@@ -7,5 +7,9 @@ class AccountSerializer < ApplicationSerializer
     object
   end
 
+  def installed_app
+    object.installed_app?
+  end
+
 
 end
