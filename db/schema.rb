@@ -202,7 +202,7 @@ ActiveRecord::Schema.define(version: 20140627024733) do
     t.boolean  "admin"
     t.integer  "primary_office_location_id"
     t.integer  "current_office_location_id"
-    t.integer  "devices_count"
+    t.integer  "devices_count",              default: 0
   end
 
   add_index "users", ["company_id"], name: "index_users_on_company_id", using: :btree
