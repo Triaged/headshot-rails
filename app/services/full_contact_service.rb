@@ -25,6 +25,7 @@ class FullContactService
 				puts "updating users avatar"
 				puts photo["url"]
 				@user.update(remote_avatar_url: photo["url"])
+				puts @user.errors.inspect
 				return
 			end
 		end
