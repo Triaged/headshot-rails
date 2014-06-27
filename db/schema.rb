@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140627024733) do
+ActiveRecord::Schema.define(version: 20140627225151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 20140627024733) do
 
   create_table "departments", force: true do |t|
     t.string   "name"
-    t.boolean  "shared"
     t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -85,6 +84,19 @@ ActiveRecord::Schema.define(version: 20140627024733) do
   add_index "employee_infos", ["current_office_location_id"], name: "index_employee_infos_on_current_office_location_id", using: :btree
   add_index "employee_infos", ["home_office_location_id"], name: "index_employee_infos_on_home_office_location_id", using: :btree
   add_index "employee_infos", ["user_id"], name: "index_employee_infos_on_user_id", using: :btree
+
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "imported_users", force: true do |t|
     t.string   "first_name"
@@ -188,26 +200,23 @@ ActiveRecord::Schema.define(version: 20140627024733) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "company_id"
-    t.string   "title"
     t.integer  "team_id"
-    t.string   "phone_number"
     t.string   "avatar"
     t.integer  "manager_id"
-    t.date     "start_date"
-    t.date     "birthday"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "authentication_token"
     t.integer  "department_id"
     t.boolean  "admin"
-    t.datetime "deleted_at"
     t.integer  "primary_office_location_id"
     t.integer  "current_office_location_id"
     t.integer  "devices_count",              default: 0
+    t.string   "slug"
   end
 
   add_index "users", ["company_id"], name: "index_users_on_company_id", using: :btree
@@ -219,6 +228,7 @@ ActiveRecord::Schema.define(version: 20140627024733) do
   add_index "users", ["manager_id"], name: "index_users_on_manager_id", using: :btree
   add_index "users", ["primary_office_location_id"], name: "index_users_on_primary_office_location_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
   add_index "users", ["team_id"], name: "index_users_on_team_id", using: :btree
 
 end

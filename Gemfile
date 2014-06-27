@@ -46,6 +46,7 @@ gem 'sidekiq_mailer'
 gem 'newrelic_rpm'
 gem 'thin'
 gem 'devise-async'
+gem 'friendly_id', '~> 5.0.0'
 
 
 group :development do
