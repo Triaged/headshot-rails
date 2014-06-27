@@ -4,7 +4,7 @@ class Sinch::PushService
 		@push_token = params[:push_token]
 		@payload = params[:payload]
 		@body = params[:message_body]
-		@device = Device.find_by(push_token: @push_token)
+		@device = Device.find_by(token: @push_token)
 	end
 
 	def deliver!
