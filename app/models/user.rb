@@ -110,13 +110,15 @@ class User < ActiveRecord::Base
   	self.devices_count > 0
   end
 
- 
-protected
-
-	def unleash_sherlock
+  def unleash_sherlock
 		SherlockHolmes.perform_async(self.id)
 		true
 	end
+
+ 
+protected
+
+	
 
 
 	def create_default_employee_info
