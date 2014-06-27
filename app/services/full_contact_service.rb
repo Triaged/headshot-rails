@@ -14,7 +14,7 @@ class FullContactService
 	end
 
 	def parse_results result
-		find_avatar(result.photos) if (result.has_key?("photos") && !result["photos"].empty?)
+		find_avatar(result["photos"]) if (result.has_key?("photos") && !result["photos"].empty?)
 	end
 
 	def find_avatar photos

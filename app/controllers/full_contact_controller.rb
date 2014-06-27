@@ -6,6 +6,8 @@ class FullContactController < ApplicationController
 		user = User.find(params[:webhookId])
 		FullContactService.new(@user).parse_results JSON.parse(params[:result])
 		render :json => { "message" => "ok" }, :status => 200
+	rescue
+		render :json => { "message" => "ok" }, :status => 200
 	end
 
 
