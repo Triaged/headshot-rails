@@ -1,5 +1,5 @@
 class API::V1::UsersController < APIController
-  before_action :set_user, only: [:show, :manager, :subordinates]
+  before_action :set_user, only: [:show, :email_message]
 
   # GET /api/v1/users
   # GET /api/v1/users.json
@@ -15,7 +15,7 @@ class API::V1::UsersController < APIController
   end
 
   def email_message
-    Rails.logger.info "Email Message"
+    MessageMailer.mobile_message(@user, current_user, email_message_params[:body]).deliver!
   end
   
   private
@@ -30,6 +30,6 @@ class API::V1::UsersController < APIController
     end
 
     def email_message_params
-      params[:user].permit(:message)
+      params[:message].permit(:body, :timestamp)
     end
 end
