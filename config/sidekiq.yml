@@ -1,0 +1,11 @@
+# config/sidekiq.yml
+#
+# Configuration file for Sidekiq.
+# Options here can still be overridden by cmd line args.
+---
+:verbose: false
+:concurrency: 6
+:queues:
+  - [often, 3]
+  - [default, 2]
+  - [seldom, 1]
