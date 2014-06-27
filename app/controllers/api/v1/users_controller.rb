@@ -16,6 +16,7 @@ class API::V1::UsersController < APIController
 
   def email_message
     MessageMailer.mobile_message(@user, current_user, email_message_params[:body]).deliver!
+    render :json => { "message" => "ok" }, :status => 200
   end
   
   private
