@@ -79,6 +79,8 @@ HeadshotRails::Application.routes.draw do
      resources :companies do
       resources :users
      end
-    mount Sidekiq::Web => '/sidekiq'
+    
   end
+
+  mount Sidekiq::Web => '/sidekiq'
 end
