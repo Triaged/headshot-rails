@@ -23,7 +23,8 @@ class FullContactService
 		photos.each do |photo|
 			if photo["type"] == "linkedin" || photo["type"] == "angellist" || photo["type"] == "gravatar"
 				puts "updating users avatar"
-				@user.update(remote_avatar_url: photos.first["url"])
+				puts photo["url"]
+				@user.update(remote_avatar_url: photo["url"])
 				return
 			end
 		end
