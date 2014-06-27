@@ -1,3 +1,4 @@
+require 'sidekiq/web'
 HeadshotRails::Application.routes.draw do
   root :to => "home#index"
 
