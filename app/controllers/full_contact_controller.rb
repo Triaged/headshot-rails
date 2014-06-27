@@ -1,5 +1,6 @@
 class FullContactController < ApplicationController
 	skip_before_filter :authenticate_user!
+	protect_from_forgery except: :create
 
 	def create
 		user = User.find(params[:webhookId])
