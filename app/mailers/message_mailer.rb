@@ -1,5 +1,5 @@
 class MessageMailer < ActionMailer::Base
-	
+	include Sidekiq::Mailer
   
 	def mobile_message recipient, sender, message
 		@sender = sender

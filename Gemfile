@@ -42,6 +42,7 @@ gem 'jquery-validation-rails'
 gem 'foreman'
 gem 'firebase'
 gem 'sinatra', '>= 1.3.0', :require => nil
+gem 'sidekiq_mailer'
 
 
 group :development do
