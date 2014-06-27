@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
 
+  default_scope { includes(:employee_info) }
   scope :admin, -> { where(admin: true) }
 
   def full_name
