@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Your colleague, [Admin Name], has invited you to Badge</title>
+		<title><%= @user.company.admin_user.full_name %> invited you to Badge</title>
 		<style type="text/css">
 					/* /\/\/\/\/\/\/\/\/ CLIENT-SPECIFIC STYLES /\/\/\/\/\/\/\/\/ */
 					#outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
@@ -54,7 +54,7 @@
 						/*@editable*/ color:#2CB5A8;
 						display:block;
 						/*@editable*/ font-family:Helvetica;
-						/*@editable*/ font-size:40px;
+						/*@editable*/ font-size:50px;
 						/*@editable*/ font-style:normal;
 						/*@editable*/ font-weight:bold;
 						/*@editable*/ line-height:135%;
@@ -529,6 +529,7 @@
 								<!-- BEGIN PREHEADER // -->
 								<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader" style="background-color: #FFF5E7;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
 									<tbody><tr>
+										<td style="display: none !important; mso-hide:all;">Your team is using Badge as their modern mobile directory. Join your company in Badge's private beta.</div>
 										<td valign="top" class="preheaderContent" style="padding-top: 15px;padding-right: 20px;padding-bottom: 15px;padding-left: 20px;color: #2E3B4E;font-family: Helvetica;font-size: 14px;line-height: 125%;text-align: left;font-weight: lighter;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" mc:edit="preheader_content00">
 											<a href="http://badge.co/" target="_blank" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #2CB5A8;font-weight: bold;text-decoration: none;">Badge</a>
 										</td>
@@ -548,7 +549,7 @@
 								<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;border-collapse: collapse !important;">
 									<tbody><tr>
 										<td valign="top" width="100%" class="headerContent" style="padding-top: 20px;padding-right: 10%;padding-left: 10%;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #919496;font-family: Helvetica;font-size: 20px;font-weight: bold;line-height: 100%;padding-bottom: 0;text-align: center;vertical-align: middle;">
-											<h1 style="padding-bottom: 20px;color: #2CB5A8;display: block;font-family: Helvetica;font-size: 40px;font-style: normal;font-weight: bold;line-height: 135%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;">Congrats!</h1>
+											<h1 style="padding-bottom: 20px;color: #2CB5A8;display: block;font-family: Helvetica;font-size: 50px;font-style: normal;font-weight: lighter;line-height: 135%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;">Congrats!</h1>
 											<img src="<%= @user.company.admin_user.avatar.face.url %>" style="max-width: 100px;padding-bottom: 20px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;" id="headerImage" mc:label="header_image" mc:edit="header_image" mc:allowdesigner="" mc:allowtext="">
 										</td>
 									</tr>
@@ -624,7 +625,7 @@
 											<table border="0" cellpadding="20" cellspacing="0" width="100%" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
 												<tbody><tr>
 													<td class="leftColumnContent center" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #919496;font-family: Helvetica;font-size: 14px;line-height: 150%;font-weight: lighter;padding-top: 20px;padding-bottom: 20px;padding-right: 20px;padding-left: 20px;text-align: center !important;">
-														<img src="https://ci5.googleusercontent.com/proxy/Cd_5pFnaGUnf1TDZ3R-S5oXHGWRQFQrfLod2mrShKBkilqjPzxcrIvvsuU32-IYB_Y_kuHXHpcAsm7mP72ymwfwbgTgdv1RtxyD6NE8d5xNY_OAnQbmi5RYE_T1mQQeDTxN135sYRrvTzOGr2QI1Pxx6WSI5kE7-15iDIw=s0-d-e1-ft#http://gallery.mailchimp.com/09719a524b376a51bc97e6bd7/images/5d2bd6df-c69c-41b4-96ae-a4181767e0fd.png" width="247" style="max-width: 247px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" class="columnImage" mc:label="left_column_image" mc:edit="left_column_image">
+														<img src="https://ci5.googleusercontent.com/proxy/cO1H-fmGVAADRwsH44LZ9dCkMvj02nI-zpZ_x7nQVSM51oKcuYh5PNMhmoBQhmHoch_No0OxDP6pbOe_ABpDk9htbFFDOp3D-Vhhss8jTAwkTKzcSrGlijs4dTFv8MQYEZpckg66-NT2Ru2CW6uE42d5CW0RenrIUtPP4A=s0-d-e1-ft#http://gallery.mailchimp.com/09719a524b376a51bc97e6bd7/images/7ad2634e-d16c-4c22-8177-3b143c31cdd2.png" width="247" style="max-width: 247px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" class="columnImage" mc:label="left_column_image" mc:edit="left_column_image">
 
 													</td>
 												</tr>
