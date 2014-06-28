@@ -21,8 +21,8 @@
         <%= e.text_field :job_title %> 
         <%= e.text_field :cell_phone %>  
         <%= e.text_field :office_phone %>   
-        <%= e.date_field :birth_date, class: "datepicker-noyear" %>  
-        <%= e.date_field :job_start_date, class: "datepicker" %>  
+        <%= e.date_select :birth_date, discard_year: true, with_css_classes: true  %>  
+        <%= e.date_select :job_start_date, with_css_classes: true %>  
       <% end %>
     </div>
 
