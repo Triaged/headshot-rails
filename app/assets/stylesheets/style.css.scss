@@ -369,6 +369,9 @@ button.close-custom {
 	.contact-info {
 		margin: 0 0 0 75px;
 		border-bottom: 1px solid $grey-lighter;
+		@media(max-width:767px){ 
+		padding-bottom: 10px;
+		}
 	}
 }
 
@@ -395,6 +398,7 @@ button.close-custom {
 	width: 28%;
 	display: inline-block;
 	text-align: right;
+	position: relative;
 	p {
 		display: inline;
 	}
@@ -403,6 +407,10 @@ button.close-custom {
 	}
 	i {
 		padding: 0 15px;
+	}
+	.fa {
+		position: relative;
+		top: 2px;
 	}
 	.fa-mobile {
 		font-size: 26px;
