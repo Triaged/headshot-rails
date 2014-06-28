@@ -10,7 +10,7 @@
       </div>
     </div>
     <% if user.destroyed? %>
-      <%= link_to 'Activate', "#", data: {toggle: "modal", target: "#archiveContact"} %>
+      <%= link_to 'Activate', "#", data: {toggle: "modal", target: "#archiveContact#{user.id}"} %>
     <% else %>
       <div class="activity-state">
         <% if user.installed_app? %>
@@ -25,7 +25,7 @@
 
 <% if user.destroyed? %>
   <!-- Modal -->
-  <div class="modal fade" id="archiveContact" tabindex="-1" role="dialog" aria-labelledby="archiveContact" aria-hidden="true">
+  <div class="modal fade" id="archiveContact<%= user.id %>" tabindex="-1" role="dialog" aria-labelledby="archiveContact" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header modal-header-custom">

@@ -13,7 +13,6 @@ gem 'figaro'
 gem 'pg'
 gem 'simple_form'
 #gem 'devise-basecamper'
-gem 'friendly_id', '~> 5.0.0'
 gem 'mail'
 gem 'public_suffix'
 gem 'carrierwave'
@@ -46,6 +45,8 @@ gem 'sidekiq_mailer'
 gem 'newrelic_rpm'
 gem 'thin'
 gem 'devise-async'
+gem 'friendly_id', '~> 5.0.0'
+gem "bugsnag"
 
 
 group :development do

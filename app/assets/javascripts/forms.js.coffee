@@ -1,13 +1,13 @@
-$ ->
-  $(".datepicker").datepicker
-    format: "MM dd yyyy"
-    todayHighlight: true
-    autoclose: true 
+$(document).on 'ready page:load', ->
+  # $(".datepicker").datepicker
+  #   format: "MM dd yyyy"
+  #   todayHighlight: true
+  #   autoclose: true 
 
-  $(".datepicker-noyear").datepicker
-    format: "MM dd"
-    todayHighlight: true
-    autoclose: true  
+  # $(".datepicker-noyear").datepicker
+  #   format: "MM dd"
+  #   todayHighlight: true
+  #   autoclose: true  
 
   $("#import_users_form input[type='checkbox']").change ->
     if @checked  

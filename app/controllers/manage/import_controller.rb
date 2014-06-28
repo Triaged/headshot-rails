@@ -9,7 +9,7 @@ class Manage::ImportController < ManageController
 		crendentials_id = session[:credentials_id]
 		@import = UserImport.new(current_user.id, current_company.id).import_users(@provider.id, crendentials_id)
 		unless @import.errors.empty?
-			flash[:error] = @import.errors
+			flash[:error] = "Authentication failed. Please try again."
 			redirect_to manage_import_url(@provider.name)
 		end
 	end

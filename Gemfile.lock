@@ -73,6 +73,9 @@ GEM
       momentjs-rails (~> 2.5.0)
     bootstrap_form (2.1.1)
     browser (0.6.0)
+    bugsnag (2.1.0)
+      httparty (>= 0.6, < 1.0)
+      multi_json (~> 1.0)
     builder (3.2.2)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -162,6 +165,9 @@ GEM
       guard (>= 2.0.0)
     hashie (2.0.5)
     hike (1.2.3)
+    httparty (0.13.1)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     httpauth (0.2.1)
     hub (1.12.0)
     i18n (0.6.9)
@@ -358,6 +364,7 @@ DEPENDENCIES
   bootstrap3-datetimepicker-rails (~> 3.0.0)
   bootstrap_form
   browser
+  bugsnag
   carrierwave
   cloudinary
   coffee-rails (~> 4.0.0)

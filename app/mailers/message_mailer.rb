@@ -1,11 +1,12 @@
 class MessageMailer < ActionMailer::Base
 	include Sidekiq::Mailer
   
-	def mobile_message recipient, sender, message
-		@sender = sender
+	def mobile_message recipient_id, sender_id, message
+		@recipient = User.find(recipient_id)
+		@sender = User.find(sender_id)
 		@message = message
 
-		mail(to: recipient.email, from: "\"#{@sender.full_name} via Badge\" <team@badge.co>", 
+		mail(to: @recipient.email, from: "\"#{@sender.full_name} via Badge\" <team@badge.co>", 
 					subject: "#{@sender.full_name} sent you a message")
 	end
 

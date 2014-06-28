@@ -8,11 +8,11 @@ class SherlockHolmes
 
 	def investigate!
 		puts "investigating"
-		person = FullContact.person(email: @user.email)
-		puts person.inspect
+		FullContactService.new(@user).fetch_results
 	rescue
 		puts "Sherlock failed"
 	end
+
 end
 
 	
