@@ -291,6 +291,9 @@ button.close-custom {
 	font-size: 14px;
 	color: #2CB5A8;
 	opacity: 1;
+	@media(max-width:767px){ 
+		font-size: 10px;
+		}
 	}
 }
 
@@ -593,4 +596,8 @@ button.close-custom {
 			border: 1px solid $brand-primary;
 		}
 	}
+}
+
+#response {
+	padding-top:$spacing-m;
 }
