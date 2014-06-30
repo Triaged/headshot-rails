@@ -409,19 +409,20 @@ button.close-custom {
 	.activity-icon {
 	width: 30px;
 	display: inline-block;
+	text-align: center;
 		.fa {
 			position: relative;
 		}
 		.fa-mobile {
 			font-size: 26px;
 			color: $active;
-			top: 2px;
+			top: 3px;
 
 		}
 		.fa-envelope-o {
 			font-size: 20px;
 			color: $grey-light;
-			top: 4px;
+			top: 2px;
 		}
 		@media(max-width:767px){ 
 			width: 100%;
