@@ -14,7 +14,7 @@ class API::V1::OfficeLocationsController < APIController
 
   def entered
     OfficeLocationService.new(current_user, @office_location).enter!
-    rrender :json => { "message" => "ok" }, :status => 200
+    render :json => { "message" => "ok" }, :status => 200
   end
 
   def exited
