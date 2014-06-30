@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Your colleague, [Admin Name], has invited you to Badge</title>
+		<title><%= @sender.full_name %> sent you a message</title>
 		<style type="text/css">
 					/* /\/\/\/\/\/\/\/\/ CLIENT-SPECIFIC STYLES /\/\/\/\/\/\/\/\/ */
 					#outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
@@ -524,31 +524,13 @@
 				<td align="center" valign="top" id="bodyCell" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;margin: 0;padding: 20px;border-top: 4px solid #FFFFFF;height: 100% !important;width: 100% !important;">
 					<!-- BEGIN TEMPLATE // -->
 					<table border="0" cellpadding="0" cellspacing="0" id="templateContainer" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 800px;border: 1px solid #FFFFFF;border-collapse: collapse !important;">
-						<tbody><tr>
-							<td align="center" valign="top" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-								<!-- BEGIN PREHEADER // -->
-								<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader" style="background-color: #FFF5E7;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
-									<tbody><tr>
-										<td valign="top" class="preheaderContent" style="padding-top: 15px;padding-right: 20px;padding-bottom: 15px;padding-left: 20px;color: #2E3B4E;font-family: Helvetica;font-size: 14px;line-height: 125%;text-align: left;font-weight: lighter;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" mc:edit="preheader_content00">
-											<a href="http://badge.co/" target="_blank" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #2CB5A8;font-weight: bold;text-decoration: none;">Badge</a>
-										</td>
-										<!-- *|IFNOT:ARCHIVE_PAGE|* -->
-										<td valign="top" width="380" class="preheaderContent" style="padding-top: 15px;padding-right: 20px;padding-bottom: 15px;padding-left: 0;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #919496 !important;font-family: Helvetica;font-size: 14px;line-height: 125%;text-align: right;font-weight: lighter;" mc:edit="preheader_content01">
-											 <%= @sender.full_name %> sent you a message.
-										</td>
-										<!-- *|END:IF|* -->
-									</tr>
-								</tbody></table>
-								<!-- // END PREHEADER -->
-							</td>
-						</tr>
+						<tbody>
 						<tr>
 							<td align="center" valign="top" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
 								<!-- BEGIN HEADER // -->
 								<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;border-collapse: collapse !important;">
 									<tbody><tr>
 										<td valign="top" width="100%" class="headerContent" style="padding-top: 20px;padding-right: 10%;padding-left: 10%;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #919496;font-family: Helvetica;font-size: 20px;font-weight: bold;line-height: 100%;padding-bottom: 0;text-align: center;vertical-align: middle;">
-											
 										</td>
 									</tr>
 								</tbody></table>
@@ -560,9 +542,10 @@
 								<!-- BEGIN BODY // -->
 								<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;border-collapse: collapse !important;">
 									<tbody><tr>
+										<td style="display: none !important; mso-hide:all;"><%= @message %>. Reply to <%= @sender.full_name %> using Badge.</td>
 										<td valign="top" class="bodyContent" mc:edit="body_content" style="padding-top: 20px;padding-right: 10%;padding-left: 10%;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #BBBBBB;font-family: Helvetica;font-size: 14px;line-height: 150%;padding-bottom: 20px;text-align: center;">
-											<h2 style="padding-bottom: 20px;display: block;font-family: Helvetica;font-size: 20px;font-style: normal;font-weight: bold;line-height: 135%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #2E3B4E !important;"><%= @sender.full_name %> sent you a message:</h2> 
-											<h3 style="display: block;font-family: Helvetica;font-size: 16px;font-style: normal;font-weight: lighter;line-height: 150%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #919496 !important;"><%= @message %></h3>
+											<h3 style="display: block;font-family: Helvetica;font-size: 16px;color: #BBBBBB;line-height: 20px;letter-spacing: 1px;margin-bottom:20px;"><%= @sender.full_name %> sent you a message:</h3> 
+											<h2 style="display: block;font-family: Helvetica;font-size: 24px;color: #2E3B4E;line-height: 36px;letter-spacing: 1px;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;"><%= @message %></h2>
 										</td>
 									</tr>
 								</tbody></table>
@@ -571,15 +554,33 @@
 						</tr>
 						<tr>
 							<td align="center" valign="top" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+								<!-- BEGIN HEADER // -->
+								<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;border-collapse: collapse !important;">
+									<tbody><tr>
+										<td valign="top" width="100%" class="headerContent" style="padding-top: 20px;padding-right: 20%;padding-left: 20%;padding-bottom: 20px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+											<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;border-collapse: collapse !important;">
+												<tbody><tr>
+													<td valign="top" width="100%" class="headerContent" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-bottom:1px solid #F8AE37;">
+													</td>
+												</tr></tbody>
+											</table>
+										</td>
+									</tr>
+								</tbody></table>
+								<!-- // END HEADER -->
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="top" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
 								<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
 									<tbody>
 										<tr>
-											<td style="padding-top: 0;padding-right: 18px;padding-bottom: 40px;padding-left: 18px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" valign="top" align="center">
+											<td style="padding-top: 0;padding-right: 18px;padding-top: 30px;padding-bottom: 40px;padding-left: 18px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" valign="top" align="center">
 												<table border="0" cellpadding="0" cellspacing="0" style="background-color: #FF9D00;border-radius: 5px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
 													<tbody>
 														<tr>
 															<td align="center" valign="middle" style="color: #FFFFFF;border-color: #FF9D00;font-family: Helvetica, Arial, sans-serif;font-size: 16px;letter-spacing: .5px;line-height: 150%;padding-top: 10px;padding-right: 50px;padding-bottom: 10px;padding-left: 50px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-																Reply to <%= @sender.first_name %></a>
+																Reply on Badge</a>
 															</td>
 														</tr>
 													</tbody>
@@ -597,7 +598,7 @@
 								<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;border-collapse: collapse !important;">
 									<tbody><tr>
 										<td valign="top" class="bodyContent" mc:edit="body_content" style="padding-top: 20px;padding-right: 10%;padding-left: 10%;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #BBBBBB;font-family: Helvetica;font-size: 14px;line-height: 150%;padding-bottom: 20px;text-align: center;">
-											<h3 style="display: block;font-family: Helvetica;font-size: 14px;font-style: normal;font-weight: lighter;line-height: 150%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #919496 !important;">Badge is mobile directory for you and your team. </br> Use the button above to sign in, and join your team!</h3>
+											<h3 style="display: block;font-family: Helvetica;font-size: 14px;font-style: normal;font-weight: lighter;line-height: 24px;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;color: #BBBBBB;">Badge is mobile directory for you and your team. </br> Use the button above to sign in, and join your team!</h3>
 										</td>
 									</tr>
 								</tbody></table>
