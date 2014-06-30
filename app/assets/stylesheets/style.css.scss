@@ -401,28 +401,32 @@ button.close-custom {
 	position: relative;
 	p {
 		display: inline;
+		text-align: right;
 	}
 	.active {
 		color: $active;
 	}
-	i {
-		padding: 0 15px;
-	}
-	.fa {
-		position: relative;
-		top: 2px;
-	}
-	.fa-mobile {
-		font-size: 26px;
-		color: $active;
-	}
-	.fa-envelope-o {
-		font-size: 20px;
-		color: $grey-light;
-	}
-	@media(max-width:767px){ 
-		width: 100%;
-		text-align: left;
+	.activity-icon {
+	width: 30px;
+	display: inline-block;
+		.fa {
+			position: relative;
+		}
+		.fa-mobile {
+			font-size: 26px;
+			color: $active;
+			top: 2px;
+
+		}
+		.fa-envelope-o {
+			font-size: 20px;
+			color: $grey-light;
+			top: 4px;
+		}
+		@media(max-width:767px){ 
+			width: 100%;
+			text-align: left;
+		}
 	}
 }
 

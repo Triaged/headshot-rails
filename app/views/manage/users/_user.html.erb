@@ -14,9 +14,15 @@
     <% else %>
       <div class="activity-state">
         <% if user.installed_app? %>
-          <p class="active">active</p><i class="fa fa-mobile"></i>
+          <p class="active">active</p>
+          <div class="activity-icon">
+            <i class="fa fa-mobile"></i>
+          </div>
         <% else %>
-          <p class="inactive">waiting</p><i class="fa fa-envelope-o"></i>
+          <p class="inactive">waiting</p>
+          <div class="activity-icon">
+            <i class="fa fa-envelope-o"></i>
+          </div>
         <% end %>
       </div>
     <% end %>
