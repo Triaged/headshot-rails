@@ -61,6 +61,9 @@ class ConfirmationsController < Devise::ConfirmationsController
   end
 
   def do_confirm
+    @confirmable.first_name = params[:first_name]
+    @confirmable.last_name = params[:last_name]
+    @confirmable.employee_info.cell_phone = params[:employee_info][:cell_phone]
     @confirmable.confirm!
     set_flash_message :notice, :confirmed
     sign_in_and_redirect(resource_name, @confirmable)
