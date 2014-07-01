@@ -90,7 +90,9 @@ $spacing-xlg: 40px;
 		background-color: #ffffff;
 	}
 	.navbar .navbar-custom > li > a  {
-		background: rgba(225, 225, 225, 0.8);
+		background:#fff;
+		border-bottom: 1px solid $text-color;
+		padding-bottom: 5px;
 	}
 	.navbar .navbar-custom > .active > a::before {
 		height: 0;
