@@ -7,7 +7,6 @@ class SherlockHolmes
 	end
 
 	def investigate!
-		puts "investigating"
 		FullContactService.new(@user).fetch_results
 	rescue
 		puts "Sherlock failed"

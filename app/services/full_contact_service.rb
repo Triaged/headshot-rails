@@ -6,10 +6,7 @@ class FullContactService
 	end
 
 	def fetch_results
-		puts "fetching"
-		puts @user.inspect
 		result = FullContact.person(email: @user.email, webhookId: @user.id, webhookUrl: full_contact_index_url)
-		puts result
 		parse_results result
 	end
 

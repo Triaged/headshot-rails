@@ -6,7 +6,8 @@ class UserMailer < Devise::Mailer
   	mail = super
     # your custom logic
     admin = record.company.admin_user
-		mail.subject = "#{admin.full_name} invited you to Badge!"
+		mail.subject = "#{admin.first_name.capitalize} invited you to Badge!"
+		mail.from = "\"#{admin.full_name} via Badge\""
 
     mail
 	end
