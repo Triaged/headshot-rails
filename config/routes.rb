@@ -48,6 +48,7 @@ HeadshotRails::Application.routes.draw do
   	resource :account
     resource :download do
       post 'txt', on: :member
+      get 'now', on: :member
     end
     
     namespace :manage do
