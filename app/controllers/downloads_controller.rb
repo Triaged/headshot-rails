@@ -1,6 +1,6 @@
 class DownloadsController < ApplicationController
 	layout "download"
-	skip_before_action :authenticate_user!, only: :now
+	skip_before_filter :authenticate_user!, only: :now
 	
 	def show
 		respond_to do |format|
@@ -17,6 +17,5 @@ class DownloadsController < ApplicationController
 	end
 
 	def now
-		redirect_to "itms-services://?action=download-manifest&url=https://badge.co/Headshot-ios.plist"
 	end
 end
