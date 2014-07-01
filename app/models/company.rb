@@ -9,7 +9,6 @@ class Company < ActiveRecord::Base
 	has_many :departments
 
 	after_create :create_default_departments
-	after_create :set_firebase
 
 	
 

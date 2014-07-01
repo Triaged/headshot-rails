@@ -14,12 +14,12 @@ class API::V1::OfficeLocationsController < APIController
 
   def entered
     OfficeLocationService.new(current_user, @office_location).enter!
-    respond_with @office_location
+    render :json => { "message" => "ok" }, :status => 200
   end
 
   def exited
     OfficeLocationService.new(current_user, @office_location).exit!
-    respond_with @office_location
+    render :json => { "message" => "ok" }, :status => 200
   end
 
   # POST /api/v1/office_locations
