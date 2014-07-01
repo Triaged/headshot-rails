@@ -17,7 +17,7 @@ class SmsService
 	end
 
 	def default_delivery_message
-		"Download the Triage app here - http://bit.ly/18DNhux"
+		"Download Badge here - <coming soon>"
 	end
 
 end
