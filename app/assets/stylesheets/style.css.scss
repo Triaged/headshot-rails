@@ -33,11 +33,10 @@ $spacing-xlg: 40px;
 	font-size: $font-size-small;
 	color: $text-color;
 	text-transform: uppercase;
-	letter-spacing: .05em;
-	font-weight: 500;
 	padding: 15px 5px 0;
 	margin: 0 10px;
 	background-color: #fff;
+	font-weight: 500;
 	}
 	.navbar-custom > .nav-link > a:after {
 	position: absolute;
@@ -119,10 +118,11 @@ $spacing-xlg: 40px;
 .contact-breadcrumb {
 	padding-bottom: $spacing-sm;
 	h2 {
-		font-weight: 700;
+		font-weight: 600;
 	}
 	a {
 		color: $text-color;
+		font-weight: 600;
 	}
 	.breadcrumb-fwdslsh {
 		color: $grey;
@@ -366,6 +366,7 @@ button.close-custom {
 		margin: $spacing-xsm 0;
 		a {
 			color: $text-color;
+			font-weight: 400;
 		}
 	}
 	.contact-info {
