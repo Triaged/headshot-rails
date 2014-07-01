@@ -61,9 +61,9 @@ class ConfirmationsController < Devise::ConfirmationsController
   end
 
   def do_confirm
-    @confirmable.first_name = params[:first_name] if params[:first_name]
-    @confirmable.last_name = params[:last_name] if params[:last_name]
-    @confirmable.employee_info.cell_phone = params[:employee_info_attributes][:cell_phone] if (params[:employee_info_attributes] && params[:employee_info_attributes][:cell_phone])
+    @confirmable.first_name = params[:user][:first_name] if params[:user][:first_name]
+    @confirmable.last_name = params[:user][:last_name] if params[:user][:last_name]
+    @confirmable.employee_info.cell_phone = params[:user][:employee_info_attributes][:cell_phone] if (params[:user][:employee_info_attributes] && params[:user][:employee_info_attributes][:cell_phone])
     @confirmable.confirm!
     set_flash_message :notice, :confirmed
     sign_in_and_redirect(resource_name, @confirmable)
