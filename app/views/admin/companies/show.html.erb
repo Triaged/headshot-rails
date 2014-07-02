@@ -4,12 +4,12 @@
 Admins:
 <hr />
 <% @company.users.admin.each do |admin| %>
-	<%= admin.email %> <br />
+	<%= admin.email %> <%= link_to 'Login', become_admin_company_user_path(@company, admin), method: :post %> <br />
 <% end %>
 
 
 Users:
 <hr />
 <% @company.users.each do |user| %>
-	<%= user.email %> <br />
+	<%= user.email %>  <%= link_to 'Login', become_admin_company_user_path(@company, user), method: :post %> <br />
 <% end %>
