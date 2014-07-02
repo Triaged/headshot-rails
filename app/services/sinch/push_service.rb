@@ -9,6 +9,7 @@ class Sinch::PushService
 	end
 
 	def deliver!
+		puts "Pushing to #{@puch_token}"
 		@device.increment!(:count)
 		
 

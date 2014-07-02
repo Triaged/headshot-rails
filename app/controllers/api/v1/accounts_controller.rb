@@ -24,6 +24,10 @@ class API::V1::AccountsController < APIController
     end
   end
 
+  def reset_count
+    @user.devices.each {|device| device.update(count: 0) }
+  end
+
 private
 
 	# Never trust parameters from the scary internet, only allow the white list through.
