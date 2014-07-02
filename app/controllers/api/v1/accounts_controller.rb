@@ -26,6 +26,7 @@ class API::V1::AccountsController < APIController
 
   def reset_count
     @user.devices.each {|device| device.update(count: 0) }
+    render :json => { "message" => "ok" }, :status => 200
   end
 
 private
