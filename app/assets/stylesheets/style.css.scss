@@ -156,7 +156,10 @@ $spacing-xlg: 40px;
 .form-control {
 	box-shadow: none;
 }
-
+.form-control:focus {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
 .form-pull-right {
 	text-align: right;
 }
