@@ -33,7 +33,7 @@ namespace :deploy do
   task :after_deploy, :env, :branch do |t, args|
     puts "Deployment Complete"
     revision = `git rev-parse --short HEAD`.strip
-    Rake::Task['bugsnag:deploy'].invoke("BUGSNAG_REVISION=#{revision} BUGSNAG_RELEASE_STAGE=#{args[:ENV]} BUGSNAG_API_KEY=#{ENV["BUGSNAG_API_KEY"}]}")
+    Rake::Task['bugsnag:deploy'].invoke("BUGSNAG_REVISION=#{revision} BUGSNAG_RELEASE_STAGE=#{args[:ENV]} BUGSNAG_API_KEY=#{ENV["BUGSNAG_API_KEY"]}")
   end
  
   task :update_code, :env, :branch do |t, args|
