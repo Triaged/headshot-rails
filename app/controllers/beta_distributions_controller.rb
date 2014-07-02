@@ -1,6 +1,6 @@
 class BetaDistributionsController < ApplicationController
 	skip_before_filter :authenticate_user!
-	layout "false"
+	layout nil
 
 	def show
 
