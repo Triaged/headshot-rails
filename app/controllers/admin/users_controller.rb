@@ -11,7 +11,7 @@ class Admin::UsersController < AdminController
 	end
 
 	def become
-    sign_in(:user, User.find(params[:id]))
+    sign_in(:user, @company.users.find(params[:id]))
     redirect_to root_url # or user_root_url
   end
 
