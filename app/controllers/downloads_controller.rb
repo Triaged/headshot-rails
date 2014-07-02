@@ -1,6 +1,5 @@
 class DownloadsController < ApplicationController
 	layout "download"
-	skip_before_filter :authenticate_user!, only: :now
 	
 	def show
 		respond_to do |format|
@@ -16,6 +15,4 @@ class DownloadsController < ApplicationController
     @response =  @result ? "Great, we texted you a link to the app!" : "Sorry, your phone number looks invalid."
 	end
 
-	def now
-	end
 end

@@ -48,7 +48,6 @@ HeadshotRails::Application.routes.draw do
   	resource :account
     resource :download do
       post 'txt', on: :member
-      get 'now', on: :member
     end
     
     namespace :manage do
@@ -73,6 +72,7 @@ HeadshotRails::Application.routes.draw do
   end
 
   resources :full_contact, only: :create
+  resource :beta_distribution, only: :show
 
    # Admin
   devise_for :admins

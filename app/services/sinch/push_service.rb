@@ -31,6 +31,7 @@ class Sinch::PushService
 
 		GROCER_FEEDBACK.each do |attempt|
 			puts attempt.inspect
+			@device.destroy!
 		end
 	end
 
