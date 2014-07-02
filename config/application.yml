@@ -26,7 +26,8 @@ GROCER_ENDPOINT: gateway.push.apple.com
 BUGSNAG_API_KEY: f7039da9a0bcf75663356b181a7e42dd
 
 staging:
-
+  GA_CLIENT_ID: 735228360361-qt7vofvrlat880q27g096sfqhaee39ih.apps.googleusercontent.com
+  GA_SECRET: KTX0cuMOM1hkk1KxXKyVg3Mn
 
 production:
   GA_CLIENT_ID: 735228360361-qt7vofvrlat880q27g096sfqhaee39ih.apps.googleusercontent.com
