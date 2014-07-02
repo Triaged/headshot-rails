@@ -48,7 +48,7 @@ private # ----------------------------------------------------
 	end
 
   def company_subdomain?
-    request.subdomain.present? && request.subdomain != "www" 
+    request.subdomain.present? && (request.subdomain != "www" || request.subdomain != "admin")
   end
 
 	# This will redirect the user to your 404 page if the account can not be found
