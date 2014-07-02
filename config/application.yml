@@ -31,4 +31,4 @@ production:
   FIREBASE_URL: https://badge-prod.firebaseio.com/
   GROCER_CERT: badge-adhoc.pem
   GROCER_PASS: snowboard12
-  GROCER_ENDPOINT: gateway.push.push.apple.com
+  GROCER_ENDPOINT: gateway.push.apple.com
