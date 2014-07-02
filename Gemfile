@@ -73,5 +73,4 @@ end
 
 group :test do
   gem 'minitest-spec-rails', :github => "metaskills/minitest-spec-rails"
-  gem 'minitest-wscolor'
 end

@@ -23,6 +23,7 @@ FIREBASE_URL: https://badge-dev.firebaseio.com/
 GROCER_CERT: badge-adhoc.pem
 GROCER_PASS: snowboard12
 GROCER_ENDPOINT: gateway.push.apple.com
+BUGSNAG_API_KEY: f7039da9a0bcf75663356b181a7e42dd
 
 staging:
 
