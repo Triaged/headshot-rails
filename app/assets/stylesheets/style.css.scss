@@ -156,7 +156,10 @@ $spacing-xlg: 40px;
 .form-control {
 	box-shadow: none;
 }
-
+.form-control:focus {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
 .form-pull-right {
 	text-align: right;
 }
@@ -402,9 +405,16 @@ button.close-custom {
 	display: inline-block;
 	text-align: right;
 	position: relative;
+	@media(max-width:767px) {
+		width: 100%;
+		text-align: left;
+	}
 	p {
 		display: inline;
 		text-align: right;
+		@media(max-width:767px) {
+			display: inline-block;
+		}
 	}
 	.active {
 		color: $active;
@@ -428,8 +438,7 @@ button.close-custom {
 			top: 2px;
 		}
 		@media(max-width:767px){ 
-			width: 100%;
-			text-align: left;
+			text-align: right;
 		}
 	}
 }
