@@ -1,5 +1,5 @@
 Users:
 <hr />
-<% @company.users.each do |user| %>
-	<%= user.email %> <br />
+<% @users.each do |user| %>
+	<%= user.email %> <br /> <%= link_to 'Login', become_admin_company_user_path(@company, @user), method: :post %>
 <% end %>

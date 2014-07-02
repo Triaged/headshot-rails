@@ -82,7 +82,9 @@ HeadshotRails::Application.routes.draw do
   devise_for :admins
   namespace :admin, :path => "", :constraints => {:subdomain => "admin"} do
      resources :companies do
-      resources :users
+      resources :users do
+        post 'become', on: :member
+      end
      end
     
   end
