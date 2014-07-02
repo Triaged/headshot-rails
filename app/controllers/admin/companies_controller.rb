@@ -23,4 +23,10 @@ class Admin::CompaniesController < AdminController
     end
   end
 
+private
+
+	def company_params
+		params[:company].permit(:name, :uses_departments)
+	end
+
 end

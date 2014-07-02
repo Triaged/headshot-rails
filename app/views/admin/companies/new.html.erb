@@ -5,7 +5,7 @@
   <%= bootstrap_form_for([:admin, @company], layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
     <div class="form-inputs">
     	<%= f.text_field :name %>
-    	<%= f.text_field :use_departments %>
+    	<%= f.text_field :uses_departments %>
     </div>
     <%= f.button "Create", class: "btn-custom btn-primary" %>
   <% end %>
