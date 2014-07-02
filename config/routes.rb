@@ -5,6 +5,10 @@ HeadshotRails::Application.routes.draw do
   # API
   namespace :api, :path => "", :constraints => {:subdomain => "api"}, :defaults => {:format => :json} do
   	namespace :v1 do
+      resource :versions do
+        get 'ios', on: :member
+        get 'android', on: :member
+      end
       resources :users do
         post 'email_message', on: :member
       end
