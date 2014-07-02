@@ -17,7 +17,7 @@ class SmsService
 	end
 
 	def default_delivery_message
-		"Download Badge here - <coming soon>"
+		"Download Badge here - bit.ly/1o0rs9I"
 	end
 
 end
