@@ -37,7 +37,7 @@ class API::V1::AccountsController < APIController
     @user = User.find_by_email(params[:email])
     if @user.present?
       @user.send_reset_password_instructions
-      render :json => { "message" => "An email was sent with intructions"}, :status => 200
+      render :json => { "message" => "An email was sent with instructions"}, :status => 200
     else
       render :json => { "message" => "No such email found"}, :status => 200
     end 
