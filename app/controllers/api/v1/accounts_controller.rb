@@ -1,6 +1,8 @@
 class API::V1::AccountsController < APIController
-  before_filter :authenticate_user_from_token!, :only => :reset_password
-  before_filter :authenticate_user!, :only => :reset_password
+  skip_before_filter :authenticate_user_from_token!, :only => :reset_password
+  skip_before_filter :authenticate_user!, :only => :reset_password
+  skip_before_filter :current_company, :only => :reset_password
+
 	before_action :set_user, :except => :reset_password
 
 	def show
