@@ -1,5 +1,7 @@
 class API::V1::AccountsController < APIController
-	before_action :set_user
+  before_filter :authenticate_user_from_token!, :only => :reset_password
+  before_filter :authenticate_user!, :only => :reset_password
+	before_action :set_user, :except => :reset_password
 
 	def show
 		render json: @user, serializer: AccountSerializer
