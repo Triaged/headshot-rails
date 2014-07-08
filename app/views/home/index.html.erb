@@ -1,17 +1,401 @@
-<div class="border">
-	<h3>Sign In</h3>
-</div>
-<div class="sign-in no-border">
-	<%= bootstrap_form_for(:user, :url => session_path(:user), :html => { :role => 'form'}, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
-    
-    
-    <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
-    <%= f.password_field :password, class: 'form-control' %>
-    
-   <div class="form-actions form-pull-right edit-btns">
-    <%= f.submit "Sign In", class: "btn-custom btn-primary" %>
-  </div>
-  <% end %>
-</div>
+    <!--begin container -->
+    <div id="container">
+                
+        <!--begin intro -->
+        <div id="intro">
+        <div id="intro-bg"></div>
+        
+            <!--begin header_wrapper -->
+            <header id="header_wrapper">
+                
+                <!--begin header -->    
+                <div id="header" class="clearfix">
+                        
+                            <span id="altcolor" class="nospam">Coming soon to iOS and Android</span>
+                            <!--begin social icons -->
+                            <ul class="social_icons">
+                                <li>
+                                    <a href="mailto:team@badge.co" target="_top">
+                                        <i class="fa fa-envelope"></i>
+                                    </a>
+                                </li>
+                                <!-- <li>
+                                	<%= link_to 'login', "#" %>
+                                </li> -->
+                            </form>
+                            </ul>
+                            <!--end social icons -->
+                            
+                </div>
+                <!--end header -->
+                
+            </header>
+            <!--end header_wrapper -->
+            
+            <!--begin home section -->
+            <section id="home">
+            
+            	<!--begin home_box -->
+                <div class="home_box bounce_fade">
+                    <span class="logo">Badge</span>
+                                                                    
+                    <span class="home_text1">A modern company directory.</span>
 
+                    <!-- Begin MailChimp Signup Form -->
 
+                 
+
+                    <!--End mc_embed_signup-->
+                    <div id="mc_embed_signup">                        
+                        <form id="mc-embedded-subscribe-form" class="contact_form home_form validate" name="mc-embedded-subscribe-form" action="http://headshot.us8.list-manage.com/subscribe/post?u=2759e56aacab86303443bf35f&amp;id=132442e9b2" method="post" target="_blank" novalidate>
+                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" name="cf_email" placeholder="Enter Your Email Address" required>  
+                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_2759e56aacab86303443bf35f_132442e9b2" tabindex="-1" value=""></div>
+                            <input type="submit" value="Get Early Access" name="subscribe" id="mc-embedded-subscribe" class="button yellow"/>
+                        </form>
+                    </div>
+                
+                </div>
+                <!--end home_box -->
+
+                                        
+            </section>
+            <!--end home section -->
+            
+        </div>
+        <!--end intro -->
+
+        <!-- begin features_wrapper -->
+        <div class="features_wrapper">
+            
+            <!-- begin features_box -->
+            <div class="features_box">
+                 
+                <!-- begin row -->
+                <div class="row">
+                    
+                    <!-- begin twelvecol -->
+                    <div class="twelvecol">
+                    
+                        <span class="features_title_big up_fade">Connect everyone on your team</span>
+                        
+                        <span class="features_title_small up_fade">Up-to-date contact info for everyone in your company.</span>
+                    
+                        <div class="two-iphones">    
+                            <!--begin features_left -->
+                             <div class="features_center up_fade">
+                                
+                                <img src="<%= asset_url "home/iphone-firstimage.png" %>" alt="Picture">
+                                
+                            </div>
+
+                    
+                            <!--end features_side -->
+                        </div>
+                        
+                    </div>
+                    <!-- end twelvecol -->
+                    
+                </div>
+                <!-- end row -->
+            
+            </div>
+            <!-- end features_box -->
+            
+        </div>
+        <!-- end features_wrapper -->
+
+        <!--begin section_wrapper -->
+        <section class="section_wrapper">
+            
+            <!--begin section_box -->
+            <div class="section_box">
+              
+                <!--begin row -->
+                <div class="row">
+                    
+                    <!--begin twelvecol -->
+                    <div class="twelvecol">
+                    
+                        <!--begin section_description -->
+                        <div class="section_description left_fade">
+                            
+                            <p>Communicating with your teammates shouldn't be a hassle. Badge allows you to message, text and call everyone on your team.</p>
+                            
+                            
+                        </div>
+                        <!--end section_description -->
+                        
+                        <!--begin section_image -->
+                        <div class="section_image right_fade">
+                            
+                            <img src="<%= asset_url "home/iphone4-communication.png" %>"alt="picture">
+                                                                   
+                        </div>
+                        <!--end section_image -->
+                         
+                    </div>
+                    <!--end twelvecol -->
+                    
+                </div>
+                <!--end row -->
+                
+            </div>
+            <!--end section_box -->
+            
+        </section>
+        <!--end section_wrapper -->
+
+        
+
+        <!-- begin features_wrapper -->
+        <div class="features_wrapper">
+            
+            <!-- begin features_box -->
+            <div class="features_box">
+                 
+                <!-- begin row -->
+                <div class="row">
+                    
+                    <!-- begin twelvecol -->
+                    <div class="twelvecol">
+                    
+                        <span class="features_title_big up_fade">Simple Mobile Messaging</span>
+                        
+                        <span class="features_title_small up_fade">The fastest way to coordinate with colleagues.</span>
+                    
+                         <div class="two-iphones">    
+                            <!--begin features_left -->
+                             <div class="features_center up_fade">
+                                
+                                <img src="<%= asset_url "home/iphone-firstimage.png" %>" alt="Picture">
+                                
+                            </div>
+
+                    
+                            <!--end features_side -->
+                        </div>
+                        
+                    </div>
+                    <!-- end twelvecol -->
+                    
+                </div>
+                <!-- end row -->
+            
+            </div>
+            <!-- end features_box -->
+            
+        </div>
+        <!-- end features_wrapper -->
+
+        <!--begin section_wrapper -->
+        <section class="section_wrapper nodisplay">
+            
+            <!--begin section_box -->
+            <div class="section_box">
+              
+                <!--begin row -->
+                <div class="row">
+                    
+                    <!--begin twelvecol -->
+                    <div class="twelvecol">
+                    
+                        <!--begin section_description -->
+                        <div class="section_description left_fade">
+                            
+                            <p>Headshot uses your phone's GPS to detect your location and post your current status to your team.</p>
+                            
+                        </div>
+                        <!--end section_description -->
+                        
+                        <!--begin section_image -->
+                        <div class="section_image right_fade">
+                            
+                            <img src="<%= asset_url "home/map.png" %>" alt="picture">
+                                                                   
+                        </div>
+                        <!--end section_image -->
+                         
+                    </div>
+                    <!--end twelvecol -->
+                    
+                </div>
+                <!--end row -->
+                
+            </div>
+            <!--end section_box -->
+            
+        </section>
+        <!--end section_wrapper -->
+
+        <!--begin services_wrapper -->
+        <section class="services_wrapper">
+            
+            <!--begin services_box -->
+            <div class="services_box up_fade">
+           
+                <!--begin row -->
+                <div class="row">
+                
+                    <!--begin twelvecol -->
+                    <div class="twelvecol">
+
+                    <span class="home_text1">Importing your contacts is care-free.</span>
+                    <span class="features_title_small up_fade">We allow you to import and invite contacts from the following services:</span>
+                        
+                        <!--begin fourcol -->
+                        <div class="fourcol">
+                            
+                            <!--begin services_item -->
+                            <div class="services_item">
+                                <div class="icon_wrapper">
+                                    <img src="<%= asset_url "home/apps_logo_flat_print_medium.png" %>" id="google-icon">
+                                </div>
+                                <h2>Google Apps</h2>
+                            </div>
+                            <!--end services_item -->
+                            
+                        </div>
+                        <!--end threecol -->
+                        
+                        <!--begin fourcol -->
+                        <div class="fourcol">
+                            
+                            <!--begin services_item -->
+                            <div class="services_item">
+                                <div class="icon_wrapper">
+                                    <img src="<%= asset_url "home/logo-active-directory.png"  %>" class="import-icons">
+                                </div>
+                                <h2>Microsoft Active Directory</h2>
+                            </div>
+                            <!--end services_item -->
+                            
+                        </div>
+                        <!--end fourcol -->
+                        
+                        <!--begin fourcol -->
+                        <div class="fourcol last">
+                            
+                            <!--begin services_item -->
+                            <div class="services_item last">
+                                <div class="icon_wrapper">
+                                    <img src="<%= asset_url "home/BambooHR.png"  %>"id="bamboo-icon">
+                                </div>
+                                <h2>Bamboo HR</h2>
+                            </div>
+                            <!--end services_item -->
+                            
+                        </div>
+                        <!--end threecol -->
+                        
+                    </div>
+                    <!--end twelvecol -->
+                    
+                </div>
+                <!--end row -->
+                
+            </div>
+            <!--end services_box -->
+             
+        </section>
+        <!--end services_wrapper -->
+        
+        
+        <!-- begin newsletter_wrapper -->
+        <div class="newsletter_wrapper">
+        	
+            <!--begin info_transparent -->
+            <div class="info_transparent bounce_fade">
+                <h3>Sign up today to be notified<br>when we launch the app!</h3>
+            </div>
+            <!--end info_transparent -->
+            
+            <!-- begin newsletter_box -->
+            <div class="newsletter_box">
+                 
+                <!-- begin row -->
+                <div class="row">
+                    
+                    <!-- begin twelvecol -->
+                    <div class="twelvecol">
+                    
+                        <!--begin newsletter form -->
+                        <div class="contact_form_wrap bounce_fade">
+                            
+                            <!--begin success_box -->
+                            <p class="success_box" style="display:none;">We received your message and you'll hear from us soon. Thank You!</p>
+                            <!--end success_box -->
+                            
+                            <!--begin newsletter form -->
+                            <div id="mc_embed_signup">                        
+                                <form id="mc-embedded-subscribe-form" class="contact_form home_form validate" name="mc-embedded-subscribe-form" action="http://headshot.us8.list-manage.com/subscribe/post?u=2759e56aacab86303443bf35f&amp;id=132442e9b2" method="post" target="_blank" novalidate>
+                                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" name="cf_email" placeholder="Enter Your Email Address" required>  
+                                    <div style="position: absolute; left: -5000px;"><input type="text" name="b_2759e56aacab86303443bf35f_132442e9b2" tabindex="-1" value=""></div>
+                                    <input type="submit" value="Get Early Access" name="subscribe" id="mc-embedded-subscribe" class="button yellow-lined"/>
+                                </form>
+                            </div>
+                            <!--end newsletter form -->
+                            
+                        </div>
+                        <!--end newsletter form -->
+                        
+                    </div>
+                    <!-- end twelvecol -->
+                    
+                </div>
+                <!-- end row -->
+            
+            </div>
+            <!-- end newsletter_box -->
+            
+        </div>
+        <!-- end newsletter_wrapper -->
+           
+    </div>
+    <!--! end of #container -->
+    
+    <!-- scripts concatenated and minified via ant build script-->
+    <script src="lib/js/modernizr-2.6.1.min.js"></script>
+    <script src="lib/js/conditional.js"></script>
+    <script src="lib/js/prettyPhoto/js/jquery.prettyPhoto.js"></script>
+    <script src="lib/js/script.js"></script>
+    <script src="lib/js/jquery.inview.js"></script>
+    
+    <!-- begin slider script-->
+    <script src="lib/js/responsiveslides.min.js"></script>
+  	<script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+	
+		  // Slideshow 4
+		  $("#slider4, #slider3").responsiveSlides({
+			auto: true,
+			pager: true,
+			nav: true,
+			pause: true,
+			speed: 500,
+			timeout: 5000,
+			namespace: "callbacks",
+			before: function () {
+			  $('.events').append("<li>before event fired.</li>");
+			},
+			after: function () {
+			  $('.events').append("<li>after event fired.</li>");
+			}
+		  });
+	
+		});
+  	</script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45309305-4', 'headshot.io');
+  ga('send', 'pageview');
+
+</script>
+    <!-- end slider script-->
+    
+</body>
+</html>

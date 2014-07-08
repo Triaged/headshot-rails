@@ -29,6 +29,17 @@ class API::V1::AccountsController < APIController
     render :json => { "message" => "ok" }, :status => 200
   end
 
+  def reset_password
+    @user = User.find_by_email(params[:email])
+    if @user.present?
+      @user.send_reset_password_instructions
+      render :json => { "message" => "An email was sent with intructions"}, :status => 200
+    else
+      render :json => { "message" => "No such email found"}, :status => 200
+    end 
+    
+  end
+
 private
 
 	# Never trust parameters from the scary internet, only allow the white list through.
