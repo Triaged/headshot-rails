@@ -17,7 +17,7 @@ class Sinch::PushService
 			  device_token:      @push_token,
 			  alert:             "#{@author.first_name.capitalize}: #{@body}".truncate(150),
 			  sound: 						 'default',
-			  badge:             @device.count || 1,
+			  badge:             (@device ? @device.count : 1),
 			  expiry:            Time.now + 60*60*12,     # optional; 0 is default, meaning the message is not stored
 			  content_available: true,                  # optional; any truthy value will set 'content-available' to 1
 				custom: {
