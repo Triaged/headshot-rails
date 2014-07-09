@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
  	
  	has_one :employee_info
  	accepts_nested_attributes_for :employee_info
+ 	has_one :home_location
 	
 	mount_uploader :avatar, AvatarUploader
 
