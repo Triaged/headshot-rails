@@ -27,6 +27,7 @@ class Sinch::PushService
 
 		GROCER.with do |connection|
   		connection.push(notification)
+  		puts "Pushed msg"
   	end
 			
 
