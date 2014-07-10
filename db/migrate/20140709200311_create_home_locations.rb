@@ -1,7 +1,7 @@
 class CreateHomeLocations < ActiveRecord::Migration
   def change
     create_table :home_locations do |t|
-      t.reference :user
+      t.references :user
       t.string :street_address
       t.string :city
       t.string :zip_code

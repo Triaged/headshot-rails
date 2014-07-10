@@ -1,5 +1,5 @@
 class Manage::UsersController < ManageController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :resend]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :resend, :wipe_devices]
 
 	def index
     @users = current_company.users
@@ -35,6 +35,11 @@ class Manage::UsersController < ManageController
   def destroy
     @user.destroy
     redirect_to manage_users_path, success: "#{@user.full_name} was successfully deactivated."
+  end
+
+  def wipe_devices
+    WipeUserDevices.new(@user).wipe!
+    redirect_to manage_user_path(@user), success: 'Devices successfully wiped.'
   end
 
   def resend

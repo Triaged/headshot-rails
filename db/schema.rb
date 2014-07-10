@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140702185044) do
+ActiveRecord::Schema.define(version: 20140709200753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,9 @@ ActiveRecord::Schema.define(version: 20140702185044) do
     t.integer  "current_availability"
     t.integer  "home_office_location_id"
     t.integer  "current_office_location_id"
+    t.string   "twitter_url"
+    t.string   "linkedin_url"
+    t.string   "website_url"
   end
 
   add_index "employee_infos", ["current_office_location_id"], name: "index_employee_infos_on_current_office_location_id", using: :btree
@@ -97,6 +100,19 @@ ActiveRecord::Schema.define(version: 20140702185044) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "home_locations", force: true do |t|
+    t.integer  "user_id"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "zip_code"
+    t.string   "state"
+    t.string   "country"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "imported_users", force: true do |t|
     t.string   "first_name"
