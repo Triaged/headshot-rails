@@ -10,4 +10,5 @@ class Device < ActiveRecord::Base
   def strip_spaces
   	token.delete(' ') if token
   end
+
 end

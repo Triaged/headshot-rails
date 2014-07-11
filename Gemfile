@@ -47,6 +47,7 @@ gem 'thin'
 gem 'devise-async'
 gem 'friendly_id', '~> 5.0.0'
 gem "bugsnag"
+gem 'birthday', '~> 0.3.0'
 
 
 group :development do
