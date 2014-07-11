@@ -9,14 +9,15 @@ class Sinch::PushService
 	end
 
 	def deliver!
-		@device.increment!(:count)
+		puts "Pushing to #{@puch_token}"
+		@device.increment!(:count) if @device
 		
 
 		notification = Grocer::Notification.new(
 			  device_token:      @push_token,
 			  alert:             "#{@author.first_name.capitalize}: #{@body}".truncate(240),
 			  sound: 						 'default',
-			  badge:             @device.count,
+			  badge:             @device.count || 1,
 			  expiry:            Time.now + 60*60*12,     # optional; 0 is default, meaning the message is not stored
 			  content_available: true,                  # optional; any truthy value will set 'content-available' to 1
 				custom: {
@@ -31,6 +32,7 @@ class Sinch::PushService
 
 		GROCER_FEEDBACK.each do |attempt|
 			puts attempt.inspect
+			@device.destroy! if @device
 		end
 	end
 

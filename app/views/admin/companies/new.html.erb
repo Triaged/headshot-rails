@@ -1,0 +1,15 @@
+<div class="edit">
+  <h3>New Company</h3>
+	
+<div class="edit-fields">
+  <%= bootstrap_form_for([:admin, @company], layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
+    <div class="form-inputs">
+    	<%= f.text_field :name %>
+    	<%= f.text_field :use_departments %>
+    </div>
+    <%= f.button "Create", class: "btn-custom btn-primary" %>
+  <% end %>
+ </div>
+
+ </div>
+      

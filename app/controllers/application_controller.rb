@@ -48,13 +48,14 @@ private # ----------------------------------------------------
 	end
 
   def company_subdomain?
-    request.subdomain.present? && request.subdomain != "www" 
+    request.subdomain.present? && request.subdomain != "www" && request.subdomain != "admin"
   end
 
 	# This will redirect the user to your 404 page if the account can not be found
 	# based on the subdomain.  You can change this to whatever best fits your
 	# application.
 	def validate_subdomain
+      Rails.logger.info company_subdomain?
 	    redirect_to root_url(subdomain: nil) if (company_subdomain? && (current_company.nil? || !current_user || current_user.company != current_company))
 	end
 

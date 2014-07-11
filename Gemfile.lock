@@ -196,8 +196,6 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     minitest (5.3.4)
-    minitest-wscolor (0.0.3)
-      minitest (>= 2.3.1)
     momentjs-rails (2.5.1)
       railties (>= 3.1)
     multi_json (1.10.1)
@@ -388,7 +386,6 @@ DEPENDENCIES
   mail
   mandrill-api
   minitest-spec-rails!
-  minitest-wscolor
   momentjs-rails (~> 2.5.0)
   newrelic_rpm
   omniauth

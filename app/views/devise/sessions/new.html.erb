@@ -2,7 +2,7 @@
   <h3>Sign In</h3>
 </div>
 <div class="sign-in no-border">
-  <%= bootstrap_form_for(:user, :url => session_path(:user), :html => { :role => 'form'}, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
+  <%= bootstrap_form_for(resource, :url => session_path(resource), :html => { :role => 'form'}, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
     
     
     <%= f.email_field :email, :autofocus => true, class: 'form-control' %>

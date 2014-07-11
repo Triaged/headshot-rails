@@ -14,4 +14,5 @@ class DownloadsController < ApplicationController
     @result = sms_app_link.deliver!
     @response =  @result ? "Great, we texted you a link to the app!" : "Sorry, your phone number looks invalid."
 	end
+
 end
