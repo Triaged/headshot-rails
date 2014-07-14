@@ -14,8 +14,8 @@ HeadshotRails::Application.routes.draw do
       end
       resources :office_locations do
         member do 
-          post 'entered'
-          delete 'exited'
+          put 'entered'
+          put 'exited'
         end
       end
       resources :devices, only: :create
