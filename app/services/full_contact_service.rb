@@ -9,10 +9,11 @@ class FullContactService
 
 	def fetch_results
 		result = FullContact.person(email: @user.email, webhookId: @user.id, webhookUrl: full_contact_index_url)
-		parse_results result unless result["likelihood"] < MIN_LIKELIHOOD)
+		parse_results result 
 	end
 
 	def parse_results result
+		return if (result["likelihood"] < MIN_LIKELIHOOD)
 		find_avatar(result["photos"]) if (result.has_key?("photos") && !result["photos"].empty?)
 	end
 
