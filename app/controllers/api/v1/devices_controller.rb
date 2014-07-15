@@ -11,7 +11,14 @@ class API::V1::DevicesController < APIController
 		end
 
 		@device.update(device_params)
-		render :json => { "message" => "ok" }, :status => 200
+		respond_with @device, location: api_v1_device_path(@device)
+	end
+
+	def sign_out
+		@device = Device.find(params[:id])
+		@device.update(logged_in: false)
+		
+		respond_with @device, location: api_v1_device_path(@device)
 	end
 
 private 

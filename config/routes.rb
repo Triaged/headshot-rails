@@ -18,7 +18,9 @@ HeadshotRails::Application.routes.draw do
           put 'exited'
         end
       end
-      resources :devices, only: :create
+      resources :devices, only: :create do
+        delete 'sign_out', on: :member
+      end
 
       resources :departments
       resource :account do
