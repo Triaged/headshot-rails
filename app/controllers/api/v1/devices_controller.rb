@@ -11,14 +11,14 @@ class API::V1::DevicesController < APIController
 		end
 
 		@device.update(device_params)
-		respond_with @device, location: api_v1_device_path(@device)
+		respond_with @device, location: api_v1_devices_path(@device)
 	end
 
 	def sign_out
 		@device = Device.find(params[:id])
 		@device.update(logged_in: false)
 		
-		respond_with @device, location: api_v1_device_path(@device)
+		respond_with @device, location: api_v1_devices_path(@device)
 	end
 
 private 
