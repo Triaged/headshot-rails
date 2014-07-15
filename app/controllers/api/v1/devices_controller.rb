@@ -10,7 +10,7 @@ class API::V1::DevicesController < APIController
 			@device = current_user.devices.find_or_initialize_by(token: device_params[:token], service: device_params[:service])
 		end
 
-		@device.update(device_params)
+		@device.update(device_params.merge(logged_in: true))
 		respond_with @device, location: api_v1_devices_path(@device)
 	end
 
