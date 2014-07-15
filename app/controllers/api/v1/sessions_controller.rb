@@ -19,7 +19,7 @@ class API::V1::SessionsController < APIController
 	end
 	
 	def destroy
-		current_user.reset_authentication_token!
+		sign_out(current_user)
 		render :json=> {:success=>true}
 	end
  
