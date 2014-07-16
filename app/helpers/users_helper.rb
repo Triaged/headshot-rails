@@ -15,9 +15,13 @@ module UsersHelper
 
   def company_logo(company)
     content_tag(:div, class: "profile-picture") do
-      content_tag(:div, class: "initials-circle") do
-        content_tag(:div, class: "initials") do
-          concat content_tag(:span, company.initial)
+      if company.logo?
+        concat cl_image_tag(company.logo.url)
+      else
+        content_tag(:div, class: "initials-circle") do
+          content_tag(:div, class: "initials") do
+            concat content_tag(:span, company.initial)
+          end
         end
       end
     end

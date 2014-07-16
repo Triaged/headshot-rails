@@ -19,7 +19,7 @@ private
 	end
 
 	def company_params
-		params[:company].permit(:name, :uses_departments)
+		params[:company].permit(:name, :uses_departments, :logo)
 	end
 
 end

@@ -8,6 +8,8 @@ class Company < ActiveRecord::Base
 	has_many :office_locations
 	has_many :departments
 
+	mount_uploader :logo, CompanyLogoUploader
+
 	after_create :create_default_departments
 
 	
