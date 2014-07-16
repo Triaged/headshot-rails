@@ -1,6 +1,10 @@
 class Manage::ImportController < ManageController
 	before_action :set_provider, except: :update
 
+	def index
+		
+	end
+
 	def show
 		
 	end
@@ -12,6 +16,9 @@ class Manage::ImportController < ManageController
 			flash[:error] = "Authentication failed. Please try again."
 			redirect_to manage_import_url(@provider.name)
 		end
+	end
+
+	def bamboo
 	end
 
 	def update

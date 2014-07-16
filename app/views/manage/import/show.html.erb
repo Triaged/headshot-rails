@@ -24,3 +24,24 @@
     <%= link_to "Import from Google Apps", user_omniauth_authorize_url(:google_oauth2, subdomain: nil, state: current_company.name), class: "btn-custom btn-primary" %>
   </div>
 </div>
+
+<div class="profile">
+  <div class="profile-picture">
+    <div class="icon-circle">
+      <div class="icon">
+        <%= image_tag "apps_logo_flat_print_large.png" %>
+      </div>
+    </div>
+  </div>
+  <div class="profile-info">
+    <div class="profile-name">
+      <h2>BambooHR</h2>
+    </div>
+    <div class="profile-email">
+      <p>Connect your BambooHR account to import your contacts.</p>
+    </div>
+  </div>
+  <div class="btns-center btns-spacing-m">
+    <%= link_to "Import from BambooHR", user_omniauth_authorize_url(:google_oauth2, subdomain: nil, state: current_company.name), class: "btn-custom btn-primary" %>
+  </div>
+</div>

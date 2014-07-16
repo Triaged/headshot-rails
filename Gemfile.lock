@@ -61,6 +61,8 @@ GEM
       extlib (>= 0.9.15)
       multi_json (>= 1.0.0)
     aws_cf_signer (0.1.2)
+    bamboohr (0.0.1)
+      httparty (~> 0.13.0)
     bcrypt (3.1.7)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
@@ -359,6 +361,7 @@ DEPENDENCIES
   active_link_to
   active_model_serializers
   activerecord-session_store
+  bamboohr
   better_errors
   binding_of_caller
   birthday (~> 0.3.0)

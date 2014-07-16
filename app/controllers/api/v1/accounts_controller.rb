@@ -10,6 +10,7 @@ class API::V1::AccountsController < APIController
   end
 
 	def update
+    logger.info user_params
 		@user.update(user_params)
 		render json: @user, serializer: AccountSerializer
   end

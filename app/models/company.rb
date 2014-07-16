@@ -8,6 +8,8 @@ class Company < ActiveRecord::Base
 	has_many :office_locations
 	has_many :departments
 
+	has_one :bamboohr_info
+
 	after_create :create_default_departments
 
 	
