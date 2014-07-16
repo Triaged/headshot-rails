@@ -50,7 +50,7 @@ private
 	# Never trust parameters from the scary internet, only allow the white list through.
   def user_params
     params[:user].permit(:first_name, :last_name, :avatar, :department_id, :manager_id, :primary_office_location_id, :sharing_office_location,
-    	employee_info_attributes: [:job_title, :cell_phone, :office_phone, :job_start_date, :birth_date]
+    	employee_info: [:job_title, :cell_phone, :office_phone, :job_start_date, :birth_date]
     )
   end
 
