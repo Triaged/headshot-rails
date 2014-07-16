@@ -21,7 +21,6 @@ class User < ActiveRecord::Base
 	belongs_to :current_office_location, class_name: 'OfficeLocation'
  	
  	has_one :employee_info
- 	accepts_nested_attributes_for :employee_info
  	has_one :home_location
 	
 	mount_uploader :avatar, AvatarUploader
