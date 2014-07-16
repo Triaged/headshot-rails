@@ -1,6 +1,6 @@
 class Department < ActiveRecord::Base
 	belongs_to :company
-	has_many :users
+	has_many :users, counter_cache: true
 
 	validates :name, uniqueness: {scope: :company}
 
