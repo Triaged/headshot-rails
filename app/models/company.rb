@@ -14,7 +14,9 @@ class Company < ActiveRecord::Base
 
 	validates :name, uniqueness: true
 
-	
+	def should_generate_new_friendly_id?
+  	slug.blank? || name_changed?
+  end
 
 	def initial
 		name[0].capitalize
