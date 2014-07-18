@@ -1,0 +1,12 @@
+<%= bootstrap_form_for(@bamboohr_info, url: update_bamboohr_settings_manage_import_index_path, method: :post, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
+  <div class="form-inputs">
+  	<%= f.text_field :subdomain %>
+  	<%= f.text_field :api_key %>
+  </div>
+
+
+  <div class="form-actions form-pull-right edit-btns">
+    <%= link_to "Cancel", manage_import_index_path,  class: "btn-custom btn-default" %>
+    <%= f.submit "Import From BambooHR", class: "btn-custom btn-primary" %>
+  </div>
+<% end %>

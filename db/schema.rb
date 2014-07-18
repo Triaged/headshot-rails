@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140715215530) do
+ActiveRecord::Schema.define(version: 20140718134303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140715215530) do
     t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "daily_import"
   end
 
   add_index "bamboohr_infos", ["company_id"], name: "index_bamboohr_infos_on_company_id", using: :btree
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 20140715215530) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "uses_departments", default: true
+    t.string   "logo"
   end
 
   create_table "departments", force: true do |t|
@@ -93,10 +95,12 @@ ActiveRecord::Schema.define(version: 20140715215530) do
     t.string   "twitter_url"
     t.string   "linkedin_url"
     t.string   "website_url"
+    t.integer  "imported_user_id"
   end
 
   add_index "employee_infos", ["current_office_location_id"], name: "index_employee_infos_on_current_office_location_id", using: :btree
   add_index "employee_infos", ["home_office_location_id"], name: "index_employee_infos_on_home_office_location_id", using: :btree
+  add_index "employee_infos", ["imported_user_id"], name: "index_employee_infos_on_imported_user_id", using: :btree
   add_index "employee_infos", ["user_id"], name: "index_employee_infos_on_user_id", using: :btree
 
   create_table "friendly_id_slugs", force: true do |t|
@@ -135,6 +139,9 @@ ActiveRecord::Schema.define(version: 20140715215530) do
     t.datetime "updated_at"
     t.string   "full_name"
     t.integer  "import_id"
+    t.string   "department"
+    t.string   "location"
+    t.string   "avatar_url"
   end
 
   add_index "imported_users", ["company_id"], name: "index_imported_users_on_company_id", using: :btree

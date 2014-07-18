@@ -71,7 +71,10 @@ HeadshotRails::Application.routes.draw do
       resources :import do
         member do
           get 'select'
+
         end
+        get 'bamboohr', on: :collection
+        post 'update_bamboohr_settings', on: :collection
       end
       resource :company
       resources :office_locations

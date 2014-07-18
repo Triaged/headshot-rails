@@ -1,5 +1,5 @@
 class Manage::ImportController < ManageController
-	before_action :set_provider, except: :update
+	before_action :set_provider, except: [:index, :update, :bamboohr, :update_bamboohr_settings]
 
 	def index
 		
@@ -18,9 +18,23 @@ class Manage::ImportController < ManageController
 		end
 	end
 
-	def bamboo
+	def bamboohr
+		@bamboohr_info = current_company.bamboohr_info || current_company.build_bamboohr_info
+		redirect_to select_manage_import_path(id: Provider.named("bamboohr").id) if @bamboohr_info.info_set?
 	end
 
+	def update_bamboohr_settings
+		@bamboohr_info = current_company.bamboohr_info || current_company.build_bamboohr_info
+		@bamboohr_info.update(bamboohr_info_params)
+		
+		if @bamboohr_info.valid?
+			redirect_to select_manage_import_path(id: Provider.named("bamboohr").id)
+		else
+			bamboohr_manage_import_index_path
+		end
+	end
+
+	
 	def update
 		@import = Import.find(params[:id])
 
@@ -37,6 +51,10 @@ private
 
 	def import_params
 		params[:import].permit(:imported_users_attributes => [:id, :should_import])
+	end
+
+	def bamboohr_info_params
+		params[:bamboohr_info].permit(:api_key, :subdomain)
 	end
 
 end
