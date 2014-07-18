@@ -12,6 +12,8 @@ class Company < ActiveRecord::Base
 
 	after_create :create_default_departments
 
+	validates :name, uniqueness: true
+
 	
 
 	def initial

@@ -7,6 +7,12 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!, :validate_subdomain
   before_action :set_device_type
 
+  def append_info_to_payload(payload)
+    super
+    payload[:params] = request.params
+    payload[:user] = current_user.try(:email)
+  end
+
   def set_device_type
     request.variant = :mobile if browser.mobile?
   end
