@@ -49,6 +49,8 @@ gem 'friendly_id', '~> 5.0.0'
 gem "bugsnag"
 gem 'birthday', '~> 0.3.0'
 gem "lograge"
+gem 'bamboohr'
+
 
 
 group :development do

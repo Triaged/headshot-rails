@@ -7,6 +7,7 @@ class Company < ActiveRecord::Base
 	has_many :imports
 	has_many :office_locations
 	has_many :departments
+	has_one :bamboohr_info
 
 	mount_uploader :logo, CompanyLogoUploader
 

@@ -10,7 +10,7 @@ class API::V1::AccountsController < APIController
   end
 
 	def update
-		@user.update(user_params)
+    @user.update(user_params)
 		render json: @user, serializer: AccountSerializer
   end
 
