@@ -16,6 +16,11 @@
       <p><%= @user.email %></p>
     </div>
   </div>
+  <% if @user.admin? %>
+    <div class="profile-label" style="text-align: center;">
+      <span class="label label-default label-custom">Admin</span>
+    </div>
+  <% end %>
 </div>
 <% unless @user.installed_app? %>
   <div class="profile-status border">
@@ -33,7 +38,8 @@
 </div>
 
 <div class="final-links">
-  <p><%= link_to 'Wipe Device Data', "#", data: {toggle: "modal", target: "#wipeDevices"} %></p>
+  <!--<p><%#= link_to 'Wipe Device Data', "#", data: {toggle: "modal", target: "#wipeDevices"} %></p>-->
+  <% unless @user.admin %> <p><%= link_to 'Make Admin', make_admin_manage_user_path(@user), method: :post %></p> <% end %>
   <p><%= link_to 'Deactivate Contact', "#", data: {toggle: "modal", target: "#archiveContact"} %></p>
 </div>
 

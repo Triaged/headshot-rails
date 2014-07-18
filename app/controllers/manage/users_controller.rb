@@ -1,5 +1,6 @@
 class Manage::UsersController < ManageController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :resend, :wipe_devices]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :resend, :wipe_devices, :make_admin]
+  before_action :require_admin, only: [:make_admin]
 
 	def index
     @users = current_company.users
@@ -51,6 +52,11 @@ class Manage::UsersController < ManageController
     redirect_to manage_user_path(@user), success: 'Invitation was successfully resent.'
   end
 
+  def make_admin
+    @user.update(admin: true)
+    redirect_to manage_user_path(@user), success: "#{@user.first_name} is now an admin."
+  end
+
   def archived
     @users = current_company.users.only_deleted
   end
@@ -61,6 +67,10 @@ class Manage::UsersController < ManageController
   end
 
 private
+
+  def require_admin
+    redirect_to manage_users_path and return unless current_user.admin
+  end
 
   def set_user
     @user = current_company.users.friendly.find(params[:id])

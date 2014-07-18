@@ -66,6 +66,7 @@ HeadshotRails::Application.routes.draw do
           post 'restore'
           put 'resend'
           post 'wipe_devices'
+          post 'make_admin'
         end
       end
       resources :import do
