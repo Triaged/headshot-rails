@@ -1,0 +1,15 @@
+.section-header {
+	padding-bottom: 85px;
+	.divider-line {
+		height: 1px; 
+		background-color: $text-color; 
+		text-align: center;
+		span {
+			background-color: white; 
+			position: relative; 
+			top: -0.5em;
+			padding: 0 30px;
+			text-transform: uppercase;
+		}
+	}
+}
