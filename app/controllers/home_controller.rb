@@ -7,6 +7,12 @@ class HomeController < ApplicationController
 	def index
 	end
 
+	def about
+	end
+
+	def signup
+	end
+
 private
 	
 	def check_redirect
