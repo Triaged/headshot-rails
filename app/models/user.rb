@@ -128,7 +128,7 @@ protected
 	def create_default_employee_info
 	  # build default profile instance. Will use default params.
 	  # The foreign key to the owning User model is set automatically
-	  create_employee_info
+	  create_employee_info if employee_info.nil?
 	  true # Always return true in callbacks as the normal 'continue' state
 	end
 

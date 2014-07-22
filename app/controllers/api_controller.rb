@@ -25,9 +25,7 @@ class APIController < ApplicationController
   end
 
   def authenticate_user_from_token!
-    logger.info "Authenticating from token"
     user_token = request.headers["HTTP_AUTHORIZATION"].presence
-    logger.info user_token
     user = user_token && User.find_by(authentication_token: user_token)
     sign_in user if user
   rescue
