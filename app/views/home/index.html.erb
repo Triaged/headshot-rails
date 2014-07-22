@@ -1,7 +1,8 @@
-<main role="main">
+<div class="container-full">
 
     <div class="hero">
-        <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+
+        <header class="navbar navbar-transparent" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button class="navbar-toggle navbar-toggle-custom" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -30,64 +31,72 @@
         </header>
 
         <div class="hero-content">
-            <div class="container">
-                <h1>Your Company Directory, Completely Reinvented</h1>
-                <div class="cta-forms">
-                    <form class="form-inline" role="form">
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Company email">
+            <div class="hero-img">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <h1>Your Company Directory, Completely Reinvented</h1>
+                            <div class="cta-forms">
+                                <form class="form-inline" role="form">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Company email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Company name">
+                                    </div>
+                                    <button type="submit" class="btn-custom btn-primary">Sign in</button>
+                                </form>
+                            </div>
+                            <p><small>BADGE IS AVAILIBLE ON IOS &amp; ANDROID DEVICES</small></p>
                         </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Company name">
-                        </div>
-                        <button type="submit" class="btn-custom btn-primary">Sign in</button>
-                    </form>
+                    </div>
                 </div>
-                <p>BADGE IS AVAILIBLE ON IOS &amp; ANDROID DEVICES</p>
             </div>
         </div>
-
     </div>
 
-    <div class="main">
-        <div class="container">
 
-            <div class="mission-content col-lg-10 col-lg-offset-1">
-                <h3>We believe that great companies are built by empowered employees. That’s why we created Badge.</h3>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="mission-content col-lg-10 col-lg-offset-1">
+                    <h3>We believe that great companies are built by empowered employees. That’s why we created Badge.</h3>
+                </div>
             </div>
 
             <div class="features-content">
-                <div class="section-header col-lg-10 col-lg-offset-1">
-                    <div class="divider-line">
-                        <span>
-                            Features
-                        </span>
+                <div class="row">
+                    <div class="section-header col-lg-10 col-lg-offset-1">
+                        <div class="divider-line">
+                            <span>
+                               <small>Features</small>
+                            </span>
+                        </div>
                     </div>
                 </div>
                 <div class="section row">
                     <div class="feature-image col-lg-8">
                         <%= image_tag ("home/web/hand1.png"), :width => "750" %>
                     </div>
-                    <div class="feature-copy col-lg-4">
+                    <div class="feature-copy-right col-lg-4">
                         <h4>A Mobile-First Company Directory</h4>
                         <p>Your company directory has been neglected for far too long. Badge provides access to all your work contacts, so getting in touch with anyone is fast, convienient and organized beautifully.  You've truly got your whole company at your fingertips.</p>
                     </div>
                 </div>
                 <div class="section row">
-                    <div class="feature-copy col-lg-4">
+                    <div class="feature-copy-left col-lg-4">
                         <h4>Mobile Messaging Made For Work</h4>
                         <p>People reply 30X faster to texts than emails. So why are you still putting critical, urgent requests into email?  With Badge, everyone in your company can send secure mobile messages.  That means work gets done faster.</p>
                     </div>
                     <div class="feature-image col-lg-8">
                         <%= image_tag ("home/web/hand2.png"), :width => "750" %>
                     </div>
-                    </div>
                 </div>
                 <div class="section row">
                     <div class="feature-image col-lg-8">
                         <%= image_tag ("home/web/hand3.png"), :width => "750" %>
                     </div>
-                    <div class="feature-copy col-lg-4">
+                    <div class="feature-copy-right col-lg-4">
                         <h4>Your Colleagues At A Glance</h4>
                         <p>Badge gives you the information you need most about your colleagues. Wondering who’s in the office? Looking for phone or email? Want to find a teammate you’ve been told to follow up with? We've got you covered. Badge helps you navigate your company more quickly and easily that ever before.</p>
                     </div>
@@ -95,101 +104,119 @@
             </div>
 
             <div class="customer-content">
-                <div class="section-header col-lg-10 col-lg-offset-1">
-                    <div class="divider-line">
-                        <span>
-                            Clients
-                        </span>
+                <div class="row">
+                    <div class="section-header col-lg-10 col-lg-offset-1">
+                        <div class="divider-line">
+                            <span>
+                                <small>Clients</small>
+                            </span>
+                        </div>
                     </div>
                 </div>
                 <div class="section">
-                    <div class="feature-copy col-lg-7">
-                        <span class="">"</span>
-                        <h3>Badge has energized our culture at Moat. We're collaborating more effectively, getting things done faster, and having fun while we do it.</h3>
-                    </div>
-                    <div class="feature-image col-lg-5">
-                        <%= image_tag ("home/web/badge.png"), :width => "362" %>
+                    <div class="row">
+                        <div class="customer-copy col-lg-7">
+                            <span class=""><%= image_tag ("home/quotation.svg"), :width => "50" %></span>
+                            <h3>Badge has energized our culture at Moat. We're collaborating more effectively, getting things done faster, and having fun while we do it.</h3>
+                        </div>
+                        <div class="feature-image col-lg-5">
+                            <%= image_tag ("home/web/badge.png"), :width => "362" %>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="onboard-content">
-                <div class="section-header col-lg-10 col-lg-offset-1">
-                    <div class="divider-line">
-                        <span>
-                            Onboarding
-                        </span>
+                <div class="row">
+                    <div class="section-header col-lg-10 col-lg-offset-1">
+                        <div class="divider-line">
+                            <span>
+                                <small>Onboarding</small>
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <div class="onboarding-copy col-lg-8 col-lg-offset-2">
-                    <h2>Roll Out Badge In Minutes</h2>
-                    <p>You can import employees from Google Apps or BambooHR in one click (more integrations coming soon!).  Use something else? No problem! All you need is a list of names and emails, and our account team takes care of the rest!</p>
+                <div class="row">
+                    <div class="onboarding-copy col-lg-8 col-lg-offset-2">
+                        <h2>Roll Out Badge In Minutes</h2>
+                        <p class="p-large">You can import employees from Google Apps or BambooHR in one click (more integrations coming soon!). Use something else? No problem! All you need is a list of names and emails, and our account team takes care of the rest!</p>
+                    </div>
                 </div>
                 <div class="onboarding-video">
+                    <%= image_tag ("home/web/onboarding-laptop.svg"), :width => "1141" %>
                 </div>
             </div>
 
         </div>
     </div>
-</main>
 
-<div class="cta">
-    <div class="container">
-        <h3>Register to request early access to Badge.</h3>
-        <div class="cta-forms">
-            <form class="form-inline" role="form">
-                <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Company email">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Company name">
-                </div>
-                <button type="submit" class="btn btn-default">Get Early Access</button>
-            </form>
+
+    <div class="cta">
+        <div class="container">
+            <h3>Register to request early access to Badge.</h3>
+            <div class="cta-forms">
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Company email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Company name">
+                    </div>
+                    <button type="submit" class="btn btn-default">Get Early Access</button>
+                </form>
+            </div>
+            <p>Badge Is Availible On iOS &amp; Android Devices</p>
         </div>
-        <p>Badge Is Availible On iOS &amp; Android Devices</p>
     </div>
-</div>
+
+
+
+    <footer>
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <ul class="footer-links">
+                    <div class="row">
+                        <li class="col-lg-4">
+                            <div class="footer-headline">
+                                <h6>Learn More</h6>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="/our-features">Features</a>
+                                </li>
+                                <li>
+                                    <a href="/our-features">About Us</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="col-lg-4">
+                            <div class="footer-headline">
+                                <h6>Get In Touch</h6>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="/our-features">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="/our-features"><i class="fa fa-twitter"></i></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="col-lg-4">
+                            <div class="footer-headline">
+                                <h6>Badge</h6>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="/our-features">Login</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+            
+    </footer>
 
 </div>
-<footer>
-    <div class="col-lg-6 col-lg-offset-3">
-        <ul class="footer-links">
-            <li class="col-lg-4">
-                <div class="footer-headline">
-                    <h6>Learn More</h6>
-                </div>
-                <ul>
-                    <li>
-                        <a href="/our-features">Features</a>
-                    </li>
-                    <li>
-                        <a href="/our-features">About Us</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="col-lg-4">
-                <div class="footer-headline">
-                    <h6>Get In Touch</h6>
-                </div>
-                <ul>
-                    <li>
-                        <a href="/our-features">Contact Us</a>
-                    </li>
-                    <li>
-                        <a href="/our-features"><i class="fa fa-twitter"></i></a>
-                    </li>
-                </ul>
-            </li>
-            <li class="col-lg-4">
-                <div class="footer-headline">
-                    <h6>Badge</h6>
-                </div>
-                <ul>
-                    <li>
-                        <a href="/our-features">Login</a>
-                    </li>
-                </ul>
-            </li>
-        
-</footer>

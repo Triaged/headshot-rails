@@ -1,3 +1,50 @@
+html {
+height: 100%;
+position: relative;
+}
+
+body {
+height: 100%;
+position: relative;
+font-size: 16px;
+line-height: 1.6;
+}
+
+// Typography
+
+p {
+	line-height: 1.6em;
+	color: #636C7B;
+}
+h1 {
+  	font-size: (16px * 2.78);
+}
+h2 {
+
+  	font-size: (16px * 2.5);
+  	font-weight: 300;
+}
+h3 {
+
+  	font-size: (16px * 2);
+  	line-height: 50px;
+  	letter-spacing: 1px;
+}
+h4 {
+
+  	font-size: (16px * 1.67);
+}
+small {
+	font-size: (16px * 0.89);
+	line-height: 20px;
+	letter-spacing: 1px;
+}
+h2, h3, h4, small {
+	color: #2E3B4E;
+}
+
+// General Items
+
 .section-header {
 	padding-bottom: 85px;
 	.divider-line {
@@ -12,4 +59,142 @@
 			text-transform: uppercase;
 		}
 	}
+}
+
+.container-full {
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+}
+
+.navbar-transparent {
+background-color: transparent;
+position: absolute;
+color: #ffffff;
+top: 0px;
+right: 0;
+left: 0;
+z-index: 1001;
+padding: 35px 0px;
+}
+
+// Landing Page
+
+// Navigation
+
+.navbar-brand {
+	font-size: 24px;
+	font-weight: 600;
+	color: #FFFFFF;
+	text-transform: uppercase;
+}
+.navbar-custom {
+	display: none;
+}
+
+// Hero
+
+.hero {
+	position: relative;
+	min-height: 100%;
+	text-align: center;
+}
+.hero-img {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+	background: image-url('home/web/hero-img.png') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	border-bottom-style: solid;
+	border-bottom-color: #d3d3d3;
+	border-bottom-width: 1px;
+	-webkit-animation: fadein 1s;
+	-moz-animation: fadein 1s;
+	-ms-animation: fadein 1s;
+	-o-animation: fadein 1s;
+	animation: fadein 1s;
+	.row {
+		padding-top: 200px;
+	}
+	h1 {
+		font-size: 50px;
+		color: #FFFFFF;
+		line-height: 60px;
+		font-weight: 600;
+	}
+	small {
+		color: #FFFFFF;
+	}
+}
+// Mission
+
+.mission-content {
+	text-align: center;
+	h3 {
+		font-weight: 500;
+		line-height: 64px;
+		font-style: italic;
+	}
+}
+
+// Features
+
+.features-content {
+	h4 {
+		font-weight: 400;
+		color: #F8AE37;
+		line-height: 36px;
+		text-transform: uppercase;
+		padding: 100px 0 30px;
+	}
+	.feature-copy-right {
+		padding-left: 50px;
+	}
+	.feature-copy-left {
+		padding-right: 50px;
+	}
+}
+
+// Clients
+
+.customer-copy {
+	text-align: center;
+	h3 {
+		font-weight: 400;
+	}
+}
+
+// Onboarding
+
+.onboard-content {
+	text-align: center;
+	.p-large {
+		font-size: 22px;
+		line-height: 34px;
+	}
+}
+
+// CTA
+
+.cta {
+	background-color: #2CB5A8;
+	text-align: center;
+	h3 {
+		font-weight: 600;
+		color: #FFFFFF;
+	}
+	p {
+		text-transform: uppercase;
+		color: #FFFFFF;
+	}
+}
+
+// Footer
+
+footer {
+	background-color: #FFFCF1;
 }
