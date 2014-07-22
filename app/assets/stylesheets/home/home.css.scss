@@ -13,7 +13,7 @@ line-height: 1.6;
 // Typography
 
 p {
-	line-height: 1.6em;
+	line-height: 1.65em;
 	color: #636C7B;
 }
 h1 {
@@ -21,8 +21,9 @@ h1 {
 }
 h2 {
 
-  	font-size: (16px * 2.5);
+  	font-size: (16px * 2.78);
   	font-weight: 300;
+  	text-transform: uppercase;
 }
 h3 {
 
@@ -34,10 +35,15 @@ h4 {
 
   	font-size: (16px * 1.67);
 }
+h4 {
+
+  	font-size: (16px * 0.89);
+}
 small {
 	font-size: (16px * 0.89);
 	line-height: 20px;
 	letter-spacing: 1px;
+	text-transform: uppercase;
 }
 h2, h3, h4, small {
 	color: #2E3B4E;
@@ -87,12 +93,23 @@ padding: 35px 0px;
 	font-weight: 600;
 	color: #FFFFFF;
 	text-transform: uppercase;
+	padding: 0;
 	img {
 		display: inline;
 	}
 }
 .navbar-custom {
 	display: none;
+}
+
+// Forms
+
+.form-inline-custom{
+	width: auto;
+	.form-control-custom {
+		width: 260px;
+		height: 46px;
+	}
 }
 
 // Hero
@@ -123,11 +140,17 @@ padding: 35px 0px;
 	.row {
 		padding-top: 200px;
 	}
+	.cta-forms {
+		padding-top: 75px;
+	}
 	h1 {
 		font-size: 50px;
 		color: #FFFFFF;
 		line-height: 60px;
 		font-weight: 600;
+	}
+	p {
+		padding-top: 8px;
 	}
 	small {
 		color: #FFFFFF;
@@ -137,6 +160,7 @@ padding: 35px 0px;
 
 .mission-content {
 	text-align: center;
+	padding: 50px 0 75px;
 	h3 {
 		font-weight: 500;
 		line-height: 64px;
@@ -147,6 +171,9 @@ padding: 35px 0px;
 // Features
 
 .features-content {
+	.section {
+		padding-bottom: 100px;
+	}
 	h4 {
 		font-weight: 400;
 		color: #F8AE37;
@@ -164,10 +191,17 @@ padding: 35px 0px;
 
 // Clients
 
-.customer-copy {
-	text-align: center;
-	h3 {
-		font-weight: 400;
+.customer-content {
+	padding-bottom: 75px;
+	.customer-copy {
+		padding-top: 100px;
+		text-align: center;
+		img {
+			padding-bottom: 10px;
+		}
+		h3 {
+			font-weight: 400;
+		}
 	}
 }
 
@@ -176,8 +210,12 @@ padding: 35px 0px;
 .onboard-content {
 	text-align: center;
 	.p-large {
+		padding-top: 20px;
 		font-size: 22px;
-		line-height: 34px;
+		line-height: 36px;
+	}
+	.onboarding-video {
+		padding: 50px 0 75px;
 	}
 }
 
@@ -186,9 +224,14 @@ padding: 35px 0px;
 .cta {
 	background-color: #2CB5A8;
 	text-align: center;
+	height: 400px;
 	h3 {
+		padding-top: 75px;
 		font-weight: 600;
 		color: #FFFFFF;
+	}
+	.cta-forms {
+		padding: 50px 0 25px;
 	}
 	p {
 		text-transform: uppercase;
@@ -200,4 +243,23 @@ padding: 35px 0px;
 
 footer {
 	background-color: #FFFCF1;
+	height: 175px;
+	.footer-links {
+		padding-top: 50px;
+		ul {
+		list-style-type: none;
+		}
+		h5 {
+			text-transform: uppercase;
+			color: $brand-primary;
+		}
+		li {
+		font-size: 14px;
+		font-weight: 300;
+		list-style-type: none;
+		}
+		.list-links {
+			padding-left: 0;
+		}
+	}
 }
