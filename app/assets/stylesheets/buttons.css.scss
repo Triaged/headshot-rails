@@ -45,9 +45,23 @@ border-color: #ea9308;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
-color: white;
+color: #FFFFFF;
 background-color: #f79e10;
 border-color: #fff;
+}
+
+.btn-transparent {
+	color: #FFFFFF;
+	opacity: 0.4;
+	background-color: #f79e10;
+	border-color: #fff;
+}
+
+.btn-transparent:hover, .btn-transparent:focus, .btn-transparent:active, .btn-transparent.active {
+	color: #FFFFFF;
+	opacity: 0.4;
+	background-color: #f79e10;
+	border-color: #fff;
 }
 
 .btns-right {
