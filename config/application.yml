@@ -28,6 +28,7 @@ BUGSNAG_API_KEY: f7039da9a0bcf75663356b181a7e42dd
 staging:
   GA_CLIENT_ID: 735228360361-qt7vofvrlat880q27g096sfqhaee39ih.apps.googleusercontent.com
   GA_SECRET: KTX0cuMOM1hkk1KxXKyVg3Mn
+  INTERNAL_API_TOKEN: 20566ad05aaa5828ad6c3a6c73329db5108e4baba29814c59dbe5569e7c12be8
 
 production:
   GA_CLIENT_ID: 735228360361-qt7vofvrlat880q27g096sfqhaee39ih.apps.googleusercontent.com

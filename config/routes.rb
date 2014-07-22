@@ -39,6 +39,16 @@ HeadshotRails::Application.routes.draw do
         match '/registrations' => 'registrations#create', :via => :post
      end
   	end
+
+    # Internal API, never to be exposed to public
+    namespace :internal do
+      resources :users do
+        member do
+          get 'valid_auth_token'
+          post 'deliver_message'
+        end
+      end
+    end
 	end
 
  
