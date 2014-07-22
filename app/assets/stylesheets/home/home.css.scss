@@ -48,7 +48,10 @@ small {
 h2, h3, h4, small {
 	color: #2E3B4E;
 }
-
+.p-large {
+	font-size: 22px;
+	line-height: 36px;
+}
 // General Items
 
 .section-header {
@@ -214,9 +217,7 @@ background-color: #FFFFFF;
 .onboard-content {
 	text-align: center;
 	.p-large {
-		padding-top: 20px;
-		font-size: 22px;
-		line-height: 36px;
+	padding-top: 20px;
 	}
 	.onboarding-video {
 		padding: 50px 0 75px;
@@ -246,7 +247,7 @@ background-color: #FFFFFF;
 // Footer
 
 footer {
-	background-color: #FFFCF1;
+	background-color: #FFF2E3;
 	.footer-links {
 		padding: 50px 0 25px;
 		ul {
@@ -264,5 +265,29 @@ footer {
 		.list-links {
 			padding-left: 0;
 		}
+	}
+}
+
+
+
+// About Us Page
+
+// Story-Content
+
+.story-content {
+	text-align: center;
+	padding: 50px;
+	.col-lg-10 {
+	width: 82.333333%;
+	}
+	.col-lg-offset-1 {
+	margin-left: 8.8333333333%;
+	}
+	h3 {
+		padding: 10px 0 30px;
+		font-style: italic;
+	}
+	.section-header {
+		padding-top: 75px;
 	}
 }
