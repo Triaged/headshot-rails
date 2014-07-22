@@ -9,13 +9,13 @@ class API::Internal::UsersController < InternalAPIController
 	end
 
 	def valid_auth_token
-		if @user == User.find_by(authentication_token: params[:authentication_token])
+		if @user.id == User.find_by(authentication_token: params[:authentication_token]).id
 			render :json => { "success" => "true" }, :status => 200
 		else
-			render :json => { "success" => "true" }, :status => 200
+			render :json => { "success" => "false" }, :status => 200
 		end
 	rescue
-		render :json => { "success" => "true" }, :status => 200
+		render :json => { "success" => "false" }, :status => 200
 	end
 
 private
