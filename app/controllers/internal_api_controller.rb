@@ -12,10 +12,12 @@ class InternalAPIController < ApplicationController
 
   def authenticate_from_token!
     user_token = request.headers["HTTP_AUTHORIZATION"].presence
-    user_token && (user_token == ENV["INTERNAL_API_TOKEN"])
+    unless user_token && (user_token == ENV["INTERNAL_API_TOKEN"])
+      render :json => { :errors => ['You must be signed in to access this page'] }, :status => 401
+    end
   rescue
     # find_by fails with an invalid token
-    false
+    render :json => { :errors => ['You must be signed in to access this page'] }, :status => 401
   end
 
 end
