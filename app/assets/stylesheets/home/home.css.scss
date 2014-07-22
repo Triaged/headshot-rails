@@ -17,11 +17,11 @@ p {
 	color: #636C7B;
 }
 h1 {
-  	font-size: (16px * 2.78);
+  	font-size: (16px * 4);
 }
 h2 {
 
-  	font-size: (16px * 2.78);
+  	font-size: (16px * 3);
   	font-weight: 300;
   	text-transform: uppercase;
 }
@@ -35,7 +35,7 @@ h4 {
 
   	font-size: (16px * 1.67);
 }
-h4 {
+h5 {
 
   	font-size: (16px * 0.89);
 }
@@ -90,7 +90,7 @@ padding: 35px 0px;
 
 .navbar-brand-custom {
 	font-size: 24px;
-	font-weight: 600;
+	font-weight: 700;
 	color: #FFFFFF;
 	text-transform: uppercase;
 	padding: 0;
@@ -101,6 +101,9 @@ padding: 35px 0px;
 .navbar-custom {
 	display: none;
 }
+.navbar-toggle-custom .icon-bar {
+background-color: #FFFFFF;
+}
 
 // Forms
 
@@ -109,6 +112,8 @@ padding: 35px 0px;
 	.form-control-custom {
 		width: 260px;
 		height: 46px;
+		background-color: #FFFFFF;
+		margin: 0 auto;
 	}
 }
 
@@ -144,10 +149,9 @@ padding: 35px 0px;
 		padding-top: 75px;
 	}
 	h1 {
-		font-size: 50px;
 		color: #FFFFFF;
-		line-height: 60px;
-		font-weight: 600;
+		line-height: 70px;
+		font-weight: 700;
 	}
 	p {
 		padding-top: 8px;
@@ -243,9 +247,8 @@ padding: 35px 0px;
 
 footer {
 	background-color: #FFFCF1;
-	height: 175px;
 	.footer-links {
-		padding-top: 50px;
+		padding: 50px 0 25px;
 		ul {
 		list-style-type: none;
 		}
