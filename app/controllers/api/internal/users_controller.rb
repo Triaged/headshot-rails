@@ -9,8 +9,6 @@ class API::Internal::UsersController < InternalAPIController
 	end
 
 	def valid_auth_token
-		logger.info @user.id
-		logger.info User.find_by(authentication_token: params[:authentication_token]).id
 		if @user.id == User.find_by(authentication_token: params[:authentication_token]).id
 			render :json => { "success" => "true" }, :status => 200
 		else

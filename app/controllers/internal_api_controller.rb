@@ -1,7 +1,7 @@
 class InternalAPIController < ApplicationController
 	respond_to :json
   protect_from_forgery with: :null_session
-  skip_before_filter :validate_subdomain
+  skip_before_filter :authenticate_user!, :validate_subdomain
   before_filter :authenticate_from_token!, :except => [:page_not_found]
   
   protected
