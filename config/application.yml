@@ -33,5 +33,6 @@ staging:
 production:
   GA_CLIENT_ID: 735228360361-qt7vofvrlat880q27g096sfqhaee39ih.apps.googleusercontent.com
   GA_SECRET: KTX0cuMOM1hkk1KxXKyVg3Mn
+  INTERNAL_API_TOKEN: f9c93bc9ca8a0fe561c2ca3eb132cdbed7a70bd4095ed9212063edd3a4825255
   FIREBASE_URL: https://badge-prod.firebaseio.com/
 
