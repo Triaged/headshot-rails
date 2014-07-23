@@ -115,7 +115,7 @@ class User < ActiveRecord::Base
   end
 
   def can_receive_push?
-  	self.installed_app? && (self.devices.where.not(token: nil) > 0)
+  	self.installed_app? && (self.devices.where.not(token: nil).count > 0)
   end
 
   def unleash_sherlock
