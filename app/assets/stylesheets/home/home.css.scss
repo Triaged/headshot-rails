@@ -7,7 +7,7 @@ body {
 height: 100%;
 position: relative;
 font-size: 16px;
-line-height: 1.6;
+line-height: 1.5;
 }
 
 // Typography
@@ -17,32 +17,32 @@ p {
 	color: #636C7B;
 }
 h1 {
-  	font-size: (16px * 4);
+  	font-size: 4em;
   	font-weight: 700;
 }
 h2 {
 
-  	font-size: (16px * 3);
+  	font-size: 3em;
   	font-weight: 300;
   	text-transform: uppercase;
 }
 h3 {
 
-  	font-size: (16px * 2);
-  	line-height: 50px;
+  	font-size: 2em;
+  	line-height: 1.5em;
   	letter-spacing: 1px;
 }
 h4 {
 
-  	font-size: (16px * 1.67);
+  	font-size: 1.67em;
 }
 h5 {
 
-  	font-size: (16px * 0.89);
+  	font-size: 0.89em;
 }
 small {
-	font-size: (16px * 0.89);
-	line-height: 20px;
+	font-size: 0.89em;
+	line-height: 1.25em;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 }
@@ -64,7 +64,7 @@ h2, h3, h4, small {
 		span {
 			background-color: white; 
 			position: relative; 
-			top: -0.5em;
+			top: -0.75em;
 			padding: 0 30px;
 			text-transform: uppercase;
 		}
@@ -188,14 +188,15 @@ background-color: #FFFFFF;
 
 // Features
 
-.features-content {
+.content {
+	
 	.section {
 		padding-bottom: 100px;
 	}
 	h4 {
 		font-weight: 400;
 		color: #F8AE37;
-		line-height: 36px;
+		line-height: 1.5em;
 		text-transform: uppercase;
 		padding: 100px 0 30px;
 	}
@@ -243,7 +244,6 @@ background-color: #FFFFFF;
 .cta {
 	background-color: #2CB5A8;
 	text-align: center;
-	height: 400px;
 	h3 {
 		padding-top: 75px;
 		font-weight: 600;
@@ -255,6 +255,7 @@ background-color: #FFFFFF;
 	p {
 		text-transform: uppercase;
 		color: #FFFFFF;
+		padding-bottom: 25px;
 	}
 }
 
@@ -325,4 +326,130 @@ footer {
 	.section-header {
 		padding-top: 75px;
 	}
+}
+
+
+// Mobile
+
+@media(max-width:767px){
+	p {
+		font-size: 1.125em;
+		line-height: 1.5em;
+	}
+	h1 {
+	  	font-size: 1.875em;
+	  	text-transform: uppercase;
+	}
+	h2 {
+
+	  	font-size: 3em;
+	}
+	h3 {
+	  	font-size: 1.5em;
+	}
+	h4 {
+
+	  	font-size: 1.3em;
+	}
+	h5 {
+
+	  	font-size: 0.89em;
+	}
+	small {
+	font-size: 0.75em;
+	}
+	.hero {
+		position: relative;
+		.navbar {
+			margin-bottom: 10px;
+		}
+		.navbar-transparent {
+		padding: 10px 0 0;
+		}
+		.navbar-custom {
+		display: inline;
+		}
+		.navbar-brand-custom {
+			font-size: 16px;
+			font-weight: 700;
+			color: #FFFFFF;
+			text-transform: uppercase;
+			padding: 0 0 0 30px;
+		}
+		.row {
+			padding-top: 75px;
+		}
+		.cta-forms {
+			padding-top: 30px;
+		}
+		.hero-img-m {
+			background: image-url('home/mobile/hero-img.png') no-repeat center center;
+			width: 100%;
+			min-height: 100%;
+		}
+		h1 {
+			margin-top: 0px;
+		}
+	}
+	.form-inline-custom .form-control-custom {
+		font-size: 12px;
+		width: 196px;
+		height: 35px;
+		background-color: #FFFFFF;
+		margin: 0 auto;
+	}
+	.content {
+		position: relative;
+		width: 100%;
+		min-height: 100%;
+		padding-top: 70px;
+		text-align: center;
+		.section-header {
+		padding-bottom: 0;
+		}
+		h4 {
+			padding: 0 0 10px;
+		}
+		.feature-section {
+			padding-top: 40px;
+			position: relative;
+			width: 100%;
+			min-height: 650px;
+		}
+		.feature-image {
+			position: relative;
+			width: 100%;
+			min-height: 100%;
+			.image-section {
+				position: absolute;
+				left: 0;
+				top:0;
+				width: 100%;
+				min-height: 100%;
+			}
+			p {
+				position: absolute;
+				padding-top: 25px;
+				top:0;
+				color: #ffffff;
+				font-weight: 500;
+			}
+		}
+		.client-image {
+			padding-top: 20px;
+
+		}
+	}
+	.cta {
+		h3 {
+			padding-top: 50px;
+		}
+		small {
+			color: #ffffff;
+		}
+	}
+	footer {
+		text-align: center;
+	}
+
 }

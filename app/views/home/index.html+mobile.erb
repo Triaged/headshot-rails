@@ -1,1 +1,260 @@
-mobile index
+<div class="container-full">
+
+    <div class="hero">
+
+        <header class="navbar navbar-transparent" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle navbar-toggle-custom" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-brand navbar-brand-custom">
+                        <%= image_tag ("home/badge-logo.png") %>
+                        <span>Badge</span>
+                    </div>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                    <ul class="nav navbar-nav navbar-custom">
+                        <li>
+                            <a href="../getting-started">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="../getting-started">Login</a>
+                        </li>
+                        <li>
+                            <a href="../getting-started">About Us</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="hero-content">
+            <div class="hero-img-m">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <h1>Your Company Directory,</br> Completely Reinvented</h1>
+                            <div class="cta-forms">
+                                <form class="form-inline form-inline-custom" role="form">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control form-control-custom" id="exampleInputEmail2" placeholder="Company email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-custom" id="exampleInputEmail2" placeholder="Company name">
+                                    </div>
+                                    <button type="submit" class="btn-custom btn-cta">Get Early Access</button>
+                                </form>
+                            </div>
+                            <p><small>Badge is availible on iOS </br>&amp; Andriod devices</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+	<div class="content">
+		<div class="container">
+	        <div class="row">
+	            <div class="section-header col-xs-10 col-xs-offset-1">
+	                <div class="divider-line">
+	                    <span>
+	                       <small>Features</small>
+	                    </span>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- Directory -->
+	    <div class="feature-section">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-xs-10 col-xs-offset-1">
+		                <h4>A Mobile-First Company Directory</h4>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="feature-image">
+		    	<div class="image-section">
+		    		<%= image_tag ("home/mobile/hand1-m@2x.png")%>
+		    	</div>
+		    	<div class="container">
+			        <div class="row">
+			            <div class="col-xs-12">
+		    				<p>Badge gives you access to all your colleagues, on your phone.</p>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+	    </div>
+	    <!-- Messaging -->
+	    <div class="feature-section">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-xs-10 col-xs-offset-1">
+		                <h4>Mobile Messaging Made For Work</h4>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="feature-image">
+		    	<div class="image-section">
+		    		<%= image_tag ("home/mobile/hand3-m@2x.png")%>
+		    	</div>
+		    	<div class="container">
+			        <div class="row">
+			            <div class="col-xs-12">
+			            	<p>Expect responses up to 3x faster than traditional emails.</p>
+			            </div>
+			        </div>
+			    </div>
+		    </div>
+		</div>
+	    <!-- Contacts -->
+	    <div class="feature-section">
+		    <div class="container">
+		        <div class="row">
+		            <div class="section-header col-xs-10 col-xs-offset-1">
+		                <h4>Your Colleagues At A Glance</h4>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="feature-image">
+		    	<div class="image-section">
+		    		<%= image_tag ("home/mobile/hand2-m@2x.png")%>
+		    	</div>
+		    	<div class="container">
+			        <div class="row">
+			            <div class="col-xs-12">
+		    				<p>Contact info, availibity and team oganization at your fingertips.</p>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+		</div>
+	</div>
+
+		<!-- Clients -->
+	<div class="content">
+		<div class="container">
+	        <div class="row">
+	            <div class="section-header col-xs-10 col-xs-offset-1">
+	                <div class="divider-line">
+	                    <span>
+	                       <small>Clients</small>
+	                    </span>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="container">
+	        <div class="row">
+	            <div class="section-header col-xs-10 col-xs-offset-1">
+	            	<span class=""><%= image_tag ("home/quotation.svg")%></span>
+	                <h3>Badge has energized our culture at Moat. We're collaborating more effectively, getting things done faster, and having fun while we do it.</h3>
+	            </div>
+                <div class="client-image col-xs-8 col-xs-offset-2">
+                    <%= image_tag ("home/badge.png"), :width => "361", :class => "pull-right" %>
+                </div>
+	        </div>
+	    </div>
+	</div>
+
+	<!-- Onboarding -->
+	<div class="content">
+		<div class="container">
+	        <div class="row">
+	            <div class="section-header col-xs-10 col-xs-offset-1">
+	                <div class="divider-line">
+	                    <span>
+	                       <small>Onboarding</small>
+	                    </span>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="container">
+	        <div class="row">
+	            <div class="section-header col-xs-10 col-xs-offset-1">
+	            	<h4>Roll Out Badge In Minutes</h4>
+	                <p>You can import employees from Google Apps or BambooHR in one click, with more integrations coming soon! Use something else? No problem, all you need is a list of names and emails, and our account team takes care of the rest!</p>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<!-- CTA -->
+	<div class="cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <h3>Register to request early access to Badge.</h3>
+                    <div class="cta-forms">
+                        <form class="form-inline form-inline-custom" role="form">
+                            <div class="form-group">
+                                <input type="email" class="form-control form-control-custom" id="exampleInputEmail2" placeholder="Company email">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-custom" id="exampleInputEmail2" placeholder="Company name">
+                            </div>
+                            <button type="submit" class="btn-custom btn-cta">Get Early Access</button>
+                        </form>
+                    </div>
+                    <p><small>Badge is availible on iOS </br>&amp; Andriod devices</small></p>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+    <footer>
+        <div class="container">
+            <ul class="footer-links">
+                <div class="row">
+                    <li class="col-sm-4">
+                        <div class="footer-headline">
+                            <h5>Learn More</h5>
+                        </div>
+                        <ul class="list-links">
+                            <li>
+                                <a href="/our-features">Features</a>
+                            </li>
+                            <li>
+                                <a href="/our-features">About Us</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="col-sm-4">
+                        <div class="footer-headline">
+                            <h5>Get In Touch</h5>
+                        </div>
+                        <ul class="list-links">
+                            <li>
+                                <a href="/our-features">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="/our-features"><i class="fa fa-twitter"></i></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="col-sm-4">
+                        <div class="footer-headline">
+                            <h5>Badge</h5>
+                        </div>
+                        <ul class="list-links">
+                            <li>
+                                <a href="/our-features">Login</a>
+                            </li>
+                        </ul>
+                    </li>
+                </div>
+            </ul>
+        </div>
+            
+    </footer>
+
+</div>
