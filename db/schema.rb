@@ -11,11 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20140716194553) do
-=======
 ActiveRecord::Schema.define(version: 20140718134303) do
->>>>>>> bamboo
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,10 +41,7 @@ ActiveRecord::Schema.define(version: 20140718134303) do
     t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-<<<<<<< HEAD
-=======
     t.boolean  "daily_import"
->>>>>>> bamboo
   end
 
   add_index "bamboohr_infos", ["company_id"], name: "index_bamboohr_infos_on_company_id", using: :btree

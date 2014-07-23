@@ -114,6 +114,10 @@ class User < ActiveRecord::Base
   	self.devices_count > 0
   end
 
+  def can_receive_push?
+  	self.installed_app? && (self.devices.where.not(token: nil) > 0)
+  end
+
   def unleash_sherlock
 		SherlockHolmes.perform_async(self.id)
 		true

@@ -8,7 +8,7 @@ class MessageService
 	def deliver 
 		author = User.find(@message.author_id)
 
-		if @user.installed_app?
+		if @user.can_receive_push?
 			PushService.new(@user.id).deliver("#{author.first_name.capitalize}: #{@message.body}".truncate(150), increase_badge_count=true)
 		else
 			MessageMailer.mobile_message(@user.id, author.id, @message.body).deliver
