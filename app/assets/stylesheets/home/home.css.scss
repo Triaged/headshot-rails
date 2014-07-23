@@ -127,25 +127,6 @@ background-color: #FFFFFF;
 	position: relative;
 	min-height: 100%;
 	text-align: center;
-}
-.hero-img {
-	position: absolute;
-	left: 0;
-	width: 100%;
-	min-height: 100%;
-	background: image-url('home/web/hero-img.png') no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	border-bottom-style: solid;
-	border-bottom-color: #d3d3d3;
-	border-bottom-width: 1px;
-	-webkit-animation: fadein 1s;
-	-moz-animation: fadein 1s;
-	-ms-animation: fadein 1s;
-	-o-animation: fadein 1s;
-	animation: fadein 1s;
 	.row {
 		padding-top: 200px;
 	}
@@ -172,6 +153,26 @@ background-color: #FFFFFF;
 		}
 	}
 }
+.hero-img {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+	background: image-url('home/web/hero-img-alt.png') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	border-bottom-style: solid;
+	border-bottom-color: #d3d3d3;
+	border-bottom-width: 1px;
+	-webkit-animation: fadein 1s;
+	-moz-animation: fadein 1s;
+	-ms-animation: fadein 1s;
+	-o-animation: fadein 1s;
+	animation: fadein 1s;
+}
+
 // Mission
 
 .mission-content {
@@ -218,6 +219,9 @@ background-color: #FFFFFF;
 		h3 {
 			font-weight: 400;
 		}
+	}
+	.feature-image {
+
 	}
 }
 
@@ -280,6 +284,23 @@ footer {
 
 
 // About Us Page
+
+.about-img {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+	background: image-url('home/web/team-img.png') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	-webkit-animation: fadein 1s;
+	-moz-animation: fadein 1s;
+	-ms-animation: fadein 1s;
+	-o-animation: fadein 1s;
+	animation: fadein 1s;
+}
 
 // Story-Content
 

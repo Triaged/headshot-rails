@@ -49,13 +49,13 @@ border-color: #fff;
 }
 
 .btn-transparent {
-	color: #FDA414;
+	color: #FFAC26;
 	background-color: transparent;
-	border: 2px solid #FDA414;
+	border: 2px solid #FFAC26;
 }
 
 .btn-transparent:hover, .btn-transparent:focus, .btn-transparent:active, .btn-transparent.active {
-	color: #000;
+	color: #FFAC26;
 	background-color: rgba(248,174,55,0.15);
 	border: 2px solid #FDA414;
 }
@@ -65,19 +65,13 @@ border-color: #fff;
 	height: 44px;
 	color: #FFFFFF;
 	border: none;
-	background-image: -o-linear-gradient(-89deg, #FFB53E 0%, #EFA227 100%);
-	background-image: -moz-linear-gradient(-89deg, #FFB53E 0%, #EFA227 100%);
-	background-image: -ms-linear-gradient(-89deg, #FFB53E 0%, #EFA227 100%);
-	background-image: linear-gradient(-179deg, #FFB53E 0%, #EFA227 100%);
+	background-color: #FFAC26;
 	-moz-box-shadow:    0px 2px 0px 0px #AA7216;
 	box-shadow:         0px 2px 0px 0px #AA7216;
 }
 
 .btn-cta:hover, .btn-cta:focus, .btn-cta:active, .btn-cta.active {
-	background-image: -o-linear-gradient(-89deg, #FFAC26 0%, #E48F06 100%);
-	background-image: -moz-linear-gradient(-89deg, #FFAC26 0%, #E48F06 100%);
-	background-image: -ms-linear-gradient(-89deg, #FFAC26 0%, #E48F06 100%);
-	background-image: linear-gradient(-179deg, #FFAC26 0%, #E48F06 100%);
+	background-color: #F39E17;
 	-moz-box-shadow:    0px 2px 0px 0px #AA7216;
 	box-shadow:         0px 2px 0px 0px #AA7216;
 }
