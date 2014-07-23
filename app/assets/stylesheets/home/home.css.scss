@@ -137,6 +137,7 @@ background-color: #FFFFFF;
 		color: #FFFFFF;
 		line-height: 1.25em;
 		font-weight: 700;
+		text-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
 	}
 	p {
 		padding-top: 8px;
@@ -285,7 +286,7 @@ footer {
 
 // About Us Page
 
-.brand-alt {
+.brand-alt	 {
 	color: $brand-primary;
 }
 
