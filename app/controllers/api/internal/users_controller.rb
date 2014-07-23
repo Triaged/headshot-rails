@@ -6,6 +6,8 @@ class API::Internal::UsersController < InternalAPIController
 	end
 
 	def deliver_message
+		MessageService.new(@user.id, message_params).deliver
+		render :json => { "message" => "ok" }, :status => 200
 	end
 
 	def valid_auth_token
@@ -22,6 +24,10 @@ private
 
 	def set_user
 		@user = User.find(params[:id])
+	end
+
+	def message_params
+		params[:message].permit(:author_id, :body, :timestamp)
 	end
 
 end

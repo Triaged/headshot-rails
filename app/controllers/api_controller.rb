@@ -5,10 +5,9 @@ class APIController < ApplicationController
   before_filter :authenticate_user_from_token!, :except => [:page_not_found]
   before_filter :authenticate_user!
   before_filter :current_company
-  # rescue_from Brainstem::SearchUnavailableError, :with => :search_unavailable
-  # rescue_from ActiveRecord::RecordNotFound,
-  #             ActionController::RoutingError,
-  #             ::AbstractController::ActionNotFound, :with => :page_not_found
+  rescue_from ActiveRecord::RecordNotFound,
+              ActionController::RoutingError,
+              ::AbstractController::ActionNotFound, :with => :page_not_found
 
   protected
 
@@ -18,10 +17,6 @@ class APIController < ApplicationController
 
   def page_not_found
     render :json => { :errors => ['Page not found'] }, :status => 404
-  end
-
-  def search_unavailable
-    render :json => { :errors => ['Search is currently unavailable'] }, :status => 503
   end
 
   def authenticate_user_from_token!
