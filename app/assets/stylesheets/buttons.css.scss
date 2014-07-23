@@ -12,15 +12,13 @@ cursor: pointer;
 background-image: none;
 border: 1px solid;
 white-space: nowrap;
-padding: 7px 15px;
+padding: 9px 25px;
 line-height: 1.428571429;
 border-radius: $border-radius-sm;
 text-decoration: none !important;
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
--o-user-select: none;
-user-select: none;
+font-size: 14px;
+letter-spacing: 1px;
+font-weight:500;
 }
 
 .btn-custom + .btn-custom {
@@ -45,9 +43,37 @@ border-color: #ea9308;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
-color: white;
+color: #FFFFFF;
 background-color: #f79e10;
 border-color: #fff;
+}
+
+.btn-transparent {
+	color: #FFAC26;
+	background-color: transparent;
+	border: 2px solid #FFAC26;
+}
+
+.btn-transparent:hover, .btn-transparent:focus, .btn-transparent:active, .btn-transparent.active {
+	color: #FFAC26;
+	background-color: rgba(248,174,55,0.15);
+	border: 2px solid #FDA414;
+}
+
+.btn-cta {
+	width: 260px;
+	height: 44px;
+	color: #FFFFFF;
+	border: none;
+	background-color: #FFAC26;
+	-moz-box-shadow:    0px 2px 0px 0px #AA7216;
+	box-shadow:         0px 2px 0px 0px #AA7216;
+}
+
+.btn-cta:hover, .btn-cta:focus, .btn-cta:active, .btn-cta.active {
+	background-color: #F39E17;
+	-moz-box-shadow:    0px 2px 0px 0px #AA7216;
+	box-shadow:         0px 2px 0px 0px #AA7216;
 }
 
 .btns-right {
