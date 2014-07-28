@@ -1,15 +1,23 @@
 <%= @company.name %>
 <br />
 <%= link_to 'Add User', new_admin_company_user_path(@company) %> <br />
-Admins:
 <hr />
+Admins: <br />
 <% @company.users.admin.each do |admin| %>
-	<%= admin.email %> <%= link_to 'Login', become_admin_company_user_path(@company, admin), method: :post %> <br />
+	<%= admin.email %> |
+	confirmed: <%= admin.confirmed? %> | 
+	<%= link_to 'Login', become_admin_company_user_path(@company, admin), method: :post %> |
+	<%= link_to 'Send Invite', invite_admin_company_user_path(@company, admin), method: :post %><br />
+
 <% end %>
 
 
-Users:
+
 <hr />
+Users: <br />
 <% @company.users.each do |user| %>
-	<%= user.email %>  <%= link_to 'Login', become_admin_company_user_path(@company, user), method: :post %> <br />
+	<%= user.email %> |
+	confirmed <%= user.confirmed? %> |
+	<%= link_to 'Login', become_admin_company_user_path(@company, user), method: :post %> |
+	<%= link_to 'Send Invite', invite_admin_company_user_path(@company, user), method: :post %><br />
 <% end %>

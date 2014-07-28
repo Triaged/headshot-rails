@@ -102,6 +102,7 @@ HeadshotRails::Application.routes.draw do
      resources :companies do
       resources :users do
         post 'become', on: :member
+        post 'invite', on: :member
       end
      end
     

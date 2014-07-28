@@ -1,6 +1,6 @@
 class Admin::UsersController < AdminController
 	before_action :set_company
-	before_action :set_user, only: [:show, :edit, :update, :destroy]
+	before_action :set_user, only: [:show, :edit, :update, :destroy, :invite]
 
 	def index
 		@users = @company.users.all
@@ -15,12 +15,19 @@ class Admin::UsersController < AdminController
     redirect_to root_url # or user_root_url
   end
 
+  def invite
+  	@user.send_confirmation_instructions
+  	redirect_to admin_company_path(@company), notice: 'User was successfully invited.'
+  end
+
 	def new
 		@user = @company.users.build
 	end
 
 	def create
 		@user = @company.users.new(user_params)
+		logger.info params[:send_confirmation]
+		@user.skip_confirmation_notification! unless params[:send_confirmation]
 
 		if @user.save
       redirect_to admin_company_user_path(@company, @user), notice: 'User was successfully created.'

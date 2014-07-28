@@ -6,6 +6,8 @@
   	<%= f.input :last_name %>
   	<%= f.input :email %>
     <%= f.input :admin %>
+    <%= check_box_tag :send_confirmation %>
+    <%= label_tag(:send_confirmation, "Send Invite Email") %>
   </div>
 
   <div class="form-actions">

@@ -50,6 +50,7 @@ gem "bugsnag"
 gem 'birthday', '~> 0.3.0'
 gem "lograge"
 gem 'bamboohr'
+gem 'gcm'
 
 
 

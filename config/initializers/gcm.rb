@@ -1,0 +1,1 @@
+GOOGLE_CM = GCM.new(ENV['GCM_KEY'])
