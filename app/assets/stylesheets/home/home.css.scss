@@ -123,10 +123,20 @@ background-color: #FFFFFF;
 
 // Hero
 
-.hero {
+.hero-container {
 	position: relative;
-	min-height: 100%;
+	height: 95%;
+	z-index: 0;
+	background: none;
 	text-align: center;
+	min-height: 700px;
+}
+.hero-content {
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 20px;
+	clear: both;
 	.row {
 		padding-top: 200px;
 	}
@@ -154,24 +164,39 @@ background-color: #FFFFFF;
 		}
 	}
 }
-.hero-img {
+.hero-scroll {
+	text-align: center;
 	position: absolute;
-	left: 0;
 	width: 100%;
-	min-height: 100%;
-	background: image-url('home/web/hero-img-alt.png') no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	border-bottom-style: solid;
-	border-bottom-color: #d3d3d3;
-	border-bottom-width: 1px;
-	-webkit-animation: fadein 1s;
-	-moz-animation: fadein 1s;
-	-ms-animation: fadein 1s;
-	-o-animation: fadein 1s;
-	animation: fadein 1s;
+	bottom: 0;
+	background: image-url('web/down-arrow.svg') bottom center no-repeat;
+	padding-bottom: 25px;
+	margin: 0 0 25px 0;
+	color: #fff;
+}
+.hero-background {
+	left: 0px;
+	top: 0px;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+	z-index: -999998;
+	position: absolute;
+	.hero-img {
+		position: absolute;
+		margin: 0px;
+		padding: 0px;
+		border: none;
+		width: 100%;
+		height: 125%;
+		max-height: none;
+		max-width: none;
+		z-index: -999999;
+		left: 0px;
+		top: 0px;
+	}
 }
 
 // Mission
@@ -193,12 +218,17 @@ background-color: #FFFFFF;
 	.section {
 		padding-bottom: 100px;
 	}
+	.feature-icon {
+		padding-top: 75px;
+		float: left;
+	}
 	h4 {
+		clear: both;
 		font-weight: 400;
 		color: #F8AE37;
 		line-height: 1.5em;
 		text-transform: uppercase;
-		padding: 100px 0 30px;
+		padding: 15px 0 30px;
 	}
 	.feature-copy-right {
 		padding-left: 50px;
@@ -255,7 +285,7 @@ background-color: #FFFFFF;
 	p {
 		text-transform: uppercase;
 		color: #FFFFFF;
-		padding-bottom: 25px;
+		padding-bottom: 50px;
 	}
 }
 
@@ -280,6 +310,9 @@ footer {
 		.list-links {
 			padding-left: 0;
 		}
+		a {
+			color: #FFD187;
+		}
 	}
 }
 
@@ -296,7 +329,7 @@ footer {
 	left: 0;
 	width: 100%;
 	min-height: 100%;
-	background: image-url('home/web/team-img.png') no-repeat center center;
+	background: image-url('web/team-img.png') no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -312,7 +345,7 @@ footer {
 
 .story-content {
 	text-align: center;
-	padding: 50px;
+	padding-top: 50px;
 	.col-lg-10 {
 	width: 82.333333%;
 	}
@@ -326,6 +359,57 @@ footer {
 	.section-header {
 		padding-top: 75px;
 	}
+}
+
+// Investors 
+
+.investor-logos {
+	padding-bottom: 50px;
+}
+
+
+// Sign Up Page
+
+.signup {
+	position: relative;
+	min-height: 100%;
+	text-align: center;
+	.section-header {
+	padding: 125px 0 50px;
+	}
+	small {
+		color: #ffffff;
+	}
+	h3 {
+		color: #FFFFFF;
+		line-height: 1.25em;
+		font-weight: 700;
+		text-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+	}
+	p {
+		padding-top: 20px;
+		color: #FFFFFF;
+	}
+	.signup-social {
+		padding-top:50px;
+	}
+	@media (min-width: 1441px) {
+		h1 {
+			font-size: 86px;
+		}
+	}
+}
+
+.signup-img {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+	background: image-url('web/signup-img.png') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 
@@ -342,10 +426,10 @@ footer {
 	}
 	h2 {
 
-	  	font-size: 3em;
+	  	font-size: 2em;
 	}
 	h3 {
-	  	font-size: 1.5em;
+	  	font-size: 1.4em;
 	}
 	h4 {
 
@@ -358,37 +442,37 @@ footer {
 	small {
 	font-size: 0.75em;
 	}
-	.hero {
-		position: relative;
-		.navbar {
-			margin-bottom: 10px;
+	.navbar {
+		margin-bottom: 10px;
+	}
+	.navbar-transparent {
+	padding: 10px 0 0;
+	}
+	.navbar-custom {
+	display: inline;
+	}
+	.navbar-brand-custom {
+		font-size: 16px;
+		font-weight: 700;
+		color: #FFFFFF;
+		text-transform: uppercase;
+		padding: 10px 0 0 30px;
+	}
+	.hero-content,
+	.signup {
+		.cta-forms {
+			padding-top: 30px;
 		}
-		.navbar-transparent {
-		padding: 10px 0 0;
-		}
-		.navbar-custom {
-		display: inline;
-		}
-		.navbar-brand-custom {
-			font-size: 16px;
-			font-weight: 700;
-			color: #FFFFFF;
-			text-transform: uppercase;
-			padding: 0 0 0 30px;
+		h1 {
+			margin-top: 0px;
 		}
 		.row {
 			padding-top: 75px;
 		}
-		.cta-forms {
-			padding-top: 30px;
-		}
-		.hero-img-m {
-			background: image-url('home/mobile/hero-img.png') no-repeat center center;
-			width: 100%;
-			min-height: 100%;
-		}
-		h1 {
-			margin-top: 0px;
+	}
+	.hero {
+		.row {
+			padding-top: 75px;
 		}
 	}
 	.form-inline-custom .form-control-custom {
@@ -398,49 +482,41 @@ footer {
 		background-color: #FFFFFF;
 		margin: 0 auto;
 	}
-	.content {
-		position: relative;
-		width: 100%;
-		min-height: 100%;
-		padding-top: 70px;
-		text-align: center;
-		.section-header {
+	.section-header {
+		padding-top: 75px;
 		padding-bottom: 0;
-		}
+	}
+	.feature-section{
+		text-align: center;
+		padding: 50px 0 25px;
 		h4 {
-			padding: 0 0 10px;
+			color: $brand-primary;
 		}
-		.feature-section {
-			padding-top: 40px;
-			position: relative;
-			width: 100%;
-			min-height: 650px;
-		}
-		.feature-image {
-			position: relative;
-			width: 100%;
-			min-height: 100%;
-			.image-section {
-				position: absolute;
-				left: 0;
-				top:0;
-				width: 100%;
-				min-height: 100%;
-			}
-			p {
-				position: absolute;
-				padding-top: 25px;
-				top:0;
-				color: #ffffff;
-				font-weight: 500;
-			}
-		}
+	}
+	.content-container {
+		position: relative;
+	}
+	.content-content {
+		text-align: center;
+		padding-top: 25px;
+	    top:0;
+	    left:0;
+	    position: absolute;
+	    p {
+	    	color: #ffffff;
+	    }
+	}
+	.support-section {
+		text-align: center;
+		padding-top: 50px;
 		.client-image {
 			padding-top: 20px;
 
 		}
 	}
+
 	.cta {
+		margin-top: 50px;
 		h3 {
 			padding-top: 50px;
 		}
@@ -450,6 +526,30 @@ footer {
 	}
 	footer {
 		text-align: center;
+	}
+
+	.investor-group {
+		.section-header {
+		padding-bottom: 25px;
+		}
+		img {
+			padding-top: 10px;
+		}
+		.row {
+			padding-bottom: 25px;
+		}
+	}
+
+	.signup {
+		.section-header {
+		display: none;
+		}
+		h3 {
+			padding-top: 50px;
+		}
+		.signup-social {
+			padding-top: 0;
+		}
 	}
 
 }

@@ -1,40 +1,90 @@
-<main role="main">
+<div class="container-full">
 
-    <div class="hero">
-        
-        <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+    <div class="signup">
+
+        <header class="navbar navbar-transparent" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a href="../" class="navbar-brand">Badge</a>
+                    <div class="navbar-brand navbar-brand-custom">
+                        <%= image_tag ("badge-logo.png") %>
+                        <span>Badge</span>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <div class="hero-content">
-            <div class="container">
-            	<div class="row">
-	            	<div class="section-header col-lg-10 col-lg-offset-1">
-	                    <div class="divider-line">
-	                        <span>
-	                            <small>Early Access</small>
-	                        </span>
+        <div class="signup-content">
+            <div class="signup-img">
+                <div class="container">
+                	<div class="row">
+	                    <div class="section-header col-lg-10 col-lg-offset-1">
+	                        <small>Early Access</small>
 	                    </div>
 	                </div>
-	            </div>
-	            <div class="row">
-	                <div class="col-lg-10 col-lg-offset-1">
-		                <h3>We’re currently rolling out access to Badge. We’ll follow up shortly with an email when we’re ready to onboard you.</h3>
-		                <p>Thanks for your interest!</p>
-		            </div>
-		        </div>
-		        <div class="row">
-	                <div class="social-copy col-lg-6 col-lg-offset-3">
-	                	<p>If you want, you can follow us on twitter for updates.</p>
-	                	<btn class=""><i class="fa fa-twitter"></i> @badgeco</btn>
-	            	</div>
-	            </div>
-	        </div>
+                    <div class="row">
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <h3>We’re currently rolling out access to Badge. We’ll follow up shortly with an email when we’re ready to onboard you.</h3>
+                            <p>Thanks for your interest!</p>
+                            <div class="signup-social">
+	                            <p>If you want, you can follow us on twitter for updates.</p>
+	                            <btn class="btn-custom btn-transparent"><i class="fa fa-twitter"></i>Follow @badgeco</btn>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
-</main>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <ul class="footer-links">
+                        <div class="row">
+                            <li class="col-lg-4">
+                                <div class="footer-headline">
+                                    <h5>Learn More</h5>
+                                </div>
+                                <ul class="list-links">
+                                    <li>
+                                        <a href="/our-features">Features</a>
+                                    </li>
+                                    <li>
+                                        <a href="/our-features">About Us</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="col-lg-4">
+                                <div class="footer-headline">
+                                    <h5>Get In Touch</h5>
+                                </div>
+                                <ul class="list-links">
+                                    <li>
+                                        <a href="/our-features">Contact Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="/our-features"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="col-lg-4">
+                                <div class="footer-headline">
+                                    <h5>Badge</h5>
+                                </div>
+                                <ul class="list-links">
+                                    <li>
+                                        <a href="/our-features">Login</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            
+    </footer>
+
+</div>
