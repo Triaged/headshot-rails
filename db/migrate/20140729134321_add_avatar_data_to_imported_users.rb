@@ -1,5 +1,5 @@
 class AddAvatarDataToImportedUsers < ActiveRecord::Migration
   def change
-    add_column :imported_users, :avatar_data, :text
+    add_column :imported_users, :avatar, :text
   end
 end
