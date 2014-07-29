@@ -33,7 +33,7 @@ class Google::UserImport
 				imported_user.first_name = user['name']['givenName']
 				imported_user.last_name = user['name']['familyName']
 				imported_user.full_name = user['name']['fullName']
-				imported_user.avatar = fetch_avatar_data user['id']
+				#imported_user.avatar = fetch_avatar_data user['id']
 				imported_user.save
 			else
 				Rails.logger.info "User #{email['address']} exists"
