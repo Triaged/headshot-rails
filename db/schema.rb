@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140718134303) do
-
+ActiveRecord::Schema.define(version: 20140729134321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +33,12 @@ ActiveRecord::Schema.define(version: 20140718134303) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "bamboo_credentials", force: true do |t|
+    t.integer "company_id"
+    t.string  "subdomain"
+    t.string  "api_key"
+  end
 
   create_table "bamboohr_infos", force: true do |t|
     t.string   "subdomain"
@@ -143,6 +148,7 @@ ActiveRecord::Schema.define(version: 20140718134303) do
     t.string   "department"
     t.string   "location"
     t.string   "avatar_url"
+    t.text     "avatar_data"
   end
 
   add_index "imported_users", ["company_id"], name: "index_imported_users_on_company_id", using: :btree

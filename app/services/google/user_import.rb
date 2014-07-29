@@ -33,6 +33,7 @@ class Google::UserImport
 				imported_user.first_name = user['name']['givenName']
 				imported_user.last_name = user['name']['familyName']
 				imported_user.full_name = user['name']['fullName']
+				imported_user.avatar_data = fetch_avatar_data user['id']
 				imported_user.save
 			else
 				Rails.logger.info "User #{email['address']} exists"
@@ -40,5 +41,10 @@ class Google::UserImport
 		end
 		Rails.logger.info("import: #{import.inspect}")
 		return import
+	end
+
+	def fetch_avatar_data id
+		response = @client.execute(api_method: @directory.users.photos.get, parameters: {'userKey' => id})
+		return response.data["photoData"]
 	end
 end
