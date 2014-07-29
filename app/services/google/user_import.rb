@@ -45,6 +45,9 @@ class Google::UserImport
 
 	def fetch_avatar_data id
 		response = @client.execute(api_method: @directory.users.photos.get, parameters: {'userKey' => id})
-		return response.data["photoData"]
+		avatar_data = response.data["photoData"]
+		s = StringIO.new(avatar_data)
+		def s.original_filename; "#{id}.png"; end
+		return s
 	end
 end
