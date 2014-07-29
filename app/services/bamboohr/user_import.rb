@@ -25,7 +25,6 @@ class Bamboohr::UserImport
 				imported_user.location = user['location']
 				imported_user.remote_avatar_url = user['photoUrl'] if user['photoUploaded']
 
-				imported_user.build_employee_info
 				imported_user.employee_info.job_title = user['jobTitle']
 				imported_user.employee_info.office_phone = user['workPhone']
 				imported_user.employee_info.cell_phone = user['mobilePhone']

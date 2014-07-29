@@ -6,6 +6,8 @@ class ImportedUser < ActiveRecord::Base
 
 	mount_uploader :avatar, AvatarUploader
 
+	before_create :build_employee_info
+
 	def user_exists?
 		User.exists?(email: self.email)
 	end

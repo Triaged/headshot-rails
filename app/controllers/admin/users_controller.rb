@@ -38,6 +38,7 @@ class Admin::UsersController < AdminController
 
 	def destroy_all
 		@company.users.each do |user|
+			user.employee_info.destroy
 			user.really_destroy!
 		end
 		redirect_to admin_company_path(@company)
