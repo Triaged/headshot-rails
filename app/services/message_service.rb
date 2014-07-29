@@ -1,7 +1,8 @@
 class MessageService
 
-	def initialize user_id, message_params
+	def initialize user_id, thread_id, message_params
 		@user = User.find(user_id)
+		@thread_id = thread_id
 		@message = Hashie::Mash.new(message_params)
 	end
 
@@ -9,7 +10,7 @@ class MessageService
 		author = User.find(@message.author_id)
 
 		if @user.can_receive_push?
-			PushService.new(@user.id).deliver("#{author.first_name.capitalize}: #{@message.body}".truncate(150), increase_badge_count=true)
+			PushService.new(@user.id).deliver("#{author.first_name.capitalize}: #{@message.body}".truncate(150), increase_badge_count=true, {thread_id: @thread_id})
 		else
 			MessageMailer.mobile_message(@user.id, author.id, @message.body).deliver
 		end
