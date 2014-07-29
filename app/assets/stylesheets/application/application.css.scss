@@ -37,6 +37,73 @@ h1, h2, h3, h4 {
 	.navbar-brand-custom {
 	color: #2CB5A8;
 	}
+	.navbar-custom > li > a {
+	font-size: 12px;
+	color: #2e3b4e;
+	text-transform: uppercase;
+	padding: 15px 0 0;
+	margin: 0 15px;
+	background-color: #fff;
+	font-weight: 500;
+	}
+	.navbar-custom > .nav-link > a:after {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: $text-color;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+	}
+	.navbar-custom > .nav-link > a:hover::after,
+	.navbar-custom > .nav-link > a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+	}
+	.navbar-custom > .active > a:before {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: $text-color;
+	content: '';
+	opacity: 1;
+	}
+}
+.nav-icon {
+	display: inline;
+	padding-right: $spacing-xsm;
+	height: 12px;
+	margin-top: -4px;
+}
+
+@media(max-width:767px){
+	.navbar-toggle-custom {
+		.icon-bar {
+			background-color: $text-color;
+		}
+	}
+	.navbar .in {
+		background-color: #ffffff;
+	}
+	.navbar .navbar-custom > li > a  {
+		background:#fff;
+		border-bottom: 1px solid $text-color;
+		padding-bottom: 5px;
+	}
+	.navbar .navbar-custom > .active > a::before {
+		height: 0;
+	}
 }
 
 // Headlines
