@@ -23,7 +23,7 @@ class Bamboohr::UserImport
 				imported_user.last_name = user['lastName']
 				imported_user.department = user['department']
 				imported_user.location = user['location']
-				imported_user.avatar_url = user['photoUrl'] if user['photoUploaded']
+				imported_user.remote_avatar_url = user['photoUrl'] if user['photoUploaded']
 
 				imported_user.build_employee_info
 				imported_user.employee_info.job_title = user['jobTitle']

@@ -4,6 +4,8 @@ class ImportedUser < ActiveRecord::Base
 
 	has_one :employee_info
 
+	mount_uploader :avatar, AvatarUploader
+
 	def user_exists?
 		User.exists?(email: self.email)
 	end
@@ -19,8 +21,7 @@ class ImportedUser < ActiveRecord::Base
 
 		user.employee_info = self.employee_info
 		user.department = Department.find_or_create_by(name: self.department) if self.department
-		user.remote_avatar_url = self.avatar_url if self.avatar_url
-		user.avatar = self.avatar_data if self.avatar_data
+		user.avatar = self.avatar if self.avatar?
 		user.save
 
 		return user
