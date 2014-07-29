@@ -153,11 +153,16 @@
                     <p class="p-large">You can import employees from Google Apps or BambooHR in one click, with more integrations coming soon! Use something else? No problem, all you need is a list of names and emails, and our account team takes care of the rest!</p>
                 </div>
             </div>
-            <div class="onboarding-video">
-                <%= image_tag ("web/onboarding-laptop.svg"), :width => "1141" %>
-<!--                 <video autoplay loop poster="polina.jpg" id="bgvid">
-                    <%= video_tag("trailer.ogg", "trailer.flv", autoplay: true) %>
-                </video> -->
+            <div class="onboarding-example">
+                <div class="onboarding-img">
+                    <%= image_tag ("web/onboarding-laptop.svg"), :width => "1141" %>
+                </div>
+                <div class="onboarding-video">
+                    <video autoplay loop mute id="bgvid">
+                        <source src="/assets/video/onboarding.webm" type="video/webm">
+                        <source src="/assets/video/onboarding.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
         </div>
 

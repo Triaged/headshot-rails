@@ -265,8 +265,20 @@ background-color: #FFFFFF;
 	.p-large {
 	padding-top: 20px;
 	}
-	.onboarding-video {
-		padding: 50px 0 75px;
+	.onboarding-example {
+		margin-top: 50px;
+		padding-bottom: 75px;
+		position: relative;
+		.onboaring-img {
+			position: relative;
+		}
+		.onboarding-video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin-top: 94px;
+			margin-left: 137px;
+		}
 	}
 }
 

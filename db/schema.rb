@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20140729134321) do
 
   # These are extensions that must be enabled in order to support this database
@@ -150,7 +149,7 @@ ActiveRecord::Schema.define(version: 20140729134321) do
     t.string   "department"
     t.string   "location"
     t.string   "avatar_url"
-    t.text     "avatar_data"
+    t.text     "avatar"
   end
 
   add_index "imported_users", ["company_id"], name: "index_imported_users_on_company_id", using: :btree
