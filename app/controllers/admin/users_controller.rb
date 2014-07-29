@@ -36,6 +36,12 @@ class Admin::UsersController < AdminController
     end
 	end
 
+	def destroy_all
+		@company.users.each do |user|
+			user.really_destroy!
+		end
+	end
+
 private
 
 	def set_user

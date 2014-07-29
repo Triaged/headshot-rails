@@ -21,3 +21,7 @@ Users: <br />
 	<%= link_to 'Login', become_admin_company_user_path(@company, user), method: :post %> |
 	<%= link_to 'Send Invite', invite_admin_company_user_path(@company, user), method: :post %><br />
 <% end %>
+
+<hr />
+
+<%= link_to 'Destroy all Users', destroy_all_admin_company_users_path(@company), method: :delete %>

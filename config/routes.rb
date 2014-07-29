@@ -103,6 +103,7 @@ HeadshotRails::Application.routes.draw do
       resources :users do
         post 'become', on: :member
         post 'invite', on: :member
+        delete 'destroy_all', on: :collection
       end
      end
     
