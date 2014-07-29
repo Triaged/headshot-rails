@@ -40,6 +40,7 @@ class Admin::UsersController < AdminController
 		@company.users.each do |user|
 			user.really_destroy!
 		end
+		redirect_to admin_company_path(@company)
 	end
 
 private
