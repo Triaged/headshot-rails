@@ -11,6 +11,12 @@ class HomeController < ApplicationController
     end
 	end
 
+	def about
+	end
+
+	def signup
+	end
+
 private
 	
 	def check_redirect

@@ -1,4 +1,17 @@
-@import "home/animate";
+
+$font-family-sans-serif: 'Whitney SSm A', 'Whitney SSm B';
+@import "bootstrap_imports";
+
+@import "bootstrap";
+@import "select2";
+@import "select2-bootstrap3";
+@import "framework_and_overrides";
+@import "bootstrapValidator.min";
+@import "bootstrap-datepicker";
 @import "font-awesome";
+@import "colors";
+@import "style";
+@import "buttons";
+@import "typography";
+@import "avatar";
 @import "home/home";
-@import "home/ie";

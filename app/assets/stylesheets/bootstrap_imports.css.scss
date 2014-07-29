@@ -2,17 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// Typography
-
-$font-size-base: 16px;
-$font-size-small: ($font-size-base * 0.875);
-$font-size-h1: ($font-size-base * 2.1875);
-$font-size-h2: ($font-size-base * 1.25);
-$font-size-h3: ($font-size-base * 1);
-
 // Colors
 
-$brand-primary: #F8AE37;
+$brand-primary: #f8ac00;
 
 $text-color: #2E3B4E;
 $link-color: $brand-primary;
@@ -26,9 +18,9 @@ $grey-dark: #919496;
 
 $btn-font-weight: 400;
 
-$btn-default-color: #fff;
-$btn-default-bg: $brand-primary;
-$btn-default-border: $brand-primary;
+$btn-primary-color: #fff;
+$btn-primary-bg: $brand-primary;
+$btn-primary-border: $brand-primary;
 
 $btn-default-color: $brand-primary;
 $btn-default-bg: #fff;
