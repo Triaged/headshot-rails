@@ -193,7 +193,7 @@ background-color: #FFFFFF;
 		max-height: none;
 		z-index: -999999;
 		top: 0px;
-		max-width: 100%;
+		width: 100%;
 	}
 	.about-img {
 		height: 100%;
@@ -486,7 +486,7 @@ footer {
 		.hero-img {
 			position: relative;
 			height: 100%;
-			max-width: none;
+			min-width: 100%;
 		}
 	}
 	.form-inline-custom .form-control-custom {
