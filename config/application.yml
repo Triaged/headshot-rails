@@ -24,6 +24,8 @@ GROCER_CERT: badge-adhoc.pem
 GROCER_PASS: snowboard12
 GROCER_ENDPOINT: gateway.push.apple.com
 BUGSNAG_API_KEY: f7039da9a0bcf75663356b181a7e42dd
+INTERCOM_APP_ID: 5f50e0c798d99997d289d68d41287fc59de15c64
+INTERCOM_API_KEY: 7a9eb75d23ecaa228669f51a2698052899ce6cc8
 
 staging:
   GA_CLIENT_ID: 466421541427-hm6pjklidk8pgossbc8t78480rq9kbd8.apps.googleusercontent.com

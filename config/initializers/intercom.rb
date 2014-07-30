@@ -1,3 +1,6 @@
+Intercom.app_id = ENV["INTERCOM_APP_ID"]
+Intercom.app_api_key = ENV["INTERCOM_API_KEY"]
+
 IntercomRails.config do |config|
   # == Intercom app_id
   # 
