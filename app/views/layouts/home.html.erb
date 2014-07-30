@@ -11,9 +11,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    
-            <%= render 'layouts/messages' %>
-            <%= yield %>
+    <%= yield %>
     <%= javascript_include_tag 'retina.min'  %>
   </body>
 </html>
