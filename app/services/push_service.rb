@@ -37,6 +37,7 @@ class PushService
 			
 
 		GROCER_FEEDBACK.each do |attempt|
+			puts "Push failed"
 			puts attempt.inspect
 			device.destroy! if device
 		end
