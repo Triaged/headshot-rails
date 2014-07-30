@@ -2,7 +2,7 @@ class PushService
 
 	def initialize user_id
 		@user = User.find(user_id)
-		@devices = @user.devices
+		@devices = @user.devices.to_a.uniq{ |device| device.token }
 	end
 
 	def deliver alert, increase_badge_count=false, custom_payload=nil
