@@ -8,4 +8,8 @@ class CompanyLogoUploader < CarrierWave::Uploader::Base
     cloudinary_transformation :crop => :fill, :width => 200, :height => 80, :format => 'png'
   end
 
+  version :web do
+  	cloudinary_transformation :height => 150, :crop => :limit
+  end
+
 end

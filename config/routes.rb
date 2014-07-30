@@ -67,6 +67,7 @@ HeadshotRails::Application.routes.draw do
   	resource :account
     resource :download do
       post 'txt', on: :member
+      post 'txt_stored', on: :member
     end
     
     namespace :manage do

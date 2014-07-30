@@ -8,9 +8,9 @@ class PushService
 	def deliver alert, increase_badge_count=false, custom_payload=nil
 		@devices.each do |device|
 			if device.service == "ios"
-				deliver_to_apns device, alert, increase_badge_count, custom_payload
+				deliver_to_apns device, alert, increase_badge_count, custom_payload if device.logged_in
 			else
-				deliver_to_google_cloud device, alert, increase_badge_count, custom_payload
+				deliver_to_google_cloud device, alert, increase_badge_count, custom_payload if device.logged_in
 			end
 		end
 	end

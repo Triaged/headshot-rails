@@ -9,6 +9,16 @@
 		<h2>A Modern Directory For Your Company.</h2>
 		<p class="download-altcolor">Download the app and join your team.</p>
 		<div class="download-form">
+		<% if current_user.employee_info.cell_phone %>
+
+			<%= link_to "Text me a link to the app.", txt_stored_download_path, method: :post, :remote => :true, class: "btn-custom btn-primary" %>
+			<br />
+			<p id="response" style="visibility:hidden;">abc</p>
+
+			<br /><br /><br /><br />
+
+		<% else %>
+
 		<%= simple_form_for :sms_capture, :url => txt_download_path, :method => :post, :remote => :true, :html => {:id => 'sms_delivery_form'} do |f| %>
 					<p class="field-description">Text your phone a link to the app:</p>
 					<div class="input-group">
@@ -20,6 +30,8 @@
 						<p id="response" class="center-block" style="visibility:hidden;text-align:center;">abc</p>
 					</div>
 			<% end %>
+
+		<% end %>
 
 
 			<!-- <p class="field-description">Text your phone a link to the app:</p>
