@@ -45,7 +45,7 @@ class PushService
 
 	def deliver_to_google_cloud device, alert, increase_badge_count, custom_payload
 		registration_ids= [device.token]
-		options = {data: {message: alert}, collapse_key: "message"}
+		options = {data: {message: alert}.merge(custom_payload), collapse_key: "message"}
 		response = GOOGLE_CM.send_notification(registration_ids, options)
 	end
 
