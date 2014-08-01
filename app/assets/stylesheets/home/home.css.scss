@@ -157,11 +157,14 @@ background-color: #FFFFFF;
 		color: #FFFFFF;
 	}
 	@media (min-width: 1441px) {
+		.hero-headline {
+		padding-top: 150px;
+		}
 		h1 {
 			font-size: 86px;
 		}
 		.cta-forms {
-			padding-top: 150px;
+			padding-top: 100px;
 		}
 	}
 }
