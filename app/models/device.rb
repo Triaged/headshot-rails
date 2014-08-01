@@ -16,7 +16,7 @@ class Device < ActiveRecord::Base
   	return unless self.token_changed?
   	client = AWS::SNS.new.client
 		response = client.create_platform_endpoint(
-		  platform_application_arn: "aws:sns:us-west-2:297824293218:app/APNS/badge-staging",
+		  platform_application_arn: "arn:aws:sns:us-west-2:297824293218:app/APNS/badge-staging",
 		  token: self.token
 		)
 		self.arn = response[:endpoint_arn]
