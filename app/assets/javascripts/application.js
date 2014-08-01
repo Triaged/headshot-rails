@@ -21,4 +21,4 @@
 //= require bootstrap-datepicker
 //= require jquery.validate
 //= require jquery.validate.additional-methods
-//= require_tree .
+//= require_tree ./application

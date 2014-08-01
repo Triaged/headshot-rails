@@ -51,6 +51,11 @@ gem 'birthday', '~> 0.3.0'
 gem "lograge"
 gem 'bamboohr'
 gem 'gcm'
+gem 'intercom-rails', '~> 0.2.24'
+gem 'intercom', "~> 2.1.3"
+gem 'aws-sdk'
+
+
 
 
 

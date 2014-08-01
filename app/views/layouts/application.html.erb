@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7609112/659304/css/fonts.css" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= render partial "layouts/ga" if Rails.env.production? %>
     <%= csrf_meta_tags %>
   </head>
   <body>

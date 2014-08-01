@@ -1,52 +1,20 @@
-<header class="navbar navbar-transparent" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button class="navbar-toggle navbar-toggle-custom" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="navbar-brand navbar-brand-custom">
-                <%= image_tag ("badge-logo.png") %>
-            </div>
-        </div>
-        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-            <ul class="nav navbar-nav navbar-custom">
-                <li>
-                    <a href="../getting-started">Login</a>
-                </li>
-                <li>
-                    <a href="../getting-started">About Us</a>
-                </li>
-                <li>
-                    <a href="../getting-started">FAQ</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right navbar-buttons">
-                <btn class="btn-custom btn-transparent">Login</btn>
-            </ul>
-        </nav>
-    </div>
-</header>
-
 <div class="hero-container">
     <div class="hero-content">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
                 <h1 class="hero-headline">Mobile Contacts and Messaging, </br> For Growing Companies</h1>
                 <div class="cta-forms">
-                    <form class="form-inline form-inline-custom" role="form">
+                    <form class="form-inline form-inline-custom" action="/signup" method="post" role="form">
                         <div class="form-group">
-                            <input type="email" class="form-control form-control-custom" id="exampleInputEmail2" placeholder="Company email">
+                            <input type="email" name="email" class="form-control form-control-custom" id="emailPilot" placeholder="Company email">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control form-control-custom" id="exampleInputEmail2" placeholder="Company name">
+                            <input type="text" name="company" class="form-control form-control-custom" id="companyPilot" placeholder="Company name">
                         </div>
                         <button type="submit" class="btn-custom btn-cta">Get Early Access</button>
                     </form>
                 </div>
-                <p><small>Badge is availible on iOS &amp; Android</small></p>
+                <p><small>Badge is available on iOS &amp; Android</small></p>
             </div>
         </div>
     </div>
@@ -148,7 +116,7 @@
             <div class="row">
                 <div class="onboarding-copy col-lg-8 col-lg-offset-2">
                     <h2>Roll Out Badge In Minutes</h2>
-                    <p class="p-large">You can import employees from Google Apps or BambooHR in one click, with more integrations coming soon! Use something else? No problem, all you need is a list of names and emails, and our account team takes care of the rest!</p>
+                    <p class="p-large">You can import employees from Google Apps or BambooHR in one click, with more integrations coming soon. Use something else? No problem, all you need is a list of names and emails, and our account team takes care of the rest!</p>
                 </div>
             </div>
             <div class="onboarding-example">
@@ -156,10 +124,7 @@
                     <%= image_tag ("web/onboarding-laptop.svg"), :width => "1141" %>
                 </div>
                 <div class="onboarding-video">
-                    <video autoplay loop mute id="bgvid">
-                        <source src="/assets/video/onboarding.webm" type="video/webm">
-                        <source src="/assets/video/onboarding.mp4" type="video/mp4">
-                    </video>
+                    <%= video_tag(["https://s3-us-west-2.amazonaws.com/badge-video/onboarding.webm", "https://s3-us-west-2.amazonaws.com/badge-video/onboarding.mp4"], autoplay: true, mute: true, loop: true, id: "bgvid") %>
                 </div>
             </div>
         </div>
@@ -170,75 +135,18 @@
 
 <div class="cta">
     <div class="container">
-        <h3>Register to request early access to Badge.</h3>
+        <h3>Request early access to Badge.</h3>
         <div class="cta-forms">
-            <form class="form-inline form-inline-custom" role="form">
+            <form class="form-inline form-inline-custom" action="/signup" method="post" role="form">
                 <div class="form-group">
-                    <input type="email" class="form-control form-control-custom" id="exampleInputEmail2" placeholder="Company email">
+                    <input type="email" name="email" class="form-control form-control-custom" id="emailPilot" placeholder="Company email">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-custom" id="exampleInputEmail2" placeholder="Company name">
+                    <input type="text" name="company" class="form-control form-control-custom" id="companyPilot" placeholder="Company name">
                 </div>
                 <button type="submit" class="btn-custom btn-cta">Get Early Access</button>
             </form>
         </div>
-        <p>Badge is availible on iOS &amp; Android</p>
+        <p>Badge is available on iOS &amp; Android</p>
     </div>
 </div>
-
-
-
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <ul class="footer-links">
-                    <div class="row">
-                        <li class="col-lg-3">
-                            <div class="footer-headline">
-                                <%= image_tag ("badge-logo-sm.png"), :class => "footer-logo"  %>
-                            </div>
-                        </li>
-                        <li class="col-lg-3">
-                            <div class="footer-headline">
-                                <h5>Learn More</h5>
-                            </div>
-                            <ul class="list-links">
-                                <li>
-                                    <a href="/our-features">FAQ</a>
-                                </li>
-                                <li>
-                                    <a href="/our-features">About Us</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="col-lg-3">
-                            <div class="footer-headline">
-                                <h5>Get In Touch</h5>
-                            </div>
-                            <ul class="list-links">
-                                <li>
-                                    <a href="/our-features">Contact Us</a>
-                                </li>
-                                <li>
-                                    <a href="/our-features"><i class="fa fa-twitter"></i></a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="col-lg-3">
-                            <div class="footer-headline">
-                                <h5>Badge</h5>
-                            </div>
-                            <ul class="list-links">
-                                <li>
-                                    <a href="/our-features">Login</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                </ul>
-            </div>
-        </div>
-    </div>
-        
-</footer>

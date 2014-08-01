@@ -45,14 +45,14 @@ HeadshotRails::Application.configure do
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
-  config.lograge.enabled = true
-  config.lograge.custom_options = lambda do |event|
-    unwanted_keys = %w[format action controller]
-    params = event.payload[:params].reject { |key,_| unwanted_keys.include? key }
+  # config.lograge.enabled = true
+  # config.lograge.custom_options = lambda do |event|
+  #   unwanted_keys = %w[format action controller]
+  #   params = event.payload[:params].reject { |key,_| unwanted_keys.include? key }
  
-    # capture some specific timing values you are interested in
-    {:params => params, :user => event.payload[:user] }
-  end
+  #   # capture some specific timing values you are interested in
+  #   {:params => params, :user => event.payload[:user] }
+  # end
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -68,7 +68,7 @@ HeadshotRails::Application.configure do
 
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-  config.assets.precompile += %w( home.js home.css )
+  config.assets.precompile += %w( home.js home.css retina.min.js )
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
