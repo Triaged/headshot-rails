@@ -8,6 +8,8 @@ class API::Internal::UsersController < InternalAPIController
 	def deliver_message
 		MessageService.new(@user.id, params[:thread_id], message_params).deliver
 		render :json => { "message" => "ok" }, :status => 200
+	rescue
+		render :json => { "message" => "ok" }, :status => 200
 	end
 
 	def valid_auth_token
