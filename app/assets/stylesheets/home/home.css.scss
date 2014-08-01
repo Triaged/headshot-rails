@@ -225,8 +225,7 @@ background-color: #FFFFFF;
 	}
 	h4 {
 		clear: both;
-		font-weight: 400;
-		color: #F8AE37;
+		font-weight: 500;
 		line-height: 1.5em;
 		text-transform: uppercase;
 		padding: 15px 0 30px;
@@ -242,7 +241,11 @@ background-color: #FFFFFF;
 // Clients
 
 .customer-content {
-	padding-bottom: 75px;
+	background-color: #FFFAF4;
+	margin-bottom: 75px;
+	.row {
+		padding: 25px 0;
+	}
 	.customer-copy {
 		padding-top: 100px;
 		text-align: center;
@@ -251,6 +254,9 @@ background-color: #FFFFFF;
 		}
 		h3 {
 			font-weight: 400;
+			color: #F8AE37;
+			line-height: 50px;
+			letter-spacing: 1px;
 		}
 	}
 	.feature-image {
