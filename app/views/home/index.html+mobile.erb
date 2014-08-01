@@ -158,7 +158,7 @@
 <div class="support-section container">
     <div class="row">
         <div class="after-header col-xs-12">
-        	<span class=""><%= image_tag ("quotation.svg")%></span>
+        	<span class=""><%= image_tag ("quotation.png")%></span>
             <h3>Badge has energized our culture at Moat. We're collaborating more effectively, getting things done faster, and having fun while we do it.</h3>
         </div>
         <div class="client-image col-xs-8 col-xs-offset-2">
@@ -213,46 +213,55 @@
 
 <footer>
     <div class="container">
-        <ul class="footer-links">
-            <div class="row">
-                <li class="col-sm-4">
-                    <div class="footer-headline">
-                        <h5>Learn More</h5>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <ul class="footer-links">
+                    <div class="row">
+                        <li class="col-lg-3">
+                            <div class="footer-headline">
+                                <%= image_tag ("badge-logo-sm.png"), :class => "footer-logo"  %>
+                            </div>
+                        </li>
+                        <li class="col-lg-3">
+                            <div class="footer-headline">
+                                <h5>Learn More</h5>
+                            </div>
+                            <ul class="list-links">
+                                <li>
+                                    <a href="/our-features">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="/our-features">About Us</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="col-lg-3">
+                            <div class="footer-headline">
+                                <h5>Get In Touch</h5>
+                            </div>
+                            <ul class="list-links">
+                                <li>
+                                    <a href="/our-features">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="/our-features"><i class="fa fa-twitter"></i></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="col-lg-3">
+                            <div class="footer-headline">
+                                <h5>Badge</h5>
+                            </div>
+                            <ul class="list-links">
+                                <li>
+                                    <a href="/our-features">Login</a>
+                                </li>
+                            </ul>
+                        </li>
                     </div>
-                    <ul class="list-links">
-                        <li>
-                            <a href="/our-features">FAQ</a>
-                        </li>
-                        <li>
-                            <a href="/our-features">About Us</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="col-sm-4">
-                    <div class="footer-headline">
-                        <h5>Get In Touch</h5>
-                    </div>
-                    <ul class="list-links">
-                        <li>
-                            <a href="/our-features">Contact Us</a>
-                        </li>
-                        <li>
-                            <a href="/our-features"><i class="fa fa-twitter"></i></a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="col-sm-4">
-                    <div class="footer-headline">
-                        <h5>Badge</h5>
-                    </div>
-                    <ul class="list-links">
-                        <li>
-                            <a href="/our-features">Login</a>
-                        </li>
-                    </ul>
-                </li>
+                </ul>
             </div>
-        </ul>
+        </div>
     </div>
         
 </footer>
