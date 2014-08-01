@@ -68,7 +68,7 @@ class PushService
 			},
 			"custom" => custom_payload 
 		}.to_json
-		message = { "default" => "this is the default", "APNS" => apns_payload }.to_json
+		message = { "default" => alert, "APNS" => apns_payload }.to_json
 
 		client.publish( message: message, target_arn: device.arn, message_structure: 'json' )
 	end
