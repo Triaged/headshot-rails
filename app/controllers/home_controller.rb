@@ -15,6 +15,10 @@ class HomeController < ApplicationController
 	end
 
 	def signup
+		Pilot.create(email: params[:email], company: params[:company])
+	end
+
+	def faq
 	end
 
 private

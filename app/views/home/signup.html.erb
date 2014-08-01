@@ -1,25 +1,29 @@
+<%= content_for :header do %>
 <header class="navbar navbar-transparent" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <div class="navbar-brand navbar-brand-custom">
-                <%= image_tag ("badge-logo.png") %>
-                <span>Badge</span>
+                <%= link_to "/" do %> 
+                    <%= image_tag ("badge-logo.png") %>
+                    <span>Badge</span>
+                <% end %>
             </div>
         </div>
     </div>
 </header>
+<% end %>
 
 <div class="hero-container signup">
     <div class="hero-content container">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="section-header col-lg-10 col-lg-offset-1">
-                    <small>Early Access</small>
+                    <small>Thanks for your interest!</small>
                 </div>
             </div>
             <div class="col-lg-10 col-lg-offset-1">
                 <h3>We’re currently rolling out access to Badge. We’ll follow up shortly with an email when we’re ready to onboard you.</h3>
-                <p>Thanks for your interest!</p>
+                
                 <div class="signup-social">
                     <p>If you want, you can follow us on twitter for updates.</p>
                     <btn class="btn-custom btn-transparent"><i class="fa fa-twitter"></i>Follow @badgeco</btn>
@@ -31,53 +35,3 @@
         <%= image_tag ("web/signup-img.png"), :class => "hero-img" %>
     </div>
 </div>
-
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <ul class="footer-links">
-                    <div class="row">
-                        <li class="col-lg-4">
-                            <div class="footer-headline">
-                                <h5>Learn More</h5>
-                            </div>
-                            <ul class="list-links">
-                                <li>
-                                    <a href="/our-features">FAQ</a>
-                                </li>
-                                <li>
-                                    <a href="/our-features">About Us</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="col-lg-4">
-                            <div class="footer-headline">
-                                <h5>Get In Touch</h5>
-                            </div>
-                            <ul class="list-links">
-                                <li>
-                                    <a href="/our-features">Contact Us</a>
-                                </li>
-                                <li>
-                                    <a href="/our-features"><i class="fa fa-twitter"></i></a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="col-lg-4">
-                            <div class="footer-headline">
-                                <h5>Badge</h5>
-                            </div>
-                            <ul class="list-links">
-                                <li>
-                                    <a href="/our-features">Login</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                </ul>
-            </div>
-        </div>
-    </div>
-        
-</footer>

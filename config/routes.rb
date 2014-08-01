@@ -2,7 +2,9 @@ require 'sidekiq/web'
 HeadshotRails::Application.routes.draw do
   root :to => "home#index"
   match '/about' => "home#about", :via => :get
-  match '/signup' => "home#signup", :via => :get
+  match '/faq' => "home#faq", :via => :get
+  match '/signup' => "home#signup", :via => :post
+
 
   # API
   namespace :api, :path => "", :constraints => {:subdomain => "api"}, :defaults => {:format => :json} do
