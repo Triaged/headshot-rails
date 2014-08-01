@@ -15,6 +15,18 @@ class PushService
 		end
 	end
 
+	def deliver_message author, message, custom_payload
+		@devices.each do |device|
+			if device.service == "ios"
+				alert = "#{author.first_name.capitalize}: #{message}"
+				deliver_to_apns device, alert, true, {thread_id: @thread_id} if device.logged_in
+			else
+				alert = message
+				deliver_to_google_cloud device, alert, true, {thread_id: @thread_id, author_name: author.first_name} if device.logged_in
+			end
+		end
+	end
+
 	def deliver_to_apns device, alert, increase_badge_count, custom_payload
 		puts "Pushing to #{device.inspect}"
 		device.increment!(:count) if increase_badge_count
