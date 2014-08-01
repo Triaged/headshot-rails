@@ -10,7 +10,7 @@ class MessageService
 		author = User.find(@message.author_id)
 
 		if @user.can_receive_push?
-			PushService.new(@user.id).deliver_message author, message.body, @thread_id
+			PushService.new(@user.id).deliver_message author, @message.body, @thread_id
 		else
 			MessageMailer.mobile_message(@user.id, author.id, @message.body).deliver
 		end
