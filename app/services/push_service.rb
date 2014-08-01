@@ -15,14 +15,14 @@ class PushService
 		end
 	end
 
-	def deliver_message author, message, custom_payload
+	def deliver_message author, message, thread_id
 		@devices.each do |device|
 			if device.service == "ios"
 				alert = "#{author.first_name.capitalize}: #{message}"
-				deliver_to_apns(device, alert, true, custom_payload) if device.logged_in
+				deliver_to_apns(device, alert, true, {thread_id: thread_id}) if device.logged_in
 			else
 				alert = message
-				deliver_to_google_cloud(device, alert, true, custom_payload.merge({author_name: author.first_name})) if device.logged_in
+				deliver_to_google_cloud(device, alert, true, {thread_id: thread_id, author_name: author.first_name}) if device.logged_in
 			end
 		end
 	end
