@@ -1,0 +1,36 @@
+<%= content_for :header do %>
+<header class="navbar navbar-transparent" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <div class="navbar-brand navbar-brand-custom">
+                <%= link_to "/" do %> 
+                    <%= image_tag ("badge-logo.png") %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</header>
+<% end %>
+
+<div class="hero-container signup">
+    <div class="hero-content container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class="section-header col-lg-10 col-lg-offset-1">
+                    <small>Thanks for your interest!</small>
+                </div>
+            </div>
+            <div class="col-lg-10 col-lg-offset-1">
+                <h3>We’re currently rolling out access to Badge. We’ll follow up shortly with an email when we’re ready to onboard you.</h3>
+                
+                <div class="signup-social">
+                    <p>If you want, you can follow us on twitter for updates.</p>
+                    <btn class="btn-custom btn-transparent"><i class="fa fa-twitter"></i>Follow @badgeco</btn>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-background">
+        <%= image_tag ("web/signup-img.png"), :class => "hero-img" %>
+    </div>
+</div>

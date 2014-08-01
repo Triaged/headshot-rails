@@ -1,16 +1,19 @@
 class FullContactService
 	include Rails.application.routes.url_helpers
 
+	MIN_LIKELIHOOD = 0.85
+
 	def initialize user
 		@user = user
 	end
 
 	def fetch_results
 		result = FullContact.person(email: @user.email, webhookId: @user.id, webhookUrl: full_contact_index_url)
-		parse_results result
+		parse_results result 
 	end
 
 	def parse_results result
+		return if (result["likelihood"] < MIN_LIKELIHOOD)
 		find_avatar(result["photos"]) if (result.has_key?("photos") && !result["photos"].empty?)
 	end
 

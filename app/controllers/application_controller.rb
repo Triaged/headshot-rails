@@ -2,10 +2,16 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   include UrlHelper
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
   helper_method :subdomain, :current_company, :is_admin?
   before_filter :authenticate_user!, :validate_subdomain
   before_action :set_device_type
+
+  def append_info_to_payload(payload)
+    super
+    payload[:params] = request.params
+    payload[:user] = current_user.try(:email)
+  end
 
   def set_device_type
     request.variant = :mobile if browser.mobile?
@@ -55,8 +61,7 @@ private # ----------------------------------------------------
 	# based on the subdomain.  You can change this to whatever best fits your
 	# application.
 	def validate_subdomain
-      Rails.logger.info company_subdomain?
-	    redirect_to root_url(subdomain: nil) if (company_subdomain? && (current_company.nil? || !current_user || current_user.company != current_company))
+      redirect_to root_url(subdomain: nil) if (company_subdomain? && (current_company.nil? || !current_user || current_user.company != current_company))
 	end
 
 end

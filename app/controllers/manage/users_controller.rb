@@ -1,5 +1,6 @@
 class Manage::UsersController < ManageController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :resend]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :resend, :wipe_devices, :make_admin]
+  before_action :require_admin, only: [:make_admin]
 
 	def index
     @users = current_company.users
@@ -37,6 +38,11 @@ class Manage::UsersController < ManageController
     redirect_to manage_users_path, success: "#{@user.full_name} was successfully deactivated."
   end
 
+  def wipe_devices
+    WipeUserDevices.new(@user).wipe!
+    redirect_to manage_user_path(@user), success: 'Devices successfully wiped.'
+  end
+
   def resend
     if @user.confirmed_at.nil?
       @user.send_confirmation_instructions
@@ -44,6 +50,11 @@ class Manage::UsersController < ManageController
       # send download email
     end
     redirect_to manage_user_path(@user), success: 'Invitation was successfully resent.'
+  end
+
+  def make_admin
+    @user.update(admin: true)
+    redirect_to manage_user_path(@user), success: "#{@user.first_name} is now an admin."
   end
 
   def archived
@@ -56,6 +67,10 @@ class Manage::UsersController < ManageController
   end
 
 private
+
+  def require_admin
+    redirect_to manage_users_path and return unless current_user.admin
+  end
 
   def set_user
     @user = current_company.users.friendly.find(params[:id])

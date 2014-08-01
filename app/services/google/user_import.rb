@@ -27,12 +27,13 @@ class Google::UserImport
 		response.data.users.each do |user|
 			email = user.emails.select {|email| email['primary'] == true }.first
 			
-			if User.where(email: email['address']).count < 1
+			if User.with_deleted.where(email: email['address']).count < 1
 				imported_user = import.imported_users.find_or_initialize_by(email: email['address'])
 				imported_user.company = @company
 				imported_user.first_name = user['name']['givenName']
 				imported_user.last_name = user['name']['familyName']
 				imported_user.full_name = user['name']['fullName']
+				#imported_user.avatar = fetch_avatar_data user['id']
 				imported_user.save
 			else
 				Rails.logger.info "User #{email['address']} exists"
@@ -40,5 +41,13 @@ class Google::UserImport
 		end
 		Rails.logger.info("import: #{import.inspect}")
 		return import
+	end
+
+	def fetch_avatar_data id
+		response = @client.execute(api_method: @directory.users.photos.get, parameters: {'userKey' => id})
+		avatar_data = response.data["photoData"]
+		s = StringIO.new(avatar_data)
+		def s.original_filename; "#{id}.png"; end
+		return s
 	end
 end

@@ -2,7 +2,7 @@ class API::V1::SessionsController < APIController
 	before_filter :authenticate_user_from_token!, :except => [:create]
 	before_filter :authenticate_user!, :except => [:create]
 	before_filter :current_company, :except => [:create]
-	before_filter :ensure_params_exist
+	before_filter :ensure_params_exist, :only => [:create]
 
 	
 	def create
@@ -19,7 +19,7 @@ class API::V1::SessionsController < APIController
 	end
 	
 	def destroy
-		current_user.reset_authentication_token
+		sign_out(current_user)
 		render :json=> {:success=>true}
 	end
  

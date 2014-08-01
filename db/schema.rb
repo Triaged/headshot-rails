@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140702185044) do
+ActiveRecord::Schema.define(version: 20140801191708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,23 @@ ActiveRecord::Schema.define(version: 20140702185044) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
+  create_table "bamboo_credentials", force: true do |t|
+    t.integer "company_id"
+    t.string  "subdomain"
+    t.string  "api_key"
+  end
+
+  create_table "bamboohr_infos", force: true do |t|
+    t.string   "subdomain"
+    t.string   "api_key"
+    t.integer  "company_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "daily_import"
+  end
+
+  add_index "bamboohr_infos", ["company_id"], name: "index_bamboohr_infos_on_company_id", using: :btree
+
   create_table "companies", force: true do |t|
     t.string   "name"
     t.string   "slug"
@@ -41,6 +58,7 @@ ActiveRecord::Schema.define(version: 20140702185044) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "uses_departments", default: true
+    t.string   "logo"
   end
 
   create_table "departments", force: true do |t|
@@ -64,6 +82,8 @@ ActiveRecord::Schema.define(version: 20140702185044) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "application_id"
+    t.boolean  "logged_in",        default: true
+    t.string   "arn"
   end
 
   add_index "devices", ["user_id"], name: "index_devices_on_user_id", using: :btree
@@ -80,10 +100,15 @@ ActiveRecord::Schema.define(version: 20140702185044) do
     t.integer  "current_availability"
     t.integer  "home_office_location_id"
     t.integer  "current_office_location_id"
+    t.string   "twitter_url"
+    t.string   "linkedin_url"
+    t.string   "website_url"
+    t.integer  "imported_user_id"
   end
 
   add_index "employee_infos", ["current_office_location_id"], name: "index_employee_infos_on_current_office_location_id", using: :btree
   add_index "employee_infos", ["home_office_location_id"], name: "index_employee_infos_on_home_office_location_id", using: :btree
+  add_index "employee_infos", ["imported_user_id"], name: "index_employee_infos_on_imported_user_id", using: :btree
   add_index "employee_infos", ["user_id"], name: "index_employee_infos_on_user_id", using: :btree
 
   create_table "friendly_id_slugs", force: true do |t|
@@ -99,6 +124,19 @@ ActiveRecord::Schema.define(version: 20140702185044) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
+  create_table "home_locations", force: true do |t|
+    t.integer  "user_id"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "zip_code"
+    t.string   "state"
+    t.string   "country"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "imported_users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -109,6 +147,10 @@ ActiveRecord::Schema.define(version: 20140702185044) do
     t.datetime "updated_at"
     t.string   "full_name"
     t.integer  "import_id"
+    t.string   "department"
+    t.string   "location"
+    t.string   "avatar_url"
+    t.text     "avatar"
   end
 
   add_index "imported_users", ["company_id"], name: "index_imported_users_on_company_id", using: :btree
@@ -138,6 +180,13 @@ ActiveRecord::Schema.define(version: 20140702185044) do
   end
 
   add_index "office_locations", ["company_id"], name: "index_office_locations_on_company_id", using: :btree
+
+  create_table "pilots", force: true do |t|
+    t.string   "email"
+    t.string   "company"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "provider_credentials", force: true do |t|
     t.integer  "user_id"

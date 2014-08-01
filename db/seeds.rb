@@ -12,5 +12,6 @@
 # puts 'user: ' << user.name
 
 Provider.create(name: "google", title: "Google", short_title: "Google", oauth: true, active: true, oauth_path: "google_oauth2")
+Provider.create(name: "bamboohr", title: "BambooHR", short_title: "BambooHR", oauth: false, active: true)
 
 

@@ -5,6 +5,20 @@ class HomeController < ApplicationController
 	layout "home"
 
 	def index
+		respond_to do |format|
+      format.html          # /app/views/home/index.html.erb
+      format.html.mobile    # /app/views/home/index.html+phone.erb
+    end
+	end
+
+	def about
+	end
+
+	def signup
+		Pilot.create(email: params[:email], company: params[:company])
+	end
+
+	def faq
 	end
 
 private

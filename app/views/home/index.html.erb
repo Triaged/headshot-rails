@@ -1,356 +1,154 @@
-    <!--begin container -->
-    <div id="container">
-                
-        <!--begin intro -->
-        <div id="intro">
-        <div id="intro-bg"></div>
-        
-            <!--begin header_wrapper -->
-            <header id="header_wrapper">
-                
-                <!--begin header -->    
-                <div id="header" class="clearfix">
-                        
-                            <span id="altcolor" class="nospam">Coming soon to iOS and Android</span>
-                            <!--begin social icons -->
-                            <ul class="social_icons">
-                                <li>
-                                    <a href="mailto:team@badge.co" target="_top">
-                                        <i class="fa fa-envelope"></i>
-                                    </a>
-                                </li>
-                                <li style="padding-left:10px;">
-                                	<%= link_to 'Login', "/users/sign_in", style: "color:#F8AC00;" %>
-                                </li>
-                            </form>
-                            </ul>
-                            <!--end social icons -->
-                            
+<div class="hero-container">
+    <div class="hero-content">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h1 class="hero-headline">Mobile Contacts and Messaging, </br> For Growing Companies</h1>
+                <div class="cta-forms">
+                    <form class="form-inline form-inline-custom" action="/signup" method="post" role="form">
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control form-control-custom" id="emailPilot" placeholder="Company email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="company" class="form-control form-control-custom" id="companyPilot" placeholder="Company name">
+                        </div>
+                        <button type="submit" class="btn-custom btn-cta">Get Early Access</button>
+                    </form>
                 </div>
-                <!--end header -->
-                
-            </header>
-            <!--end header_wrapper -->
-            
-            <!--begin home section -->
-            <section id="home">
-            
-            	<!--begin home_box -->
-                <div class="home_box bounce_fade">
-                    <span class="logo">Badge</span>
-                                                                    
-                    <span class="home_text1 hero-font">Mobile Contacts & Messaging For Your Company</span>
 
-                    <!-- Begin MailChimp Signup Form -->
-
-                 
-
-                    <!--End mc_embed_signup-->
-                    <div id="mc_embed_signup">                        
-                        <form id="mc-embedded-subscribe-form" class="contact_form home_form validate" name="mc-embedded-subscribe-form" action="//badge.us8.list-manage.com/subscribe/post?u=c5c3dd5ff4cfff725d7d8fcaf&amp;id=49771b3c4f" method="post" target="_blank" novalidate>
-                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" name="cf_email" placeholder="Enter Your Email Address" required>  
-                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_2759e56aacab86303443bf35f_132442e9b2" tabindex="-1" value=""></div>
-                            <input type="submit" value="Join the beta" name="subscribe" id="mc-embedded-subscribe" class="button yellow"/>
-                        </form>
-                    </div>
-                
-                </div>
-                <!--end home_box -->
-
-                                        
-            </section>
-            <!--end home section -->
-            
+                <p><small>Badge is available on iOS &amp; Android</small></p>
+            </div>
         </div>
-        <!--end intro -->
-
-        <!-- begin features_wrapper -->
-        <div class="features_wrapper" style="border-bottom: 1px solid #e0e0e0;">
-            
-            <!-- begin features_box -->
-            <div class="features_box">
-                 
-                <!-- begin row -->
-                <div class="row">
-                    
-                    <!-- begin twelvecol -->
-                    <div class="twelvecol">
-                    
-                        <span class="features_title_big up_fade">Find Coworkers Instantly</span>
-                        
-                        <span class="features_title_small up_fade">Colleagues' profiles with all the info you need.</span>
-                    
-                        <div class="two-iphones">    
-                            <!--begin features_left -->
-                             <div class="features_center up_fade">
-                                
-                                <img src="<%= asset_url "home/iphone-firstimage.png" %>" alt="Picture">
-                                
-                            </div>
-
-                    
-                            <!--end features_side -->
-                        </div>
-                        
-                    </div>
-                    <!-- end twelvecol -->
-                    
-                </div>
-                <!-- end row -->
-            
-            </div>
-            <!-- end features_box -->
-            
-        </div>
-        <!-- end features_wrapper -->
-
-       
-
-        
-
-        <!-- begin features_wrapper -->
-        <div class="features_wrapper">
-            
-            <!-- begin features_box -->
-            <div class="features_box">
-                 
-                <!-- begin row -->
-                <div class="row">
-                    
-                    <!-- begin twelvecol -->
-                    <div class="twelvecol">
-                    
-                        <span class="features_title_big up_fade">Connect with Mobile Messaging</span>
-                        
-                        <span class="features_title_small up_fade">30x faster replies than email; no phone numbers required.</span>
-                    
-                         <!--begin section_image -->
-                        <div class="section_image right_fade">
-                            
-                            <img src="<%= asset_url "home/iphone4-communication.png" %>"alt="picture">
-                                                                   
-                        </div>
-                        <!--end section_image -->
-                        
-                    </div>
-                    <!-- end twelvecol -->
-                    
-                </div>
-                <!-- end row -->
-            
-            </div>
-            <!-- end features_box -->
-            
-        </div>
-        <!-- end features_wrapper -->
-
-        <!--begin section_wrapper -->
-        <section class="section_wrapper nodisplay">
-            
-             <span class="features_title_big up_fade">See Teammates' Availability</span>
-             <span class="features_title_small up_fade">Badge tracks who's in the office & available.</span>
-            <!--begin section_box -->
-            <div class="section_box" style="padding-top:0px;">
-              
-                <!--begin row -->
-                <div class="row">
-
-                    
-                    <!--begin twelvecol -->
-                    <div class="twelvecol">
-                    
-                       
-                        <!--end section_description -->
-                        
-                        <!--begin section_image -->
-                        <div class="section_image right_fade">
-                            
-                            <img src="<%= asset_url "home/map.png" %>" alt="picture">
-                                                                   
-                        </div>
-                        <!--end section_image -->
-                         
-                    </div>
-                    <!--end twelvecol -->
-                    
-                </div>
-                <!--end row -->
-                
-            </div>
-            <!--end section_box -->
-            
-        </section>
-        <!--end section_wrapper -->
-
-        <!--begin services_wrapper -->
-        <section class="services_wrapper">
-            
-            <!--begin services_box -->
-            <div class="services_box up_fade">
-           
-                <!--begin row -->
-                <div class="row">
-                
-                    <!--begin twelvecol -->
-                    <div class="twelvecol">
-
-                    <span class="features_title_big">Onboard in Minutes</span>
-                    <span class="features_title_small up_fade">Import and invite contacts from the following services:</span>
-                        
-                        <!--begin fourcol -->
-                        <div class="fourcol">
-                            
-                            <!--begin services_item -->
-                            <div class="services_item">
-                                <div class="icon_wrapper">
-                                    <img src="<%= asset_url "home/apps_logo_flat_print_medium.png" %>" id="google-icon">
-                                </div>
-                                <h2>Google Apps</h2>
-                            </div>
-                            <!--end services_item -->
-                            
-                        </div>
-                        <!--end threecol -->
-                        
-                        <!--begin fourcol -->
-                        <div class="fourcol">
-                            
-                            <!--begin services_item -->
-                            <div class="services_item">
-                                <div class="icon_wrapper">
-                                    <img src="<%= asset_url "home/logo-active-directory.png"  %>" class="import-icons">
-                                </div>
-                                <h2>Microsoft Active Directory</h2>
-                            </div>
-                            <!--end services_item -->
-                            
-                        </div>
-                        <!--end fourcol -->
-                        
-                        <!--begin fourcol -->
-                        <div class="fourcol last">
-                            
-                            <!--begin services_item -->
-                            <div class="services_item last">
-                                <div class="icon_wrapper">
-                                    <img src="<%= asset_url "home/BambooHR.png"  %>"id="bamboo-icon">
-                                </div>
-                                <h2>Bamboo HR</h2>
-                            </div>
-                            <!--end services_item -->
-                            
-                        </div>
-                        <!--end threecol -->
-                        
-                    </div>
-                    <!--end twelvecol -->
-                    
-                </div>
-                <!--end row -->
-                
-            </div>
-            <!--end services_box -->
-             
-        </section>
-        <!--end services_wrapper -->
-        
-        
-        <!-- begin newsletter_wrapper -->
-        <div class="newsletter_wrapper">
-        	
-            <!--begin info_transparent -->
-            <div class="info_transparent bounce_fade">
-                <h3>Get early access to Badge</h3>
-            </div>
-            <!--end info_transparent -->
-            
-            <!-- begin newsletter_box -->
-            <div class="newsletter_box">
-                 
-                <!-- begin row -->
-                <div class="row">
-                    
-                    <!-- begin twelvecol -->
-                    <div class="twelvecol">
-                    
-                        <!--begin newsletter form -->
-                        <div class="contact_form_wrap bounce_fade">
-                            
-                            <!--begin success_box -->
-                            <p class="success_box" style="display:none;">We received your message and you'll hear from us soon. Thank You!</p>
-                            <!--end success_box -->
-                            
-                            <!--begin newsletter form -->
-                            <div id="mc_embed_signup">                        
-                                <form id="mc-embedded-subscribe-form" class="contact_form home_form validate" name="mc-embedded-subscribe-form" action="//badge.us8.list-manage.com/subscribe/post?u=c5c3dd5ff4cfff725d7d8fcaf&amp;id=49771b3c4f" method="post" target="_blank" novalidate>
-                                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" name="cf_email" placeholder="Enter Your Email Address" required>  
-                                    <div style="position: absolute; left: -5000px;"><input type="text" name="b_2759e56aacab86303443bf35f_132442e9b2" tabindex="-1" value=""></div>
-                                    <input type="submit" value="Join the beta" name="subscribe" id="mc-embedded-subscribe" class="button yellow-lined"/>
-                                </form>
-                            </div>
-                            <!--end newsletter form -->
-                            
-                        </div>
-                        <!--end newsletter form -->
-                        
-                    </div>
-                    <!-- end twelvecol -->
-                    
-                </div>
-                <!-- end row -->
-            
-            </div>
-            <!-- end newsletter_box -->
-            
-        </div>
-        <!-- end newsletter_wrapper -->
-           
     </div>
-    <!--! end of #container -->
-    
-    <!-- scripts concatenated and minified via ant build script-->
-    <script src="lib/js/modernizr-2.6.1.min.js"></script>
-    <script src="lib/js/conditional.js"></script>
-    <script src="lib/js/prettyPhoto/js/jquery.prettyPhoto.js"></script>
-    <script src="lib/js/script.js"></script>
-    <script src="lib/js/jquery.inview.js"></script>
-    
-    <!-- begin slider script-->
-    <script src="lib/js/responsiveslides.min.js"></script>
-  	<script>
-		// You can also use "$(window).load(function() {"
-		$(function () {
-	
-		  // Slideshow 4
-		  $("#slider4, #slider3").responsiveSlides({
-			auto: true,
-			pager: true,
-			nav: true,
-			pause: true,
-			speed: 500,
-			timeout: 5000,
-			namespace: "callbacks",
-			before: function () {
-			  $('.events').append("<li>before event fired.</li>");
-			},
-			after: function () {
-			  $('.events').append("<li>after event fired.</li>");
-			}
-		  });
-	
-		});
-  	</script>
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <p class="hero-scroll small">More Info Below</p>
+    <div class="hero-background">
+        <%= image_tag ("web/hero-img-alt.png"), :class => "hero-img" %>
+    </div>
+</div>
 
-  ga('create', 'UA-45309305-4', 'headshot.io');
-  ga('send', 'pageview');
 
-</script>
-    <!-- end slider script-->
-    
-</body>
-</html>
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="mission-content col-lg-10 col-lg-offset-1">
+                <h3>We believe great companies are built by empowered employees and we’ve made it our mission to support your team.</h3>
+            </div>
+        </div>
+
+        <div class="features-content">
+            <div class="row">
+                <div class="section-header col-lg-10 col-lg-offset-1">
+                    <div class="divider-line">
+                        <span>
+                           <small>Features</small>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="section row">
+                <div class="feature-image col-lg-8">
+                    <%= image_tag ("web/hand1.png"), :width => "750" %>
+                </div>
+                <div class="feature-copy-right col-lg-4">
+                    <div class="feature-icon">
+                        <%= image_tag ("icons/landing-icon_01.svg"), :width => "45" %>
+                    </div>
+                    <h4>A Mobile-First Company Directory</h4>
+                    <p>Your company directory has been neglected for far too long. Badge provides access to all your work contacts, so getting in touch with anyone is fast, convenient and organized beautifully.  You've truly got your whole company at your fingertips.</p>
+                </div>
+            </div>
+            <div class="section row">
+                <div class="feature-copy-left col-lg-4">
+                    <div class="feature-icon">
+                        <%= image_tag ("icons/landing-icon_02.svg"), :width => "45" %>
+                    </div>
+                    <h4>Mobile Messaging Made For Work</h4>
+                    <p>People reply 30X faster to texts than emails. So why are you still putting critical, urgent requests into email?  With Badge, everyone in your company can send secure mobile messages.  That means work gets done faster.</p>
+                </div>
+                <div class="feature-image col-lg-8">
+                    <%= image_tag ("web/hand2.png"), :width => "750" %>
+                </div>
+            </div>
+            <div class="section row">
+                <div class="feature-image col-lg-8">
+                    <%= image_tag ("web/hand3.png"), :width => "750" %>
+                </div>
+                <div class="feature-copy-right col-lg-4">
+                    <div class="feature-icon">
+                        <%= image_tag ("icons/landing-icon_03.svg"), :width => "45" %>
+                    </div>
+                    <h4>Your Colleagues At A Glance</h4>
+                    <p>Badge gives you the information you need most about your colleagues. Wondering who’s in the office? Looking for phone or email? Want to find a teammate you’ve been told to follow up with? We've got you covered. Badge helps you navigate your company more quickly and easily that ever before.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="customer-content">
+    <div class="container">    
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="customer-copy col-lg-6 col-lg-offset-1">
+                        <span class=""><%= image_tag ("quotation.png"), :width => "50" %></span>
+                        <h3>Badge has energized our culture at Moat. We're collaborating more effectively, getting things done faster, and having fun while we do it.</h3>
+                    </div>
+                    <div class="feature-image col-lg-4">
+                        <%= image_tag ("badge.png"), :width => "300", :class => "pull-right" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="content">
+    <div class="container">
+        <div class="onboard-content">
+            <div class="row">
+                <div class="section-header col-lg-10 col-lg-offset-1">
+                    <div class="divider-line">
+                        <span>
+                            <small>Onboarding</small>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="onboarding-copy col-lg-8 col-lg-offset-2">
+                    <h2>Roll Out Badge In Minutes</h2>
+                    <p class="p-large">You can import employees from Google Apps or BambooHR in one click, with more integrations coming soon. Use something else? No problem, all you need is a list of names and emails, and our account team takes care of the rest!</p>
+                </div>
+            </div>
+            <div class="onboarding-example">
+                <div class="onboarding-img">
+                    <%= image_tag ("web/onboarding-laptop.svg"), :width => "1141" %>
+                </div>
+                <div class="onboarding-video">
+                    <%= video_tag(["https://s3-us-west-2.amazonaws.com/badge-video/onboarding.webm", "https://s3-us-west-2.amazonaws.com/badge-video/onboarding.mp4"], autoplay: true, mute: true, loop: true, id: "bgvid") %>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="cta">
+    <div class="container">
+        <h3>Request early access to Badge.</h3>
+        <div class="cta-forms">
+            <form class="form-inline form-inline-custom" action="/signup" method="post" role="form">
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control form-control-custom" id="emailPilot" placeholder="Company email">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="company" class="form-control form-control-custom" id="companyPilot" placeholder="Company name">
+                </div>
+                <button type="submit" class="btn-custom btn-cta">Get Early Access</button>
+            </form>
+        </div>
+        <p>Badge is available on iOS &amp; Android</p>
+    </div>
+</div>

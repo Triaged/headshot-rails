@@ -1,6 +1,10 @@
 require 'sidekiq/web'
 HeadshotRails::Application.routes.draw do
   root :to => "home#index"
+  match '/about' => "home#about", :via => :get
+  match '/faq' => "home#faq", :via => :get
+  match '/signup' => "home#signup", :via => :post
+
 
   # API
   namespace :api, :path => "", :constraints => {:subdomain => "api"}, :defaults => {:format => :json} do
@@ -14,11 +18,13 @@ HeadshotRails::Application.routes.draw do
       end
       resources :office_locations do
         member do 
-          post 'entered'
-          delete 'exited'
+          put 'entered'
+          put 'exited'
         end
       end
-      resources :devices, only: :create
+      resources :devices, only: :create do
+        delete 'sign_out', on: :member
+      end
 
       resources :departments
       resource :account do
@@ -37,6 +43,16 @@ HeadshotRails::Application.routes.draw do
         match '/registrations' => 'registrations#create', :via => :post
      end
   	end
+
+    # Internal API, never to be exposed to public
+    namespace :internal do
+      resources :users do
+        member do
+          get 'valid_auth_token'
+          post 'deliver_message'
+        end
+      end
+    end
 	end
 
  
@@ -53,6 +69,7 @@ HeadshotRails::Application.routes.draw do
   	resource :account
     resource :download do
       post 'txt', on: :member
+      post 'txt_stored', on: :member
     end
     
     namespace :manage do
@@ -63,12 +80,17 @@ HeadshotRails::Application.routes.draw do
         member do
           post 'restore'
           put 'resend'
+          post 'wipe_devices'
+          post 'make_admin'
         end
       end
       resources :import do
         member do
           get 'select'
+
         end
+        get 'bamboohr', on: :collection
+        post 'update_bamboohr_settings', on: :collection
       end
       resource :company
       resources :office_locations
@@ -85,6 +107,8 @@ HeadshotRails::Application.routes.draw do
      resources :companies do
       resources :users do
         post 'become', on: :member
+        post 'invite', on: :member
+        delete 'destroy_all', on: :collection
       end
      end
     

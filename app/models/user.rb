@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
  	
  	has_one :employee_info
  	accepts_nested_attributes_for :employee_info, update_only: true
+ 	has_one :home_location
+
 	
 	mount_uploader :avatar, AvatarUploader
 
@@ -113,6 +115,10 @@ class User < ActiveRecord::Base
   	self.devices_count > 0
   end
 
+  def can_receive_push?
+  	self.installed_app? && (self.devices.where.not(token: nil).count > 0)
+  end
+
   def unleash_sherlock
 		SherlockHolmes.perform_async(self.id)
 		true
@@ -127,7 +133,7 @@ protected
 	def create_default_employee_info
 	  # build default profile instance. Will use default params.
 	  # The foreign key to the owning User model is set automatically
-	  create_employee_info
+	  create_employee_info if employee_info.nil?
 	  true # Always return true in callbacks as the normal 'continue' state
 	end
 

@@ -1,0 +1,63 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Colors
+
+$brand-primary: #f8ac00;
+
+$text-color: #2E3B4E;
+$link-color: $brand-primary;
+$link-hover-color: darken($link-color, 10%);
+$grey: #919496;
+$grey-light: #DBDCE1;
+$grey-lighter: #E3E4EC;
+$grey-dark: #919496;
+$active: #87C750;
+
+// Buttons
+
+$btn-font-weight: 400;
+
+$btn-primary-color: #fff;
+$btn-primary-bg: $brand-primary;
+$btn-primary-border: $brand-primary;
+
+$btn-default-color: $brand-primary;
+$btn-default-bg: #fff;
+$btn-default-border: $brand-primary;
+
+
+// Alerts
+
+$alert-border-radius: 5px;
+$alert-link-font-weight: 400;
+$alert-success-bg: #DEF2F0;
+$alert-success-text: #2CB5A8;
+$alert-success-border: #CCEBE9;
+
+// Forms
+
+$input-bg: #ECECEC;
+$input-color: #222222;
+$input-border: $grey-lighter;
+$input-border-radius: 3px;
+$input-border-focus: $grey-dark;
+$input-color-placeholder: $grey;
+
+
+// Labels
+
+$label-default-bg: #2CB5A8;
+
+$border-radius-sm: 2px;
+$border-radius-lg: 5px;
+
+$spacing-xsm: 5px;
+$spacing-sm: 10px;
+$spacing-m: 20px;
+$spacing-lg: 30px;
+$spacing-xlg: 40px;
+$spacing-xxlg: 100px;
+
+// colors

@@ -1,12 +1,15 @@
-<div class="authform">
-  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :role => 'form'}) do |f| %>
+<div class="sign-in no-border">
+  <%= bootstrap_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :role => 'form'}, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
     <h3>Forgot your password?</h3>
     <p>We'll send password reset instructions.</p>
     <%= devise_error_messages! %>
-    <div class="form-group">
-      <%= f.label :email %>
+
+    <br />
+    
       <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
+    
+    <div class="form-actions form-pull-right edit-btns">
+      <%= f.submit 'Reset Password', class: "btn-custom btn-primary" %>
     </div>
-     <%= f.submit 'Reset Password', :class => 'button right' %>
   <% end %>
 </div>

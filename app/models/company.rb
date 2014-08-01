@@ -7,10 +7,17 @@ class Company < ActiveRecord::Base
 	has_many :imports
 	has_many :office_locations
 	has_many :departments
+	has_one :bamboohr_info
+
+	mount_uploader :logo, CompanyLogoUploader
 
 	after_create :create_default_departments
 
-	
+	validates :name, uniqueness: true
+
+	def should_generate_new_friendly_id?
+  	slug.blank? || name_changed?
+  end
 
 	def initial
 		name[0].capitalize
