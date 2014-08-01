@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7609112/659304/css/fonts.css" />
     <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'home', 'data-turbolinks-track' => true %>
-    <%= render partial "layouts/ga" if Rails.env.production? %>
+    <%= render partial: "layouts/ga" if Rails.env.production? %>
     <%= csrf_meta_tags %>
   </head>
   <body>
