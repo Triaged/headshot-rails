@@ -20,7 +20,6 @@ class UserMailer < Devise::Mailer
 
     mail do |format|
       format.html { render template_name }
-      format.txt { render template_name }
     end
 
   end
