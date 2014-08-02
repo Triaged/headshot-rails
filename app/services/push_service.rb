@@ -61,7 +61,7 @@ class PushService
 		client = AWS::SNS::Client.new
 		apns_payload = { 
 			"aps" => { 
-				"alert" => alert.truncate(140), 
+				"alert" => alert.truncate(100), 
 				"badge" => (increase_badge_count ? device.count : 0),
 				"content_available" => true,
 				"expiry" => Time.now + 60*60*12,
@@ -69,7 +69,7 @@ class PushService
 			},
 			"custom" => custom_payload 
 		}.to_json
-		message = { "default" => alert.truncate(140), "APNS" => apns_payload }.to_json
+		message = { "default" => "New Badge Message", "APNS" => apns_payload }.to_json
 
 		client.publish( message: message, target_arn: device.arn, message_structure: 'json' )
 	end
