@@ -61,7 +61,7 @@ class PushService
 		client = AWS::SNS::Client.new
 		apns_payload = { 
 			"aps" => { 
-				"alert" => alert.truncate(100), 
+				"alert" => alert.truncate(80), 
 				"badge" => (increase_badge_count ? device.count : 0),
 				"content_available" => true,
 				"expiry" => Time.now + 60*60*12,
