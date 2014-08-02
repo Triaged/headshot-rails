@@ -11,11 +11,16 @@ class UserMailer < Devise::Mailer
       admin = record.company.admin_user
   		mail.subject = "#{admin.first_name.capitalize} invited you to Badge!"
       mail.from = "\"#{admin.full_name} via Badge\" <team@badge.co>"
-      mail
+      template_name = "confirmation_instructions"
   	else
       mail.subject = "Welcome to Badge!"
       mail.from = "\"Badge Team\" <team@badge.co>"
-      mail(template_name => "confirmation_instructions_admin")
+      template_name = "confirmation_instructions_admin"
+    end
+
+    mail do |format|
+      format.html { render template_name }
+      format.txt { render template_name }
     end
 
   end
