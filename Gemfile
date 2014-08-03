@@ -56,8 +56,9 @@ gem 'intercom', "~> 2.1.3"
 gem 'aws-sdk'
 gem 'mailchimp-api', require: 'mailchimp'
 
-
-
+group :assets do
+  gem 'asset_sync'
+end
 
 
 group :development do
