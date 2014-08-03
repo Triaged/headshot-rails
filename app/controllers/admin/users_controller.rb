@@ -52,7 +52,7 @@ class Admin::UsersController < AdminController
 private
 
 	def set_user
-		@user = @company.users.find(params[:id])
+		@user = @company.users.with_deleted.find(params[:id])
 	end
 
 	def set_company
