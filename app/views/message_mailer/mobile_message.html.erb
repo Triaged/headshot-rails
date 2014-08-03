@@ -467,8 +467,12 @@
                                                <table border="0" cellpadding="0" cellspacing="0" style="background-color: #F8AE37;border-radius: 3px;margin: 60px auto;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
 												    <tr>
 												        <td align="center" valign="middle" style="color: #FFFFFF;font-family: Helvetica, Arial, sans-serif;font-size: 16px;font-weight: bold;letter-spacing: 1px;line-height: 150%;padding-top: 10px;padding-right: 40px;padding-bottom: 10px;padding-left: 30px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-												            <a href="http://www.mailchimp.com/blog/" target="_blank" style="color: #FFFFFF;text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;font-weight: normal;">Reply On Badge</a>
-												        </td>
+												        <% if @recipient.confirmed? %>
+												        	<%= link_to 'Reply On Badge', new_user_session_url, { :style => 'color: #FFFFFF;text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;' }  %>
+												        <% else %>
+												        		<%= link_to 'Reply On Badge', confirmation_url(@recipient, confirmation_token: @recipient.confirmation_token), { :style => 'color: #FFFFFF;text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;' }  %>
+												        <% end %>
+																</td>
 												    </tr>
 												</table>
                                                 Badge is a contacts and communication mobile app for you and your team. You’ll recieve replies faster, know when coworkers are available, and see up-to-date contact information. Use the button above to join the rest of your team.

@@ -55,6 +55,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.6)
+    analytics-ruby (2.0.5)
     arel (5.0.1.20140414130214)
     asset_sync (1.0.0)
       activemodel
@@ -408,6 +409,7 @@ DEPENDENCIES
   active_link_to
   active_model_serializers
   activerecord-session_store
+  analytics-ruby (~> 2.0.0)
   asset_sync
   aws-sdk
   bamboohr
