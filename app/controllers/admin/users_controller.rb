@@ -3,7 +3,7 @@ class Admin::UsersController < AdminController
 	before_action :set_user, only: [:show, :edit, :update, :destroy, :invite]
 
 	def index
-		@users = @company.users.all
+		@users = @company.users.with_deleted.all
 	end
 
 	def show 
@@ -34,6 +34,11 @@ class Admin::UsersController < AdminController
     else
       render action: 'new'
     end
+	end
+
+	def destroy
+		@user.really_destroy!
+		redirect_to admin_company_path(@company), notice: 'User was destroyed.'
 	end
 
 	def destroy_all
