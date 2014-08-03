@@ -46,5 +46,5 @@ production:
   INTERNAL_API_TOKEN: f9c93bc9ca8a0fe561c2ca3eb132cdbed7a70bd4095ed9212063edd3a4825255
   FIREBASE_URL: https://badge-prod.firebaseio.com/
   GCM_KEY: f7039da9a0bcf75663356b181a7e42dd
-	FOG_DIRECTORY: badge-prod
+  FOG_DIRECTORY: badge-prod
 
