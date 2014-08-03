@@ -470,7 +470,7 @@
 												        <% if @recipient.confirmed? %>
 												        	<%= link_to 'Reply On Badge', new_user_session_url, { :style => 'color: #FFFFFF;text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;' }  %>
 												        <% else %>
-												        		<%= link_to 'Reply On Badge', confirmation_url(@recipient, confirmation_token: @recipient.confirmation_token), { :style => 'color: #FFFFFF;text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;' }  %>
+												        		<%= link_to 'Reply On Badge', confirmation_url(@recipient, confirmation_token: @token), { :style => 'color: #FFFFFF;text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;' }  %>
 												        <% end %>
 																</td>
 												    </tr>
