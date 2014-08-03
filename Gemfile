@@ -54,6 +54,7 @@ gem 'gcm'
 gem 'intercom-rails', '~> 0.2.24'
 gem 'intercom', "~> 2.1.3"
 gem 'aws-sdk'
+gem 'mailchimp-api', require: 'mailchimp'
 
 
 

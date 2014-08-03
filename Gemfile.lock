@@ -209,6 +209,9 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mailchimp-api (2.0.5)
+      excon (>= 0.16.0)
+      json (>= 1.7.7)
     mandrill-api (1.0.51)
       excon (>= 0.16.0, < 1.0)
       json (>= 1.7.7, < 2.0)
@@ -413,6 +416,7 @@ DEPENDENCIES
   jquery-validation-rails
   lograge
   mail
+  mailchimp-api
   mandrill-api
   minitest-spec-rails!
   momentjs-rails (~> 2.5.0)

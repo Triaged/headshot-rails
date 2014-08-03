@@ -16,6 +16,7 @@ class HomeController < ApplicationController
 
 	def signup
 		Pilot.create(email: params[:email], company: params[:company])
+		$mailchimp.lists.subscribe("49771b3c4f", {email: params[:email]}, double_optin=false)
 	end
 
 	def faq
