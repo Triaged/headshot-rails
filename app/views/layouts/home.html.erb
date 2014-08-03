@@ -6,8 +6,7 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Badge" %>">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7609112/659304/css/fonts.css" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'home', 'data-turbolinks-track' => true %>
     <%= render partial: "layouts/ga" if Rails.env.production? %>
