@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 
   #before_create :set_company
   before_create :create_default_employee_info
-  after_create :unleash_sherlock
+  after_create :set_defaults
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -117,6 +117,19 @@ class User < ActiveRecord::Base
 
   def can_receive_push?
   	self.installed_app? && (self.devices.where.not(token: nil).count > 0)
+  end
+
+  def set_defaults
+  	Analytics.identify(
+    user_id: self.id,
+    traits: {
+      name: self.full_name,
+      email: self.email,
+      created_at: DateTime.now,
+      company_name: self.company.name,
+      company_id: self.company_id
+    })
+  	unleash_sherlock
   end
 
   def unleash_sherlock

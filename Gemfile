@@ -56,6 +56,7 @@ gem 'intercom', "~> 2.1.3"
 gem 'aws-sdk'
 gem 'mailchimp-api', require: 'mailchimp'
 gem 'asset_sync'
+gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
 
 
 

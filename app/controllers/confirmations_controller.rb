@@ -67,5 +67,13 @@ class ConfirmationsController < Devise::ConfirmationsController
     @confirmable.confirm!
     set_flash_message :notice, :confirmed
     sign_in_and_redirect(resource_name, @confirmable)
+    track_confirm
+  end
+
+  def track_confirm
+    Analytics.track(
+      user_id: current_user.id,
+      event: 'confirmed_account'
+    )
   end
 end

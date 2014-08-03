@@ -33,6 +33,7 @@ MAILCHIMP_API_KEY: b19eab2e7628484787d8e21a9d2d5157-us8
 AWS_ACCESS_KEY_ID: AKIAJHBY3QOXLZUGABCQ
 AWS_SECRET_ACCESS_KEY: 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
 FOG_PROVIDER: AWS
+SEGMENT_WRITE_KEY: baum6glmly
 
 staging:
   GA_CLIENT_ID: 466421541427-hm6pjklidk8pgossbc8t78480rq9kbd8.apps.googleusercontent.com
@@ -47,4 +48,5 @@ production:
   FIREBASE_URL: https://badge-prod.firebaseio.com/
   GCM_KEY: f7039da9a0bcf75663356b181a7e42dd
   FOG_DIRECTORY: badge-prod
+  SEGMENT_WRITE_KEY: 5rum4421f5
 

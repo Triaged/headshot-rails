@@ -7,6 +7,7 @@ class Device < ActiveRecord::Base
 
 	before_save :strip_spaces
 	before_save :create_sns_endpoint
+	after_create :track_device
 
   def strip_spaces
   	token.delete(' ') if token
@@ -29,6 +30,17 @@ class Device < ActiveRecord::Base
 		end
 
 		self.arn = response[:endpoint_arn]
+  end
+
+  def track_device
+  	Analytics.track(
+      user_id: user.id,
+      event: 'device_added',
+      properties: {
+      	service: self.service,
+      	os_version: self.os_version
+      }
+    )
   end
 
 end
