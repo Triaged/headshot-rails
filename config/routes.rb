@@ -59,10 +59,10 @@ HeadshotRails::Application.routes.draw do
   
  # Web
   as :user do
+      put '/users/password' => 'devise/passwords#update'
       patch '/user/confirmation' => 'confirmations#update', :via => :patch, :as => :update_user_confirmation
       get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'    
       put 'users/:id' => 'devise/registrations#update', :as => 'user_registration' 
-      put '/users/password' => 'devise/passwords#update'
   end
   devise_for :users, :skip => [:registrations], :controllers => {omniauth_callbacks: "omniauth_callbacks",  :confirmations => "confirmations"}
   
