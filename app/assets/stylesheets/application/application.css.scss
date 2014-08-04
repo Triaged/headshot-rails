@@ -89,6 +89,7 @@ h1, h2, h3, h4 {
 
 @media(max-width:767px){
 	.navbar-toggle-custom {
+		margin-top: 15px;
 		.icon-bar {
 			background-color: $text-color;
 		}

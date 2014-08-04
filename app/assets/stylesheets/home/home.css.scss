@@ -152,15 +152,15 @@ background-color: #FFFFFF;
 	small {
 		color: #FFFFFF;
 	}
-	@media (min-width: 1600px) {
+	@media (min-width: 1660px) {
 		.hero-headline {
-		padding-top: 150px;
+		padding-top: 200px;
 		}
 		h1 {
 			font-size: 86px;
 		}
 		.cta-forms {
-			padding-top: 100px;
+			padding-top: 150px;
 		}
 	}
 }
@@ -199,6 +199,50 @@ background-color: #FFFFFF;
 	}
 }
 
+.about-hero {
+	position: relative;
+	height: 95%;
+	@media(max-width:1200px){
+		height: auto;
+		}
+	.about-background {
+		height: 100%;
+		background: #eceaea; /* Old browsers */
+		background: -moz-linear-gradient(top, #eceaea 0%, #f1f1f1 50%, #f5f6f6 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eceaea), color-stop(50%,#f1f1f1), color-stop(100%,#f5f6f6)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, #eceaea 0%,#f1f1f1 50%,#f5f6f6 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, #eceaea 0%,#f1f1f1 50%,#f5f6f6 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, #eceaea 0%,#f1f1f1 50%,#f5f6f6 100%); /* IE10+ */
+		background: linear-gradient(to bottom, #eceaea 0%,#f1f1f1 50%,#f5f6f6 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eceaea', endColorstr='#f5f6f6',GradientType=0 ); /* IE6-9 */
+	}
+	.about-row {
+		width: 90%;
+		margin: 0 auto;
+		padding-top: 15%;
+		padding-bottom: 25px;
+	}
+	.about-img {
+		width: 100%;
+	}
+	@media(max-width:1200px){
+		height: auto;
+		.about-row {
+			padding-top: 100px;
+			padding-bottom: 25px;
+		}
+		.hero-backround {
+			height: auto;
+			position: relative;
+		}
+		.about-column {
+			padding-top: 25px;
+		}
+		.about-img {
+			width: auto;
+		}
+	}
+}
 // Mission
 
 .mission-content {
@@ -214,7 +258,6 @@ background-color: #FFFFFF;
 // Features
 
 .content {
-	
 	.section {
 		padding-bottom: 100px;
 	}
@@ -317,10 +360,6 @@ background-color: #FFFFFF;
 	color: $brand-primary;
 }
 
-.about-img {
-	position: absolute;
-	min-height: 100%;
-}
 
 // Story-Content
 
@@ -338,6 +377,9 @@ background-color: #FFFFFF;
 
 // Investors 
 
+.investor-group {
+	padding-top: 75px;
+}
 .investor-logos {
 	padding-bottom: 50px;
 }
@@ -521,10 +563,6 @@ background-color: #FFFFFF;
 		small {
 			color: #ffffff;
 		}
-	}
-
-	.about-hero {
-		height: 38%;
 	}
 
 	.investor-group {
