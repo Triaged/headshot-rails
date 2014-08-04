@@ -73,7 +73,7 @@ private
   end
 
   def set_user
-    @user = current_company.users.friendly.find(params[:id])
+    @user = current_company.users.with_deleted.friendly.find(params[:id])
   end
 
   def user_params
