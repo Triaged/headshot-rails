@@ -67,7 +67,7 @@ class PushService
 				"expiry" => Time.now + 60*60*12,
 				"sound" => "default"
 			},
-			"custom" => custom_payload 
+			custom_payload 
 		}.to_json
 		message = { "default" => "New Badge Message", "APNS" => apns_payload }.to_json
 
