@@ -5,11 +5,18 @@ class APIController < ApplicationController
   before_filter :authenticate_user_from_token!, :except => [:page_not_found]
   before_filter :authenticate_user!
   before_filter :current_company
+  force_ssl if: :ssl_configured?
   rescue_from ActiveRecord::RecordNotFound,
               ActionController::RoutingError,
               ::AbstractController::ActionNotFound, :with => :page_not_found
 
   protected
+
+
+
+  def ssl_configured?
+    Rails.env.production?
+  end
 
   def current_company
   	current_user.company
