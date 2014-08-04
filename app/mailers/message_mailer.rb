@@ -5,7 +5,11 @@ class MessageMailer < ActionMailer::Base
 		@recipient = User.find(recipient_id)
 		@sender = User.find(sender_id)
 		@message = message
-		@token = Devise.token_generator.digest(self, :confirmation_token, @recipient.confirmation_token)
+		unless @recipient.confirmed?
+			@token, secure_token = Devise.token_generator.generate(User, :confirmation_token)
+   		User.last.update_attributes(confirmation_token: secure_token)
+		end
+		
 
 		mail(to: @recipient.email, from: "\"#{@sender.full_name} via Badge\" <team@badge.co>", 
 					subject: "#{@sender.full_name} sent you a message")
