@@ -443,7 +443,7 @@
                                         <tr>
                                             <td valign="top" class="headerContent" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #636C7B;font-family: Helvetica;font-size: 20px;font-weight: bold;line-height: 100%;padding-top: 30px;padding-right: 150px;padding-bottom: 0;padding-left: 150px;text-align: center;vertical-align: middle;">
                                             	<img src="https://s3-us-west-2.amazonaws.com/badge-video/email-logo.png" style="max-width: 600px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;text-align: center;" id="headerImage" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext>
-                                            	<h1 style="display: block;font-family: Helvetica;font-size: 40px;font-style: normal;font-weight: bold;line-height: 150%;letter-spacing: 1px;margin-top: 30px;margin-right: 0;margin-bottom: 10px;margin-left: 0;text-align: center;color: #2CB5A8 !important;">Hi <%= @user.company.admin_user.full_name %>!</h1>
+                                            	<h1 style="display: block;font-family: Helvetica;font-size: 40px;font-style: normal;font-weight: bold;line-height: 150%;letter-spacing: 1px;margin-top: 30px;margin-right: 0;margin-bottom: 10px;margin-left: 0;text-align: center;color: #2CB5A8 !important;">Hi <%= @user.first_name %>!</h1>
                                             </td>
                                         </tr>
                                     </table>
@@ -460,7 +460,7 @@
                                                 We believe that great companies are built by empowered employees and we’ve made it our mission to support your team. I’m really excited to show you all that Badge can do.
                                                 <br>
                                                 <br>
-                                                Get access to <%= @user.company %>’s admin dashboard below and start importing your contacts!
+                                                Get access to <%= @user.company.name %>’s admin dashboard below and start importing your contacts!
                                                <table border="0" cellpadding="0" cellspacing="0" style="background-color: #F8AE37;border-radius: 3px;margin: 60px auto;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
 												    <tr>
 												        <td align="center" valign="middle" style="color: #FFFFFF;font-family: Helvetica, Arial, sans-serif;font-size: 16px;font-weight: bold;letter-spacing: 1px;line-height: 150%;padding-top: 10px;padding-right: 40px;padding-bottom: 10px;padding-left: 30px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">

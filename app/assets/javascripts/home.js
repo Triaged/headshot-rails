@@ -19,6 +19,7 @@
 //= require bootstrapValidator.min
 //= require moment
 //= require bootstrap-datepicker
+//= require jquery.inview
 //= require jquery.validate
 //= require jquery.validate.additional-methods
 //= require_tree ./home
