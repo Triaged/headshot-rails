@@ -8,7 +8,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         </button>
-        <span class="navbar-brand navbar-brand-custom">Badge</span>
+        <div class="navbar-brand navbar-brand-custom">
+                <%= link_to "/" do %> 
+                    <%= image_tag_with_at2x ("badge-logo-sm.png") %>
+                <% end %>
+            </div>
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav navbar-right navbar-custom">
