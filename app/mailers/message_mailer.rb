@@ -7,7 +7,7 @@ class MessageMailer < ActionMailer::Base
 		@message = message
 		unless @recipient.confirmed?
 			@token, secure_token = Devise.token_generator.generate(User, :confirmation_token)
-   		User.last.update_attributes(confirmation_token: secure_token)
+   		@recipient.update_attributes(confirmation_token: secure_token)
 		end
 		
 
