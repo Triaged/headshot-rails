@@ -12,7 +12,7 @@ class API::V1::DepartmentsController < APIController
 
 	# POST /api/v1/departments
   def create
-    @department = current_company.departments.create(department_params)
+    @department = current_company.departments.find_or_create(department_params)
     respond_with @department, location: api_v1_department_path(@department)
   end
 
