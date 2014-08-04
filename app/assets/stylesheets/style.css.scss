@@ -14,14 +14,6 @@ html, body {
 height: 100%;
 }
 
-#wrap {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  /* Negative indent footer by it's height */
-  margin: 0 auto -160px;
-}
-
 
 // NAVBAR + FOOTER
 
@@ -103,11 +95,11 @@ height: 100%;
 
 // Footer
 
-#push,
 #footer {
 	height:165px;
-}
-#footer {
+	@media (max-width: 767px) {
+	height: 320px;
+	}
 	text-align: center;
 	background-color: #FFF5E7;
 	width: 100%;
@@ -134,12 +126,6 @@ height: 100%;
 		a {
 			color: #FFD187;
 		}
-	}
-	@media (max-width: 767px) {
-	  margin-left: -20px;
-	  margin-right: -20px;
-	  padding-left: 20px;
-	  padding-right: 20px;
 	}
 }
 

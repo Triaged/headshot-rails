@@ -13,16 +13,14 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div id="wrap">
-      <% if content_for?(:header) %>
-         <%= yield(:header) %>
-      <% else %>
-        <%= render partial: 'layouts/header' %>
-      <% end %>
-      
-      <%= yield %>
-      <%= javascript_include_tag 'retina.min'  %>
-      <%= render partial: 'layouts/footer' %>
-    </div>
+    <% if content_for?(:header) %>
+       <%= yield(:header) %>
+    <% else %>
+      <%= render partial: 'layouts/header' %>
+    <% end %>
+    
+    <%= yield %>
+    <%= javascript_include_tag 'retina.min'  %>
+    <%= render partial: 'layouts/footer' %>
   </body>
 </html>

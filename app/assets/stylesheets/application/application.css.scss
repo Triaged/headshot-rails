@@ -106,6 +106,20 @@ h1, h2, h3, h4 {
 	}
 }
 
+// Footer
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -160px;
+}
+
+#push {
+	height:165px;
+}
+
 // Headlines
 
 .headline {

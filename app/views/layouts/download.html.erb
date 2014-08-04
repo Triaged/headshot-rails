@@ -14,14 +14,14 @@
       <header>
         <%= render 'layouts/navigation' %>
       </header>
-      <main role="main" id ="wrap">
+      <div class="main">
         <div class="container">
           <div class="row">
               <%= render 'layouts/messages' %>
               <%= yield %>
           </div>
         </div>
-      </main>
+      </div>
       <div id="push"></div>
 
       <%= render 'layouts/footer' %>
