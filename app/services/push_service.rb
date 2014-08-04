@@ -72,6 +72,9 @@ class PushService
 		message = { "default" => "New Badge Message", "APNS" => apns_payload }.to_json
 
 		client.publish( message: message, target_arn: device.arn, message_structure: 'json' )
+	rescue
+		Rails.logger.info "delivery to device: #{device.inspect} failed"
+		device.destroy
 	end
 
 	def deliver_to_google_cloud device, alert, increase_badge_count, custom_payload
@@ -81,8 +84,11 @@ class PushService
 		message = { "default" => alert, "GCM" => gcm_payload }.to_json
 		
 		client.publish( message: message, target_arn: device.arn, message_structure: 'json' )
+	rescue
+		Rails.logger.info "delivery to device: #{device.inspect} failed"
+		device.destroy
 	end
-
+	
 	# def deliver_to_google_cloud device, alert, increase_badge_count, custom_payload
 	# 	registration_ids= [device.token]
 		
