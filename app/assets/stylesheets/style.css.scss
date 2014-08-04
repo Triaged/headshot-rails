@@ -10,6 +10,18 @@
   transform: translateY(-50%);
 }
 
+html, body {
+height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -160px;
+}
+
 
 // NAVBAR + FOOTER
 
@@ -91,8 +103,14 @@
 
 // Footer
 
-footer {
+#push,
+#footer {
+	height:165px;
+}
+#footer {
+	text-align: center;
 	background-color: #FFF5E7;
+	width: 100%;
 	.footer-links {
 		.footer-logo {
 			padding-top: 10px;
@@ -116,6 +134,12 @@ footer {
 		a {
 			color: #FFD187;
 		}
+	}
+	@media (max-width: 767px) {
+	  margin-left: -20px;
+	  margin-right: -20px;
+	  padding-left: 20px;
+	  padding-right: 20px;
 	}
 }
 

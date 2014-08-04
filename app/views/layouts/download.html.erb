@@ -10,19 +10,21 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-      <div class="container">
-        <div class="row">
-            <%= render 'layouts/messages' %>
-            <%= yield %>
+    <div id="wrap">
+      <header>
+        <%= render 'layouts/navigation' %>
+      </header>
+      <main role="main" id ="wrap">
+        <div class="container">
+          <div class="row">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+          </div>
         </div>
-      </div>
-    </main>
-    <footer>
+      </main>
+      <div id="push"></div>
+
       <%= render 'layouts/footer' %>
-    </footer>
+    </div>
   </body>
 </html>

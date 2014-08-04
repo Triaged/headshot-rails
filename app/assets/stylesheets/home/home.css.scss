@@ -1,13 +1,8 @@
 @import "variables";
 
-html {
-height: 100%;
-position: relative;
-}
+
 
 body {
-height: 100%;
-position: relative;
 font-size: 16px;
 line-height: 1.5;
 }
@@ -526,9 +521,6 @@ background-color: #FFFFFF;
 		small {
 			color: #ffffff;
 		}
-	}
-	footer {
-		text-align: center;
 	}
 
 	.about-hero {
