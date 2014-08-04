@@ -6,9 +6,9 @@ class APIController < ApplicationController
   before_filter :authenticate_user!
   before_filter :current_company
   force_ssl if: :ssl_configured?
-  rescue_from ActiveRecord::RecordNotFound,
-              ActionController::RoutingError,
-              ::AbstractController::ActionNotFound, :with => :page_not_found
+  # rescue_from ActiveRecord::RecordNotFound,
+  #             ActionController::RoutingError,
+  #             ::AbstractController::ActionNotFound, :with => :page_not_found
 
   protected
 
