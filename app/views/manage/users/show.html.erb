@@ -39,8 +39,12 @@
 
 <div class="final-links">
   <!--<p><%#= link_to 'Wipe Device Data', "#", data: {toggle: "modal", target: "#wipeDevices"} %></p>-->
-  <% unless @user.admin %> <p><%= link_to 'Make Admin', make_admin_manage_user_path(@user), method: :post %></p> <% end %>
-  <p><%= link_to 'Deactivate Contact', "#", data: {toggle: "modal", target: "#archiveContact"} %></p>
+  <% unless @user.destroyed? %>
+    <% unless @user.admin %> <p><%= link_to 'Make Admin', make_admin_manage_user_path(@user), method: :post %></p> <% end %>
+    <p><%= link_to 'Deactivate Contact', "#", data: {toggle: "modal", target: "#archiveContact"} %></p>
+  <% else %>
+    <%= link_to 'Activate', "#", data: {toggle: "modal", target: "#archiveContact#{user.id}"} %>
+  <% end %>
 </div>
 
 
@@ -85,3 +89,5 @@
     </div>
   </div>
 </div>
+
+<%= render partial: "reactivate_modal" %>
