@@ -66,9 +66,8 @@ class PushService
 				"content_available" => true,
 				"expiry" => Time.now + 60*60*12,
 				"sound" => "default"
-			},
-			"custom" => custom_payload 
-		}.to_json
+			}
+		}.merge(custom_payload).to_json
 		message = { "default" => "New Badge Message", "APNS" => apns_payload }.to_json
 
 		client.publish( message: message, target_arn: device.arn, message_structure: 'json' )
