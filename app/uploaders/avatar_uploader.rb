@@ -21,6 +21,12 @@ class AvatarUploader < CarrierWave::Uploader::Base
         :width => 120, :height => 120, :crop => :thumb, :gravity => :face, :format => 'png'
   end
 
+  version :face2x do
+    #eager
+    cloudinary_transformation :radius => :max,
+        :width => 240, :height => 240, :crop => :thumb, :gravity => :face, :format => 'png'
+  end
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
