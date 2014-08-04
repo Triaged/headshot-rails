@@ -1,5 +1,9 @@
 require 'sidekiq/web'
 HeadshotRails::Application.routes.draw do
+  namespace :admin do
+  get 'pilots/index'
+  end
+
   root :to => "home#index"
   match '/about' => "home#about", :via => :get
   match '/faq' => "home#faq", :via => :get

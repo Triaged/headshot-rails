@@ -112,7 +112,7 @@ class User < ActiveRecord::Base
   end
 
   def installed_app?
-  	self.devices_count > 0
+  	self.devices.count > 0
   end
 
   def can_receive_push?
