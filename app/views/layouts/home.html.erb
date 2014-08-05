@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7609112/659304/css/fonts.css" />
     <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'home', 'data-turbolinks-track' => true %>
     <%= render partial: "layouts/ga" if Rails.env.production? %>
     <%= csrf_meta_tags %>
   </head>
@@ -23,4 +22,5 @@
     <%= javascript_include_tag 'retina.min'  %>
     <%= render partial: 'layouts/footer' %>
   </body>
+  <%= javascript_include_tag 'home', 'data-turbolinks-track' => true %>
 </html>
