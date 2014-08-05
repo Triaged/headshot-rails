@@ -2,6 +2,10 @@ class DownloadsController < ApplicationController
 	layout "download"
 	
 	def show
+		@platform = :android if browser.android?
+		@platform = :ios if browser.ios?
+
+
 		respond_to do |format|
       format.html          # /app/views/home/index.html.erb
       format.html.mobile    # /app/views/home/index.html+phone.erb

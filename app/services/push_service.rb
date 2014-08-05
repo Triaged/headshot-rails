@@ -73,6 +73,7 @@ class PushService
 		client.publish( message: message, target_arn: device.arn, message_structure: 'json' )
 	rescue
 		Rails.logger.info "delivery to device: #{device.inspect} failed"
+		device.delete_sns_endpoint
 		device.destroy
 	end
 
@@ -85,6 +86,7 @@ class PushService
 		client.publish( message: message, target_arn: device.arn, message_structure: 'json' )
 	rescue
 		Rails.logger.info "delivery to device: #{device.inspect} failed"
+		device.delete_sns_endpoint
 		device.destroy
 	end
 	

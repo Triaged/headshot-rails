@@ -24,7 +24,7 @@ class API::V1::AccountsController < APIController
       # Sign in the user by passing validation in case his password changed
       render :json => { "message" => "ok" }, :status => 200
     else
-    	render :json=> { "errors" => @user.errors.full_messages }, :status=> 401
+    	render :json=> { "errors" => @user.errors.full_messages }, status: :unprocessable_entity
     end
   end
 

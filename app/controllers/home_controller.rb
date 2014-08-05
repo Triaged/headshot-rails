@@ -19,6 +19,7 @@ class HomeController < ApplicationController
 		redirect_to "/" and return if (params[:email].blank? || params[:company].blank?)
 		Pilot.create(email: params[:email], company: params[:company])
 		$mailchimp.lists.subscribe("49771b3c4f", {email: params[:email]}, nil, double_optin=false)
+	rescue
 	end
 
 	def faq

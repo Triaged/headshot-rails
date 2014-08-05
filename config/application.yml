@@ -48,5 +48,5 @@ production:
   FIREBASE_URL: https://badge-prod.firebaseio.com/
   GCM_KEY: f7039da9a0bcf75663356b181a7e42dd
   FOG_DIRECTORY: badge-prod
-  SEGMENT_WRITE_KEY: 5rum4421f5
+  SEGMENT_WRITE_KEY: 3albr82hm1
 
