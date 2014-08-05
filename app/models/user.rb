@@ -116,7 +116,7 @@ class User < ActiveRecord::Base
   end
 
   def can_receive_push?
-  	self.installed_app? && (self.devices.where.not(token: nil).count > 0)
+  	self.installed_app? && (self.devices.where.not(token: nil).count > 0) && (self.devices.where(logged_in: true).count > 0)
   end
 
   def set_defaults
