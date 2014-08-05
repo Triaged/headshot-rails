@@ -1,5 +1,16 @@
-<script>
-	window.location = "itms-services://?action=download-manifest&url=https://badge.co/Headshot-ios.plist";
-</script>
+<% if @platform == :ios %>     
+	<script>
+		window.location = "itms-services://?action=download-manifest&url=https://badge.co/Headshot-ios.plist";
+	</script>	       
+<% elsif @platform == :android %>
+	<script>
+		window.location = "https://play.google.com";
+	</script>	 
+<% else %>
+	Sorry, Badge is currently available on iOS and Android only.
+<% end %>
+
+
+
 
  
