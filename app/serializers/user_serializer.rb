@@ -11,10 +11,6 @@ class UserSerializer < ApplicationSerializer
     object.first_name.capitalize
   end
 
-  def full_name
-    object.full_name.capitalize
-  end
-  
   
   def manager_id
     object.manager_id.to_s

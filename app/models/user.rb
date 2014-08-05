@@ -30,8 +30,7 @@ class User < ActiveRecord::Base
   #before_create :set_company
   before_create :create_default_employee_info
   after_create :set_defaults
-  before_save :check_for_confirmed
-
+  
   validates :first_name, presence: true
   validates :last_name, presence: true
 
@@ -144,15 +143,6 @@ class User < ActiveRecord::Base
 		SherlockHolmes.perform_async(self.id)
 		true
 	end
-
-  def check_for_confirmed
-    if self.confirmed_at_changed?
-      Analytics.track(
-      user_id: self.id,
-      event: 'user_confirmed'
-    )
-    end
-  end
 
  
 protected
