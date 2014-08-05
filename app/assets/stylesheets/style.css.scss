@@ -97,7 +97,7 @@ height: 100%;
 
 #footer {
 	height:165px;
-	background-color: #FFF5E7;
+	background-color: #FFFAF2;
 	width: 100%;
 	text-align: left;
 	@media (max-width: 767px) {
@@ -117,19 +117,21 @@ height: 100%;
 		list-style-type: none;
 		}
 		h5 {
+			font-size: 1em;
 			text-transform: uppercase;
 			color: $brand-primary;
+			font-weight: 500;
 		}
 		li {
 		font-size: 14px;
-		font-weight: 300;
 		list-style-type: none;
 		}
 		.list-links {
 			padding-left: 0;
 		}
 		a {
-			color: #FFD187;
+			color: #FFC870;
+			font-weight: 400;
 		}
 	}
 }
