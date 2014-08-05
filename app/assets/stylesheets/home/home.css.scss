@@ -251,6 +251,15 @@ background-color: #FFFFFF;
 		}
 	}
 }
+
+.faq-container {
+	position: relative;
+	height: 50%;
+	z-index: 0;
+	background: none;
+	text-align: center;
+}
+
 // Mission
 
 .mission-content {
