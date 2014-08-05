@@ -9,7 +9,7 @@ class OfficeLocation < ActiveRecord::Base
 		end
 	end
 	after_validation :geocode, :reverse_geocode
-
+	
 	belongs_to :company
 
 	def full_address
