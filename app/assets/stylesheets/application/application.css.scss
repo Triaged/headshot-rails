@@ -118,7 +118,7 @@ h1, h2, h3, h4 {
 }
 
 #push {
-	height:165px;
+	height:170px;
 }
 
 // Headlines
@@ -533,6 +533,7 @@ button.close-custom {
 	@media(max-width:767px){ 
 		margin-top: 0;
 		background-color: #FFFFFF;
+		text-align: center;
 	}
 }
 .download-screenshot {
