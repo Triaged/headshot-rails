@@ -207,59 +207,6 @@ background-color: #FFFFFF;
 	}
 }
 
-.about-hero {
-	position: relative;
-	height: 95%;
-	@media(max-width:1200px){
-		height: auto;
-		}
-	.about-background {
-		height: 100%;
-		background: #eceaea; /* Old browsers */
-		background: -moz-linear-gradient(top, #eceaea 0%, #f1f1f1 50%, #f5f6f6 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eceaea), color-stop(50%,#f1f1f1), color-stop(100%,#f5f6f6)); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top, #eceaea 0%,#f1f1f1 50%,#f5f6f6 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top, #eceaea 0%,#f1f1f1 50%,#f5f6f6 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(top, #eceaea 0%,#f1f1f1 50%,#f5f6f6 100%); /* IE10+ */
-		background: linear-gradient(to bottom, #eceaea 0%,#f1f1f1 50%,#f5f6f6 100%); /* W3C */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eceaea', endColorstr='#f5f6f6',GradientType=0 ); /* IE6-9 */
-	}
-	.about-row {
-		width: 90%;
-		margin: 0 auto;
-		padding-top: 10%;
-		padding-bottom: 25px;
-	}
-	.about-img {
-		width: 100%;
-	}
-	@media(max-width:1200px){
-		height: auto;
-		.about-row {
-			padding-top: 100px;
-			padding-bottom: 25px;
-		}
-		.hero-backround {
-			height: auto;
-			position: relative;
-		}
-		.about-column {
-			padding-top: 25px;
-		}
-		.about-img {
-			width: auto;
-		}
-	}
-}
-
-.faq-container {
-	position: relative;
-	height: 50%;
-	z-index: 0;
-	background: none;
-	text-align: center;
-}
-
 // Mission
 
 .mission-content {
@@ -373,6 +320,51 @@ background-color: #FFFFFF;
 
 // About Us Page
 
+.about-hero {
+	position: relative;
+	height: 95%;
+	@media(max-width:1200px){
+		height: auto;
+		}
+	.about-background {
+		height: 100%;
+		background: #eceaea; /* Old browsers */
+		background: -moz-linear-gradient(top, #eceaea 0%, #f1f1f1 50%, #f5f6f6 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eceaea), color-stop(50%,#f1f1f1), color-stop(100%,#f5f6f6)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, #eceaea 0%,#f1f1f1 50%,#f5f6f6 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, #eceaea 0%,#f1f1f1 50%,#f5f6f6 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, #eceaea 0%,#f1f1f1 50%,#f5f6f6 100%); /* IE10+ */
+		background: linear-gradient(to bottom, #eceaea 0%,#f1f1f1 50%,#f5f6f6 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eceaea', endColorstr='#f5f6f6',GradientType=0 ); /* IE6-9 */
+	}
+	.about-row {
+		width: 90%;
+		margin: 0 auto;
+		padding-top: 10%;
+		padding-bottom: 25px;
+	}
+	.about-img {
+		width: 100%;
+	}
+	@media(max-width:1200px){
+		height: auto;
+		.about-row {
+			padding-top: 100px;
+			padding-bottom: 25px;
+		}
+		.hero-backround {
+			height: auto;
+			position: relative;
+		}
+		.about-column {
+			padding-top: 25px;
+		}
+		.about-img {
+			width: auto;
+		}
+	}
+}
+
 .brand-alt	 {
 	color: $brand-primary;
 }
@@ -434,12 +426,30 @@ background-color: #FFFFFF;
 	min-height: 100%;
 }
 
-// Sign Up Page
+// FAQ 
+
+.faq-container {
+	position: relative;
+	height: 50%;
+	z-index: 0;
+	background: none;
+	text-align: center;
+}
 
 .faq-hero {
 	width: 100%;
 	.fag-img {
 
+	}
+}
+
+.faq-group {
+	padding-bottom: 50px;
+	h3 {
+		text-align:center;
+	}
+	.section-header {
+		padding: 75px 0 50px;
 	}
 }
 
