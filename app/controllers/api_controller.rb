@@ -29,7 +29,7 @@ class APIController < ApplicationController
   def authenticate_user_from_token!
     user_token = request.headers["HTTP_AUTHORIZATION"].presence
     user = user_token && User.find_by(authentication_token: user_token)
-    sign_in(user, store: false) if user
+    sign_in(user) if user
   rescue
     # find_by fails with an invalid token
   end
