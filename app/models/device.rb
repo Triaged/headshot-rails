@@ -35,7 +35,7 @@ class Device < ActiveRecord::Base
   def delete_sns_endpoint
   	return if self.arn.nil?
   	client = AWS::SNS.new.client
-  	response = client.delete_endpoint(self.arn)
+  	response = client.delete_endpoint(endpoint_arn: self.arn)
   end
 
   def track_device
