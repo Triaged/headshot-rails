@@ -66,6 +66,14 @@ h2, h3, h4, small {
 			text-transform: uppercase;
 		}
 	}
+	.divider-about {
+		span {
+			background-color: #EFEEEE;
+			@media(max-width:767px){
+				background-color: #EDEBEB;
+			}
+		}
+	}
 }
 
 .container-full {
@@ -219,7 +227,7 @@ background-color: #FFFFFF;
 	.about-row {
 		width: 90%;
 		margin: 0 auto;
-		padding-top: 15%;
+		padding-top: 10%;
 		padding-bottom: 25px;
 	}
 	.about-img {
@@ -417,6 +425,14 @@ background-color: #FFFFFF;
 	min-height: 100%;
 }
 
+// Sign Up Page
+
+.faq-hero {
+	width: 100%;
+	.fag-img {
+
+	}
+}
 
 // Mobile
 
@@ -565,10 +581,12 @@ background-color: #FFFFFF;
 		}
 	}
 
+	.about-header {
+		padding: 0 0 75px;
+	}
 	.investor-group {
 		.section-header {
-		padding-bottom: 25px;
-		padding-top: 50px;
+		padding: 0 0 25px;
 		}
 		img {
 			padding-top: 10px;
