@@ -130,6 +130,13 @@ class User < ActiveRecord::Base
       company_name: self.company.name,
       company_id: self.company_id
     })
+    Analytics.track(
+      user_id: self.id,
+      event: 'user_invited',
+       properties: {
+        admin: self.company.admin_user
+      }
+    )
   	unleash_sherlock
   end
 
@@ -141,7 +148,7 @@ class User < ActiveRecord::Base
   def check_for_confirmed
     if self.confirmed_at_changed?
       Analytics.track(
-      user_id: user.id,
+      user_id: self.id,
       event: 'user_confirmed'
     )
     end
