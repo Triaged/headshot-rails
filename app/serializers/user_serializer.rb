@@ -6,6 +6,14 @@ class UserSerializer < ApplicationSerializer
   attributes :primary_office_location_id, :current_office_location_id, :department_id, :installed_app, :sharing_office_location
 
   has_one :employee_info
+
+  def first_name
+    object.first_name.capitalize
+  end
+
+  def full_name
+    object.full_name.capitalize
+  end
   
   
   def manager_id
