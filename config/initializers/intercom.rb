@@ -89,5 +89,5 @@ IntercomRails.config do |config|
   #             id of #Intercom.
   #
   # config.inbox.style = :default 
-  # config.inbox.style = :custom
+  config.inbox.style = :custom
 end
