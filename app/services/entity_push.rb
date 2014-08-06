@@ -2,8 +2,8 @@
 class EntityPush
   include Sidekiq::Worker
 
-  def perform(company, type, id)
-  	users = company.users
+  def perform(company_id, type, id)
+  	users = Company.find(company_id).users
 		devices = users.collect {|user| user.devices.where(service: 'android').all }.flatten.to_a.uniq{ |device| device.token }
 		client = AWS::SNS::Client.new
 

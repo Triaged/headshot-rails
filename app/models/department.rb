@@ -14,7 +14,7 @@ class Department < ActiveRecord::Base
 	end
 
 	def push_entity
-		EntityPush.perform_async(self.company, "department", self.id)
+		EntityPush.perform_async(self.company.id, "department", self.id)
 	end
 
 end
