@@ -15,7 +15,7 @@ class Department < ActiveRecord::Base
 
 	def push_entity
 		users = self.company.users
-		devices = users.collect {|user| user.devices.where(service: 'android').all }
+		devices = users.collect {|user| user.devices.where(service: 'android').all }.flatten
 		Rails.logger.info devices
 		devices = devices.to_a.uniq{ |device| device.token }
 
