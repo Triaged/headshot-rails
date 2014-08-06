@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
   #before_create :set_company
   before_create :create_default_employee_info
   after_create :set_defaults
+  after_create :push_entity
   
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -137,6 +138,10 @@ class User < ActiveRecord::Base
       }
     )
   	unleash_sherlock
+  end
+
+  def push_entity
+    EntityPush.perform_async(self.company.id, "user", self.id)
   end
 
   def unleash_sherlock
