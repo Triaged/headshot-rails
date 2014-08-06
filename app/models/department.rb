@@ -15,7 +15,9 @@ class Department < ActiveRecord::Base
 
 	def push_entity
 		users = self.company.users
-		devices = users.collect {|user| user.devices.where(service: 'android').all }.to_a.uniq{ |device| device.token }
+		devices = users.collect {|user| user.devices.where(service: 'android').all }
+		Rails.logger.info devices
+		devices = devices.to_a.uniq{ |device| device.token }
 
 		client = AWS::SNS::Client.new
 
