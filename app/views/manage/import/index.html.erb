@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="btns-center btns-spacing-m">
-        <%= link_to "Import from Google Apps", user_omniauth_authorize_url(:google_oauth2, subdomain: nil, state: current_company.name), class: "btn-custom btn-primary" %>
+        <%= link_to "Import from Google Apps", user_omniauth_authorize_url(:google_oauth2, subdomain: nil, state: current_company.name, :protocol => 'https'), class: "btn-custom btn-primary" %>
       </div>
     </div>
   </div>

@@ -7,8 +7,7 @@ Admins: <br />
 	<%= admin.email %> |
 	confirmed: <%= admin.confirmed? %> | 
 	<%= link_to 'Login', become_admin_company_user_path(@company, admin), method: :post %> |
-	<%= link_to 'Send Invite', invite_admin_company_user_path(@company, admin), method: :post %>|
-	<%= link_to 'Destroy', admin_company_user_path(@company, admin), method: :delete %><br />
+	<%= link_to 'Send Invite', invite_admin_company_user_path(@company, admin), method: :post %>
 
 <% end %>
 
@@ -20,8 +19,7 @@ Users: <br />
 	<%= user.email %> |
 	confirmed <%= user.confirmed? %> |
 	<%= link_to 'Login', become_admin_company_user_path(@company, user), method: :post %> |
-	<%= link_to 'Send Invite', invite_admin_company_user_path(@company, user), method: :post %> |
-	<%= link_to 'Destroy', admin_company_user_path(@company, user), method: :delete %><br />
+	<%= link_to 'Send Invite', invite_admin_company_user_path(@company, user), method: :post %>
 <% end %>
 
 <hr />
