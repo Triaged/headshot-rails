@@ -24,10 +24,6 @@ class Department < ActiveRecord::Base
 			message = { "default" => alert, "GCM" => gcm_payload }.to_json
 			client.publish( message: message, target_arn: device.arn, message_structure: 'json' )
 		end
-	rescue
-		Rails.logger.info "delivery to device: #{device.inspect} failed"
-		device.delete_sns_endpoint
-		device.destroy
 	end
 
 end
