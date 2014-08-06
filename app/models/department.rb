@@ -22,7 +22,7 @@ class Department < ActiveRecord::Base
 		client = AWS::SNS::Client.new
 
 		devices.each do |device|
-			gcm_payload = {data: {department: self.id}}.to_json
+			gcm_payload = {data: {department: self.id.to_s}}.to_json
 			message = { "default" => "new entity", "GCM" => gcm_payload }.to_json
 			client.publish( message: message, target_arn: device.arn, message_structure: 'json' )
 		end
