@@ -43,8 +43,8 @@ staging:
   FOG_DIRECTORY: badge-staging
 
 production:
-  GA_CLIENT_ID: 466421541427-a0imgmrrg2gm24sfodk3tt6l9sk5p97s.apps.googleusercontent.com
-  GA_SECRET: dGiCSgf6kD2nBC7klB0MDMrW
+  GA_CLIENT_ID: 466421541427-r5kqtu81bci8eqcnurgtus0aqd5qdb34.apps.googleusercontent.com
+  GA_SECRET: 1J4tpHAxOVZxdNSHx7wR_pz4
   INTERNAL_API_TOKEN: f9c93bc9ca8a0fe561c2ca3eb132cdbed7a70bd4095ed9212063edd3a4825255
   FIREBASE_URL: https://badge-prod.firebaseio.com/
   GCM_KEY: f7039da9a0bcf75663356b181a7e42dd
