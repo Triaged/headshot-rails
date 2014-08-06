@@ -8,9 +8,11 @@ class OfficeLocation < ActiveRecord::Base
 	    obj.country = geo.country_code
 		end
 	end
-	after_validation :geocode, :reverse_geocode
-	
 	belongs_to :company
+
+	after_validation :geocode, :reverse_geocode
+	after_create :push_entity
+
 
 	def full_address
 		"#{street_address} #{city}, #{state} #{zip_code} #{country}"
@@ -18,6 +20,10 @@ class OfficeLocation < ActiveRecord::Base
 
 	def display_name
 		self.name.nil? || self.name.empty? ? self.street_address : self.name
+	end
+
+	def push_entity
+		EntityPush.perform_async(self.company.id, "office_location", self.id)
 	end
 
 end
