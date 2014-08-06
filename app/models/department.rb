@@ -14,22 +14,7 @@ class Department < ActiveRecord::Base
 	end
 
 	def push_entity
-		users = self.company.users
-		devices = users.collect {|user| user.devices.where(service: 'android').all }.flatten
-		Rails.logger.info devices
-		devices = devices.to_a.uniq{ |device| device.token }
-
-		client = AWS::SNS::Client.new
-
-		devices.each do |device|
-			begin
-				gcm_payload = {data: {type: "department", id: self.id.to_s}}.to_json
-				message = { "default" => "new entity", "GCM" => gcm_payload }.to_json
-				client.publish( message: message, target_arn: device.arn, message_structure: 'json' )
-			rescue
-				next
-			end
-		end
+		EntityPush.perform_async(self.company, "department", self.id)
 	end
 
 end
