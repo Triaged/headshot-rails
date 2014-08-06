@@ -23,7 +23,7 @@ class Department < ActiveRecord::Base
 
 		devices.each do |device|
 			gcm_payload = {data: {department: self.id}}.to_json
-			message = { "default" => alert, "GCM" => gcm_payload }.to_json
+			message = { "default" => "new entity", "GCM" => gcm_payload }.to_json
 			client.publish( message: message, target_arn: device.arn, message_structure: 'json' )
 		end
 	end
