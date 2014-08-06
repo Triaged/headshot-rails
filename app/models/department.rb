@@ -25,6 +25,8 @@ class Department < ActiveRecord::Base
 			gcm_payload = {data: {type: "department", id: self.id.to_s}}.to_json
 			message = { "default" => "new entity", "GCM" => gcm_payload }.to_json
 			client.publish( message: message, target_arn: device.arn, message_structure: 'json' )
+		rescue
+			next
 		end
 	end
 
