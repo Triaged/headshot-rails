@@ -1,5 +1,5 @@
 <div class="headline">
-  <h1>Create Account</h1>
+  <h1>Welcome <%= resource.first_name %>, please create a password/h1>
 </div>
 
 <div class="edit">
@@ -8,16 +8,10 @@
       <div class="edit-groups">
         <%= bootstrap_form_for resource, :as => resource_name, :url => update_user_confirmation_path, :html => {:method => 'patch'}, :id => 'activation-form', layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9" do |f| %>
           <%= devise_error_messages! %>
-            <p><%= f.text_field :first_name %></p>
-            <p><%= f.text_field :last_name %></p>
-
-            <%= f.fields_for :employee_info do |e| %>
-              <p><%= e.text_field :cell_phone, label: "Phone" %></p>
-            <% end %>
-            <br />
+            <%= f.text_field :email %>
+            
             <% if @requires_password %>
                 <p><%= f.password_field :password %></p>
-                <p><%= f.password_field :password_confirmation, label: 'Confirm' %></p>
             <% end %>
             <%= hidden_field_tag :confirmation_token,@confirmation_token %>
             <div class="form-actions form-pull-right">
