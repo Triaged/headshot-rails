@@ -232,7 +232,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :google_oauth2, ENV['GA_CLIENT_ID'], ENV['GA_SECRET'], prompt: 'select_account consent', :scope => 'https://www.googleapis.com/auth/userinfo.email, https://www.googleapis.com/auth/userinfo.profile, https://www.googleapis.com/auth/admin.directory.user.readonly'
+  config.omniauth :google_oauth2, ENV['GA_CLIENT_ID'], ENV['GA_SECRET'], prompt: 'select_account consent', :scope => 'https://www.googleapis.com/auth/userinfo.email, https://www.googleapis.com/auth/userinfo.profile, https://www.googleapis.com/auth/admin.directory.group.readonly, https://www.googleapis.com/auth/admin.directory.group.member.readonly, https://www.googleapis.com/auth/admin.directory.user.readonly'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
