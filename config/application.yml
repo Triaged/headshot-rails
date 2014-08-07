@@ -33,6 +33,7 @@ AWS_ACCESS_KEY_ID: AKIAJHBY3QOXLZUGABCQ
 AWS_SECRET_ACCESS_KEY: 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
 FOG_PROVIDER: AWS
 SEGMENT_WRITE_KEY: baum6glmly
+BUGSNAG_API_KEY: 4005a93212ac0ed9961482bf7e6266d9
 
 staging:
   GA_CLIENT_ID: 466421541427-hm6pjklidk8pgossbc8t78480rq9kbd8.apps.googleusercontent.com
@@ -40,7 +41,6 @@ staging:
   INTERNAL_API_TOKEN: 20566ad05aaa5828ad6c3a6c73329db5108e4baba29814c59dbe5569e7c12be8
   GCM_KEY: AIzaSyC5iPpyCeQY1sfvoplNHikzL-sndqJvooY
   FOG_DIRECTORY: badge-staging
-  BUGSNAG_API_KEY: 4005a93212ac0ed9961482bf7e6266d9
 
 production:
   GA_CLIENT_ID: 466421541427-r5kqtu81bci8eqcnurgtus0aqd5qdb34.apps.googleusercontent.com
