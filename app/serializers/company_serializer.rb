@@ -10,7 +10,7 @@ class CompanySerializer < ApplicationSerializer
   end
 
   def users
-  	@options[:updated_at] ? object.users.where("updated_at >= ?", DateTime.parse(@options[:updated_at])) : object.users
+  	@options[:updated_at] ? object.users.with_deleted.where("updated_at >= ?", DateTime.parse(@options[:updated_at])) : object.users.with_deleted
   end
 
   def office_locations
