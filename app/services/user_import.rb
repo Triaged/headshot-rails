@@ -7,7 +7,7 @@ class UserImport
 
 	def import_users provider_id, credentials_id
 		provider = Provider.find(provider_id)
-		credentials = ProviderCredential.find(credentials_id)
+		credentials = ProviderCredential.where(id: credentials_id).first
 		destroy_existing
 		
 		import_class = "#{provider.name.classify}::UserImport".constantize

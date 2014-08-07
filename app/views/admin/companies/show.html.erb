@@ -8,7 +8,7 @@ Admins: <br />
 	confirmed: <%= admin.confirmed? %> | 
 	<%= link_to 'Login', become_admin_company_user_path(@company, admin), method: :post %> |
 	<%= link_to 'Send Invite', invite_admin_company_user_path(@company, admin), method: :post %>
-
+	<br />
 <% end %>
 
 
@@ -20,8 +20,9 @@ Users: <br />
 	confirmed <%= user.confirmed? %> |
 	<%= link_to 'Login', become_admin_company_user_path(@company, user), method: :post %> |
 	<%= link_to 'Send Invite', invite_admin_company_user_path(@company, user), method: :post %>
+	<br />
 <% end %>
-
+	
 <hr />
 
 
