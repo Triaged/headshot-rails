@@ -77,6 +77,7 @@ HeadshotRails::Application.routes.draw do
       resources :users do
         collection do
           get 'archived'
+          post 'invite_all'
         end
         member do
           post 'restore'
