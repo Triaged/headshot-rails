@@ -24,4 +24,10 @@ Users: <br />
 
 <hr />
 
-<%= link_to 'Destroy all Users', destroy_all_admin_company_users_path(@company), method: :delete %>
+
+<%= link_to 'Send Invite To All Unconfirmed Users', invite_all_admin_company_users_path(@company), method: post %>
+
+
+<% unless Rails.env.production? %>
+	<%= link_to 'Destroy all Users', destroy_all_admin_company_users_path(@company), method: :delete %>
+<% end %>
