@@ -23,7 +23,6 @@ FIREBASE_URL: https://badge-dev.firebaseio.com/
 GROCER_CERT: badge-adhoc.pem
 GROCER_PASS: snowboard12
 GROCER_ENDPOINT: gateway.push.apple.com
-BUGSNAG_API_KEY: f7039da9a0bcf75663356b181a7e42dd
 INTERCOM_APP_ID: 5f50e0c798d99997d289d68d41287fc59de15c64
 INTERCOM_API_KEY: 7a9eb75d23ecaa228669f51a2698052899ce6cc8
 AWS_ACCESS_KEY_ID: AKIAIMFJRPGLNT7FTLFQ
@@ -41,6 +40,7 @@ staging:
   INTERNAL_API_TOKEN: 20566ad05aaa5828ad6c3a6c73329db5108e4baba29814c59dbe5569e7c12be8
   GCM_KEY: AIzaSyC5iPpyCeQY1sfvoplNHikzL-sndqJvooY
   FOG_DIRECTORY: badge-staging
+  BUGSNAG_API_KEY: 4005a93212ac0ed9961482bf7e6266d9
 
 production:
   GA_CLIENT_ID: 466421541427-r5kqtu81bci8eqcnurgtus0aqd5qdb34.apps.googleusercontent.com
@@ -50,4 +50,5 @@ production:
   GCM_KEY: f7039da9a0bcf75663356b181a7e42dd
   FOG_DIRECTORY: badge-prod
   SEGMENT_WRITE_KEY: 3albr82hm1
+  BUGSNAG_API_KEY: f7039da9a0bcf75663356b181a7e42dd
 
