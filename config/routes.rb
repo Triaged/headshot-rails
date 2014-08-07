@@ -1,9 +1,5 @@
 require 'sidekiq/web'
 HeadshotRails::Application.routes.draw do
-  namespace :admin do
-  get 'pilots/index'
-  end
-
   root :to => "home#index"
   match '/about' => "home#about", :via => :get
   match '/faq' => "home#faq", :via => :get
@@ -109,13 +105,14 @@ HeadshotRails::Application.routes.draw do
    # Admin
   devise_for :admins
   namespace :admin, :path => "", :constraints => {:subdomain => "admin"} do
-     resources :companies do
+    resources :companies do
       resources :users do
         post 'become', on: :member
         post 'invite', on: :member
         delete 'destroy_all', on: :collection
       end
-     end
+    end
+    resources :pilots
     
   end
 
