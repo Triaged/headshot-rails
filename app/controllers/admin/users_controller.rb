@@ -30,7 +30,7 @@ class Admin::UsersController < AdminController
 		@user.skip_confirmation_notification! unless params[:send_confirmation]
 
 		if @user.save
-      redirect_to admin_company_user_path(@company, @user), notice: 'User was successfully created.'
+      redirect_to admin_company_path(@company), notice: 'User was successfully created.'
     else
       render action: 'new'
     end

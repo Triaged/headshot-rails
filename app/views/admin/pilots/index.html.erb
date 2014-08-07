@@ -1,2 +1,4 @@
-<h1>Admin::Pilots#index</h1>
-<p>Find me in app/views/admin/pilots/index.html.erb</p>
+<% @pilots.each do |pilot| %>
+	<%= pilot.email %> - <%= pilot.company %>
+	<br />
+<% end %> 
