@@ -20,11 +20,13 @@ h2 {
   	font-weight: 400; 
   	font-style: normal;
   	font-size: (16px * 1.25);
+  	line-height: 1.25;
 }
 h3 {
   	font-weight: 500; 
   	font-style: normal;
   	font-size: (16px * 1);
+  	line-height: 1.25;
 }
 h5 {
   	font-size: 12px;
@@ -271,7 +273,6 @@ button.close-custom {
 	width: 100%;
 	background-color: #2CB5A8;
 	text-align: center;
-	height: 50px;
 	.container {
 		padding-top: 5px;
 	}
@@ -283,6 +284,16 @@ button.close-custom {
 			font-weight: 500;
 		}
 	}
+	.notification-copy {
+		padding: 10px 0;
+	}
+	.notification-close {
+		margin: 5px 5px 0 0;
+	}
+}
+
+.nowrap {
+	white-space: nowrap;
 }
 
 // PAGES
