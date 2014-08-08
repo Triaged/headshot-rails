@@ -8,10 +8,12 @@ p {
 	letter-spacing: .025em;
 	color: $grey;
 	font-weight: 16px;
+	line-height: 1.75;
 }
 h1 {
   	font-weight: 600; 
   	font-style: normal;
+  	line-height: 1.25;
   	font-size: (16px * 2.1875);
 }
 h2 {
@@ -253,6 +255,15 @@ button.close-custom {
 	text-align: right;
 }
 
+// Other
+
+.instructions {
+	color: #2CB5A8;
+}
+.notification {
+	color: $brand-primary;
+	text-transform: none;
+}
 
 // PAGES
 
