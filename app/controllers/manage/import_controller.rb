@@ -10,7 +10,7 @@ class Manage::ImportController < ManageController
 		@import = UserImport.new(current_user.id, current_company.id).import_users(@provider.id, crendentials_id)
 		unless @import.errors.empty?
 			flash[:error] = "Authentication failed. Please ensure you are a #{@provider.title} admin and that API access is enabled."
-			redirect_to manage_import_index_url
+			redirect_to failed_manage_import_path
 		end
 	end
 
@@ -28,6 +28,9 @@ class Manage::ImportController < ManageController
 		else
 			bamboohr_manage_import_index_path
 		end
+	end
+
+	def failed
 	end
 
 	
