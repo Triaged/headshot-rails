@@ -1,5 +1,5 @@
 class Manage::ImportController < ManageController
-	before_action :set_provider, except: [:index, :update, :bamboohr, :update_bamboohr_settings, :failed]
+	before_action :set_provider, except: [:index, :update, :bamboohr, :update_bamboohr_settings]
 
 	def index
 		
@@ -31,7 +31,6 @@ class Manage::ImportController < ManageController
 	end
 
 	def failed
-
 	end
 
 	
