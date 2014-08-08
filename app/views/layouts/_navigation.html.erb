@@ -1,4 +1,4 @@
-<% unless current_user.installed_app? %>
+<% if user_signed_in? && !current_user.installed_app? %>
   Yo, download the app!
 <% end %>
 
