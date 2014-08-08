@@ -88,6 +88,7 @@ HeadshotRails::Application.routes.draw do
       resources :import do
         member do
           get 'select'
+          get 'failed'
 
         end
         get 'bamboohr', on: :collection
