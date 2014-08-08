@@ -10,7 +10,8 @@ class CompanySerializer < ApplicationSerializer
   end
 
   def users
-  	@options[:updated_at] ? object.users.where("updated_at >= ?", DateTime.parse(@options[:updated_at])).where.not(id: current_user.id) : object.users.where.not(id: current_user.id)
+  	users = @options[:updated_at] ? object.users.where("updated_at >= ?", DateTime.parse(@options[:updated_at])) : object.users
+    users = @options[:exclude_current_user] ? users.where.not(id: current_user.id) : users
   end
 
   def office_locations
