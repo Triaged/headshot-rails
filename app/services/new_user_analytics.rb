@@ -21,3 +21,4 @@ class NewUserAnalytics
       }
     )
   end
+end
