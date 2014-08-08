@@ -17,7 +17,7 @@ class NewUserAnalytics
       event: 'user_invited',
        properties: {
         admin: user.company.admin_user.id,
-        admin_name: user.company.admin_user.name
+        admin_name: user.company.admin_user.full_name
       }
     )
   end
