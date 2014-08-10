@@ -4,7 +4,7 @@ class API::V1::VersionsController < APIController
   skip_before_filter :current_company
 
 	def ios
-		render :json => { "version" => "12" }, :status => 200
+		render :json => { "version" => "13" }, :status => 200
 	end
 
 	def android
