@@ -23,4 +23,6 @@ class UserMailer < Devise::Mailer
     end
 
   end
+
+  
 end
