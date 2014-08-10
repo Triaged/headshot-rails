@@ -1,0 +1,50 @@
+<% if @provider.name == "google" %>
+
+
+<% else %>
+
+<% end %>
+
+<div class="contact-breadcrumb border">
+  <h2>
+  <%= link_to 'Contacts', manage_users_path %> <span class="breadcrumb-fwdslsh">/</span> Import Contacts
+  </h2>
+</div>
+
+<div class="headline border">
+	<h1 class="notification">We're sorry! <br> It looks like your Google Apps authentication failed.</h1>
+	<p>Below are steps to fix this issue.</p>
+</div>
+
+<div>
+	<h3>Google Apps API Access</h3>
+	<p>To import contacts in Badge, you’ll need to have Google Apps API access enabled. To do so, sign into your Google Apps Admin console <a href="https://admin.google.com/">here</a>.
+	</br>
+	</br>
+	Then go to:<span class="instructions"> Security tab > API reference, and enable API access</span>. 
+	</br>
+	</br>
+	<%= image_tag ("admin/google-api-help-img.png") %>
+	</br>
+	</br>
+	And that’s it. You should be good to complete your Google Apps contact import. Use the button below to complete the process.</p>
+	</br>
+	<%= link_to 'Import Contacts', manage_import_index_path, class: "btn-custom btn-primary" %>
+	</br>
+	</br>
+</div>
+
+<div>
+	<h3>Google Apps Admin Privileges</h3>
+	<p>If you are not able to see your company’s Google App dashboard, can’t see your company’s Google App Security tab, or can’t enable API access, that unfortunately means that you don’t have the adequate Google Apps Admin privileges.
+	</br>
+	</br>
+	The easiest way to solve this issue is to invite your Google Apps Super Admin to Badge through the <%= link_to 'Add Contacts', new_manage_user_path %> page. After you have added them, go to their profile page and give them Admin privileges as illustrated below. Then, ask if they will import your company’s Google Apps contacts into Badge. 
+	</br>
+	</br>
+	<%= image_tag ("admin/make-admin-help-img.png") %>
+	</br>
+	</br>
+	Otherwise, you can reach out to your Google Apps Super Admin and ask to be given the role of a Super Admin, Groups Admin, or User Management Admin within Google Apps. Once you have one of these roles, you will be able to complete the Google Apps contact import.</p>
+</div>
+

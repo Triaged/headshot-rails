@@ -19,77 +19,49 @@ height: 100%;
 
 // Navbar
 
-.navbar {
-	font-weight: 500;
-	.navbar-brand-custom {
-	color: #2CB5A8;
-	}
-	.navbar-custom > li > a {
-	font-size: 13px;
-	color: #2e3b4e;
-	text-transform: uppercase;
-	padding: 15px 0 0;
-	margin: 0 15px;
-	background-color: #fff;
-	font-weight: 500;
-	}
-	.navbar-custom > .nav-link > a:after {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background: $text-color;
-	content: '';
-	opacity: 0;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
-	transition: opacity 0.3s, transform 0.3s;
-	-webkit-transform: translateY(10px);
-	-moz-transform: translateY(10px);
-	transform: translateY(10px);
-	}
-	.navbar-custom > .nav-link > a:hover::after,
-	.navbar-custom > .nav-link > a:focus::after {
-	opacity: 1;
-	-webkit-transform: translateY(0px);
-	-moz-transform: translateY(0px);
-	transform: translateY(0px);
-	}
-	.navbar-custom > .active > a:before {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background: $text-color;
-	content: '';
-	opacity: 1;
+.navbar-transparent {
+background-color: transparent;
+color: #ffffff;
+top: 0px;
+right: 0;
+left: 0;
+z-index: 1001;
+padding: 35px 0 0;
+@media(max-width:767px){
+		padding: 15px 0 0;
 	}
 }
-.nav-icon {
-	display: inline;
-	padding-right: $spacing-xsm;
-	height: 12px;
-	margin-top: -4px;
+.navbar-nav > li > a {
+	padding: 15px;
+}
+.navbar-nav > li > a:hover {
+	background-color: rgba(255, 255, 255, 0.15);
+}
+.landing-button > li > a {
+	padding: 9px 25px;
 }
 
 @media(max-width:767px){
-	.navbar-toggle-custom {
-		.icon-bar {
-			background-color: $text-color;
+	.navbar-header {
+		a {
+			float: left;
+			padding-left: 10px;
 		}
 	}
-	.navbar .in {
-		background-color: #ffffff;
+	.navbar-toggle .icon-bar {
+		background-color: $text-color;
 	}
-	.navbar .navbar-custom > li > a  {
-		background:#fff;
-		border-bottom: 1px solid $text-color;
-		padding-bottom: 5px;
+	.navbar-collapse {
+	background-color: #fff;
 	}
-	.navbar .navbar-custom > .active > a::before {
-		height: 0;
+	.nav > li {
+	border-bottom: 1px solid $text-color;
+	margin: 0 30px;
+	padding-top: 10px;
+	}
+	.navbar-nav > li > a {
+	color: $text-color;
+	text-align: center;
 	}
 }
 

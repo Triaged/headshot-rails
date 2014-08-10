@@ -77,6 +77,7 @@ HeadshotRails::Application.routes.draw do
       resources :users do
         collection do
           get 'archived'
+          post 'invite_all'
         end
         member do
           post 'restore'
@@ -88,6 +89,7 @@ HeadshotRails::Application.routes.draw do
       resources :import do
         member do
           get 'select'
+          get 'failed'
 
         end
         get 'bamboohr', on: :collection

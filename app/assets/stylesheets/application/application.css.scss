@@ -8,21 +8,25 @@ p {
 	letter-spacing: .025em;
 	color: $grey;
 	font-weight: 16px;
+	line-height: 1.75;
 }
 h1 {
   	font-weight: 600; 
   	font-style: normal;
+  	line-height: 1.25;
   	font-size: (16px * 2.1875);
 }
 h2 {
   	font-weight: 400; 
   	font-style: normal;
   	font-size: (16px * 1.25);
+  	line-height: 1.25;
 }
 h3 {
   	font-weight: 500; 
   	font-style: normal;
   	font-size: (16px * 1);
+  	line-height: 1.25;
 }
 h5 {
   	font-size: 12px;
@@ -35,78 +39,21 @@ h1, h2, h3, h4 {
 
 // Navbar
 
-.navbar {
-	font-weight: 500;
-	.navbar-brand-custom {
-	color: #2CB5A8;
-	}
-	.navbar-custom > li > a {
-	font-size: 12px;
-	color: #2e3b4e;
+.navbar-nav > li > a {
+	color: $text-color;
 	text-transform: uppercase;
-	padding: 15px 0 0;
-	margin: 0 15px;
-	background-color: #fff;
+	font-size: 12px;
 	font-weight: 500;
-	}
-	.navbar-custom > .nav-link > a:after {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background: $text-color;
-	content: '';
-	opacity: 0;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
-	transition: opacity 0.3s, transform 0.3s;
-	-webkit-transform: translateY(10px);
-	-moz-transform: translateY(10px);
-	transform: translateY(10px);
-	}
-	.navbar-custom > .nav-link > a:hover::after,
-	.navbar-custom > .nav-link > a:focus::after {
-	opacity: 1;
-	-webkit-transform: translateY(0px);
-	-moz-transform: translateY(0px);
-	transform: translateY(0px);
-	}
-	.navbar-custom > .active > a:before {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background: $text-color;
-	content: '';
-	opacity: 1;
+	padding-top: 5px;
+	padding-bottom: 0;
+	@media(max-width:767px){ 
+		padding-top: 15px;
+		padding-bottom: 15px;
 	}
 }
-.nav-icon {
-	display: inline;
-	padding-right: $spacing-xsm;
-	height: 12px;
-	margin-top: -4px;
-}
-
-@media(max-width:767px){
-	.navbar-toggle-custom {
-		margin-top: 15px;
-		.icon-bar {
-			background-color: $text-color;
-		}
-	}
-	.navbar .in {
-		background-color: #ffffff;
-	}
-	.navbar .navbar-custom > li > a  {
-		background:#fff;
-		border-bottom: 1px solid $text-color;
-		padding-bottom: 5px;
-	}
-	.navbar .navbar-custom > .active > a::before {
-		height: 0;
+@media(max-width:767px){ 
+	.navbar-toggle {
+		margin-top: 0;
 	}
 }
 
@@ -217,8 +164,7 @@ h1, h2, h3, h4 {
 // Modals
 
 .modal,
-.fade,
-.in {
+.fade{
 	background: rgba(225,225,225,0.80);
 }
 
@@ -253,6 +199,45 @@ button.close-custom {
 	text-align: right;
 }
 
+// Other
+
+.instructions {
+	color: #2CB5A8;
+}
+.notification {
+	color: $brand-primary;
+	text-transform: none;
+}
+
+// Download Notification
+
+.download-notification {
+	width: 100%;
+	background-color: #2CB5A8;
+	text-align: center;
+	.container {
+		padding-top: 5px;
+	}
+	h3 {
+		text-transform: none;
+		color: #fff;
+		margin-top: 10px;
+		font-weight: 400;
+		a {
+			font-weight: 500;
+		}
+	}
+	.notification-copy {
+		padding: 10px 0;
+	}
+	.notification-close {
+		margin: 5px 5px 0 0;
+	}
+}
+
+.nowrap {
+	white-space: nowrap;
+}
 
 // PAGES
 

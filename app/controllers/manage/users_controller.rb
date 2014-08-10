@@ -52,6 +52,13 @@ class Manage::UsersController < ManageController
     redirect_to manage_user_path(@user), success: 'Invitation was successfully resent.'
   end
 
+  def invite_all
+    current_company.users.where(confirmation_token: nil).all.each do |user|
+      user.send_confirmation_instructions
+    end
+    redirect_to manage_users_path(@user), notice: 'All Users invited.'  
+  end
+
   def make_admin
     @user.update(admin: true)
     redirect_to manage_user_path(@user), success: "#{@user.first_name} is now an admin."
