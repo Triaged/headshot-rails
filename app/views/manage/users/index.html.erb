@@ -12,7 +12,7 @@
 
 
 <!-- Contacts List -->
-<div class="contact-list">
+<div class="contact-list border">
   <div class="list-search col-lg-6">
     <form role="form">
       <div class="form-group has-feedback">
@@ -33,5 +33,6 @@
 	<% end %>
 </div>
 
-<hr />
-<%= link_to 'Send invitations to all unconfirmed users', invite_all_manage_users_path, method: :post %>
+<div class="final-links">
+  <%= link_to 'Send invitations to all unconfirmed users', invite_all_manage_users_path, method: :post %>
+</div>
