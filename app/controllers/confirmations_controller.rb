@@ -73,7 +73,7 @@ class ConfirmationsController < Devise::ConfirmationsController
       event: 'confirmed_account',
       properties: {
         "company.id" => current_user.company.id,
-        "company.name" => current_user.company.name,
+        "company.name" => current_user.company.name
       },
       context: {
         traits: { company_id: current_user.company.id, company_name: current_user.company.name }
