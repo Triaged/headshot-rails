@@ -20,7 +20,7 @@ class NewUserAnalytics
         admin_name: user.company.admin_user.full_name
         "company.id" => user.company.id,
         "company.name" => user.company.name,
-      }
+      },
       context: {
         traits: { company_id: user.company.id, company_name: user.company.name }
       }

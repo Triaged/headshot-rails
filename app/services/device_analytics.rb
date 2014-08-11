@@ -11,7 +11,7 @@ class DeviceAnalytics
         os_version: self.os_version,
          "company.id" => user.company.id,
          "company.name" => user.company.name,
-      }
+      },
       context: {
         traits: { company_id: user.company.id, company_name: user.company.name }
       }
