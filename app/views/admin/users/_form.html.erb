@@ -1,16 +1,41 @@
-<%= simple_form_for([:admin, @company, @user]) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-  	<%= f.input :first_name %>
-  	<%= f.input :last_name %>
-  	<%= f.input :email %>
-    <%= f.input :admin %>
-    <%= check_box_tag :send_confirmation %>
-    <%= label_tag(:send_confirmation, "Send Invite Email") %>
+<div class="edit-fields">
+  <div class="col-sm-9 col-sm-offset-3">
+    <p class="field-description">Required fields</p>
   </div>
+  <%= bootstrap_form_for([:admin, @company, @user], layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
+    
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="form-inputs">
+      <%= f.text_field :first_name %>
+      <%= f.text_field :last_name %>
+      <%= f.email_field :email %>
+      <div class="col-sm-9 col-sm-offset-3">
+        <% if @user != current_user %> 
+          <p class="field-description">Add these fields so your contacts don’t have to </p> 
+        <% else %> 
+          <p class="field-description">Optional</p>
+        <% end %>
+      </div>
+      <%= f.collection_select(:manager_id, @company.users.all, :id, :full_name, include_blank: true) %>
+      <%= f.collection_select(:department_id, @company.departments.all, :id, :name, include_blank: true) %>
+      <%= f.fields_for :employee_info do |e| %>
+        <%= e.text_field :job_title %> 
+        <%= e.text_field :cell_phone %>  
+        <%= e.text_field :office_phone %>   
+        <%= e.date_select :birth_date, discard_year: true, with_css_classes: true, :include_blank => true, :default => nil %>  
+        <%= e.date_select :job_start_date, with_css_classes: true, :include_blank => true, :default => nil %>  
+      <% end %>
+    </div>
+
+
+    <div class="form-actions form-pull-right edit-btns">
+      <%= link_to "Cancel", manage_users_path, class: "btn-custom btn-default" %>
+      <%= f.button "Save", class: "btn-custom btn-primary" %>
+    </div>
+
+    
+  <% end %>
+</div>
+
+
+
