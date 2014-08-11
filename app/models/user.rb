@@ -121,22 +121,7 @@ class User < ActiveRecord::Base
   end
 
   def set_defaults
-  	Analytics.identify(
-    user_id: self.id,
-    traits: {
-      name: self.full_name,
-      email: self.email,
-      created_at: DateTime.now,
-      company_name: self.company.name,
-      company_id: self.company_id
-    })
-    Analytics.track(
-      user_id: self.id,
-      event: 'user_invited',
-       properties: {
-        admin: self.company.admin_user
-      }
-    )
+  	NewUserAnalytics.perform_async(self.id)
   	unleash_sherlock
   end
 
