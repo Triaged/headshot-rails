@@ -39,14 +39,7 @@ class Device < ActiveRecord::Base
   end
 
   def track_device
-  	Analytics.track(
-      user_id: user.id,
-      event: 'device_added',
-      properties: {
-      	service: self.service,
-      	os_version: self.os_version
-      }
-    )
+  	DeviceAnalytics.perfom_async(self.user.id)
   end
 
 end
