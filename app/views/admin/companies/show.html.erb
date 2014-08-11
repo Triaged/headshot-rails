@@ -4,7 +4,7 @@
 <hr />
 Admins: <br />
 <% @company.users.with_deleted.admin.each do |admin| %>
-	<%= link_to admin.email, edit_manage_user_path(admin) %> |
+	<%= link_to admin.email, edit_admin_company_user_path(@company, admin) %> |
 	confirmed: <%= admin.confirmed? %> | 
 	<%= link_to 'Login', become_admin_company_user_path(@company, admin), method: :post %> |
 	<%= link_to 'Send Invite', invite_admin_company_user_path(@company, admin), method: :post %> |
@@ -17,7 +17,7 @@ Admins: <br />
 <hr />
 Users: <br />
 <% @company.users.with_deleted.each do |user| %>
-	<%= link_to user.email, edit_manage_user_path(user) %> |
+	<%= link_to user.email, edit_admin_company_user_path(@company, user) %> |
 	confirmed <%= user.confirmed? %> |
 	<%= link_to 'Login', become_admin_company_user_path(@company, user), method: :post %> |
 	<%= link_to 'Send Invite', invite_admin_company_user_path(@company, user), method: :post %> |
