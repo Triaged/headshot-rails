@@ -114,6 +114,8 @@ HeadshotRails::Application.routes.draw do
         delete 'destroy_all', on: :collection
         post 'invite_all', on: :collection
       end
+      resources :office_locations
+      resources :departments
     end
     resources :pilots
     

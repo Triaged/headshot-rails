@@ -22,6 +22,7 @@ class Admin::UsersController < AdminController
 
 	def new
 		@user = @company.users.build
+		@user.build_employee_info
 	end
 
 	def create

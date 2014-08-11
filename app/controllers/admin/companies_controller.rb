@@ -13,6 +13,10 @@ class Admin::CompaniesController < AdminController
   	@company = Company.new
   end
 
+  def edit
+    @company = Company.find(params[:id])
+  end
+
   def create
   	@company = Company.new(company_params)
 
@@ -20,6 +24,14 @@ class Admin::CompaniesController < AdminController
       redirect_to admin_company_path(@company), success: 'Company was successfully created.'
     else
       render action: 'new'
+    end
+  end
+
+  def update
+    if @company.update(company_params)
+      redirect_to admin_company_path, success: 'Company was successfully updated.'
+    else
+      render :edit
     end
   end
 

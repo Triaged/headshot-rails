@@ -4,7 +4,7 @@
 <hr />
 Admins: <br />
 <% @company.users.with_deleted.admin.each do |admin| %>
-	<%= admin.email %> |
+	<%= link_to admin.email, edit_manage_user_path(admin) %> |
 	confirmed: <%= admin.confirmed? %> | 
 	<%= link_to 'Login', become_admin_company_user_path(@company, admin), method: :post %> |
 	<%= link_to 'Send Invite', invite_admin_company_user_path(@company, admin), method: :post %> |
@@ -17,7 +17,7 @@ Admins: <br />
 <hr />
 Users: <br />
 <% @company.users.with_deleted.each do |user| %>
-	<%= user.email %> |
+	<%= link_to user.email, edit_manage_user_path(user) %> |
 	confirmed <%= user.confirmed? %> |
 	<%= link_to 'Login', become_admin_company_user_path(@company, user), method: :post %> |
 	<%= link_to 'Send Invite', invite_admin_company_user_path(@company, user), method: :post %> |
@@ -34,3 +34,52 @@ Users: <br />
 <% unless Rails.env.production? %>
 	<%= link_to 'Destroy all Users', destroy_all_admin_company_users_path(@company), method: :delete %>
 <% end %>
+
+<div class="edit border">
+  <h3>Company Info</h3>
+  <div class="edit-groups">
+    <div class="edit-fields row">
+      <div class="col-sm-3 field-name">Locations</div>
+      <div class="col-sm-9 field">
+      	<% @company.office_locations.each do |location| %>
+	        <div class="row">
+	          <div class="col-sm-11 col-xs-10 field-content"><%= location.display_name %></div>
+	          <div class="col-sm-1 col-xs-2 field-btn">
+              <%= link_to edit_admin_company_office_location_path(@company, location) do %>
+                <i class="fa fa-wrench"></i>
+              <% end %>
+            </div>
+	        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="edit-btns form-pull-right">
+      <%= link_to new_admin_company_office_location_path(@company), class: "btn-custom btn-default" do %>
+          <i class="fa fa-plus-circle"></i>Add Location
+      <% end %>
+    </div>
+  </div>
+  <div class="edit-groups">
+    <div class="edit-fields row">
+      <div class="col-sm-3 field-name">Departments</div>
+      <div class="col-sm-9 field">
+      	<% @company.departments.each do |dept| %>
+	        <div class="row">
+	          <div class="col-sm-11 col-xs-10 field-content"><%= dept.name %></div>
+	          <div class="col-sm-1 col-xs-2 field-btn">
+              <%= link_to edit_admin_company_department_path(@company, dept) do %>
+                <i class="fa fa-wrench"></i>
+              <% end %>
+            </div>
+	        </div>
+	      <% end %>
+      </div>
+    </div>
+    <div class="edit-btns form-pull-right">
+      <%= link_to new_admin_company_department_path(@company), class: "btn-custom btn-default" do %>
+          <i class="fa fa-plus-circle"></i>Add Department
+      <% end %>
+    </div>
+  </div>
+  
+</div>

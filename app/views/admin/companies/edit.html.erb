@@ -1,0 +1,70 @@
+<div class="headline border">
+  <h1>Company Profile</h1>
+</div>
+
+<div class="profile border">
+	<%= company_logo @company %>
+	<div class="profile-info">
+    <div class="profile-name">
+      <h2><%= @company.name.capitalize %></h2>
+    </div>
+  </div>
+</div>
+
+<div class="edit border">
+  <h3>Company Info</h3>
+  <div class="edit-groups">
+    <div class="edit-fields row">
+      <div class="col-sm-3 field-name">Locations</div>
+      <div class="col-sm-9 field">
+      	<% @company.office_locations.each do |location| %>
+	        <div class="row">
+	          <div class="col-sm-11 col-xs-10 field-content"><%= location.display_name %></div>
+	          <div class="col-sm-1 col-xs-2 field-btn">
+              <%= link_to edit_manage_office_location_path(location) do %>
+                <i class="fa fa-wrench"></i>
+              <% end %>
+            </div>
+	        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="edit-btns form-pull-right">
+      <%= link_to new_manage_office_location_path, class: "btn-custom btn-default" do %>
+          <i class="fa fa-plus-circle"></i>Add Location
+      <% end %>
+    </div>
+  </div>
+  <div class="edit-groups">
+    <div class="edit-fields row">
+      <div class="col-sm-3 field-name">Departments</div>
+      <div class="col-sm-9 field">
+      	<% @company.departments.each do |dept| %>
+	        <div class="row">
+	          <div class="col-sm-11 col-xs-10 field-content"><%= dept.name %></div>
+	          <div class="col-sm-1 col-xs-2 field-btn">
+              <%= link_to edit_manage_department_path(dept) do %>
+                <i class="fa fa-wrench"></i>
+              <% end %>
+            </div>
+	        </div>
+	      <% end %>
+      </div>
+    </div>
+    <div class="edit-btns form-pull-right">
+      <%= link_to new_manage_department_path, class: "btn-custom btn-default" do %>
+          <i class="fa fa-plus-circle"></i>Add Department
+      <% end %>
+    </div>
+  </div>
+  <div class="edit-groups">
+    <div class="edit-fields">
+      	<%= render "form" %>
+    </div>
+  </div>
+</div>
+<div class="final-links no-border">
+  <% unless current_company.users.only_deleted.empty? %>
+    <p><%#= link_to 'Deactivated Contacts', archived_manage_users_path %></p>
+  <% end %>
+</div>
