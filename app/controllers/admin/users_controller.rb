@@ -25,6 +25,14 @@ class Admin::UsersController < AdminController
 		@user.build_employee_info
 	end
 
+	def update
+    if @user.update(user_params)
+      redirect_to admin_company_path(@company), success: 'Contact was successfully updated.'
+    else
+      render :show
+    end
+  end
+
 	def create
 		@user = @company.users.new(user_params)
 		logger.info params[:send_confirmation]
