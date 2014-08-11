@@ -14,7 +14,7 @@ class DownloadsController < ApplicationController
 
 	def txt
 		phone_number = params[:sms_capture][:phone_number]
-		sms_app_link =SmsService.new()
+		sms_app_link =SmsService.new(phone_number)
     @result = sms_app_link.deliver!
     @response =  @result ? "Great, we texted you at #{phone_number}." : "Sorry, your phone number looks invalid."
 	end
