@@ -51,7 +51,7 @@ class Admin::OfficeLocationsController < ApplicationController
   	@company = Company.find(params[:company_id])
   end
   	
-  end
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_office_location
       @office_location = @company.office_locations.find(params[:id])
