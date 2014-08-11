@@ -17,7 +17,12 @@ class NewUserAnalytics
       event: 'user_invited',
        properties: {
         admin: user.company.admin_user.id,
-        admin_name: user.company.admin_user.full_name
+        admin_name: user.company.admin_user.full_name,
+        "company.id" => user.company.id,
+        "company.name" => user.company.name
+      },
+      context: {
+        traits: { company_id: user.company.id, company_name: user.company.name }
       }
     )
   end

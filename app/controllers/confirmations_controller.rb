@@ -70,7 +70,14 @@ class ConfirmationsController < Devise::ConfirmationsController
   def track_confirm
     Analytics.track(
       user_id: current_user.id,
-      event: 'confirmed_account'
+      event: 'confirmed_account',
+      properties: {
+        "company.id" => current_user.company.id,
+        "company.name" => current_user.company.name
+      },
+      context: {
+        traits: { company_id: current_user.company.id, company_name: current_user.company.name }
+      }
     )
   end
 end
