@@ -1,4 +1,4 @@
-class Admin::OfficeLocationsController < ApplicationController
+class Admin::OfficeLocationsController < AdminController
 	before_action :set_company
 	before_action :set_office_location, only: [:show, :edit, :update, :destroy]
 
