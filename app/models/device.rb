@@ -39,7 +39,7 @@ class Device < ActiveRecord::Base
   end
 
   def track_device
-  	DeviceAnalytics.perfom_async(self.user.id)
+  	DeviceAnalytics.perform_async(self.user.id)
   end
 
 end
