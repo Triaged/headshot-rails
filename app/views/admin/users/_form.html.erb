@@ -9,6 +9,9 @@
       <%= f.text_field :first_name %>
       <%= f.text_field :last_name %>
       <%= f.email_field :email %>
+      <%= f.input :admin %>
+      <%= check_box_tag :send_confirmation %>
+      <%= label_tag(:send_confirmation, "Send Invite Email") %>
       <div class="col-sm-9 col-sm-offset-3">
         <% if @user != current_user %> 
           <p class="field-description">Add these fields so your contacts don’t have to </p> 
