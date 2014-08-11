@@ -76,14 +76,10 @@ border-color: #fff;
 		color: #FFFFFF;
 		border: none;
 		background-color: $brand-primary;
-		-moz-box-shadow:    0px 2px 0px 0px #AA7216;
-		box-shadow:         0px 2px 0px 0px #AA7216;
 	}
 }
 .btn-cta:hover, .btn-cta:focus, .btn-cta:active, .btn-cta.active {
-	background-color: #F39E17;
-	-moz-box-shadow:    0px 2px 0px 0px #AA7216;
-	box-shadow:         0px 2px 0px 0px #AA7216;
+	background-color: #FFB640;
 }
 
 .btns-right {

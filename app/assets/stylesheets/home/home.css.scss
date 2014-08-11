@@ -36,6 +36,7 @@ h4 {
 h5 {
 
   	font-size: 0.89em;
+  	line-height: 1.5em;
 }
 small {
 	font-size: 0.89em;
@@ -440,12 +441,28 @@ h2, h3, h4, small {
 }
 
 .faq-group {
-	padding-bottom: 50px;
-	h3 {
-		text-align:center;
+	padding: 75px 0;
+	.faq-headline, .faq-buttons {
+		text-align: center;
 	}
 	.section-header {
-		padding: 75px 0 50px;
+		padding: 75px 0 75px;
+	}
+	.faq-buttons {
+		padding-top: 50px;
+		a {
+			padding-top: 13px;
+			@media(max-width:767px){
+				margin-bottom: 20px;
+				padding-top: 7px;
+			}
+		}
+		a:hover {
+			color:#fff;
+		}
+	}
+	.faq-question {
+		padding-bottom: 60px;
 	}
 }
 
