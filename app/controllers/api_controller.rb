@@ -31,7 +31,7 @@ class APIController < ApplicationController
     user = user_token && User.find_by(authentication_token: user_token)
     if user
       sign_in(user) 
-      Intercom::User.create(:user_id => user.id, :name => user.full_name, update_last_request_at:1)
+      SessionAnalytics.perform_async(user.id)
     end
   rescue
     # find_by fails with an invalid token
