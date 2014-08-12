@@ -1,4 +1,4 @@
-<% if user_signed_in? && !current_user.installed_app? %>
+<% if user_signed_in? && !current_user.installed_app? && !current_page?('/download') %>
 <div class="download-notification">
   <div class="container">
     <div class="column-lg-12 notification-copy">
