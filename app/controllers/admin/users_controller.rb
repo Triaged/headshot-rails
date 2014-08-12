@@ -46,7 +46,7 @@ class Admin::UsersController < AdminController
 	end
 
 	def invite_all
-		@company.users.where(confirmation_token: nil).all.each do |user|
+		@company.users.where(confirmed_at: nil).all.each do |user|
 			user.send_confirmation_instructions
 		end
 		redirect_to admin_company_path(@company), notice: 'All Users invited.'	
