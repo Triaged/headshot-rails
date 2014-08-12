@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def append_info_to_payload(payload)
     super
-    payload[:params] = request.params
+    payload[:params] = request.filtered_parameters
     payload[:user] = current_user.try(:email)
   end
 
