@@ -56,7 +56,7 @@ class Manage::UsersController < ManageController
   end
 
   def invite_all
-    current_company.users.where(confirmation_token: nil).all.each do |user|
+    current_company.users.where(confirmed_at: nil).all.each do |user|
       user.send_confirmation_instructions
     end
     redirect_to manage_users_path(@user), notice: 'All Users invited.'  
