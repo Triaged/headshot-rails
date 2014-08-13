@@ -18,7 +18,7 @@ class Manage::UsersController < ManageController
     send_invite = params[:save] && params[:save].has_key?(:invite)
     
     @user = current_company.users.new(user_params)
-    @user.skip_confirmation! unless send_invite
+    @user.skip_confirmation_notification! unless send_invite
 
     if @user.save
       redirect_to manage_users_path, success: 'Contact was successfully created.'

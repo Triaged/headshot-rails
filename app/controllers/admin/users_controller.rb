@@ -36,7 +36,7 @@ class Admin::UsersController < AdminController
 	def create
 		@user = @company.users.new(user_params)
 		logger.info params[:send_confirmation]
-		@user.skip_confirmation! unless params[:send_confirmation]
+		@user.skip_confirmation_notification! unless params[:send_confirmation]
 
 		if @user.save
       redirect_to admin_company_path(@company), notice: 'User was successfully created.'
