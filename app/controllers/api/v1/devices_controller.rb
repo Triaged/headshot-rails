@@ -23,6 +23,8 @@ class API::V1::DevicesController < APIController
 		@device.update(logged_in: false)
 		
 		respond_with @device, location: api_v1_devices_path(@device)
+	rescue
+		render :json => { "message" => "ok" }, :status => 200
 	end
 
 private 
