@@ -12,6 +12,7 @@
 
 html, body {
 height: 100%;
+font-size: 18px;
 }
 
 
@@ -125,7 +126,7 @@ padding: 35px 0 0;
 }
 .control-label {
 	font-weight: 400;
-	color: $grey;
+	color: $text-color;
 }
 .field-name {
 	padding: 7px 15px 0;
@@ -144,6 +145,8 @@ padding: 35px 0 0;
 }
 .form-control {
 	box-shadow: none;
+	height: 48px;
+	background-color: #fff;
 }
 .form-control:focus {
 	-webkit-box-shadow: none;
@@ -198,4 +201,30 @@ label.has-error {
 		font-size: 10px;
 		}
 	}
+}
+
+// Pagination
+
+.create-pagination {
+	width: 100%;
+}
+.pagination > li > span {
+	border-top: none;
+	border-right: none;
+	border-left: none;
+}
+.create-pagination > .active > span, .create-pagination > .active > span:hover, .create-pagination > .active > span:focus {
+z-index: 2;
+color: $text-color;
+background-color: #fff;
+cursor: default;
+border-bottom: 2px solid $brand-primary;
+padding-bottom: 5px;
+font-weight: 500;
+}
+
+.create-pagination > li:first-child > a, .create-pagination > li:first-child > span {
+margin-left: 0;
+border-bottom-left-radius: 0;
+border-top-left-radius: 0;
 }

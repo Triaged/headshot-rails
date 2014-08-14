@@ -3,39 +3,32 @@
 // Typography
 
 p {
-  font-weight: 400; 
-  font-style: normal;
-	letter-spacing: .025em;
-	color: $grey;
-	font-weight: 16px;
-	line-height: 1.75;
+ 
 }
 h1 {
-  	font-weight: 600; 
-  	font-style: normal;
-  	line-height: 1.25;
-  	font-size: (16px * 2.1875);
+	font-size: 42px;
+	font-weight: 300;
+	line-height: 51px;
+	character-spacing: -1px;
+	color: $brand-primary;
 }
 h2 {
-  	font-weight: 400; 
-  	font-style: normal;
-  	font-size: (16px * 1.25);
-  	line-height: 1.25;
+
 }
 h3 {
-  	font-weight: 500; 
-  	font-style: normal;
-  	font-size: (16px * 1);
-  	line-height: 1.25;
+
 }
 h5 {
-  	font-size: 12px;
+
 }
 h1, h2, h3, h4 {
-	text-transform: uppercase;
-	letter-spacing: .05em;
+
 }
 
+.large {
+	font-size: 22px;
+	font-weight: 300;
+}
 
 // Navbar
 
@@ -75,6 +68,9 @@ h1, h2, h3, h4 {
 
 .headline {
 	padding-bottom: $spacing-sm;
+}
+.center {
+	text-align: center;
 }
 
 // Bread Crumbs
@@ -525,6 +521,19 @@ button.close-custom {
 	padding-top: 20px;
 }
 
+// Create Account Page
+
+.create-logo {
+	padding-bottom: 75px;
+}
+.create-account {
+	.create-pagination {
+		padding-bottom: 25px;
+	}
+	.headline {
+		padding-bottom: 10px;
+	}
+}
 // Download Page 
 
 .download-background {

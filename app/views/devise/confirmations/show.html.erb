@@ -1,24 +1,38 @@
-<div class="headline">
-  <h1>Welcome <%= resource.first_name %>, please create a password</h1>
-</div>
+<div class="create-account">
 
-<div class="edit">
-  <h4>Profile</h4>
-   <div class="edit-fields">
-      <div class="edit-groups">
-        <%= bootstrap_form_for resource, :as => resource_name, :url => update_user_confirmation_path, :html => {:method => 'patch'}, :id => 'activation-form', layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9" do |f| %>
-          <%= devise_error_messages! %>
-            <%= f.text_field :email %>
-            
-            <% if @requires_password %>
-                <p><%= f.password_field :password %></p>
-                <p><%= f.password_field :password_confirmation, label: 'Confirm' %></p>
-            <% end %>
-            <%= hidden_field_tag :confirmation_token,@confirmation_token %>
-            <div class="form-actions form-pull-right">
-              <%= f.submit "Submit", class: "btn-custom btn-primary" %>
-            </div>
-        <% end %>
+  <div class="create-logo">
+  <%= image_tag_with_at2x ("web-app/grey-logo.png") %>
+  </div>
+
+  <div class="center row">
+    <ul class="create-pagination pagination">
+      <li class="active"><span class="col-lg-6">1. Create Account</span></li>
+      <li class="disabled"><span class="col-lg-6">2. Download App</span></li>
+    </ul>
+  </div>
+
+  <div class="center headline">
+    <h1>Welcome to Badge, <%= resource.first_name %>!</h1>
+    <p class="large">Creating your account is easy, just choose your password below.</p>
+  </div>
+
+  <div class="edit">
+     <div class="edit-fields">
+        <div class="edit-groups col-lg-10 col-lg-offset-1">
+          <%= bootstrap_form_for resource, :as => resource_name, :url => update_user_confirmation_path, :html => {:method => 'patch'}, :id => 'activation-form', layout: :vertical, label_col: "col-lg-4 col-sm-3", control_col: "col-lg-4 col-sm-9" do |f| %>
+            <%= devise_error_messages! %>
+              <%= f.text_field :email %>
+              
+              <% if @requires_password %>
+                  <p><%= f.password_field :password %></p>
+              <% end %>
+              <%= hidden_field_tag :confirmation_token,@confirmation_token %>
+              <div class="form-actions form-pull-right">
+                <%= f.submit "Create Account", class: "btn-custom btn-primary btn-form" %>
+              </div>
+          <% end %>
+        </div>
       </div>
-    </div>
+  </div>
+
 </div>

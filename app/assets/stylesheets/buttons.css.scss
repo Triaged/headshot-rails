@@ -6,7 +6,6 @@
 display: inline-block;
 margin-bottom: 0;
 text-align: center;
-min-width: 100px;
 vertical-align: middle;
 cursor: pointer;
 background-image: none;
@@ -14,11 +13,12 @@ border: 1px solid;
 white-space: nowrap;
 padding: 9px 25px;
 line-height: 1.428571429;
-border-radius: $border-radius-sm;
+border-radius: $border-radius-lg;
 text-decoration: none !important;
 font-size: 14px;
 letter-spacing: 1px;
 font-weight:500;
+height: 48px;
 }
 
 .btn-custom + .btn-custom {
@@ -31,6 +31,10 @@ font-weight:500;
 	}
 }
 
+.btn-form {
+	width: 100%;
+	margin-top: 20px;
+}
 
 .btn-custom i {
 	padding-right: 5px;
