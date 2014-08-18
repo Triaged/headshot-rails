@@ -22,8 +22,8 @@
 
 			/* ========== Page Styles ========== */
 
-			#bodyCell{padding:2%;}
-			#templateContainer{width:100%;}
+			#bodyCell{padding:10px;}
+			#templateContainer{width:580px;}
 
 			/**
 			* @tab Page
@@ -344,7 +344,7 @@
 				*/
 				h1{
 					/*@editable*/ font-size:30px !important;
-					/*@editable*/ line-height:125% !important;
+					/*@editable*/ line-height:100% !important;
 				}
 
 				/**
@@ -354,7 +354,7 @@
 				*/
 				h2{
 					/*@editable*/ font-size:20px !important;
-					/*@editable*/ line-height:125% !important;
+					/*@editable*/ line-height:100% !important;
 				}
 
 				/**
@@ -364,7 +364,7 @@
 				*/
 				h3{
 					/*@editable*/ font-size:18px !important;
-					/*@editable*/ line-height:125% !important;
+					/*@editable*/ line-height:100% !important;
 				}
 
 				/**
@@ -374,7 +374,7 @@
 				*/
 				h4{
 					/*@editable*/ font-size:16px !important;
-					/*@editable*/ line-height:125% !important;
+					/*@editable*/ line-height:100% !important;
 				}
 
 				/* ======== Header Styles ======== */
@@ -434,9 +434,9 @@
     	<center>
         	<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;margin: 0;padding: 0;background-color: #FFFFFF;border-collapse: collapse !important;height: 100% !important;width: 100% !important;">
             	<tr>
-                	<td align="center" valign="top" id="bodyCell" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;margin: 0;padding: 2%;height: 100% !important;width: 100% !important;">
+                	<td align="center" valign="top" id="bodyCell" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;margin: 0;padding: 10px;height: 100% !important;width: 100% !important;">
                     	<!-- BEGIN TEMPLATE // -->
-                    	<table border="0" cellpadding="0" cellspacing="0" id="templateContainer" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-radius: 3px;border: 1px solid #F8AE37;border-collapse: collapse !important;">
+                    	<table border="0" cellpadding="0" cellspacing="0" id="templateContainer" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 580px;border-radius: 3px;border: 1px solid #F8AE37;border-collapse: collapse !important;">
                         	<tr>
                             	<td align="center" valign="top" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
                                 	<!-- BEGIN HEADER // -->
@@ -444,7 +444,7 @@
                                         <tr>
                                             <td valign="top" class="headerContent" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #636C7B;font-family: Helvetica;font-size: 20px;font-weight: bold;line-height: 100%;padding-top: 30px;padding-right: 10%;padding-bottom: 0;padding-left: 10%;text-align: center;vertical-align: middle;">
                                             	<img src="https://s3-us-west-2.amazonaws.com/badge-video/email-logo.png" style="max-width: 600px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;text-align: center;" id="headerImage" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext>
-                                            	<h1 style="display: block;font-family: Helvetica;font-size: 40px;font-style: normal;font-weight: bold;line-height: 150%;letter-spacing: 1px;margin-top: 30px;margin-right: 0;margin-bottom: 10px;margin-left: 0;text-align: center;color: #2CB5A8 !important;">Need any help?</h1>
+                                            	<h1 style="display: block;font-family: Helvetica;font-size: 40px;font-style: normal;font-weight: bold;line-height: 150%;letter-spacing: 1px;margin-top: 30px;margin-right: 0;margin-bottom: 10px;margin-left: 0;text-align: center;color: #2CB5A8 !important;">Any Questions?</h1>
                                             </td>
                                         </tr>
                                     </table>
@@ -457,14 +457,14 @@
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;border-collapse: collapse !important;">
                                         <tr>
                                             <td valign="top" class="bodyContent" mc:edit="body_content" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #636C7B;font-family: Helvetica;font-size: 18px;line-height: 150%;padding-top: 20px;padding-right: 10%;padding-bottom: 20px;padding-left: 10%;text-align: center;">
-                                                Hi <%= @recipient.first_name %>. I noticed you created an account for Badge but hadn’t signed into the app.  Do you have any questions?  I’d be happy to hear from you!
+                                                Hi <%= @user.first_name %>. I noticed you were invited to Badge, but you haven’t created an account yet. Do you have any questions? I’d be happy to hear from you!
                                                 <br>
                                                 <br>
                                                 Feel free to reach out to me at <a href="mailto:jt@badge.co" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #F8AE37;font-weight: normal;text-decoration: none;">jt@badge.co</a>, or respond to this email.
                                                <table border="0" cellpadding="0" cellspacing="0" style="background-color: #F8AE37;border-radius: 3px;margin: 60px auto;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
 												    <tr>
 												        <td align="center" valign="middle" style="color: #FFFFFF;font-family: Helvetica, Arial, sans-serif;font-size: 14px;font-weight: bold;letter-spacing: 1px;line-height: 150%;padding-top: 10px;padding-right: 40px;padding-bottom: 10px;padding-left: 30px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-												            <a href="http://www.mailchimp.com/blog/" target="_blank" style="color: #FFFFFF;text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;font-weight: normal;">Sign in to Badge</a>
+												            <a href="http://www.mailchimp.com/blog/" target="_blank" style="color: #FFFFFF;text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;font-weight: normal;">Sign in to your account</a>
 												        </td>
 												    </tr>
 												</table>
