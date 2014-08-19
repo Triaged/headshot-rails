@@ -65,6 +65,9 @@ html {
 }
 body {
   margin-bottom: 160px;
+  @media (max-width: 767px) {
+    margin-bottom: 340px;
+  }
 }
 
 #footer {
