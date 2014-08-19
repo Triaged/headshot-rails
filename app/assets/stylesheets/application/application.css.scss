@@ -218,13 +218,19 @@ button.close-custom {
 	.container {
 		padding-top: 5px;
 	}
-	h3 {
+	p {
 		text-transform: none;
 		color: #fff;
 		margin-top: 10px;
 		font-weight: 400;
 		a {
-			font-weight: 500;
+		text-decoration: underline;
+		color: #fff;
+		margin-top: 10px;
+		font-weight: 400;
+		}
+		a:hover {
+			color: #008C7F;
 		}
 	}
 	.notification-copy {
@@ -493,6 +499,13 @@ button.close-custom {
 	}
 }
 
+.import {
+	padding-bottom: 25px;
+}
+.api-access {
+	padding: 25px 0;
+	text-align: left;
+}
 
 .contact-group .import-profile:not(:first-of-type) {
 		padding-top: $spacing-sm;
@@ -500,7 +513,7 @@ button.close-custom {
 
 // Company
 
-// Ofice Location & Departments
+// Office Location & Departments
 
 .form-padding {
 	padding-top: 10px;

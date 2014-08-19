@@ -36,4 +36,11 @@ HeadshotRails::Application.configure do
 
   config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews"
 
+  config.action_mailer.smtp_settings = {
+    :address   => "smtp.mandrillapp.com",
+    :port      => 587,
+    :user_name => ENV["MANDRILL_USER_NAME"],
+    :password  => ENV["MANDRILL_API_KEY"]
+  }
+
 end
