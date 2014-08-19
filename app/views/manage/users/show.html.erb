@@ -15,6 +15,18 @@
     <div class="profile-email">
       <p><%= @user.email %></p>
     </div>
+    <div class="edit-picture">
+    <%= simple_form_for([:manage, @user], html: {class: "edit_user"}) do |f| %>
+      <div class="form-group">
+        <div class="col-sm-6 col-sm-offset-3 file-input-form">
+          <div class="fileUpload btn btn-default">
+            <span>Change Avatar</span>
+            <%= f.input :avatar, input_html: { class: "upload" }, label: false %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
   </div>
   <% if @user.admin? %>
     <div class="profile-label" style="text-align: center;">
