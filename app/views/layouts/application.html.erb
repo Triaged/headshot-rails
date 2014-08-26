@@ -11,24 +11,21 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div id="wrap">
-      <header>
-        <%= render 'layouts/navigation' %>
-      </header>
-      <main role="main">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-lg-offset-3 main">
-              <%= render 'layouts/messages' %>
-              <%= yield %>
-            </div>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-lg-offset-3 main">
+            <%= render 'layouts/messages' %>
+            <%= yield %>
           </div>
         </div>
-      </main>
-      <div id="push"></div>
+      </div>
+    </main>
 
-      <%= render 'layouts/footer' %>
-    </div>
+    <%= render 'layouts/footer' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
 </html>
