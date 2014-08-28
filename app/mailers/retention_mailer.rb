@@ -24,7 +24,7 @@ class RetentionMailer < ActionMailer::Base
     @recipient = User.find(user_id)
 
     mail(to: @recipient.email, from:  "\"Badge Team\" <team@badge.co>", 
-          subject: "Your invitation to Badge is waiting.")
+          subject: "What do you think about Badge?")
   end
 
   
