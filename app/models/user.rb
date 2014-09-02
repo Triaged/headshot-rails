@@ -31,6 +31,9 @@ class User < ActiveRecord::Base
   before_create :create_default_employee_info
   after_create :set_defaults
   after_create :push_entity
+  before_destroy :remove_edges
+
+  
   
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -152,7 +155,11 @@ class User < ActiveRecord::Base
  
 protected
 
-	
+	def remove_edges
+    # do stuff
+    self.department = nil
+    
+  end
 
 
 	def create_default_employee_info
