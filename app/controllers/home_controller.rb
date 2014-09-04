@@ -14,6 +14,21 @@ class HomeController < ApplicationController
 	def about
 	end
 
+	def campaigns
+	end
+
+	def construction
+	end
+
+	def events
+	end
+
+	def hospitality
+	end
+
+	def retail
+	end
+
 	def signup
 		logger.info (params[:email].blank? || params[:company].blank?)
 		redirect_to "/" and return if (params[:email].blank? || params[:company].blank?)
