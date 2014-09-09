@@ -4,6 +4,11 @@ HeadshotRails::Application.routes.draw do
   match '/about' => "home#about", :via => :get
   match '/faq' => "home#faq", :via => :get
   match '/signup' => "home#signup", :via => :post
+  match '/campaigns' => "home#campaigns", :via => :get
+  match '/construction' => "home#construction", :via => :get
+  match '/events' => "home#events", :via => :get
+  match '/hospitality' => "home#hospitality", :via => :get
+  match '/retail' => "home#retail", :via => :get
 
 
   # API

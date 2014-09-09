@@ -6,9 +6,9 @@ class HomeController < ApplicationController
 
 	def index
 		respond_to do |format|
-      format.html          # /app/views/home/index.html.erb
-      format.html.mobile    # /app/views/home/index.html+phone.erb
-    end
+	      format.html          # /app/views/home/index.html.erb
+	      format.html.mobile    # /app/views/home/index.html+phone.erb
+	    end
 	end
 
 	def about
@@ -23,6 +23,29 @@ class HomeController < ApplicationController
 	end
 
 	def faq
+	end
+
+	def campaigns
+	end
+
+	def construction
+		respond_to do |format|
+      		format.html          # /app/views/home/index.html.erb
+      		format.html.mobile    # /app/views/home/index.html+phone.erb
+		end
+	end 
+
+	def events
+	end
+
+	def hospitality
+		respond_to do |format|
+      		format.html          # /app/views/home/index.html.erb
+      		format.html.mobile    # /app/views/home/index.html+phone.erb
+		end
+	end
+
+	def retail
 	end
 
 private

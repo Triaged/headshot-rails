@@ -190,17 +190,6 @@ h2, h3, h4, small {
 	z-index: -999998;
 	position: absolute;
 	.hero-img {
-		// position: absolute;
-		// margin: 0px;
-		// padding: 0px;
-		// border: none;
-		// max-height: none;
-		// z-index: -999999;
-		// top: 0px;
-		// width: auto;
-		// min-width: 100%;
-		// max-width: none;
-		// height: 100%;
 	}
 	.about-img {
 		height: 100%;
@@ -519,7 +508,6 @@ h2, h3, h4, small {
 	.hero-background {
 		.hero-img {
 			position: relative;
-			height: 100%;
 			min-width: 100%;
 		}
 	}
@@ -637,3 +625,7 @@ and (orientation : landscape) {
 	}
 
 }
+
+
+// New Landing Pages
+

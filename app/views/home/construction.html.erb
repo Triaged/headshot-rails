@@ -1,0 +1,135 @@
+<div class="hero-container">
+    <div class="hero-content">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h1 class="hero-headline">Empower Your Font Line <br>Construction Employees</h1>
+                <div class="cta-forms">
+                    <form class="form-inline form-inline-custom" action="/signup" method="post" role="form">
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control form-control-custom" id="emailPilot" placeholder="Company email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="company" class="form-control form-control-custom" id="companyPilot" placeholder="Company name">
+                        </div>
+                        <button type="submit" class="btn-custom btn-cta">Get Early Access</button>
+                    </form>
+                </div>
+
+                <p><small>Badge is available on iOS &amp; Android</small></p>
+            </div>
+        </div>
+    </div>
+    <p class="hero-scroll small">More Info Below</p>
+    <div class="hero-background tinted-image">
+        <%= image_tag ("web/construction/construction-landing-color.jpg"), :class => "hero-img" %>
+    </div>
+</div>
+
+
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="mission-content col-lg-10 col-lg-offset-1">
+                <h3>We believe great companies are built by empowered employees and we’ve made it our mission to support your team.</h3>
+            </div>
+        </div>
+
+        <div class="features-content">
+            <div class="row">
+                <div class="section-header col-lg-10 col-lg-offset-1">
+                    <div class="divider-line">
+                        <span>
+                           <small>Features</small>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="section row">
+                <div class="feature-image col-lg-8">
+                    <%= image_tag_with_at2x ("web/construction/hand1.jpg"), :width => "750" %>
+                </div>
+                <div class="feature-copy-right col-lg-4">
+                    <div class="feature-icon">
+                        <%= image_tag ("icons/landing-icon_01.svg"), :width => "45" %>
+                    </div>
+                    <h4>A Lite-Weight Task Manager</h4>
+                    <p>Badge is a simple and intuitive project management app for your mobile team. Tasks are easy to create and straightforward to assign or follow up on. Badge improves accountability and makes communication more effective and accurate.</p>
+                </div>
+            </div>
+            <div class="section row">
+                <div class="feature-copy-left col-lg-4">
+                    <div class="feature-icon">
+                        <%= image_tag ("icons/landing-icon_02.svg"), :width => "45" %>
+                    </div>
+                    <h4>Mobile Messaging Made For Work</h4>
+                    <p>People reply 30X faster to texts than emails. So why are you still putting critical, urgent requests into email?  With Badge, everyone in your company can send secure mobile messages.  That means work gets done faster.</p>
+                </div>
+                <div class="feature-image col-lg-8">
+                    <%= image_tag_with_at2x ("web/construction/hand3.jpg"), :width => "750" %>
+                </div>
+            </div>
+            <div class="section row">
+                <div class="feature-image col-lg-8">
+                    <%= image_tag_with_at2x ("web/construction/hand2.jpg"), :width => "750" %>
+                </div>
+                <div class="feature-copy-right col-lg-4">
+                    <div class="feature-icon">
+                        <%= image_tag ("icons/landing-icon_03.svg"), :width => "45" %>
+                    </div>
+                    <h4>A Better Way To Handle Contacts</h4>
+                    <p>Badge includes a mobile-first directory for all your contact information. Automatically synch your team and subcontractor info into one central place, organized by project affiliation. And Badge makes it easy to share with the rest of your team.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="container">
+        <div class="onboard-content">
+            <div class="row">
+                <div class="section-header col-lg-10 col-lg-offset-1">
+                    <div class="divider-line">
+                        <span>
+                            <small>Onboarding</small>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="onboarding-copy col-lg-8 col-lg-offset-2">
+                    <h2>Roll Out Badge In Minutes</h2>
+                    <p class="p-large">You can import employees from Google Apps or BambooHR in one click, with more integrations coming soon. Use something else? No problem, all you need is a list of names and emails, and our account team takes care of the rest!</p>
+                </div>
+            </div>
+            <div class="onboarding-example">
+                <div class="onboarding-img">
+                    <%= image_tag ("web/onboarding-laptop.svg"), :width => "1141" %>
+                </div>
+                <div class="onboarding-video">
+                    <%= video_tag(["https://s3-us-west-2.amazonaws.com/badge-video/onboarding.webm", "https://s3-us-west-2.amazonaws.com/badge-video/onboarding.mp4"], mute: true, loop: true, id: "bgvid", :poster => "web/video-screenshot.jpg") %>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="cta">
+    <div class="container">
+        <h3>Request early access to Badge.</h3>
+        <div class="cta-forms">
+            <form class="form-inline form-inline-custom" action="/signup" method="post" role="form">
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control form-control-custom" id="emailPilot" placeholder="Company email">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="company" class="form-control form-control-custom" id="companyPilot" placeholder="Company name">
+                </div>
+                <button type="submit" class="btn-custom btn-cta">Get Early Access</button>
+            </form>
+        </div>
+        <p>Badge is available on iOS &amp; Android</p>
+    </div>
+</div>
