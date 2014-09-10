@@ -54,6 +54,10 @@ class HomeController < ApplicationController
 	end
 
 	def retail
+		respond_to do |format|
+      		format.html          # /app/views/home/index.html.erb
+      		format.html.mobile    # /app/views/home/index.html+phone.erb
+		end
 	end
 
 private
