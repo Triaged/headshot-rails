@@ -2,7 +2,7 @@ class UserSerializer < ApplicationSerializer
   # cached
   # delegate :cache_key, to: :object
 
-  attributes :id, :first_name, :last_name, :full_name, :avatar_face_url, :avatar_face2x_url, :avatar_url, :email, :manager_id
+  attributes :id, :first_name, :archived, :last_name, :full_name, :avatar_face_url, :avatar_face2x_url, :avatar_url, :email, :manager_id
   attributes :primary_office_location_id, :current_office_location_id, :department_id, :installed_app, :sharing_office_location
 
   has_one :employee_info
@@ -11,7 +11,10 @@ class UserSerializer < ApplicationSerializer
     object.first_name.capitalize
   end
 
-  
+  def archived
+    object.destroyed?
+  end
+
   def manager_id
     object.manager_id.to_s
   end
