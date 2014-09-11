@@ -9,5 +9,8 @@ class EmployeeInfo < ActiveRecord::Base
 
 	acts_as_birthday :birth_date, :job_start_date
 
+	validates :website, :url => {:allow_nil => true}
+	validates :linkedin, :url => {:allow_nil => true}
+
 	
 end
