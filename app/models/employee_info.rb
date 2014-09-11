@@ -15,8 +15,8 @@ class EmployeeInfo < ActiveRecord::Base
 	before_validation :add_scheme
 
 	def add_scheme
-  	self.website = "http://#{self.website}" unless (!self.website || self.website=~/^https?:\/\//)
-  	self.linkedin = "http://#{self.linkedin}" unless (!self.linkedin || self.linkedin=~/^https?:\/\//)
+  	self.website = "http://#{self.website}" unless (self.website.blank? || !self.website || self.website=~/^https?:\/\//)
+  	self.linkedin = "http://#{self.linkedin}" unless (self.linkedin.blank? || !self.linkedin || self.linkedin=~/^https?:\/\//)
   end
 
 	
