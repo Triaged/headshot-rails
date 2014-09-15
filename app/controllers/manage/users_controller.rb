@@ -87,7 +87,7 @@ private
   end
 
   def user_params
-    params[:user].permit(:first_name, :last_name, :avatar, :email, :department_id, :manager_id, :employee_info_attributes => [:cell_phone, :office_phone, :job_title, :birth_date, :job_start_date])
+    params[:user].permit(:first_name, :last_name, :avatar, :email, :department_id, :manager_id, :employee_info_attributes => [:cell_phone, :office_phone, :job_title, :birth_date, :job_start_date, :website, :linkedin])
   end
 
 

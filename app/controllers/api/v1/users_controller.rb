@@ -11,6 +11,7 @@ class API::V1::UsersController < APIController
   # GET /api/v1/users/1
   # GET /api/v1/users/1.json
   def show
+    expires_now
     respond_with @user
   end
 

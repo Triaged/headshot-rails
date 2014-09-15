@@ -6,19 +6,27 @@ class HomeController < ApplicationController
 
 	def index
 		respond_to do |format|
-      format.html          # /app/views/home/index.html.erb
-      format.html.mobile    # /app/views/home/index.html+phone.erb
-    end
+	      format.html          # /app/views/home/index.html.erb
+	      format.html.mobile    # /app/views/home/index.html+phone.erb
+	    end
 	end
 
 	def about
 	end
 
 	def signup
-		logger.info (params[:email].blank? || params[:company].blank?)
 		redirect_to "/" and return if (params[:email].blank? || params[:company].blank?)
 		Pilot.create(email: params[:email], company: params[:company])
-		$mailchimp.lists.subscribe("49771b3c4f", {email: params[:email]}, nil, double_optin=false)
+
+		if params[:page] == "construction"
+			list_id = "4a4ecf64f7"
+		elsif params[:page] == "hospitality"
+			list_id = "92e6dc95ff"
+		else
+			list_id = "49771b3c4f"
+		end
+
+		$mailchimp.lists.subscribe(list_id, {email: params[:email]}, nil, double_optin=false)
 	rescue
 	end
 
@@ -29,12 +37,21 @@ class HomeController < ApplicationController
 	end
 
 	def construction
-	end
+		respond_to do |format|
+      		format.html          # /app/views/home/index.html.erb
+      		format.html.mobile    # /app/views/home/index.html+phone.erb
+		end
+	end 
+
 
 	def events
 	end
 
 	def hospitality
+		respond_to do |format|
+      		format.html          # /app/views/home/index.html.erb
+      		format.html.mobile    # /app/views/home/index.html+phone.erb
+		end
 	end
 
 	def retail
