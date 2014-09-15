@@ -22,6 +22,8 @@
         <%= e.text_field :job_title %> 
         <%= e.text_field :cell_phone %>  
         <%= e.text_field :office_phone %>   
+        <%= e.text_field :website %>
+        <%= e.text_field :linkedin %>   
         <%= e.date_select :birth_date, discard_year: true, with_css_classes: true, :include_blank => true, :default => nil %>  
         <%= e.date_select :job_start_date, with_css_classes: true, :include_blank => true, :default => nil, start_year: 1970, end_year: Date.today.year + 1 %>  
       <% end %>

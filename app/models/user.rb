@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   
 	has_many :provider_credentials
 	has_many :devices
-  has_many :subordinates, class_name: "User", foreign_key: "manager_id"
+  has_many :subordinates, class_name: "User", foreign_key: "manager_id", dependent: :nullify
 
   belongs_to :primary_office_location, class_name: "OfficeLocation"
 	belongs_to :current_office_location, class_name: 'OfficeLocation'
@@ -31,6 +31,9 @@ class User < ActiveRecord::Base
   before_create :create_default_employee_info
   after_create :set_defaults
   after_create :push_entity
+  before_destroy :remove_edges
+
+  
   
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -137,7 +140,11 @@ class User < ActiveRecord::Base
  
 protected
 
-	
+	def remove_edges
+    # do stuff
+    self.department = nil
+
+  end
 
 
 	def create_default_employee_info

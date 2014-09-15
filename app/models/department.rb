@@ -17,6 +17,11 @@ class Department < ActiveRecord::Base
 		EntityPush.perform_async(self.company.id, "department", self.id)
 	end
 
+	def user_included user
+		self.users.include? user
+	end
+
+
 end
 
 

@@ -22,6 +22,15 @@ class API::Internal::UsersController < InternalAPIController
 		render :json => { "success" => "false" }, :status => 200
 	end
 
+	def in_group
+		user_group = Department.find(params[:user_group_id])
+		if  user_group.user_included @user.id
+			render :json => { "success" => "true" }, :status => 200
+		else
+			render :json => { "success" => "false" }, :status => 200
+		end
+	end
+
 private
 
 	def set_user

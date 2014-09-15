@@ -4,13 +4,14 @@ class API::V1::UsersController < APIController
   # GET /api/v1/users
   # GET /api/v1/users.json
   def index
-    @users = current_company.users.all
+    @users = current_company.users.with_deleted.all
     respond_with @users
   end
 
   # GET /api/v1/users/1
   # GET /api/v1/users/1.json
   def show
+    expires_now
     respond_with @user
   end
 

@@ -2,7 +2,9 @@
     <div class="hero-content">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
-                <h1 class="hero-headline">Empower Your Font Line <br>Hospitality Employees</h1>
+
+                <h1 class="hero-headline">Empower Your Front Line <br>Hospitality Employees</h1>
+
                 <div class="cta-forms">
                     <form class="form-inline form-inline-custom" action="/signup" method="post" role="form">
                         <div class="form-group">
@@ -11,6 +13,9 @@
                         <div class="form-group">
                             <input type="text" name="company" class="form-control form-control-custom" id="companyPilot" placeholder="Company name">
                         </div>
+
+                            <input type="hidden" name="page" value="hospitality">
+
                         <button type="submit" class="btn-custom btn-cta">Get Early Access</button>
                     </form>
                 </div>
@@ -21,7 +26,9 @@
     </div>
     <p class="hero-scroll small">More Info Below</p>
     <div class="hero-background">
-        <%= image_tag ("web/hero-img.jpg"), :class => "hero-img" %>
+
+        <%= image_tag ("web/hospitality/hospitality-landing-color.jpg"), :class => "hero-img" %>
+
     </div>
 </div>
 
@@ -46,14 +53,18 @@
             </div>
             <div class="section row">
                 <div class="feature-image col-lg-8">
-                    <%= image_tag_with_at2x ("web/hand1.jpg"), :width => "750" %>
+
+                    <%= image_tag_with_at2x ("web/hospitality/hand1.jpg"), :width => "750" %>
+
                 </div>
                 <div class="feature-copy-right col-lg-4">
                     <div class="feature-icon">
                         <%= image_tag ("icons/landing-icon_01.svg"), :width => "45" %>
                     </div>
-                    <h4>A Lite-weight Task Manager</h4>
-                    <p>Badge is a simple and intuitive project management tool for your phone. Tasks are easy to assign and straightforward to follow up on. Improve accountability and make communication more efficient and accurate with Badge. </p>
+
+                    <h4>A Lite-Weight Task Manager</h4>
+                    <p>Badge is a simple and intuitive project management app for your mobile team. Tasks are easy to create and straightforward to assign or follow up on. Badge improves accountability and makes communication more effective and accurate.</p>
+
                 </div>
             </div>
             <div class="section row">
@@ -61,41 +72,29 @@
                     <div class="feature-icon">
                         <%= image_tag ("icons/landing-icon_02.svg"), :width => "45" %>
                     </div>
-                    <h4>Mobile Messaging Made For Work</h4>
+
+                    <h4>With Dedicated Messaging For Work</h4>
                     <p>People reply 30X faster to texts than emails. So why are you still putting critical, urgent requests into email?  With Badge, everyone in your company can send secure mobile messages.  That means work gets done faster.</p>
                 </div>
                 <div class="feature-image col-lg-8">
-                    <%= image_tag_with_at2x ("web/hand2.jpg"), :width => "750" %>
+                    <%= image_tag_with_at2x ("web/hospitality/hand3.jpg"), :width => "750" %>
+
                 </div>
             </div>
             <div class="section row">
                 <div class="feature-image col-lg-8">
-                    <%= image_tag_with_at2x ("web/hand3.jpg"), :width => "750" %>
+
+                    <%= image_tag_with_at2x ("web/hospitality/hand2.jpg"), :width => "750" %>
+
                 </div>
                 <div class="feature-copy-right col-lg-4">
                     <div class="feature-icon">
                         <%= image_tag ("icons/landing-icon_03.svg"), :width => "45" %>
                     </div>
-                    <h4>A Mobile-First Company Directory</h4>
-                    <p>Your company directory has been neglected for far too long. Badge gives you access to all your work contacts and contractors, so getting in touch with anyone is fast and organized beautifully.  You've truly got your whole company at your fingertips.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="customer-content">
-    <div class="container">    
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="row">
-                    <div class="customer-copy col-lg-6 col-lg-offset-1">
-                        <span class=""><%= image_tag ("quotation.png"), :width => "50" %></span>
-                        <h3>Badge has energized our culture at Moat. We're collaborating more effectively, getting things done faster, and having fun while we do it.</h3>
-                    </div>
-                    <div class="feature-image col-lg-4">
-                        <%= image_tag_with_at2x ("badge.png"), :width => "300", :class => "pull-right" %>
-                    </div>
+                    <h4>And A Better Way To Handle Contacts</h4>
+
+                    <p>Your company directory has been neglected for far too long. Badge gives you access to all your work contacts and contractors, so getting in touch with anyone is fast and organized beautifully.  You've truly got your whole company at your fingertips.</p>
                 </div>
             </div>
         </div>

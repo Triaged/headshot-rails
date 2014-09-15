@@ -9,5 +9,15 @@ class EmployeeInfo < ActiveRecord::Base
 
 	acts_as_birthday :birth_date, :job_start_date
 
+	validates :website, :url => {:allow_nil => true}
+	validates :linkedin, :url => {:allow_nil => true}
+
+	before_validation :add_scheme
+
+	def add_scheme
+  	self.website = "http://#{self.website}" unless (self.website.blank? || !self.website || self.website=~/^https?:\/\//)
+  	self.linkedin = "http://#{self.linkedin}" unless (self.linkedin.blank? || !self.linkedin || self.linkedin=~/^https?:\/\//)
+  end
+
 	
 end

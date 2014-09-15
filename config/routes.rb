@@ -55,6 +55,7 @@ HeadshotRails::Application.routes.draw do
         member do
           get 'valid_auth_token'
           post 'deliver_message'
+          get 'in_group'
         end
       end
     end
