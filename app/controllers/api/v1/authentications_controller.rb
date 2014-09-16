@@ -5,8 +5,7 @@ class API::V1::AuthenticationsController < APIController
 	skip_before_filter :current_company
 
 	def create
-		@user = User.find_by( email: auth_params[:email] ) \
-			|| User.find_by( phone_number: auth_params[:phone_number] )
+		@user = User.find_by( email: auth_params[:email] )
 
 		unless @user
 			@user = User.new( auth_params )
