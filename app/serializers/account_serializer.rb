@@ -1,5 +1,5 @@
 class AccountSerializer < ApplicationSerializer
-  attributes :id, :installed_app, :authentication_token, :company_id, :company_name
+  attributes :id, :installed_app, :authentication_token, :company_id
 
   has_one :current_user, serializer: UserSerializer
 
@@ -10,10 +10,5 @@ class AccountSerializer < ApplicationSerializer
   def installed_app
     object.installed_app?
   end
-
-  def company_name
-  	object.company.name
-  end
-
 
 end

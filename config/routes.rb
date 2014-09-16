@@ -13,7 +13,9 @@ HeadshotRails::Application.routes.draw do
 	# API
 	namespace :api, :path => "", :constraints => {:subdomain => "api"}, :defaults => {:format => :json} do
 		namespace :v1 do
-			resource :authentications
+			resource :authentications do
+				post 'valid', on: :collection
+			end
 			resource :versions do
 				get 'ios', on: :member
 				get 'android', on: :member
