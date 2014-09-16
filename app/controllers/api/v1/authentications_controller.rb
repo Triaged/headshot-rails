@@ -22,6 +22,7 @@ class API::V1::AuthenticationsController < APIController
 	def valid
 		@user = User.find_by( id: auth_params[:id].to_i, challenge_code: auth_params[:challenge_code]  )
 		if @user
+			@user.ensure_authentication_token!
 			render json: @user, serializer: AccountSerializer
 		else
 			render :json=> {}, :status=>401
