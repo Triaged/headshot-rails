@@ -4,7 +4,7 @@ class API::V1::SessionsController < APIController
 	before_filter :current_company, :except => [:create]
 	before_filter :ensure_params_exist, :only => [:create]
 
-	
+
 	def create
 		resource = User.find_for_database_authentication(:email => params[:user_login][:email])
 		return invalid_login_attempt unless resource
@@ -17,12 +17,12 @@ class API::V1::SessionsController < APIController
 		end
 		invalid_login_attempt
 	end
-	
+
 	def destroy
 		sign_out(current_user)
 		render :json=> {:success=>true}
 	end
- 
+
 	protected
 	# Only allow a trusted parameter "white list" through.
   def session_params
@@ -33,7 +33,7 @@ class API::V1::SessionsController < APIController
 		return unless params[:user_login].blank?
 		render :json=> { "errors" => ["Oops, there's no email address"] }, :status=>422
 	end
- 
+
 	def invalid_login_attempt
 		render :json=> { "errors" => ["Error with your email or password"] }, :status=>401
 	end

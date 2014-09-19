@@ -13,6 +13,7 @@ HeadshotRails::Application.routes.draw do
 	# API
 	namespace :api, :path => "", :constraints => {:subdomain => "api"}, :defaults => {:format => :json} do
 		namespace :v1 do
+			resource :invites
 			resource :authentications do
 				post 'valid', on: :collection
 			end
