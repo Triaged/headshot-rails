@@ -10,8 +10,7 @@ class InviteService
 			if email.to_s.length != 0
 				InviteMailer.invite( email ).deliver
 			elsif phone.to_s.length != 0
-				puts ( "Sending a text to: " + phone.to_s );
-				SmsService.new(phone).deliver!("You've been invited to try out the Badge Application")
+				SmsService.new(phone).deliver!("You've been invited to try out the Badge Application!")
 			end
 		end
 	end
