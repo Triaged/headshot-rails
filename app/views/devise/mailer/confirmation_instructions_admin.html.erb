@@ -41,7 +41,7 @@
 			* @theme page
 			*/
 			#bodyCell{
-				/*@editable*/ 
+				/*@editable*/
 			}
 
 			/**
@@ -476,7 +476,7 @@
                                                <table border="0" cellpadding="0" cellspacing="0" style="background-color: #F8AE37;border-radius: 3px;margin: 60px auto;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
 												    <tr>
 												        <td align="center" class="buttonContent" valign="middle" style="color: #FFFFFF;font-family: Helvetica, Arial, sans-serif;font-size: 16px;font-weight: bold;letter-spacing: 1px;line-height: 150%;padding-top: 10px;padding-right: 40px;padding-bottom: 10px;padding-left: 30px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-												            <%= link_to 'Sign in to your account', confirmation_url(@resource, confirmation_token: @token), { :style => 'color: #FFFFFF;text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;' }  %>
+                                                            <%= link_to 'Sign in to your account', confirmation_url(@resource, confirmation_token: @token, protocol: 'http'), { :style => 'color: #FFFFFF;text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;' }  %>
 												        </td>
 												    </tr>
 												</table>
