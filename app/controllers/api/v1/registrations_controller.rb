@@ -5,17 +5,17 @@ class API::V1::RegistrationsController < APIController
 	skip_before_filter :current_company
 	
 	def create
-		user = User.find_or_initialize_by(email: registration_params[:email])
+		user = User.new(email: registration_params)
 
-		# Merge params if this is a new user or an unregistered user
-		if user.new_record?
-			user.assign_attributes(registration_params.merge(registered: true))
-		end
+		# # Merge params if this is a new user or an unregistered user
+		# if user.new_record? || !user.registered
+		# 	user.assign_attributes(registration_params.merge(registered: true))
+		# end
 
 		# Check if this user can be saved.
 		if user.save
 			sign_in(:user, user)
-			user.ensure_authentication_token!
+			resource.ensure_authentication_token!
 			render json: user, serializer: AccountSerializer
 			return
 		else
