@@ -1,5 +1,5 @@
 class AccountSerializer < ApplicationSerializer
-  attributes :id, :installed_app, :authentication_token, :company_id, :company_name
+  attributes :id, :installed_app, :authentication_token#, :company_id#, :company_name
 
   has_one :current_user, serializer: UserSerializer
 
