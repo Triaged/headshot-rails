@@ -6,6 +6,7 @@ class API::V1::RegistrationsController < APIController
 	
 	def create
 		user = User.new(email: registration_params)
+		Rails.logger.info user.inspect
 
 		# # Merge params if this is a new user or an unregistered user
 		# if user.new_record? || !user.registered
