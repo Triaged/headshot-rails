@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140915204836) do
+ActiveRecord::Schema.define(version: 20140918192505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -165,6 +165,14 @@ ActiveRecord::Schema.define(version: 20140915204836) do
   end
 
   add_index "imports", ["provider_id"], name: "index_imports_on_provider_id", using: :btree
+
+  create_table "invites", force: true do |t|
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "office_locations", force: true do |t|
     t.string   "name"

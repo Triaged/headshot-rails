@@ -20,10 +20,17 @@ class API::V1::AuthenticationsController < APIController
 	end
 
 	def valid
+		@user = User.find_by( id: auth_params[:id].to_i, challenge_code: auth_params[:challenge_code]  )
+		if @user
+			@user.ensure_authentication_token!
+			render json: @user, serializer: AccountSerializer
+		else
+			render :json=> {}, :status=>401
+		end
 	end
 
 	def auth_params
-		params[:auth_params].permit( :first_name, :last_name, :email, :phone_number )
+		params[:auth_params].permit( :first_name, :last_name, :email, :phone_number, :id, :challenge_code )
 	end
 
 end
