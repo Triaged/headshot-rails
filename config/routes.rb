@@ -35,6 +35,7 @@ HeadshotRails::Application.routes.draw do
 			end
 
 			resources :departments
+			resources :tag_sets
 			resource :account do
 				member do
 					post 'avatar'
