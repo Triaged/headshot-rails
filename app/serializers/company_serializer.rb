@@ -1,9 +1,10 @@
 class CompanySerializer < ApplicationSerializer
-  attributes :id, :name, :uses_departments, :logo_url
+  attributes :id, :name, :uses_departments, :logo_url, :tag_set_priority
 
   has_many :users
   has_many :office_locations
   has_many :departments
+  has_many :tag_sets
 
   def logo_url
     object.logo.url
@@ -19,5 +20,13 @@ class CompanySerializer < ApplicationSerializer
 
   def departments
   	@options[:updated_at] ? object.departments.where("updated_at >= ?", DateTime.parse(@options[:updated_at])) : object.departments
+  end
+
+  def tag_sets
+    TagSet.all
+  end
+
+  def tag_set_priority
+    [2,3,1]
   end
 end
