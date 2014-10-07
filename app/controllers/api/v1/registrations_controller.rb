@@ -1,4 +1,4 @@
-class Api::V1::RegistrationsController < APIController
+class API::V1::RegistrationsController < APIController
 
 	skip_before_filter :authenticate_user!
 	
