@@ -1,6 +1,8 @@
 class API::V1::RegistrationsController < APIController
 
+	skip_before_filter :authenticate_user_from_token!
 	skip_before_filter :authenticate_user!
+	skip_before_filter :current_company
 	
 	def create
 		user = User.find_or_initialize_by(email: registration_params[:email])
