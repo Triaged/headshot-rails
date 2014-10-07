@@ -13,7 +13,8 @@ class Api::V1::RegistrationsController < APIController
 		# Check if this user can be saved.
 		if user.save
 			sign_in(:user, user)
-			render json: {authentication_token: user.authentication_token}
+			resource.ensure_authentication_token!
+			render json: user, serializer: AccountSerializer
 			return
 		else
 			warden.custom_failure!
@@ -23,7 +24,7 @@ class Api::V1::RegistrationsController < APIController
 
 private
 	def registration_params
-    params[:registration].permit(:email, :password, :password_confirmation, :first_name, :last_name)
+    params[:registration].permit(:email, :phone_number, :password, :first_name, :last_name)
   end
 
   def error_message message_hash
