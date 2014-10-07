@@ -5,7 +5,7 @@ class API::V1::RegistrationsController < APIController
 	skip_before_filter :current_company
 	
 	def create
-		user = User.new(email: registration_params)
+		user = User.new(registration_params)
 		Rails.logger.info user.inspect
 
 		# # Merge params if this is a new user or an unregistered user
