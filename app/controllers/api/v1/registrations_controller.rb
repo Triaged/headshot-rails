@@ -15,7 +15,7 @@ class API::V1::RegistrationsController < APIController
 		# Check if this user can be saved.
 		if user.save
 			sign_in(:user, user)
-			resource.ensure_authentication_token!
+			user.ensure_authentication_token!
 			render json: user, serializer: AccountSerializer
 			return
 		else
