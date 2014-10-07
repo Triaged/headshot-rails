@@ -8,7 +8,7 @@ class API::V1::RegistrationsController < APIController
 		user = User.find_or_initialize_by(email: registration_params[:email])
 
 		# Merge params if this is a new user or an unregistered user
-		if user.new_record? || !user.registered
+		if user.new_record?
 			user.assign_attributes(registration_params.merge(registered: true))
 		end
 
