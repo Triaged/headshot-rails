@@ -12,7 +12,7 @@ class EmployeeInfo < ActiveRecord::Base
 	validates :website, :url => {:allow_nil => true}
 	validates :linkedin, :url => {:allow_nil => true}
 
-	before_validation :add_scheme
+	#before_validation :add_scheme
 
 	def add_scheme
   	self.website = "http://#{self.website}" unless (self.website.blank? || !self.website || self.website=~/^https?:\/\//)
