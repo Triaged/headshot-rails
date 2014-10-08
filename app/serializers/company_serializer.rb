@@ -4,7 +4,7 @@ class CompanySerializer < ApplicationSerializer
   has_many :users
   has_many :office_locations
   has_many :departments
-  has_many :tag_sets, serializer: CommentShortSerializer
+  has_many :tag_sets, serializer: TagSetSerializer
   
 
   def logo_url
