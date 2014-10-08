@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141007204234) do
+ActiveRecord::Schema.define(version: 20141008135644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -248,6 +248,7 @@ ActiveRecord::Schema.define(version: 20141007204234) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "priority"
   end
 
   create_table "teams", force: true do |t|
@@ -258,6 +259,16 @@ ActiveRecord::Schema.define(version: 20141007204234) do
   end
 
   add_index "teams", ["company_id"], name: "index_teams_on_company_id", using: :btree
+
+  create_table "user_tag_set_items", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "tag_set_item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_tag_set_items", ["tag_set_item_id"], name: "index_user_tag_set_items_on_tag_set_item_id", using: :btree
+  add_index "user_tag_set_items", ["user_id"], name: "index_user_tag_set_items_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                      default: "", null: false
