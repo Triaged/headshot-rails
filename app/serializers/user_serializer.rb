@@ -4,9 +4,10 @@ class UserSerializer < ApplicationSerializer
 
   attributes :id, :first_name, :archived, :last_name, :full_name, :avatar_face_url, :avatar_face2x_url, :avatar_url, :email, :manager_id
   attributes :primary_office_location_id, :current_office_location_id, :department_id, :installed_app, :sharing_office_location
+  attributes :tag_set_item_ids
 
   has_one :employee_info
-  has_many :tag_set_items
+  
 
   def first_name
     object.first_name.capitalize
