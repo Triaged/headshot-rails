@@ -1,3 +1,3 @@
-class TagSetItemSerializer < ActiveModel::Serializer
+class TagSetItemSerializer < ApplicationSerializer
   attributes :id, :name
 end
