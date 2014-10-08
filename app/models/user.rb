@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
 	has_one :home_location
 
 	has_many :invites
+	has_many :user_tag_set_items
+	has_many :tag_set_items, through: :user_tag_set_items
 
 	mount_uploader :avatar, AvatarUploader
 

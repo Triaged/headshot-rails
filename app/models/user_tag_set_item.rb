@@ -1,4 +1,4 @@
-class UserTagSetItems < ActiveRecord::Base
+class UserTagSetItem < ActiveRecord::Base
   belongs_to :user
   belongs_to :tag_set_item
 end
