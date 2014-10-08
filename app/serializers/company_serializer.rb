@@ -1,9 +1,10 @@
 class CompanySerializer < ApplicationSerializer
-  attributes :id, :name, :uses_departments, :logo_url, :tag_sets
+  attributes :id, :name, :uses_departments, :logo_url
 
   has_many :users
   has_many :office_locations
   has_many :departments
+  has_many :tag_sets, serializer: CommentShortSerializer
   
 
   def logo_url
