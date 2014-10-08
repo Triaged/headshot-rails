@@ -6,6 +6,7 @@ class UserSerializer < ApplicationSerializer
   attributes :primary_office_location_id, :current_office_location_id, :department_id, :installed_app, :sharing_office_location
 
   has_one :employee_info
+  has_many :tag_set_items
 
   def first_name
     object.first_name.capitalize
