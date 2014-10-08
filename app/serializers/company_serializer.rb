@@ -1,5 +1,5 @@
 class CompanySerializer < ApplicationSerializer
-  attributes :id, :name, :uses_departments, :logo_url, :tag_set_priority
+  attributes :id, :name, :uses_departments, :logo_url
 
   has_many :users
   has_many :office_locations
@@ -26,7 +26,4 @@ class CompanySerializer < ApplicationSerializer
     TagSet.all
   end
 
-  def tag_set_priority
-    [2,3,1]
-  end
 end
