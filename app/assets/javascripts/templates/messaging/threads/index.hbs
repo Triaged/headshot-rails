@@ -1,0 +1,10 @@
+<div id="main">
+  <div id="threads">
+    {{#each}}
+    <div class="thread">{{#link-to "threads.thread" this}} hello {{title}} {{/link-to}}</div>
+    {{/each}}
+  </div>
+   <div id="messages">
+      {{ outlet }}
+    </div>
+</div>

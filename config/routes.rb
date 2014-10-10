@@ -78,6 +78,7 @@ HeadshotRails::Application.routes.draw do
 
 	constraints(Subdomain) do
 		resource :account
+		resources :messaging
 		resource :download do
 			post 'txt', on: :member
 			post 'txt_stored', on: :member

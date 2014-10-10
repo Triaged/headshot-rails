@@ -58,7 +58,8 @@ gem 'mailchimp-api', require: 'mailchimp'
 gem 'asset_sync'
 gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
 gem "validate_url"
-
+gem 'ember-rails'
+gem 'ember-source', '1.7.0'
 
 
 group :development do

@@ -1,0 +1,30 @@
+
+#main{
+    margin: 40px auto;
+    width: 854px;
+    height: 600px;
+    border: 1px solid blue;
+    vertical-align: text-top;
+}
+
+#threads{
+    height: 600px;
+    width: 300px;
+    border: 1px solid green;
+    float: left;
+}
+
+#messages{
+    height: 600px;
+    width: 550px;
+    border: 1px solid red;
+    float: right;
+}
+
+.thread{
+    border: 1px solid blue;
+    width: 100%;
+    height: 95px;
+    margin: 0px auto;
+}
+

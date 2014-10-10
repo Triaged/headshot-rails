@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Badge" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Badge" %>">
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7609112/659304/css/fonts.css" />
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= stylesheet_link_tag 'messaging', media: 'all' %>
+    <%= render partial: "layouts/ga" if Rails.env.production? %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      
+    </header>
+    <main role="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <%= render 'layouts/messages' %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    
+    <%= javascript_include_tag 'messaging/application' %>
+  </body>
+</html>
