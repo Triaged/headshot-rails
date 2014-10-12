@@ -1,5 +1,5 @@
 Messaging.Router.reopen({
-  rootURL: "/messaging/"
+    rootURL: "/messaging/"
 });
 
 
@@ -8,11 +8,11 @@ Messaging.Router.reopen({
 // controller and showing the template.
 Messaging.Router.map(function() {
     // shows all the threads
-    this.resource("threads", function() { 
+    this.resource("threads", function() {
         this.route("thread", { path: "/:thread_id" });
     });
     // shows a single thread
-    
+
 });
 
 // shows all the threads
@@ -27,7 +27,7 @@ Messaging.ThreadsRoute = Ember.Route.extend({
 });
 
 // shows a single thread
-Messaging.ThreadRoute = Ember.Route.extend({
+Messaging.ThreadsThreadRoute = Ember.Route.extend({
     model: function(params) {
         return this.store.find('thread', params.thread_id);
     }
